@@ -86,6 +86,23 @@ struct AddOrderView: View {
 
                 // Layer 2 & 3: Scrollable Form with Edge Fade Mask
                 Form {
+                    // Layer 4: Header pinned control (Buy/Sell Segmented Picker)
+                    VStack(spacing: 0) {
+                        Picker("order.type.title", selection: $selectedType) {
+                            ForEach(TransactionType.allCases, id: \.self) { type in
+                                Text(type.rawValue).tag(type)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding(.horizontal, 16)
+                        .padding(.top, 6)
+                        .padding(.bottom, 6)
+                        .background(Color(uiColor: .systemGroupedBackground))
+                    }
+                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newHeight in
+                        headerHeight = newHeight
+                    }
+                    
                     // Section 1: Platform Selector Chips
                     Section {
                         ScrollView(.horizontal, showsIndicators: false) {
@@ -343,25 +360,6 @@ struct AddOrderView: View {
             }
             .listSectionSpacing(.compact)
             .contentMargins(.top, headerHeight, for: .scrollContent)
-            .scrollEdgeFade(headerHeight: headerHeight)
-            .ignoresSafeArea(edges: .bottom)
-
-            // Layer 4: Header pinned control (Buy/Sell Segmented Picker)
-            VStack(spacing: 0) {
-                Picker("order.type.title", selection: $selectedType) {
-                    ForEach(TransactionType.allCases, id: \.self) { type in
-                        Text(type.rawValue).tag(type)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 16)
-                .padding(.top, 6)
-                .padding(.bottom, 6)
-                .background(Color(uiColor: .systemGroupedBackground))
-            }
-            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newHeight in
-                headerHeight = newHeight
-            }
         }
         .navigationTitle(selectedType == .buy ? "order.title.record_buy" : "order.title.record_sell")
         .navigationBarTitleDisplayMode(.inline)

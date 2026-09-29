@@ -7,23 +7,23 @@
         "key": "Capital (%@)",
         "location": {
           "startingColumn": 30,
-          "startingLine": 259
+          "startingLine": 250
         }
       },
       {
         "comment": "",
-        "key": "Available Free Money (UAH)",
+        "key": "rollover.label.free_uah",
         "location": {
           "startingColumn": 34,
-          "startingLine": 89
+          "startingLine": 82
         }
       },
       {
         "comment": "",
-        "key": "Remaining USDT",
+        "key": "rollover.label.unliquidated_usdt",
         "location": {
           "startingColumn": 42,
-          "startingLine": 101
+          "startingLine": 94
         }
       },
       {
@@ -31,7 +31,15 @@
         "key": "Total Portfolio Equity",
         "location": {
           "startingColumn": 42,
-          "startingLine": 111
+          "startingLine": 104
+        }
+      },
+      {
+        "comment": "",
+        "key": "Starting Deposit",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 120
         }
       },
       {
@@ -39,7 +47,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 134
+          "startingLine": 127
         }
       },
       {
@@ -47,15 +55,15 @@
         "key": "%lldk ₴",
         "location": {
           "startingColumn": 44,
-          "startingLine": 146
+          "startingLine": 139
         }
       },
       {
         "comment": "",
-        "key": "Starting Working Capital",
+        "key": "capital.label.starting_working_capital",
         "location": {
           "startingColumn": 30,
-          "startingLine": 158
+          "startingLine": 151
         }
       },
       {
@@ -63,7 +71,15 @@
         "key": "The initial cash pool in UAH you started trading with for this period.",
         "location": {
           "startingColumn": 30,
-          "startingLine": 162
+          "startingLine": 155
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initial USDT",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 164
         }
       },
       {
@@ -71,7 +87,15 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 178
+          "startingLine": 171
+        }
+      },
+      {
+        "comment": "",
+        "key": "Avg Buy Rate (₴)",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 181
         }
       },
       {
@@ -79,23 +103,23 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 195
+          "startingLine": 188
         }
       },
       {
         "comment": "",
-        "key": "Initial Crypto Value",
+        "key": "capital.label.initial_crypto_value",
         "location": {
           "startingColumn": 38,
-          "startingLine": 205
+          "startingLine": 198
         }
       },
       {
         "comment": "",
-        "key": "Initial Crypto Inventory",
+        "key": "capital.label.initial_crypto_inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 216
+          "startingLine": 209
         }
       },
       {
@@ -103,7 +127,15 @@
         "key": "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.",
         "location": {
           "startingColumn": 30,
-          "startingLine": 220
+          "startingLine": 213
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cash Out",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 222
         }
       },
       {
@@ -111,15 +143,15 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 236
+          "startingLine": 229
         }
       },
       {
         "comment": "",
-        "key": "Cash Out (To Cash)",
+        "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 244
+          "startingLine": 237
         }
       },
       {
@@ -127,7 +159,31 @@
         "key": "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.",
         "location": {
           "startingColumn": 30,
-          "startingLine": 248
+          "startingLine": 241
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 254
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.save",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 260
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 267
         }
       }
     ]

@@ -4,10 +4,90 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "settings.title",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 109
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.section.language",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 43
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.action.export_csv",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.status.coming_soon",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.section.data_export",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 68
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.label.version",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
         "key": "Spred v%@",
         "location": {
           "startingColumn": 30,
           "startingLine": 78
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.label.build",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.label.engine",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "Spred P2P Arbitrage Engine",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.section.app_info",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 99
         }
       },
       {

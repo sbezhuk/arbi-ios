@@ -88,7 +88,6 @@ struct CashWithdrawalsListView: View {
                 }
             }
             .listSectionSpacing(8)
-            .bottomScrollFade()
             .navigationTitle("Cash Out Log")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

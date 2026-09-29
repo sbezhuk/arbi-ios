@@ -2,33 +2,155 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Avg Buy Price</key>
-	<string>Сер. ціна купівлі</string>
-	<key>Bank Settlement</key>
-	<string>Банк розрахунку</string>
-	<key>Bank Turnover Limits</key>
-	<string>Ліміти по банках</string>
-	<key>Cancel</key>
+	<key>bank.action.add_account</key>
+	<string>Додати банківський рахунок</string>
+	<key>bank.action.add_defaults</key>
+	<string>Додати стандартні українські банки</string>
+	<key>bank.empty.description</key>
+	<string>Банківський рахунок або картка потрібні для обліку обороту та лімітів фінмоніторингу.</string>
+	<key>bank.empty.no_accounts</key>
+	<string>Банківські картки ще не додані.</string>
+	<key>bank.field.card_number</key>
+	<string>Номер картки</string>
+	<key>bank.field.title</key>
+	<string>Назва</string>
+	<key>bank.section.account_details</key>
+	<string>Деталі рахунку</string>
+	<key>bank.section.active_accounts</key>
+	<string>Активні рахунки та картки</string>
+	<key>bank.title.edit_account</key>
+	<string>Редагувати рахунок</string>
+	<key>bank.title.management</key>
+	<string>Банківські картки</string>
+	<key>bank.title.new_account</key>
+	<string>Новий банківський рахунок</string>
+	<key>capital.label.initial_crypto_inventory</key>
+	<string>Початковий крипторезерв</string>
+	<key>capital.label.initial_crypto_value</key>
+	<string>Початкова вартість криптоактивів</string>
+	<key>capital.label.starting_working_capital</key>
+	<string>Початковий робочий капітал</string>
+	<key>common.action.add</key>
+	<string>Додати</string>
+	<key>common.action.archive</key>
+	<string>Архівувати</string>
+	<key>common.action.cancel</key>
 	<string>Скасувати</string>
-	<key>Close Month</key>
-	<string>Закрити місяць</string>
-	<key>Commission / Fee</key>
-	<string>Комісія</string>
-	<key>Confirm</key>
+	<key>common.action.confirm</key>
 	<string>Підтвердити</string>
-	<key>Free Money</key>
-	<string>Вільний капітал</string>
-	<key>Record Buy Order</key>
-	<string>Записати купівлю</string>
-	<key>Record Sell Order</key>
-	<string>Записати продаж</string>
-	<key>Save</key>
+	<key>common.action.delete</key>
+	<string>Видалити</string>
+	<key>common.action.done</key>
+	<string>Готово</string>
+	<key>common.action.manage</key>
+	<string>Керувати</string>
+	<key>common.action.save</key>
 	<string>Зберегти</string>
-	<key>Settings</key>
+	<key>common.action.unarchive</key>
+	<string>Розархівувати</string>
+	<key>common.label.calendar_month</key>
+	<string>Календарний місяць</string>
+	<key>common.label.per_usdt</key>
+	<string>за 1 USDT</string>
+	<key>common.status.coming_soon</key>
+	<string>Незабаром</string>
+	<key>nav.tab.settings</key>
 	<string>Налаштування</string>
-	<key>Total Net PnL</key>
-	<string>Чистий прибуток</string>
-	<key>Trades</key>
+	<key>nav.tab.trades</key>
 	<string>Угоди</string>
+	<key>order.field.date_time</key>
+	<string>Дата та час</string>
+	<key>order.field.fee_usdt</key>
+	<string>Комісія (USDT)</string>
+	<key>order.field.note_placeholder</key>
+	<string>Примітка / контрагент</string>
+	<key>order.field.price_uah</key>
+	<string>Ціна (UAH)</string>
+	<key>order.field.total_uah</key>
+	<string>Всього UAH</string>
+	<key>order.field.usdt</key>
+	<string>USDT</string>
+	<key>order.section.amounts_rate</key>
+	<string>Суми угоди та курс</string>
+	<key>order.section.commission</key>
+	<string>Комісія</string>
+	<key>order.section.details</key>
+	<string>Деталі та примітка</string>
+	<key>order.section.platform</key>
+	<string>Біржа / платформа</string>
+	<key>order.section.settlement</key>
+	<string>Банк розрахунку</string>
+	<key>order.title.record_buy</key>
+	<string>Записати купівлю</string>
+	<key>order.title.record_sell</key>
+	<string>Записати продаж</string>
+	<key>order.type.buy</key>
+	<string>Купівля</string>
+	<key>order.type.sell</key>
+	<string>Продаж</string>
+	<key>order.type.title</key>
+	<string>Тип угоди</string>
+	<key>rollover.label.free_uah</key>
+	<string>Вільні кошти (UAH)</string>
+	<key>rollover.label.net_pnl</key>
+	<string>Чистий прибуток (PnL)</string>
+	<key>rollover.label.unliquidated_usdt</key>
+	<string>Залишок USDT</string>
+	<key>rollover.label.weighted_cost</key>
+	<string>Середній курс закупки</string>
+	<key>rollover.section.summary</key>
+	<string>Підсумки періоду</string>
+	<key>rollover.section.transition</key>
+	<string>Перехід періоду</string>
+	<key>rollover.section.what_changes</key>
+	<string>Що зміниться після переходу</string>
+	<key>rollover.title.close_month</key>
+	<string>Закриття місяця</string>
+	<key>settings.action.export_csv</key>
+	<string>Експорт у CSV</string>
+	<key>settings.label.build</key>
+	<string>Збірка</string>
+	<key>settings.label.engine</key>
+	<string>Двигун</string>
+	<key>settings.label.version</key>
+	<string>Версія</string>
+	<key>settings.section.app_info</key>
+	<string>Про застосунок</string>
+	<key>settings.section.data_export</key>
+	<string>Дані та експорт</string>
+	<key>settings.section.language</key>
+	<string>Мова</string>
+	<key>settings.title</key>
+	<string>Налаштування</string>
+	<key>trades.action.configure</key>
+	<string>Налаштувати</string>
+	<key>trades.action.rollover</key>
+	<string>Перенести</string>
+	<key>trades.card.cash_out</key>
+	<string>Виведення готівки</string>
+	<key>trades.card.free_money</key>
+	<string>Вільний капітал</string>
+	<key>trades.card.free_money_bank_cards</key>
+	<string>Вільний капітал (Картки)</string>
+	<key>trades.card.starting_deposit</key>
+	<string>Початковий депозит</string>
+	<key>trades.card.usdt_inventory</key>
+	<string>Залишок USDT</string>
+	<key>trades.empty.add_sample</key>
+	<string>Додати зразки угод</string>
+	<key>trades.empty.no_transactions</key>
+	<string>Немає операцій</string>
+	<key>trades.section.bank_limits</key>
+	<string>Ліміти по банках</string>
+	<key>trades.section.recent_transactions</key>
+	<string>Останні операції</string>
+	<key>trades.stats.avg_buy_price</key>
+	<string>Сер. ціна купівлі</string>
+	<key>trades.stats.net_pnl</key>
+	<string>Чистий прибуток</string>
+	<key>trades.stats.total_trades</key>
+	<string>Всього угод</string>
+	<key>trades.title.spread_arbitrage</key>
+	<string>P2P Арбітраж</string>
 </dict>
 </plist>

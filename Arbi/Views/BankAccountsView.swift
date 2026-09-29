@@ -22,13 +22,7 @@ struct BankAccountsView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                // Layer 1: Screen background
-                Color(uiColor: .systemGroupedBackground)
-                    .ignoresSafeArea()
-
-                // Layer 2 & 3: Scrollable content & Edge Fade Mask
-                List {
+            List {
                 Section {
                     if activeAccounts.isEmpty {
                         ContentUnavailableView {
@@ -85,10 +79,8 @@ struct BankAccountsView: View {
                     }
                 }
             }
-            .scrollEdgeFade()
-            .ignoresSafeArea(edges: .bottom)
-        }
-        .navigationTitle("bank.title.management")
+            .contentMargins(.top, 8, for: .scrollContent)
+            .navigationTitle("bank.title.management")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

@@ -106,8 +106,6 @@ struct SettingsView: View {
                 }
             }
             .listSectionSpacing(8)
-            .bottomScrollFade()
-            .ignoresSafeArea(edges: .bottom)
             .navigationTitle("settings.title")
             .navigationBarTitleDisplayMode(.large)
         }

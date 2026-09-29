@@ -157,8 +157,6 @@ struct ContentView: View {
                 }
             }
             .listSectionSpacing(8)
-            .bottomScrollFade()
-            .ignoresSafeArea(edges: .bottom)
             .navigationTitle("trades.title.spread_arbitrage")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {

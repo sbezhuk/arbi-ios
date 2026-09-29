@@ -75,13 +75,7 @@ struct CapitalSettingsView: View {
 
     var body: some View {
         NavigationStack {
-            ZStack {
-                // Layer 1: Screen background
-                Color(uiColor: .systemGroupedBackground)
-                    .ignoresSafeArea()
-
-                // Layer 2 & 3: Scrollable Form with Edge Fade Mask
-                Form {
+            Form {
                     // Section 1: Real-time Capital Simulation Card
                     Section {
                         VStack(alignment: .leading, spacing: 6) {
@@ -249,12 +243,10 @@ struct CapitalSettingsView: View {
                             .foregroundStyle(.secondary)
                     }
                 }
-                .listSectionSpacing(.compact)
-                .contentMargins(.bottom, 24, for: .scrollContent)
-                .scrollDismissesKeyboard(.interactively)
-                .scrollEdgeFade()
-                .ignoresSafeArea(edges: .bottom)
-            }
+            .listSectionSpacing(.compact)
+            .contentMargins(.top, 8, for: .scrollContent)
+            .contentMargins(.bottom, 24, for: .scrollContent)
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Capital (\(periodIdentifier))")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

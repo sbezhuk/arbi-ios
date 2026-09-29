@@ -4,10 +4,34 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "order.title.record_buy",
+        "location": {
+          "startingColumn": 49,
+          "startingLine": 364
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.title.record_sell",
+        "location": {
+          "startingColumn": 76,
+          "startingLine": 364
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.platform",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
         "key": "A bank account or card is required to track settlement turnover and financial monitoring limits.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 123
+          "startingLine": 122
         }
       },
       {
@@ -15,7 +39,31 @@
         "key": "No Bank Accounts Found",
         "location": {
           "startingColumn": 38,
-          "startingLine": 119
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.action.add_account",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.add",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.settlement",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 179
         }
       },
       {
@@ -23,7 +71,7 @@
         "key": "Selected card: %@ · Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 186
+          "startingLine": 185
         }
       },
       {
@@ -31,7 +79,15 @@
         "key": "Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 188
+          "startingLine": 187
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.usdt",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 196
         }
       },
       {
@@ -39,7 +95,15 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 202
+          "startingLine": 201
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.price_uah",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 214
         }
       },
       {
@@ -47,7 +111,15 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 220
+          "startingLine": 219
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.total_uah",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 232
         }
       },
       {
@@ -55,15 +127,31 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 238
+          "startingLine": 237
         }
       },
       {
         "comment": "",
-        "key": "USDT",
+        "key": "order.section.amounts_rate",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 248
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.usdt",
         "location": {
           "startingColumn": 34,
-          "startingLine": 291
+          "startingLine": 290
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.fee_usdt",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 275
         }
       },
       {
@@ -71,7 +159,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 282
+          "startingLine": 281
         }
       },
       {
@@ -79,7 +167,23 @@
         "key": "≈ %@ ₴ commission",
         "location": {
           "startingColumn": 38,
-          "startingLine": 299
+          "startingLine": 298
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.commission",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 306
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.date_time",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 315
         }
       },
       {
@@ -87,7 +191,47 @@
         "key": "",
         "location": {
           "startingColumn": 36,
-          "startingLine": 323
+          "startingLine": 322
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.field.note_placeholder",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 333
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.details",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 339
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 368
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.save",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 374
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 382
         }
       }
     ]

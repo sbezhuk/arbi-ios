@@ -4,34 +4,18 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Угоди",
+        "key": "nav.tab.trades",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 29
+          "startingColumn": 27,
+          "startingLine": 27
         }
       },
       {
         "comment": "",
-        "key": "Trades",
+        "key": "nav.tab.settings",
         "location": {
-          "startingColumn": 62,
-          "startingLine": 29
-        }
-      },
-      {
-        "comment": "",
-        "key": "Налаштування",
-        "location": {
-          "startingColumn": 47,
-          "startingLine": 38
-        }
-      },
-      {
-        "comment": "",
-        "key": "Settings",
-        "location": {
-          "startingColumn": 76,
-          "startingLine": 38
+          "startingColumn": 27,
+          "startingLine": 33
         }
       }
     ]

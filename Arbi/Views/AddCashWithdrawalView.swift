@@ -106,7 +106,6 @@ struct AddCashWithdrawalView: View {
                     Text("Note / Description (Optional)")
                 }
             }
-            .bottomScrollFade()
             .navigationTitle("Log Cash Withdrawal")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

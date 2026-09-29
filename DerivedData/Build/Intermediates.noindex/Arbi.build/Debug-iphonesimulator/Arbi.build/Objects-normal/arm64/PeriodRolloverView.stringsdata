@@ -4,7 +4,7 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Close Month",
+        "key": "rollover.title.close_month",
         "location": {
           "startingColumn": 30,
           "startingLine": 228
@@ -36,7 +36,7 @@
       },
       {
         "comment": "",
-        "key": "Period Transition",
+        "key": "rollover.section.transition",
         "location": {
           "startingColumn": 26,
           "startingLine": 96
@@ -44,7 +44,39 @@
       },
       {
         "comment": "",
-        "key": "Carry-Over Balances",
+        "key": "rollover.label.free_uah",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 105
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.label.unliquidated_usdt",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.label.weighted_cost",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.label.net_pnl",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.section.summary",
         "location": {
           "startingColumn": 26,
           "startingLine": 156
@@ -92,7 +124,7 @@
       },
       {
         "comment": "",
-        "key": "What Resets",
+        "key": "rollover.section.what_changes",
         "location": {
           "startingColumn": 26,
           "startingLine": 201
@@ -100,7 +132,7 @@
       },
       {
         "comment": "",
-        "key": "Confirm & Start Next Month",
+        "key": "common.action.confirm",
         "location": {
           "startingColumn": 34,
           "startingLine": 213
@@ -108,7 +140,7 @@
       },
       {
         "comment": "",
-        "key": "Cancel",
+        "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
           "startingLine": 232
@@ -116,7 +148,7 @@
       },
       {
         "comment": "",
-        "key": "Confirm",
+        "key": "common.action.confirm",
         "location": {
           "startingColumn": 28,
           "startingLine": 238

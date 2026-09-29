@@ -4,10 +4,18 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "bank.title.management",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 83
+        }
+      },
+      {
+        "comment": "",
         "key": "Error",
         "location": {
           "startingColumn": 20,
-          "startingLine": 116
+          "startingLine": 107
         }
       },
       {
@@ -15,63 +23,79 @@
         "key": "Archived Cards (%lld)",
         "location": {
           "startingColumn": 29,
-          "startingLine": 74
+          "startingLine": 67
         }
       },
       {
         "comment": "",
-        "key": "No Active Bank Accounts",
+        "key": "bank.empty.no_accounts",
         "location": {
           "startingColumn": 35,
-          "startingLine": 36
+          "startingLine": 29
         }
       },
       {
         "comment": "",
-        "key": "Add your bank accounts to track specific card turnover and financial monitoring limits.",
+        "key": "bank.empty.description",
         "location": {
           "startingColumn": 34,
-          "startingLine": 38
+          "startingLine": 31
         }
       },
       {
         "comment": "",
-        "key": "Add Default Ukrainian Banks",
+        "key": "bank.action.add_defaults",
         "location": {
           "startingColumn": 36,
-          "startingLine": 40
+          "startingLine": 33
         }
       },
       {
         "comment": "",
-        "key": "Delete",
+        "key": "common.action.delete",
         "location": {
           "startingColumn": 47,
-          "startingLine": 57
+          "startingLine": 50
         }
       },
       {
         "comment": "",
-        "key": "Archive",
+        "key": "common.action.archive",
         "location": {
           "startingColumn": 47,
+          "startingLine": 56
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.section.active_accounts",
+        "location": {
+          "startingColumn": 26,
           "startingLine": 63
         }
       },
       {
         "comment": "",
-        "key": "Active Accounts & Cards",
+        "key": "common.action.unarchive",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 70
+          "startingColumn": 47,
+          "startingLine": 74
         }
       },
       {
         "comment": "",
-        "key": "Unarchive",
+        "key": "common.action.done",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 81
+          "startingColumn": 28,
+          "startingLine": 87
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.action.add_account",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 98
         }
       },
       {
@@ -79,7 +103,7 @@
         "key": "OK",
         "location": {
           "startingColumn": 24,
-          "startingLine": 117
+          "startingLine": 108
         }
       },
       {
@@ -87,23 +111,23 @@
         "key": "monthly limit",
         "location": {
           "startingColumn": 22,
-          "startingLine": 185
+          "startingLine": 176
         }
       },
       {
         "comment": "",
-        "key": "New Bank Account",
+        "key": "bank.title.new_account",
         "location": {
           "startingColumn": 54,
-          "startingLine": 285
+          "startingLine": 276
         }
       },
       {
         "comment": "",
-        "key": "Edit Account",
+        "key": "bank.title.edit_account",
         "location": {
-          "startingColumn": 75,
-          "startingLine": 285
+          "startingColumn": 81,
+          "startingLine": 276
         }
       },
       {
@@ -111,15 +135,15 @@
         "key": "Error",
         "location": {
           "startingColumn": 20,
-          "startingLine": 309
+          "startingLine": 300
         }
       },
       {
         "comment": "",
-        "key": "Title",
+        "key": "bank.field.title",
         "location": {
           "startingColumn": 31,
-          "startingLine": 229
+          "startingLine": 220
         }
       },
       {
@@ -127,15 +151,15 @@
         "key": "e.g. Mono Black (Main)",
         "location": {
           "startingColumn": 35,
-          "startingLine": 234
+          "startingLine": 225
         }
       },
       {
         "comment": "",
-        "key": "Card No.",
+        "key": "bank.field.card_number",
         "location": {
           "startingColumn": 31,
-          "startingLine": 239
+          "startingLine": 230
         }
       },
       {
@@ -143,15 +167,15 @@
         "key": "Optional (e.g. •••• 1234)",
         "location": {
           "startingColumn": 35,
-          "startingLine": 244
+          "startingLine": 235
         }
       },
       {
         "comment": "",
-        "key": "Account Details",
+        "key": "bank.section.account_details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 248
+          "startingLine": 239
         }
       },
       {
@@ -159,7 +183,7 @@
         "key": "CVV and expiration date are never requested or stored for security and privacy.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 250
+          "startingLine": 241
         }
       },
       {
@@ -167,7 +191,7 @@
         "key": "Limit (₴)",
         "location": {
           "startingColumn": 31,
-          "startingLine": 255
+          "startingLine": 246
         }
       },
       {
@@ -175,7 +199,7 @@
         "key": "150000",
         "location": {
           "startingColumn": 35,
-          "startingLine": 260
+          "startingLine": 251
         }
       },
       {
@@ -183,7 +207,7 @@
         "key": "%lldk ₴",
         "location": {
           "startingColumn": 40,
-          "startingLine": 269
+          "startingLine": 260
         }
       },
       {
@@ -191,7 +215,7 @@
         "key": "Turnover Limit (UAH)",
         "location": {
           "startingColumn": 26,
-          "startingLine": 280
+          "startingLine": 271
         }
       },
       {
@@ -199,23 +223,23 @@
         "key": "Monthly P2P turnover monitoring threshold for this specific bank or card.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 282
+          "startingLine": 273
         }
       },
       {
         "comment": "",
-        "key": "Cancel",
+        "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 289
+          "startingLine": 280
         }
       },
       {
         "comment": "",
-        "key": "Save",
+        "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 295
+          "startingLine": 286
         }
       },
       {
@@ -223,7 +247,7 @@
         "key": "OK",
         "location": {
           "startingColumn": 24,
-          "startingLine": 310
+          "startingLine": 301
         }
       }
     ]

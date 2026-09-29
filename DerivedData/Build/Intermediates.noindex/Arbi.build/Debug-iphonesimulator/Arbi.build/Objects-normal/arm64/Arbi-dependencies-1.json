@@ -226,441 +226,441 @@
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Accessibility.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Accessibility-3Q081VZ27E2LRSZEL70AA7UEF.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Accessibility-155B4453XD3KGTD3V8WZN4ONY.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Accessibility"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CFNetwork.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CFNetwork-5DGXY0WS3JWMBR1YJ4FZPJ5LS.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CFNetwork-4ZHMHNNEARJT42E6ZUSUNAUOS.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CFNetwork"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreAudio.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreAudio-6W8LSNC6NA768Y3THLIWAH8RU.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreAudio-FCHO22WTJKPKVMT6QKS1V2FY.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreAudio"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreAudioTypes.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreAudioTypes-9V4MZS9CE483WM21BM158J3GS.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreAudioTypes-F24YWRT6LFVQKADBNUUYVT8KX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreAudioTypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreData.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreData-4X6CAPM657QYIRTO4JX6O37S1.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreData-2Y8NRAS46RAF6V3WY8UD0X00E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreData"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreFoundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreFoundation-9JGG0O73W8D4OB9JIN00YLLX1.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreFoundation-60ABUPUG5B3N8VIDN6QTCUB5B.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreFoundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreGraphics.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreGraphics-3PDARKGRWZV621J67890CFXNF.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreGraphics-EZKS5KJB9SQVRI8WDSCM6H06H.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreGraphics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreImage.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreImage-5XQJRR2Q5OBXRJVIUAEA559HZ.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreImage-E9CMVBS88VJOSN3ZO0GGLF5R6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreImage"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreLocation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreLocation-DJRL9P9MFB76QVYIN14S9L02X.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreLocation-83JH7C5HBLOCESPZGXZ3GBQ3E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreLocation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreMedia.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreMedia-7BT8V78XE362N77535R5SARCT.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreMedia-BWV1KB6HC13QWMFZWGTKYFU0.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreMedia"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreMotion.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreMotion-4H2WGRL4L6OK5627NAWNLSXL4.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreMotion-2S2RVTC3U556RL9E4F4BM6SQT.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreMotion"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreText.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreText-9GP20IZPJ0T8K7JDOR17CYM2G.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreText-8ENOPFYM3CTKAGLOC5H9H9VYE.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreText"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreTransferable.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreTransferable-5XHEUEH5JOTQ9FAJJR87LWKES.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreTransferable-1GS95V7MOKQW6F4XE6T9C21S2.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreTransferable"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/CoreVideo.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreVideo-6162WP3Q745YDILESPA1YATAU.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/CoreVideo-AOU4UU9A80O71KNEMTOTZUUUN.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "CoreVideo"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/Darwin.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Darwin-B9FCQC74XQQ352VA65EK8ZRN1.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Darwin-12Q66N7DF8RQKF6WT221OQYB8.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Darwin"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/DataDetection.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/DataDetection-CHHPB694FBIGITPL6WKO1NG7Q.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/DataDetection-CC17V2RA9KKISTPNCIK4I9QD4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DataDetection"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/DeveloperToolsSupport.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/DeveloperToolsSupport-OQ3KRW6VYBSA0R1P5UUODP18.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/DeveloperToolsSupport-7T5XFHL06CQJ6AOJQTLQIVMZB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "DeveloperToolsSupport"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/dispatch.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Dispatch-55XTUO05VU4DIV7FBQWQDLZXQ.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Dispatch-9AJ2IZ3UL9VSSAJMG9VVZ544W.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Dispatch"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/FileProvider.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/FileProvider-291ILAP9RD5B433PCPV2A2ZO9.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/FileProvider-860J03FHOOJJPFCDQA5H86L9Y.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "FileProvider"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Foundation.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Foundation-EYZ50E7IENDAIVWJKLM0HT2RV.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Foundation-7U112UFGK3ZLWON8CS8P6D2JX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Foundation"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/IOSurface.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/IOSurface-D6NCW15D9TJ0S2BYKNI6Q6UR3.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/IOSurface-3ZS04T1I4HAW27UL61BXJHCSB.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "IOSurface"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/ImageIO.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ImageIO-6GFBJPPU0K8LBN24N9OJP9MTC.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ImageIO-7J1RYWUQB7QNH2PLE4RZQAW31.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ImageIO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinBasic.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/MachO-5UNN6AAIDBD06BL4ISK7WGUCT.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/MachO-8SY8MJ2J27Y1VEU83WMN0Q6T9.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "MachO"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Metal.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Metal-7JL0BFSKXSJ3K7EWFOFR1O4N0.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Metal-77FWC5JGRCTZAXVP8JEU9ZXFK.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Metal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/OSLog.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/OSLog-C7OB10TFKC0J7TE5QVDWPZU9I.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/OSLog-68ZH8D36EN9UM4NO2ZVPXVPGD.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OSLog"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/ObjectiveC.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ObjectiveC-83EQCX1RT35WZ5VFIND8MVEJX.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ObjectiveC-7CS7ANNW9TQY6EJC55MLBD2SN.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ObjectiveC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/OpenGLES.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/OpenGLES-61BYWNHWMW50H4D2E31C9NEO8.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/OpenGLES-4PWA3GTYTI5XOEY9T3DX46D7E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "OpenGLES"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/QuartzCore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/QuartzCore-8G2ZJTG9LF6GMABXP2YTHUU1S.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/QuartzCore-7UNLPVMKP3FUQ7VVACZ8EGIQ6.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "QuartzCore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Security.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Security-4UWT0DT3ASO69A9NYS81PBHLD.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Security-93CEE6J93J4M3KCMAUOUSG1NQ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Security"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/Spatial\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Spatial-4454J243V4EBXQNHSH5G88EXU.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Spatial-1XON9ZPMWLT59O75HVDJPEV1E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Spatial"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftShims-AOF0XBHP80CC8YDX16MEJSZBK.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftShims-720DKLZQ2FMAYLH5E1ZIN6O9W.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/SwiftUI.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftUI-5U3YQDGDUQK6843NUMWZU9ZLM.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftUI-1CME1G7MLPIJEB9LX83YZB5EH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUI"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/SwiftUICore.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftUICore-CMHOVA23SY6SUOI85JS8XE5NL.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/SwiftUICore-8YWEFA43H0S3T7N8Y66EPJ07C.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "SwiftUICore"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/Symbols.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Symbols-8AZ478SM6GG98EKSQ5HYWHGCF.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/Symbols-92CVJC21K3T1OAEV0PIV5F7I5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "Symbols"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UIKit.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UIKit-DRV9BY9JIVLJ2ROUYLA4C6KVV.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UIKit-5AU7AV71O3YOUB7B2QXZJVWIH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UIKit"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/SubFrameworks\/UIUtilities.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UIUtilities-7TKVUQ000VI33HB6XUDEM1G7V.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UIUtilities-1VKJ70T0TSDU6PDKTLMXKVGGJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UIUtilities"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UniformTypeIdentifiers.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UniformTypeIdentifiers-AUWWPZ29GY52W8KQU11YCDM5K.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UniformTypeIdentifiers-8WQ4FGJ4JLS2TIS9QFL3O2O82.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UniformTypeIdentifiers"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/UserNotifications.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UserNotifications-4B9O1MCTVBXN5O8XCPOLWJQ1S.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/UserNotifications-OUHXRK4YGY21Y51FMS3MXKBD.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "UserNotifications"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/xpc.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/XPC-NGBSS4OAI4VY3DZH04JP3NQP.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/XPC-F3CM2HJHJ8Q69AT1KSDN16NKO.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "XPC"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_AvailabilityInternal-CFZBQQQQSP2EQ8HQSM5MTXWE5.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_AvailabilityInternal-6UQ72DP4QDKEJTGOMDJ6NJPEO.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_AvailabilityInternal"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_float-32SV0LSQ9I6L55A1L64SC2LU5.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_float-68YVAF2M7J640P2OWE9GKA5PM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_float"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_intrinsics-4SI5GWX5DNXI3C595W6RUY4JH.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_intrinsics-1F2BSYY7QER06KG2R3T8TP1E.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_intrinsics"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_inttypes-BGEQOGA1STXP3A6TT1BMUCTZA.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_inttypes-2OQXWWP2ZU8K5JU41RIROSYPH.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_inttypes"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_limits-89XCRAZZNKJNNXETTI8CWQDXZ.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_limits-ZZ2NF442SPP1OBIWR3O61VWI.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_limits"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdarg-3HU7SXHK6WWFR112Z6JPLQJ4N.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdarg-CL8KB1AKSWU6RHFNEY42B6FDV.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdarg"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdatomic-8KD0JNWYHYSGBPRPDZ5VN0MGK.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdatomic-5Z6QN7W6RRZX4HW3PLM81EUHX.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdatomic"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdbool-B5MMFAT1TDI8PCK87GK2AJSNM.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdbool-C8JLTBMS5VJ34Y3LDHEAVBCTO.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdbool"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stddef-4QCD6GEWPUV41A9NKJ19V48UP.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stddef-2ZNXD0JSNMX2EC5EUKPGXQWVJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stddef"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdint-DCIND2B04NVI8QX3C26PKV41Z.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_stdint-CG8U1ZU8M31N60031YIU1X1C4.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_stdint"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_tgmath-1T4DOM7HO0OTEG21MZQ75W8TF.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_Builtin_tgmath-DP68WOSVI75ZT51AMMIYVQ0L5.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_Builtin_tgmath"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation1.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation1-3QUFGGBH8K3955H0L23DJ0RGA.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation1-MNOPGJPN1ER912KSJBSZL9GF.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation1"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation2-EYSXI32RG65KGBY3GAEXZUOU7.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation2-BSI0HFHMWJSGHPW2KT2ATMDAP.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation2"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation3.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation3-52VEW2T0G6ZEOXKGWYIDZCYIO.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_DarwinFoundation3-C0K86CKOPML3XFDE1BC025Z36.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_DarwinFoundation3"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/System\/Library\/Frameworks\/_LocationEssentials.framework\/Modules\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_LocationEssentials-ENXZ6GJTVOSMSDFGNX32KVLGV.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_LocationEssentials-2UTK7J1EZKPCMXL8JD5B4VDWR.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_LocationEssentials"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/lib\/swift\/shims\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_SwiftConcurrencyShims-A28OOYA9TLSQVNCDVLSWG463B.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/_SwiftConcurrencyShims-A612NSB536CIYPR803VTYQG4F.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "_SwiftConcurrencyShims"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os-DZVQRSIWPOXKUNOT7IS0FOX6F.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os-5LGFQDZZJFV0VDQIAWI1JNX15.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os_object-3Q790K6Q3WY2XND2TDYUU66W4.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os_object-2SPU5ISK6U6GKKRGFR03WEC84.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_object"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/os.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os_workgroup-7TPJUDA1JZQNT6SXST8GXS9ID.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/os_workgroup-7TVO10TSPJT6896YD8EOJFN2R.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "os_workgroup"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ptrauth-5XWW0K2CPNXBGO4ZCA415Y3MS.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ptrauth-EN56F32FN8MD7JBONGWYLIRSI.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrauth"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Toolchains\/XcodeDefault.xctoolchain\/usr\/lib\/clang\/21\/include\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ptrcheck-7HWP1JS9YCCM1M9D3LGYU9PFB.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/ptrcheck-DYZV39AHNZKM7NKBQRCWWBZ1G.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "ptrcheck"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/simd\/module.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/simd-BTSA57PFW09SCY7U62JY1VHJB.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/simd-BW4PI3ZNN8H537AA311BQ0N6I.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "simd"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/c_standard_library.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/string_h-6VUT0UEXZV79HSPT2IP0QXZUO.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/string_h-2ZBOHY9Z8QNEF9O2X6HXTNEBJ.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "string_h"
   },
   {
     "clangModuleMapPath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneSimulator.platform\/Developer\/SDKs\/iPhoneSimulator.sdk\/usr\/include\/DarwinFoundation2.modulemap",
-    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/sys_types-N3AABGMXH82IFXQIE1U6O5EK.pcm",
+    "clangModulePath" : "\/Users\/stepanbezhuk\/work\/Arbi\/DerivedData\/SDKExplicitPrecompiledModules\/sys_types-5JR8TNF2UTJNQ2WR6LWZY8MWM.pcm",
     "isBridgingHeaderDependency" : false,
     "isFramework" : false,
     "moduleName" : "sys_types"

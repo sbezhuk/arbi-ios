@@ -2,33 +2,155 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Avg Buy Price</key>
-	<string>Avg Buy Price</string>
-	<key>Bank Settlement</key>
-	<string>Bank Settlement</string>
-	<key>Bank Turnover Limits</key>
-	<string>Bank Turnover Limits</string>
-	<key>Cancel</key>
+	<key>bank.action.add_account</key>
+	<string>Add Bank Account</string>
+	<key>bank.action.add_defaults</key>
+	<string>Add Default Ukrainian Banks</string>
+	<key>bank.empty.description</key>
+	<string>A bank account or card is required to track settlement turnover and financial monitoring limits.</string>
+	<key>bank.empty.no_accounts</key>
+	<string>No bank accounts added yet.</string>
+	<key>bank.field.card_number</key>
+	<string>Card No.</string>
+	<key>bank.field.title</key>
+	<string>Title</string>
+	<key>bank.section.account_details</key>
+	<string>Account Details</string>
+	<key>bank.section.active_accounts</key>
+	<string>Active Accounts &amp; Cards</string>
+	<key>bank.title.edit_account</key>
+	<string>Edit Account</string>
+	<key>bank.title.management</key>
+	<string>Bank Accounts</string>
+	<key>bank.title.new_account</key>
+	<string>New Bank Account</string>
+	<key>capital.label.initial_crypto_inventory</key>
+	<string>Initial Crypto Inventory</string>
+	<key>capital.label.initial_crypto_value</key>
+	<string>Initial Crypto Value</string>
+	<key>capital.label.starting_working_capital</key>
+	<string>Starting Working Capital</string>
+	<key>common.action.add</key>
+	<string>Add</string>
+	<key>common.action.archive</key>
+	<string>Archive</string>
+	<key>common.action.cancel</key>
 	<string>Cancel</string>
-	<key>Close Month</key>
-	<string>Close Month</string>
-	<key>Commission / Fee</key>
-	<string>Commission / Fee</string>
-	<key>Confirm</key>
+	<key>common.action.confirm</key>
 	<string>Confirm</string>
-	<key>Free Money</key>
-	<string>Free Money</string>
-	<key>Record Buy Order</key>
-	<string>Record Buy Order</string>
-	<key>Record Sell Order</key>
-	<string>Record Sell Order</string>
-	<key>Save</key>
+	<key>common.action.delete</key>
+	<string>Delete</string>
+	<key>common.action.done</key>
+	<string>Done</string>
+	<key>common.action.manage</key>
+	<string>Manage</string>
+	<key>common.action.save</key>
 	<string>Save</string>
-	<key>Settings</key>
+	<key>common.action.unarchive</key>
+	<string>Unarchive</string>
+	<key>common.label.calendar_month</key>
+	<string>Calendar Month</string>
+	<key>common.label.per_usdt</key>
+	<string>per 1 USDT</string>
+	<key>common.status.coming_soon</key>
+	<string>Coming Soon</string>
+	<key>nav.tab.settings</key>
 	<string>Settings</string>
-	<key>Total Net PnL</key>
-	<string>Total Net PnL</string>
-	<key>Trades</key>
+	<key>nav.tab.trades</key>
 	<string>Trades</string>
+	<key>order.field.date_time</key>
+	<string>Date &amp; Time</string>
+	<key>order.field.fee_usdt</key>
+	<string>Fee (USDT)</string>
+	<key>order.field.note_placeholder</key>
+	<string>Optional trade note / counterparty</string>
+	<key>order.field.price_uah</key>
+	<string>Price (UAH)</string>
+	<key>order.field.total_uah</key>
+	<string>Total UAH</string>
+	<key>order.field.usdt</key>
+	<string>USDT</string>
+	<key>order.section.amounts_rate</key>
+	<string>Trade Amounts &amp; Rate</string>
+	<key>order.section.commission</key>
+	<string>Commission / Fee</string>
+	<key>order.section.details</key>
+	<string>Details &amp; Note</string>
+	<key>order.section.platform</key>
+	<string>Exchange / Platform</string>
+	<key>order.section.settlement</key>
+	<string>Bank Settlement</string>
+	<key>order.title.record_buy</key>
+	<string>Record Buy Order</string>
+	<key>order.title.record_sell</key>
+	<string>Record Sell Order</string>
+	<key>order.type.buy</key>
+	<string>Buy</string>
+	<key>order.type.sell</key>
+	<string>Sell</string>
+	<key>order.type.title</key>
+	<string>Order Type</string>
+	<key>rollover.label.free_uah</key>
+	<string>Available Free UAH</string>
+	<key>rollover.label.net_pnl</key>
+	<string>Net Realized PnL</string>
+	<key>rollover.label.unliquidated_usdt</key>
+	<string>Unliquidated USDT</string>
+	<key>rollover.label.weighted_cost</key>
+	<string>Weighted Cost Basis</string>
+	<key>rollover.section.summary</key>
+	<string>Closing Period Summary</string>
+	<key>rollover.section.transition</key>
+	<string>Period Transition</string>
+	<key>rollover.section.what_changes</key>
+	<string>What Changes After Rollover</string>
+	<key>rollover.title.close_month</key>
+	<string>Close Month</string>
+	<key>settings.action.export_csv</key>
+	<string>Export to CSV</string>
+	<key>settings.label.build</key>
+	<string>Build</string>
+	<key>settings.label.engine</key>
+	<string>Engine</string>
+	<key>settings.label.version</key>
+	<string>Version</string>
+	<key>settings.section.app_info</key>
+	<string>App Information</string>
+	<key>settings.section.data_export</key>
+	<string>Data &amp; Export</string>
+	<key>settings.section.language</key>
+	<string>Language</string>
+	<key>settings.title</key>
+	<string>Settings</string>
+	<key>trades.action.configure</key>
+	<string>Configure</string>
+	<key>trades.action.rollover</key>
+	<string>Roll-Over</string>
+	<key>trades.card.cash_out</key>
+	<string>Cash Out</string>
+	<key>trades.card.free_money</key>
+	<string>Free Money</string>
+	<key>trades.card.free_money_bank_cards</key>
+	<string>Free Money (Bank Cards)</string>
+	<key>trades.card.starting_deposit</key>
+	<string>Starting Deposit</string>
+	<key>trades.card.usdt_inventory</key>
+	<string>USDT Inventory</string>
+	<key>trades.empty.add_sample</key>
+	<string>Add Sample Trades</string>
+	<key>trades.empty.no_transactions</key>
+	<string>No Transactions</string>
+	<key>trades.section.bank_limits</key>
+	<string>Bank Turnover Limits</string>
+	<key>trades.section.recent_transactions</key>
+	<string>Recent Transactions</string>
+	<key>trades.stats.avg_buy_price</key>
+	<string>Avg Buy Price</string>
+	<key>trades.stats.net_pnl</key>
+	<string>Total Net PnL</string>
+	<key>trades.stats.total_trades</key>
+	<string>Total Trades</string>
+	<key>trades.title.spread_arbitrage</key>
+	<string>Spread Arbitrage</string>
 </dict>
 </plist>
