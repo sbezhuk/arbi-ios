@@ -1,0 +1,176 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Spred Arbitrage",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 110
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bank Turnover Limits",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 71
+        }
+      },
+      {
+        "comment": "",
+        "key": "Recent Transactions (%lld)",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "No sell orders recorded yet. Sells will populate turnover stats per bank.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 76
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Transactions",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 92
+        }
+      },
+      {
+        "comment": "",
+        "key": "Record your first USDT ↔ UAH trade using the button below.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 94
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Sample Trades",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 96
+        }
+      },
+      {
+        "comment": "",
+        "key": "Manage Capital Settings",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "Capital",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add New Trade",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Order",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Free Money (Bank Cards)",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 234
+        }
+      },
+      {
+        "comment": "",
+        "key": "Configure",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 241
+        }
+      },
+      {
+        "comment": "",
+        "key": "₴",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 254
+        }
+      },
+      {
+        "comment": "",
+        "key": "Starting Deposit",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 263
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cash Out",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 273
+        }
+      },
+      {
+        "comment": "",
+        "key": "USDT Inventory",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 284
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total Net PnL",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 322
+        }
+      },
+      {
+        "comment": "",
+        "key": "UAH",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 331
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld sell orders",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 473
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ · %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 515
+        }
+      }
+    ]
+  },
+  "version": 1
+}

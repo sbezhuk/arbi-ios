@@ -1,0 +1,192 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/AddOrderView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Record Buy Order",
+        "location": {
+          "startingColumn": 53,
+          "startingLine": 234
+        }
+      },
+      {
+        "comment": "",
+        "key": "Record Sell Order",
+        "location": {
+          "startingColumn": 74,
+          "startingLine": 234
+        }
+      },
+      {
+        "comment": "",
+        "key": "Exchange / Platform",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 88
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bank Settlement",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "Trade Amounts & Rate",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "Commission / Fee",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 172
+        }
+      },
+      {
+        "comment": "",
+        "key": "Details & Note",
+        "location": {
+          "startingColumn": 25,
+          "startingLine": 223
+        }
+      },
+      {
+        "comment": "",
+        "key": "Order Type",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 77
+        }
+      },
+      {
+        "comment": "",
+        "key": "USDT",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "Price (UAH)",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 145
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total UAH",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 156
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
+        "key": "USDT",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 206
+        }
+      },
+      {
+        "comment": "",
+        "key": "Fee (USDT)",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 192
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 197
+        }
+      },
+      {
+        "comment": "",
+        "key": "≈ %@ ₴ commission",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 214
+        }
+      },
+      {
+        "comment": "",
+        "key": "Date & Time",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 224
+        }
+      },
+      {
+        "comment": "",
+        "key": "Optional trade note / counterparty",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 229
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 238
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 244
+        }
+      },
+      {
+        "comment": "",
+        "key": "Done",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 253
+        }
+      }
+    ]
+  },
+  "version": 1
+}

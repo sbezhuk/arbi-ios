@@ -1,0 +1,149 @@
+import Foundation
+
+/// Pure statistics container representing bank turnover and transaction count.
+public struct BankTurnoverStat: Identifiable, Sendable, Equatable {
+    public var id: BankType { bank }
+    public let bank: BankType
+    public let sellOrdersCount: Int
+    public let totalSellUAH: Double
+
+    public init(bank: BankType, sellOrdersCount: Int, totalSellUAH: Double) {
+        self.bank = bank
+        self.sellOrdersCount = sellOrdersCount
+        self.totalSellUAH = totalSellUAH
+    }
+}
+
+/// Comprehensive working capital breakdown for arbitrage operations.
+public struct CapitalBreakdown: Sendable, Equatable {
+    public let startingDepositUAH: Double
+    public let toCashUAH: Double
+    public let freeUAH: Double
+    public let remainingUSDT: Double
+    public let usdtValueUAH: Double
+    public let totalEquityUAH: Double
+    public let netPnLUAH: Double
+
+    public init(
+        startingDepositUAH: Double,
+        toCashUAH: Double,
+        freeUAH: Double,
+        remainingUSDT: Double,
+        usdtValueUAH: Double,
+        totalEquityUAH: Double,
+        netPnLUAH: Double
+    ) {
+        self.startingDepositUAH = startingDepositUAH
+        self.toCashUAH = toCashUAH
+        self.freeUAH = freeUAH
+        self.remainingUSDT = remainingUSDT
+        self.usdtValueUAH = usdtValueUAH
+        self.totalEquityUAH = totalEquityUAH
+        self.netPnLUAH = netPnLUAH
+    }
+}
+
+/// Dedicated calculator engine for crypto P2P arbitrage math operations.
+@MainActor
+public struct P2PCalculator {
+    private init() {}
+
+    /// Calculates the weighted average buy price in UAH per 1 USDT across all buy orders.
+    /// Formula: Sum(uahAmount [buy]) / Sum(usdtAmount [buy]).
+    /// Returns 0.0 if total buy USDT is 0 to prevent division by zero.
+    public static func averageBuyPrice(orders: [P2POrder]) -> Double {
+        let buyOrders = orders.filter { $0.type == .buy }
+        let totalUAH = buyOrders.reduce(0.0) { $0 + $1.uahAmount }
+        let totalUSDT = buyOrders.reduce(0.0) { $0 + $1.usdtAmount }
+
+        guard totalUSDT > 0 else { return 0.0 }
+        return totalUAH / totalUSDT
+    }
+
+    /// Calculates net Profit & Loss in UAH.
+    /// Formula:
+    /// Sum_Sell(usdtAmount * (price - avgBuyPrice))
+    /// - Sum_Sell(feeUSDT * price)
+    /// - Sum_All(txFeeUSDT * price)
+    public static func calculatePnL(orders: [P2POrder], avgBuyPrice: Double) -> Double {
+        var sellGrossProfit: Double = 0.0
+        var sellPlatformFeesUAH: Double = 0.0
+        var allTxFeesUAH: Double = 0.0
+
+        for order in orders {
+            if order.type == .sell {
+                sellGrossProfit += order.usdtAmount * (order.price - avgBuyPrice)
+                sellPlatformFeesUAH += order.feeUSDT * order.price
+            }
+            allTxFeesUAH += order.txFeeUSDT * order.price
+        }
+
+        return sellGrossProfit - sellPlatformFeesUAH - allTxFeesUAH
+    }
+
+    /// Convenience overload computing PnL directly using the orders' weighted average buy price.
+    public static func calculatePnL(orders: [P2POrder]) -> Double {
+        let avgPrice = averageBuyPrice(orders: orders)
+        return calculatePnL(orders: orders, avgBuyPrice: avgPrice)
+    }
+
+    /// Returns turnover statistics per bank (only for `.sell` transactions).
+    /// By default includes banks with at least one sell transaction, sorted descending by turnover.
+    public static func bankTurnover(orders: [P2POrder], includeEmpty: Bool = false) -> [BankTurnoverStat] {
+        let sellOrders = orders.filter { $0.type == .sell }
+        let grouped = Dictionary(grouping: sellOrders, by: \.bank)
+
+        let stats = BankType.allCases.compactMap { bank -> BankTurnoverStat? in
+            let ordersForBank = grouped[bank] ?? []
+            if ordersForBank.isEmpty && !includeEmpty {
+                return nil
+            }
+            let total = ordersForBank.reduce(0.0) { $0 + $1.uahAmount }
+            return BankTurnoverStat(
+                bank: bank,
+                sellOrdersCount: ordersForBank.count,
+                totalSellUAH: total
+            )
+        }
+
+        return stats.sorted { $0.totalSellUAH > $1.totalSellUAH }
+    }
+
+    /// Calculates available free cash (UAH), remaining USDT inventory, and total equity.
+    public static func calculateCapitalBreakdown(
+        orders: [P2POrder],
+        settings: CapitalSettings?
+    ) -> CapitalBreakdown {
+        let starting = settings?.startingDepositUAH ?? 0.0
+        let toCash = settings?.toCashUAH ?? 0.0
+
+        let buyOrders = orders.filter { $0.type == .buy }
+        let sellOrders = orders.filter { $0.type == .sell }
+
+        let totalBuyUAH = buyOrders.reduce(0.0) { $0 + $1.uahAmount }
+        let totalSellUAH = sellOrders.reduce(0.0) { $0 + $1.uahAmount }
+
+        let totalBuyUSDT = buyOrders.reduce(0.0) { $0 + $1.usdtAmount }
+        let totalSellUSDT = sellOrders.reduce(0.0) { $0 + $1.usdtAmount }
+        let totalFeesUSDT = orders.reduce(0.0) { $0 + $1.feeUSDT + $1.txFeeUSDT }
+
+        let remainingUSDT = max(0.0, totalBuyUSDT - totalSellUSDT - totalFeesUSDT)
+        let avgPrice = averageBuyPrice(orders: orders)
+        let usdtValueUAH = remainingUSDT * (avgPrice > 0 ? avgPrice : 0.0)
+
+        // Free money in UAH currently on bank accounts / cards
+        let freeUAH = starting - toCash + totalSellUAH - totalBuyUAH
+        let totalEquity = freeUAH + usdtValueUAH
+        let pnl = calculatePnL(orders: orders, avgBuyPrice: avgPrice)
+
+        return CapitalBreakdown(
+            startingDepositUAH: starting,
+            toCashUAH: toCash,
+            freeUAH: freeUAH,
+            remainingUSDT: remainingUSDT,
+            usdtValueUAH: usdtValueUAH,
+            totalEquityUAH: totalEquity,
+            netPnLUAH: pnl
+        )
+    }
+}
