@@ -84,6 +84,14 @@
       },
       {
         "comment": "",
+        "key": "rollover.footer.summary_description",
+        "location": {
+          "startingColumn": 60,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
         "key": "rollover.notice.turnover_title",
         "location": {
           "startingColumn": 38,
@@ -152,6 +160,14 @@
         "location": {
           "startingColumn": 24,
           "startingLine": 245
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.error.unknown",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 250
         }
       }
     ]

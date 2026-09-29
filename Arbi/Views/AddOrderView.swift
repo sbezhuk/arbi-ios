@@ -89,7 +89,15 @@ struct AddOrderView: View {
                     Section {
                         Picker("order.type.title", selection: $selectedType) {
                             ForEach(TransactionType.allCases, id: \.self) { type in
-                                Text(LocalizedStringKey(type.localizedKey)).tag(type)
+                                Group {
+                                    switch type {
+                                    case .buy:
+                                        Text("order.type.buy")
+                                    case .sell:
+                                        Text("order.type.sell")
+                                    }
+                                }
+                                .tag(type)
                             }
                         }
                         .pickerStyle(.segmented)
@@ -212,7 +220,7 @@ struct AddOrderView: View {
                             color: .green,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
-                        TextField("0.00", text: $usdtText)
+                        TextField(String(""), text: $usdtText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .usdt)
                             .multilineTextAlignment(.trailing)
@@ -230,7 +238,7 @@ struct AddOrderView: View {
                             color: .blue,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
-                        TextField("0.00", text: $priceText)
+                        TextField(String(""), text: $priceText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .price)
                             .multilineTextAlignment(.trailing)
@@ -248,7 +256,7 @@ struct AddOrderView: View {
                             color: .orange,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
-                        TextField("0.00", text: $uahText)
+                        TextField(String(""), text: $uahText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .totalUah)
                             .multilineTextAlignment(.trailing)
@@ -292,7 +300,7 @@ struct AddOrderView: View {
                                 fixedWidth: FormRowConstants.numericLabelWidth
                             )
 
-                            TextField("0.00", text: $feeText)
+                            TextField(String(""), text: $feeText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
                                 .focused($focusedField, equals: .fee)
                                 .multilineTextAlignment(.trailing)
@@ -333,7 +341,9 @@ struct AddOrderView: View {
 
                         Spacer()
 
-                        DatePicker("", selection: $timestamp)
+                        DatePicker(selection: $timestamp) {
+                            Text(verbatim: "")
+                        }
                             .labelsHidden()
                             .datePickerStyle(.compact)
                             .controlSize(.small)
@@ -666,8 +676,14 @@ private struct FeePresetChip: View {
 
     var body: some View {
         Button(action: action) {
-            Text(preset.label)
-                .font(.caption.weight(.medium))
+            Group {
+                if preset == .custom {
+                    Text("order.fee.custom")
+                } else {
+                    Text(verbatim: preset.label)
+                }
+            }
+            .font(.caption.weight(.medium))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
                 .background(isSelected ? Color.purple : Color(uiColor: .secondarySystemGroupedBackground))

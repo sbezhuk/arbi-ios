@@ -12,10 +12,26 @@
       },
       {
         "comment": "",
-        "key": "₴",
+        "key": "withdrawal.footer.total_withdrawn_description",
         "location": {
-          "startingColumn": 34,
-          "startingLine": 45
+          "startingColumn": 64,
+          "startingLine": 50
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.total_withdrawn",
+        "location": {
+          "startingColumn": 69,
+          "startingLine": 31
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.entries_count",
+        "location": {
+          "startingColumn": 68,
+          "startingLine": 35
         }
       },
       {
@@ -24,6 +40,14 @@
         "location": {
           "startingColumn": 35,
           "startingLine": 66
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.empty.description",
+        "location": {
+          "startingColumn": 68,
+          "startingLine": 68
         }
       },
       {

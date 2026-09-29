@@ -42,7 +42,7 @@ struct CashWithdrawalsListView: View {
                                 .font(.system(size: 26, weight: .bold, design: .rounded))
                                 .foregroundStyle(totalWithdrawn > 0 ? Color.orange : Color.primary)
 
-                            Text("₴")
+                            Text(verbatim: "₴")
                                 .font(.subheadline.weight(.semibold))
                                 .foregroundStyle(.secondary)
                         }

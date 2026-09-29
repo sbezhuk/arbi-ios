@@ -198,8 +198,6 @@
 	<string>Перенести</string>
 	<key>trades.card.cash_out</key>
 	<string>Виведення готівки</string>
-	<key>trades.card.free_money</key>
-	<string>Вільний капітал</string>
 	<key>trades.card.free_money_bank_cards</key>
 	<string>Вільний капітал (Картки)</string>
 	<key>trades.card.starting_deposit</key>

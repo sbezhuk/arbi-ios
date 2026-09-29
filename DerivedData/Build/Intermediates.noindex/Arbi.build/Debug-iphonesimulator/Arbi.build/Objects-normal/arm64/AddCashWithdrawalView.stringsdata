@@ -12,22 +12,6 @@
       },
       {
         "comment": "",
-        "key": "₴",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 43
-        }
-      },
-      {
-        "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 35,
-          "startingLine": 47
-        }
-      },
-      {
-        "comment": "",
         "key": "withdrawal.section.amount",
         "location": {
           "startingColumn": 26,
@@ -64,14 +48,6 @@
         "location": {
           "startingColumn": 30,
           "startingLine": 74
-        }
-      },
-      {
-        "comment": "",
-        "key": "(%@)",
-        "location": {
-          "startingColumn": 42,
-          "startingLine": 79
         }
       },
       {

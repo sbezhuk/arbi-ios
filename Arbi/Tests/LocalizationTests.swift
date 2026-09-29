@@ -13,6 +13,7 @@ public enum LocalizationTests {
         try testLanguageSwitching()
         try testCoreStringsResolution()
         try testMissingKeyFallback()
+        try testLocalizationCatalogIntegrity()
         print("--- All LocalizationTests Passed Successfully! ---")
     }
 
@@ -48,7 +49,7 @@ public enum LocalizationTests {
 
         // Home Dashboard
         assert(manager["trades.stats.net_pnl"] == "Чистий прибуток", "Dashboard: Total Net PnL")
-        assert(manager["trades.card.free_money"] == "Вільний капітал", "Dashboard: Free Money")
+        assert(manager["trades.card.free_money_bank_cards"] == "Вільний капітал (Картки)", "Dashboard: Free Money")
         assert(manager["trades.section.bank_limits"] == "Ліміти по банках", "Dashboard: Bank Turnover Limits")
         assert(manager["trades.stats.avg_buy_price"] == "Сер. ціна купівлі", "Dashboard: Avg Buy Price")
         assert(manager["trades.stats.total_trades"] == "Всього угод", "Dashboard: Total Trades")
@@ -112,7 +113,7 @@ public enum LocalizationTests {
 
         // Home Dashboard
         assert(manager["trades.stats.net_pnl"] == "Total Net PnL", "Dashboard: Total Net PnL")
-        assert(manager["trades.card.free_money"] == "Free Money", "Dashboard: Free Money")
+        assert(manager["trades.card.free_money_bank_cards"] == "Free Money (Bank Cards)", "Dashboard: Free Money")
         assert(manager["trades.section.bank_limits"] == "Bank Turnover Limits", "Dashboard: Bank Turnover Limits")
         assert(manager["trades.stats.avg_buy_price"] == "Avg Buy Price", "Dashboard: Avg Buy Price")
         assert(manager["trades.stats.total_trades"] == "Total Trades", "Dashboard: Total Trades")
@@ -172,6 +173,119 @@ public enum LocalizationTests {
 
         let arbitraryKey = "NonExistentKey123"
         // NSLocalizedString returns the key itself when no translation is found
-        assert(manager[arbitraryKey] == arbitraryKey, "Missing key should fallback to key itself")
+        assert(manager[raw: arbitraryKey] == arbitraryKey, "Missing key should fallback to key itself")
+    }
+
+    // MARK: - Catalog Integrity Verification
+
+    /// Blacklist of non-localizable literals that must never be auto-extracted into the String Catalog.
+    private static let prohibitedLiteralKeys: Set<String> = [
+        "",
+        " (%@)",
+        " (%lld)",
+        "%@ · %@",
+        "%lldk ₴",
+        "(%@)",
+        "0.00",
+        "150000",
+        "Spred v%@",
+        "UAH",
+        "₴"
+    ]
+
+    /// Invariant regex validating standard `.snake_case` hierarchy: e.g., "common.action.cancel"
+    private static let validKeyRegex = try! NSRegularExpression(pattern: "^[a-z]+(\\.[a-z0-9_]+)+$")
+
+    /// Validates key naming convention, ENG/UA translation presence, and absence of prohibited literals
+    /// in the underlying String Catalog without enforcing compiler-extraction parity or hardcoded counts.
+    public static func testLocalizationCatalogIntegrity() throws {
+        guard let catalog = try loadCatalogData() else {
+            assertionFailure("Failed to locate or load Localizable.xcstrings for catalog integrity verification.")
+            return
+        }
+
+        guard let strings = catalog["strings"] as? [String: Any] else {
+            assertionFailure("Malformed Localizable.xcstrings: 'strings' dictionary not found.")
+            return
+        }
+
+        assert(!strings.isEmpty, "Localizable.xcstrings must not be empty.")
+
+        for (key, value) in strings {
+            // Invariant 1: Prevent accidental String Catalog pollution via prohibited literal blacklist
+            assert(
+                !prohibitedLiteralKeys.contains(key),
+                "Non-localizable literal was accidentally extracted as a localization key: \(key)"
+            )
+
+            // Invariant 2: Localization key format must follow .snake_case hierarchy
+            let range = NSRange(location: 0, length: key.utf16.count)
+            let isMatch = validKeyRegex.firstMatch(in: key, options: [], range: range) != nil
+            assert(
+                isMatch,
+                "Invalid localization key format: \(key)"
+            )
+
+            // Invariant 3: ENG / UA translation parity
+            guard let entry = value as? [String: Any],
+                  let localizations = entry["localizations"] as? [String: Any] else {
+                assertionFailure("Missing localizations container for key: \(key)")
+                continue
+            }
+
+            let enTranslation = extractTranslationValue(from: localizations["en"])
+            assert(
+                !enTranslation.isEmpty,
+                "Missing English translation for: \(key)"
+            )
+
+            let ukTranslation = extractTranslationValue(from: localizations["uk"])
+            assert(
+                !ukTranslation.isEmpty,
+                "Missing Ukrainian translation for: \(key)"
+            )
+        }
+    }
+
+    private static func extractTranslationValue(from langEntry: Any?) -> String {
+        guard let dict = langEntry as? [String: Any] else { return "" }
+        if let stringUnit = dict["stringUnit"] as? [String: Any],
+           let value = stringUnit["value"] as? String {
+            return value.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        return ""
+    }
+
+    private static func loadCatalogData() throws -> [String: Any]? {
+        // 1. Try relative path from this source file (#filePath)
+        let sourceUrl = URL(fileURLWithPath: #filePath)
+        let catalogUrl = sourceUrl
+            .deletingLastPathComponent()
+            .deletingLastPathComponent()
+            .appendingPathComponent("Localizable.xcstrings")
+
+        if let data = try? Data(contentsOf: catalogUrl),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            return json
+        }
+
+        // 2. Try main bundle if copied into resources
+        if let bundleUrl = Bundle.main.url(forResource: "Localizable", withExtension: "xcstrings"),
+           let data = try? Data(contentsOf: bundleUrl),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            return json
+        }
+
+        // 3. Fallback to process working directory
+        let cwdUrl = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
+            .appendingPathComponent("Arbi")
+            .appendingPathComponent("Localizable.xcstrings")
+
+        if let data = try? Data(contentsOf: cwdUrl),
+           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+            return json
+        }
+
+        return nil
     }
 }

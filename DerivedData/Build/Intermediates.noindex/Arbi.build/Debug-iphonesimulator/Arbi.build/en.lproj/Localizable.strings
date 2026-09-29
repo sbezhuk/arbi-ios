@@ -198,8 +198,6 @@
 	<string>Roll-Over</string>
 	<key>trades.card.cash_out</key>
 	<string>Cash Out</string>
-	<key>trades.card.free_money</key>
-	<string>Free Money</string>
 	<key>trades.card.free_money_bank_cards</key>
 	<string>Free Money (Bank Cards)</string>
 	<key>trades.card.starting_deposit</key>

@@ -41,14 +41,19 @@ final class LocalizationManager {
     }
 
     /// Subscript backed by the native string catalog bundle lookup.
-    /// Used by `LocalizationTests` to verify xcstrings resolution.
-    subscript(_ key: String) -> String {
+    /// Uses LocalizedStringResource to ensure static compiler discovery of keys.
+    subscript(_ resource: LocalizedStringResource) -> String {
+        resource.key.localized(for: currentLanguage)
+    }
+
+    /// Dynamic fallback lookup for non-literal runtime strings (e.g. tests).
+    subscript(raw key: String) -> String {
         key.localized(for: currentLanguage)
     }
 
     /// Formats a localized string key with positional format arguments in the active language.
-    func string(_ key: String, _ args: CVarArg...) -> String {
-        let template = key.localized(for: currentLanguage)
+    func string(_ resource: LocalizedStringResource, _ args: CVarArg...) -> String {
+        let template = resource.key.localized(for: currentLanguage)
         guard !args.isEmpty else { return template }
         return String(format: template, locale: Locale(identifier: currentLanguage.rawValue), arguments: args)
     }

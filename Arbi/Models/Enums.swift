@@ -13,7 +13,10 @@ public enum TransactionType: String, Codable, CaseIterable, Sendable {
     }
 
     public var localizedTitle: String {
-        LocalizationManager.shared[localizedKey]
+        switch self {
+        case .buy: return LocalizationManager.shared["order.type.buy"]
+        case .sell: return LocalizationManager.shared["order.type.sell"]
+        }
     }
 }
 

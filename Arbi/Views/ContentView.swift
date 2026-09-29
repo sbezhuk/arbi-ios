@@ -118,7 +118,7 @@ struct ContentView: View {
                 } header: {
                     HStack {
                         Text("trades.section.bank_limits")
-                        Text(" (\(selectedPeriod))")
+                        Text(verbatim: " (\(selectedPeriod))")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                         Spacer()
@@ -152,7 +152,7 @@ struct ContentView: View {
                     }
                 } header: {
                         Text("trades.section.recent_transactions")
-                        Text(" (\(periodOrders.count))")
+                        Text(verbatim: " (\(periodOrders.count))")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -376,7 +376,7 @@ private struct CapitalOverviewCard: View {
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
                         .foregroundStyle(breakdown.freeUAH >= 0 ? Color.primary : Color.red)
 
-                    Text("₴")
+                    Text(verbatim: "₴")
                         .font(.subheadline.weight(.medium))
                         .foregroundStyle(.secondary)
                 }
@@ -461,7 +461,7 @@ private struct SummaryMetricsView: View {
                         .font(.system(size: 22, weight: .semibold, design: .rounded))
                         .foregroundStyle(pnlColor)
 
-                    Text("UAH")
+                    Text(verbatim: "UAH")
                         .font(.caption2.weight(.regular))
                         .foregroundStyle(pnlColor.opacity(0.8))
                 }
@@ -481,7 +481,6 @@ private struct SummaryMetricsView: View {
                     title: "trades.stats.avg_buy_price",
                     value: avgBuyPrice > 0 ? String(format: "%.2f ₴", avgBuyPrice) : "—",
                     subtitle: "common.label.per_usdt",
-                    isSubtitleKey: true,
                     systemImage: "chart.line.uptrend.xyaxis",
                     accentColor: .blue
                 )
@@ -489,8 +488,7 @@ private struct SummaryMetricsView: View {
                 MetricTile(
                     title: "trades.stats.total_trades",
                     value: "\(buyCount + sellCount)",
-                    subtitle: LocalizationManager.shared.string("trades.stats.buy_sell_breakdown", buyCount, sellCount),
-                    isSubtitleKey: false,
+                    subtitleText: LocalizationManager.shared.string("trades.stats.buy_sell_breakdown", buyCount, sellCount),
                     systemImage: "arrow.left.arrow.right",
                     accentColor: .purple
                 )
@@ -532,10 +530,40 @@ private struct SummaryMetricsView: View {
 private struct MetricTile: View {
     let title: LocalizedStringKey
     let value: String
-    let subtitle: String
-    var isSubtitleKey: Bool = true
+    let subtitleKey: LocalizedStringKey?
+    let subtitleText: String?
     let systemImage: String
     let accentColor: Color
+
+    init(
+        title: LocalizedStringKey,
+        value: String,
+        subtitle: LocalizedStringKey,
+        systemImage: String,
+        accentColor: Color
+    ) {
+        self.title = title
+        self.value = value
+        self.subtitleKey = subtitle
+        self.subtitleText = nil
+        self.systemImage = systemImage
+        self.accentColor = accentColor
+    }
+
+    init(
+        title: LocalizedStringKey,
+        value: String,
+        subtitleText: String,
+        systemImage: String,
+        accentColor: Color
+    ) {
+        self.title = title
+        self.value = value
+        self.subtitleKey = nil
+        self.subtitleText = subtitleText
+        self.systemImage = systemImage
+        self.accentColor = accentColor
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -552,12 +580,12 @@ private struct MetricTile: View {
             Text(value)
                 .font(.callout.weight(.medium).monospacedDigit())
 
-            if isSubtitleKey {
-                Text(LocalizedStringKey(subtitle))
+            if let subtitleKey {
+                Text(subtitleKey)
                     .font(.caption2.weight(.regular))
                     .foregroundStyle(.secondary)
-            } else {
-                Text(subtitle)
+            } else if let subtitleText {
+                Text(verbatim: subtitleText)
                     .font(.caption2.weight(.regular))
                     .foregroundStyle(.secondary)
             }
@@ -657,18 +685,25 @@ private struct OrderRowView: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(alignment: .center) {
                 // Type badge
-                Text(LocalizedStringKey(order.type.localizedKey))
-                    .textCase(.uppercase)
-                    .font(.system(size: 10, weight: .bold))
-                    .padding(.horizontal, 6)
-                    .padding(.vertical, 2)
-                    .background(order.type == .buy ? Color.green.opacity(0.15) : Color.blue.opacity(0.15))
-                    .foregroundStyle(order.type == .buy ? Color.green : Color.blue)
-                    .clipShape(Capsule())
+                Group {
+                    switch order.type {
+                    case .buy:
+                        Text("order.type.buy")
+                    case .sell:
+                        Text("order.type.sell")
+                    }
+                }
+                .textCase(.uppercase)
+                .font(.system(size: 10, weight: .bold))
+                .padding(.horizontal, 6)
+                .padding(.vertical, 2)
+                .background(order.type == .buy ? Color.green.opacity(0.15) : Color.blue.opacity(0.15))
+                .foregroundStyle(order.type == .buy ? Color.green : Color.blue)
+                .clipShape(Capsule())
 
                 // Platform & Bank Account
                 let bankTitle = order.bankAccount?.name ?? order.bank.rawValue
-                Text("\(order.platform.displayName) · \(bankTitle)")
+                Text(verbatim: "\(order.platform.displayName) · \(bankTitle)")
                     .font(.caption.weight(.regular))
                     .foregroundStyle(.secondary)
 

@@ -124,7 +124,7 @@ struct CapitalSettingsView: View {
 
                             Spacer()
 
-                            TextField("0.00", text: $depositText)
+                            TextField(String(""), text: $depositText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
                                 .focused($focusedField, equals: .deposit)
                                 .multilineTextAlignment(.trailing)
@@ -136,8 +136,10 @@ struct CapitalSettingsView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 8) {
                                 ForEach([50_000, 100_000, 150_000, 200_000, 300_000], id: \.self) { amount in
-                                    Button("\(amount / 1000)k ₴") {
+                                    Button {
                                         depositText = "\(amount)"
+                                    } label: {
+                                        Text(verbatim: "\(amount / 1000)k ₴")
                                     }
                                     .font(.caption.weight(.medium))
                                     .buttonStyle(.bordered)
@@ -168,7 +170,7 @@ struct CapitalSettingsView: View {
 
                             Spacer()
 
-                            TextField("0.00", text: $initialUSDTText)
+                            TextField(String(""), text: $initialUSDTText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
                                 .focused($focusedField, equals: .initialUSDT)
                                 .multilineTextAlignment(.trailing)
@@ -185,7 +187,7 @@ struct CapitalSettingsView: View {
 
                             Spacer()
 
-                            TextField("0.00", text: $initialAvgBuyPriceText)
+                            TextField(String(""), text: $initialAvgBuyPriceText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
                                 .focused($focusedField, equals: .initialAvgBuyPrice)
                                 .multilineTextAlignment(.trailing)
@@ -226,7 +228,7 @@ struct CapitalSettingsView: View {
 
                             Spacer()
 
-                            TextField("0.00", text: $toCashText)
+                            TextField(String(""), text: $toCashText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
                                 .focused($focusedField, equals: .toCash)
                                 .multilineTextAlignment(.trailing)

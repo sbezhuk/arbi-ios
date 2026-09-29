@@ -244,7 +244,11 @@ struct PeriodRolloverView: View {
             .alert("common.alert.error", isPresented: $showingErrorAlert) {
                 Button("common.action.ok", role: .cancel) {}
             } message: {
-                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
+                if let errorMessage {
+                    Text(verbatim: errorMessage)
+                } else {
+                    Text("common.error.unknown")
+                }
             }
         }
     }

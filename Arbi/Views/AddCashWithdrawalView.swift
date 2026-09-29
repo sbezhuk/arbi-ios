@@ -40,11 +40,11 @@ struct AddCashWithdrawalView: View {
                 // Section 1: Amount
                 Section {
                     HStack(alignment: .firstTextBaseline) {
-                        Text("₴")
+                        Text(verbatim: "₴")
                             .font(.title2.weight(.bold))
                             .foregroundStyle(Color.accentColor)
 
-                        TextField("0.00", text: $amountText)
+                        TextField(String(""), text: $amountText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                             .focused($isAmountFocused)
@@ -74,9 +74,9 @@ struct AddCashWithdrawalView: View {
                         Text("withdrawal.option.direct_cash").tag(nil as BankAccount?)
                         ForEach(activeBankAccounts) { account in
                             HStack {
-                                Text(account.name)
+                                Text(verbatim: account.name)
                                 if let card = account.cardNumber, !card.isEmpty {
-                                    Text("(\(card))")
+                                    Text(verbatim: "(\(card))")
                                         .foregroundStyle(.secondary)
                                 }
                             }

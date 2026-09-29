@@ -36,14 +36,6 @@
       },
       {
         "comment": "",
-        "key": " (%@)",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 121
-        }
-      },
-      {
-        "comment": "",
         "key": "common.action.manage",
         "location": {
           "startingColumn": 36,
@@ -56,6 +48,14 @@
         "location": {
           "startingColumn": 35,
           "startingLine": 137
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.empty.no_trades_in_period",
+        "location": {
+          "startingColumn": 68,
+          "startingLine": 139
         }
       },
       {
@@ -76,18 +76,18 @@
       },
       {
         "comment": "",
-        "key": " (%lld)",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 155
-        }
-      },
-      {
-        "comment": "",
         "key": "common.label.calendar_month",
         "location": {
           "startingColumn": 33,
           "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.period.current",
+        "location": {
+          "startingColumn": 86,
+          "startingLine": 170
         }
       },
       {
@@ -132,14 +132,6 @@
       },
       {
         "comment": "",
-        "key": "₴",
-        "location": {
-          "startingColumn": 26,
-          "startingLine": 379
-        }
-      },
-      {
-        "comment": "",
         "key": "trades.card.starting_deposit",
         "location": {
           "startingColumn": 30,
@@ -172,14 +164,6 @@
       },
       {
         "comment": "",
-        "key": "UAH",
-        "location": {
-          "startingColumn": 26,
-          "startingLine": 464
-        }
-      },
-      {
-        "comment": "",
         "key": "trades.stats.avg_buy_price",
         "location": {
           "startingColumn": 28,
@@ -188,18 +172,66 @@
       },
       {
         "comment": "",
-        "key": "trades.stats.total_trades",
+        "key": "common.label.per_usdt",
         "location": {
-          "startingColumn": 28,
-          "startingLine": 490
+          "startingColumn": 31,
+          "startingLine": 483
         }
       },
       {
         "comment": "",
-        "key": "%@ · %@",
+        "key": "trades.stats.total_trades",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 671
+          "startingColumn": 28,
+          "startingLine": 489
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.stats.buy_sell_breakdown",
+        "location": {
+          "startingColumn": 69,
+          "startingLine": 491
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.limits.progress_summary",
+        "location": {
+          "startingColumn": 50,
+          "startingLine": 622
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.limits.sell_orders_count",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 655
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.type.buy",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 691
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.type.sell",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 693
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.label.fee_amount",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 737
         }
       }
     ]

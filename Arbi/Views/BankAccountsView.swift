@@ -107,7 +107,11 @@ struct BankAccountsView: View {
             .alert("common.alert.error", isPresented: $showingErrorAlert) {
                 Button("common.action.ok", role: .cancel) { }
             } message: {
-                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
+                if let errorMessage {
+                    Text(verbatim: errorMessage)
+                } else {
+                    Text("common.error.unknown")
+                }
             }
         }
     }
@@ -248,7 +252,7 @@ struct AddOrEditBankAccountView: View {
                             .foregroundStyle(.orange)
                             .frame(width: 100, alignment: .leading)
 
-                        TextField("150000", text: $limitText)
+                        TextField(String(""), text: $limitText, prompt: Text(verbatim: "150000"))
                             .keyboardType(.numberPad)
                             .font(.body.monospacedDigit().weight(.regular))
                             .multilineTextAlignment(.trailing)
@@ -257,8 +261,10 @@ struct AddOrEditBankAccountView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
                             ForEach([50_000, 100_000, 150_000, 200_000, 250_000], id: \.self) { amount in
-                                Button("\(amount / 1000)k ₴") {
+                                Button {
                                     limitText = "\(amount)"
+                                } label: {
+                                    Text(verbatim: "\(amount / 1000)k ₴")
                                 }
                                 .font(.caption.weight(.medium))
                                 .buttonStyle(.bordered)
@@ -300,7 +306,11 @@ struct AddOrEditBankAccountView: View {
             .alert("common.alert.error", isPresented: $showingErrorAlert) {
                 Button("common.action.ok", role: .cancel) { }
             } message: {
-                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
+                if let errorMessage {
+                    Text(verbatim: errorMessage)
+                } else {
+                    Text("common.error.unknown")
+                }
             }
         }
     }

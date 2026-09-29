@@ -1,5 +1,32 @@
 {
   "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Models/Enums.swift",
-  "tables": {},
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "order.type.buy",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 17
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.type.sell",
+        "location": {
+          "startingColumn": 55,
+          "startingLine": 18
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.label.other",
+        "location": {
+          "startingColumn": 56,
+          "startingLine": 35
+        }
+      }
+    ]
+  },
   "version": 1
 }

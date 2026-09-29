@@ -76,7 +76,7 @@ struct SettingsView: View {
                     HStack {
                         Text("settings.label.version")
                         Spacer()
-                        Text("Spred v\(appVersion)")
+                        Text(verbatim: "Spred v\(appVersion)")
                             .font(.callout.monospacedDigit())
                             .foregroundStyle(.secondary)
                     }

@@ -4,6 +4,14 @@
     "Localizable": [
       {
         "comment": "",
+        "key": "capital.title.period",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 252
+        }
+      },
+      {
+        "comment": "",
         "key": "rollover.label.free_uah",
         "location": {
           "startingColumn": 34,
@@ -36,26 +44,10 @@
       },
       {
         "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 39,
-          "startingLine": 127
-        }
-      },
-      {
-        "comment": "",
-        "key": "%lldk ₴",
-        "location": {
-          "startingColumn": 44,
-          "startingLine": 139
-        }
-      },
-      {
-        "comment": "",
         "key": "capital.label.starting_working_capital",
         "location": {
           "startingColumn": 30,
-          "startingLine": 151
+          "startingLine": 153
         }
       },
       {
@@ -63,7 +55,7 @@
         "key": "capital.footer.starting_deposit",
         "location": {
           "startingColumn": 30,
-          "startingLine": 155
+          "startingLine": 157
         }
       },
       {
@@ -71,15 +63,7 @@
         "key": "capital.field.initial_usdt",
         "location": {
           "startingColumn": 40,
-          "startingLine": 164
-        }
-      },
-      {
-        "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 39,
-          "startingLine": 171
+          "startingLine": 166
         }
       },
       {
@@ -87,15 +71,7 @@
         "key": "capital.field.avg_buy_rate",
         "location": {
           "startingColumn": 40,
-          "startingLine": 181
-        }
-      },
-      {
-        "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 39,
-          "startingLine": 188
+          "startingLine": 183
         }
       },
       {
@@ -103,7 +79,7 @@
         "key": "capital.label.initial_crypto_value",
         "location": {
           "startingColumn": 38,
-          "startingLine": 198
+          "startingLine": 200
         }
       },
       {
@@ -111,7 +87,7 @@
         "key": "capital.label.initial_crypto_inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 209
+          "startingLine": 211
         }
       },
       {
@@ -119,7 +95,7 @@
         "key": "capital.footer.initial_crypto",
         "location": {
           "startingColumn": 30,
-          "startingLine": 213
+          "startingLine": 215
         }
       },
       {
@@ -127,15 +103,7 @@
         "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 40,
-          "startingLine": 222
-        }
-      },
-      {
-        "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 39,
-          "startingLine": 229
+          "startingLine": 224
         }
       },
       {
@@ -143,7 +111,7 @@
         "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 237
+          "startingLine": 239
         }
       },
       {
@@ -151,7 +119,7 @@
         "key": "capital.footer.cash_out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 241
+          "startingLine": 243
         }
       },
       {
@@ -159,7 +127,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 254
+          "startingLine": 256
         }
       },
       {
@@ -167,7 +135,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 260
+          "startingLine": 262
         }
       },
       {
@@ -175,7 +143,7 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 267
+          "startingLine": 269
         }
       }
     ]

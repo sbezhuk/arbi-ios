@@ -52,14 +52,6 @@
       },
       {
         "comment": "",
-        "key": "Spred v%@",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 79
-        }
-      },
-      {
-        "comment": "",
         "key": "settings.label.build",
         "location": {
           "startingColumn": 30,
