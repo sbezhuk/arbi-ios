@@ -92,6 +92,7 @@ struct ContentView: View {
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
                 }
+                .listSectionSpacing(0)
 
                 // Section 3: Bank Turnover & Financial Monitoring Limits
                 Section {
