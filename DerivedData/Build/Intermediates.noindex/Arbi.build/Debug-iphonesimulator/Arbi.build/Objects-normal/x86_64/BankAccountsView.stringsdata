@@ -1,0 +1,232 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/BankAccountsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 116
+        }
+      },
+      {
+        "comment": "",
+        "key": "Archived Cards (%lld)",
+        "location": {
+          "startingColumn": 29,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Active Bank Accounts",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 36
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add your bank accounts to track specific card turnover and financial monitoring limits.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Default Ukrainian Banks",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 40
+        }
+      },
+      {
+        "comment": "",
+        "key": "Delete",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 57
+        }
+      },
+      {
+        "comment": "",
+        "key": "Archive",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "Active Accounts & Cards",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 70
+        }
+      },
+      {
+        "comment": "",
+        "key": "Unarchive",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 81
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 117
+        }
+      },
+      {
+        "comment": "",
+        "key": "monthly limit",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 185
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Bank Account",
+        "location": {
+          "startingColumn": 54,
+          "startingLine": 285
+        }
+      },
+      {
+        "comment": "",
+        "key": "Edit Account",
+        "location": {
+          "startingColumn": 75,
+          "startingLine": 285
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 309
+        }
+      },
+      {
+        "comment": "",
+        "key": "Title",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 229
+        }
+      },
+      {
+        "comment": "",
+        "key": "e.g. Mono Black (Main)",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 234
+        }
+      },
+      {
+        "comment": "",
+        "key": "Card No.",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 239
+        }
+      },
+      {
+        "comment": "",
+        "key": "Optional (e.g. •••• 1234)",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 244
+        }
+      },
+      {
+        "comment": "",
+        "key": "Account Details",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 248
+        }
+      },
+      {
+        "comment": "",
+        "key": "CVV and expiration date are never requested or stored for security and privacy.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 250
+        }
+      },
+      {
+        "comment": "",
+        "key": "Limit (₴)",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 255
+        }
+      },
+      {
+        "comment": "",
+        "key": "150000",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 260
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lldk ₴",
+        "location": {
+          "startingColumn": 40,
+          "startingLine": 269
+        }
+      },
+      {
+        "comment": "",
+        "key": "Turnover Limit (UAH)",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 280
+        }
+      },
+      {
+        "comment": "",
+        "key": "Monthly P2P turnover monitoring threshold for this specific bank or card.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 282
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 289
+        }
+      },
+      {
+        "comment": "",
+        "key": "Save",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 295
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 310
+        }
+      }
+    ]
+  },
+  "version": 1
+}

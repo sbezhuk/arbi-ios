@@ -10,6 +10,7 @@ struct SpredApp: App {
                 try BankAccountsTests.runAllTests()
                 try PeriodRolloverTests.runAllTests()
                 try CashWithdrawalTests.runAllTests()
+                try LocalizationTests.runAllTests()
                 print("🎉 ALL TESTS PASSED SUCCESSFULLY! 🎉")
             } catch {
                 fatalError("Unit tests failed: \(error)")
@@ -20,7 +21,7 @@ struct SpredApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
         }
         .modelContainer(for: [P2POrder.self, CapitalSettings.self, BankAccount.self, CashWithdrawal.self])
     }

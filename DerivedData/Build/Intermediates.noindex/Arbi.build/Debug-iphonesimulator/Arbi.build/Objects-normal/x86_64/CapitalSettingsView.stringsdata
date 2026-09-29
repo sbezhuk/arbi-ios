@@ -1,0 +1,136 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/CapitalSettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Capital (%@)",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 259
+        }
+      },
+      {
+        "comment": "",
+        "key": "Available Free Money (UAH)",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "Remaining USDT",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 101
+        }
+      },
+      {
+        "comment": "",
+        "key": "Total Portfolio Equity",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lldk ₴",
+        "location": {
+          "startingColumn": 44,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "Starting Working Capital",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "The initial cash pool in UAH you started trading with for this period.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 162
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 195
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initial Crypto Value",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 205
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initial Crypto Inventory",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 216
+        }
+      },
+      {
+        "comment": "",
+        "key": "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 220
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 236
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cash Out (To Cash)",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 244
+        }
+      },
+      {
+        "comment": "",
+        "key": "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 248
+        }
+      }
+    ]
+  },
+  "version": 1
+}

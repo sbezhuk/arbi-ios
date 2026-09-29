@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>13</integer>
+	<key>logs</key>
+	<dict>
+		<key>67136542-1B58-4420-97A7-009FABAF038C</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>67136542-1B58-4420-97A7-009FABAF038C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>812397600.95437503</real>
+			<key>timeStoppedRecording</key>
+			<real>812397614.08931303</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>67136542-1B58-4420-97A7-009FABAF038C</string>
+		</dict>
+		<key>6C7A9073-89C4-471A-A26B-DF1CEF7B314D</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6C7A9073-89C4-471A-A26B-DF1CEF7B314D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>812398069.86577904</real>
+			<key>timeStoppedRecording</key>
+			<real>812398079.13556099</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>6C7A9073-89C4-471A-A26B-DF1CEF7B314D</string>
+		</dict>
+		<key>B0485547-174E-4F84-AB65-B3D5611448A4</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B0485547-174E-4F84-AB65-B3D5611448A4.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>812397755.75695598</real>
+			<key>timeStoppedRecording</key>
+			<real>812397760.59964705</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>B0485547-174E-4F84-AB65-B3D5611448A4</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

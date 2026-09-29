@@ -1,0 +1,40 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/MainTabView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Угоди",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Trades",
+        "location": {
+          "startingColumn": 62,
+          "startingLine": 29
+        }
+      },
+      {
+        "comment": "",
+        "key": "Налаштування",
+        "location": {
+          "startingColumn": 47,
+          "startingLine": 38
+        }
+      },
+      {
+        "comment": "",
+        "key": "Settings",
+        "location": {
+          "startingColumn": 76,
+          "startingLine": 38
+        }
+      }
+    ]
+  },
+  "version": 1
+}

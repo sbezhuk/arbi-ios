@@ -5,6 +5,7 @@ import SwiftData
 struct BankAccountsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.localization) private var loc
 
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allAccounts: [BankAccount]
     @State private var showingAddSheet: Bool = false
@@ -88,11 +89,11 @@ struct BankAccountsView: View {
             .scrollEdgeFade()
             .ignoresSafeArea(edges: .bottom)
         }
-        .navigationTitle("Bank Accounts")
+        .navigationTitle(loc["Bank Accounts"])
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") {
+                    Button(loc["Done"]) {
                         dismiss()
                     }
                 }
@@ -103,7 +104,7 @@ struct BankAccountsView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel("Add Bank Account")
+                    .accessibilityLabel(loc["Add Bank Account"])
                 }
             }
             .sheet(isPresented: $showingAddSheet) {

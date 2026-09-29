@@ -1,0 +1,24 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/SettingsView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Spred v%@",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 78
+        }
+      },
+      {
+        "comment": "",
+        "key": "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 103
+        }
+      }
+    ]
+  },
+  "version": 1
+}

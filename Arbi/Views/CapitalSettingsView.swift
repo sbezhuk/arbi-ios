@@ -5,6 +5,7 @@ import SwiftData
 struct CapitalSettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.localization) private var loc
 
     var periodIdentifier: String = PeriodRolloverService.currentPeriodIdentifier()
 
@@ -259,20 +260,20 @@ struct CapitalSettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button(loc["Cancel"]) {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button(loc["Save"]) {
                         saveSettings()
                     }
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    Button("Done") {
+                    Button(loc["Done"]) {
                         focusedField = nil
                     }
                     .font(.subheadline.weight(.medium))

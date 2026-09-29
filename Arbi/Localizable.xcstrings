@@ -1,0 +1,533 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "(%@)" : {
+
+    },
+    "%@ · %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ · %2$@"
+          }
+        }
+      }
+    },
+    "%@ (%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$@)"
+          }
+        }
+      }
+    },
+    "%@ (%lld)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ (%2$lld)"
+          }
+        }
+      }
+    },
+    "%@ (Current)" : {
+
+    },
+    "%lld entries" : {
+
+    },
+    "%lld sell orders" : {
+
+    },
+    "%lldk ₴" : {
+
+    },
+    "≈ %@ ₴ commission" : {
+
+    },
+    "₴" : {
+
+    },
+    "0.00" : {
+
+    },
+    "150000" : {
+
+    },
+    "A bank account or card is required to track settlement turnover and financial monitoring limits." : {
+
+    },
+    "Account Details" : {
+
+    },
+    "Active Accounts & Cards" : {
+
+    },
+    "Add Default Ukrainian Banks" : {
+
+    },
+    "Add New Trade" : {
+
+    },
+    "Add your bank accounts to track specific card turnover and financial monitoring limits." : {
+
+    },
+    "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings." : {
+
+    },
+    "Archive" : {
+
+    },
+    "Archived Cards (%lld)" : {
+
+    },
+    "Available Free Money (UAH)" : {
+
+    },
+    "Avg Buy Price" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avg Buy Price"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сер. ціна купівлі"
+          }
+        }
+      }
+    },
+    "Bank card turnover limits reset to 0 ₴ for the new calendar month." : {
+
+    },
+    "Bank Settlement" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank Settlement"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банк розрахунку"
+          }
+        }
+      }
+    },
+    "Bank Turnover Limits" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank Turnover Limits"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміти по банках"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скасувати"
+          }
+        }
+      }
+    },
+    "Capital (%@)" : {
+
+    },
+    "Card No." : {
+
+    },
+    "Carry-Over Balances" : {
+
+    },
+    "Cash Out (To Cash)" : {
+
+    },
+    "Cash Out Log" : {
+
+    },
+    "Close Month" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close Month"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити місяць"
+          }
+        }
+      }
+    },
+    "Commission / Fee" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commission / Fee"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія"
+          }
+        }
+      }
+    },
+    "Confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтвердити"
+          }
+        }
+      }
+    },
+    "Confirm & Start Next Month" : {
+
+    },
+    "Current Period" : {
+
+    },
+    "CVV and expiration date are never requested or stored for security and privacy." : {
+
+    },
+    "Date & Time" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring." : {
+
+    },
+    "Details" : {
+
+    },
+    "Done" : {
+
+    },
+    "e.g. Mono Black (Main)" : {
+
+    },
+    "e.g. Profit cash-out, USD exchange, personal withdrawal" : {
+
+    },
+    "Edit Account" : {
+
+    },
+    "Error" : {
+
+    },
+    "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred." : {
+
+    },
+    "Free Money" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free Money"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вільний капітал"
+          }
+        }
+      }
+    },
+    "Initial Crypto Inventory" : {
+
+    },
+    "Initial Crypto Value" : {
+
+    },
+    "Limit (₴)" : {
+
+    },
+    "Log Cash Out" : {
+
+    },
+    "Log Cash Withdrawal" : {
+
+    },
+    "monthly limit" : {
+
+    },
+    "Monthly P2P turnover monitoring threshold for this specific bank or card." : {
+
+    },
+    "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history." : {
+
+    },
+    "New Bank Account" : {
+
+    },
+    "New Period" : {
+
+    },
+    "No Active Bank Accounts" : {
+
+    },
+    "No Bank Accounts Found" : {
+
+    },
+    "No intermediate cash withdrawals recorded for %@." : {
+
+    },
+    "No trades recorded in %@. Tap + to record a trade." : {
+
+    },
+    "No Withdrawals" : {
+
+    },
+    "None (Direct Cash)" : {
+
+    },
+    "Note / Description (Optional)" : {
+
+    },
+    "OK" : {
+
+    },
+    "Optional (e.g. •••• 1234)" : {
+
+    },
+    "Period Identifier" : {
+
+    },
+    "Period Transition" : {
+
+    },
+    "Realized PnL Resets" : {
+
+    },
+    "Record Buy Order" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record Buy Order"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати купівлю"
+          }
+        }
+      }
+    },
+    "Record Sell Order" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record Sell Order"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати продаж"
+          }
+        }
+      }
+    },
+    "Records cash taken out of working capital into physical cash or savings." : {
+
+    },
+    "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@." : {
+
+    },
+    "Remaining USDT" : {
+
+    },
+    "Save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберегти"
+          }
+        }
+      }
+    },
+    "Selected card: %@ · Turnover limit: %lldk ₴" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Selected card: %1$@ · Turnover limit: %2$lldk ₴"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
+          }
+        }
+      }
+    },
+    "Source Bank Card" : {
+
+    },
+    "Spred v%@" : {
+
+    },
+    "Starting Working Capital" : {
+
+    },
+    "The initial cash pool in UAH you started trading with for this period." : {
+
+    },
+    "Title" : {
+
+    },
+    "Total Net PnL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Net PnL"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чистий прибуток"
+          }
+        }
+      }
+    },
+    "Total Portfolio Equity" : {
+
+    },
+    "Total profit taken to physical cash or personal savings in %@." : {
+
+    },
+    "Total Withdrawn (%@)" : {
+
+    },
+    "Trades" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trades"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Угоди"
+          }
+        }
+      }
+    },
+    "Turnover Limit (UAH)" : {
+
+    },
+    "Turnover limit: %lldk ₴" : {
+
+    },
+    "Turnover Limits Reset" : {
+
+    },
+    "UAH" : {
+
+    },
+    "Unarchive" : {
+
+    },
+    "USDT" : {
+
+    },
+    "What Resets" : {
+
+    },
+    "Withdrawal Amount (UAH)" : {
+
+    },
+    "Withdrawal History" : {
+
+    },
+    "Налаштування" : {
+
+    },
+    "Угоди" : {
+
+    }
+  },
+  "version" : "1.0"
+}

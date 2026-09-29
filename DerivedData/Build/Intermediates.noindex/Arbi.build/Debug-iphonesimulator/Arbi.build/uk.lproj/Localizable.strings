@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Avg Buy Price</key>
+	<string>Сер. ціна купівлі</string>
+	<key>Bank Settlement</key>
+	<string>Банк розрахунку</string>
+	<key>Bank Turnover Limits</key>
+	<string>Ліміти по банках</string>
+	<key>Cancel</key>
+	<string>Скасувати</string>
+	<key>Close Month</key>
+	<string>Закрити місяць</string>
+	<key>Commission / Fee</key>
+	<string>Комісія</string>
+	<key>Confirm</key>
+	<string>Підтвердити</string>
+	<key>Free Money</key>
+	<string>Вільний капітал</string>
+	<key>Record Buy Order</key>
+	<string>Записати купівлю</string>
+	<key>Record Sell Order</key>
+	<string>Записати продаж</string>
+	<key>Save</key>
+	<string>Зберегти</string>
+	<key>Settings</key>
+	<string>Налаштування</string>
+	<key>Total Net PnL</key>
+	<string>Чистий прибуток</string>
+	<key>Trades</key>
+	<string>Угоди</string>
+</dict>
+</plist>

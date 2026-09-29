@@ -1,0 +1,88 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/ContentView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "%@ (%@)",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "No trades recorded in %@. Tap + to record a trade.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 138
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ (%lld)",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ (Current)",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 173
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ (Current)",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 171
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add New Trade",
+        "location": {
+          "startingColumn": 41,
+          "startingLine": 226
+        }
+      },
+      {
+        "comment": "",
+        "key": "₴",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 379
+        }
+      },
+      {
+        "comment": "",
+        "key": "UAH",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 465
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld sell orders",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 619
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ · %@",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 662
+        }
+      }
+    ]
+  },
+  "version": 1
+}

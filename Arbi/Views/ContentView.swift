@@ -3,6 +3,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.localization) private var loc
     @Query(sort: \P2POrder.timestamp, order: .reverse) private var orders: [P2POrder]
     @Query private var capitalSettingsList: [CapitalSettings]
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allBankAccounts: [BankAccount]
@@ -99,11 +100,11 @@ struct ContentView: View {
                         HStack {
                             Image(systemName: "creditcard")
                                 .foregroundStyle(.secondary)
-                            Text("No bank accounts added yet.")
+                            Text(loc["No bank accounts added yet."])
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
                             Spacer()
-                            Button("Add") {
+                            Button(loc["Add"]) {
                                 showingBankAccountsSheet = true
                             }
                             .font(.footnote.weight(.medium))
@@ -116,11 +117,11 @@ struct ContentView: View {
                     }
                 } header: {
                     HStack {
-                        Text("Bank Turnover Limits (\(selectedPeriod))")
+                        Text("\(loc["Bank Turnover Limits"]) (\(selectedPeriod))")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                         Spacer()
-                        Button("Manage") {
+                        Button(loc["Manage"]) {
                             showingBankAccountsSheet = true
                         }
                         .font(.caption.weight(.medium))
@@ -132,11 +133,11 @@ struct ContentView: View {
                 Section {
                     if periodOrders.isEmpty {
                         ContentUnavailableView {
-                            Label("No Transactions", systemImage: "arrow.triangle.swap")
+                            Label(loc["No Transactions"], systemImage: "arrow.triangle.swap")
                         } description: {
                             Text("No trades recorded in \(PeriodRolloverService.formattedPeriodDisplay(selectedPeriod)). Tap + to record a trade.")
                         } actions: {
-                            Button("Add Sample Trades") {
+                            Button(loc["Add Sample Trades"]) {
                                 insertSampleData()
                             }
                             .buttonStyle(.bordered)
@@ -149,7 +150,7 @@ struct ContentView: View {
                         .onDelete(perform: deleteOrders)
                     }
                 } header: {
-                    Text("Recent Transactions (\(periodOrders.count))")
+                    Text("\(loc["Recent Transactions"]) (\(periodOrders.count))")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -157,12 +158,12 @@ struct ContentView: View {
             .listSectionSpacing(8)
             .bottomScrollFade()
             .ignoresSafeArea(edges: .bottom)
-            .navigationTitle("Spread Arbitrage")
+            .navigationTitle(loc["Spread Arbitrage"])
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Menu {
-                        Section("Calendar Month") {
+                        Section(loc["Calendar Month"]) {
                             Button {
                                 selectedPeriod = PeriodRolloverService.currentPeriodIdentifier()
                             } label: {
@@ -200,7 +201,7 @@ struct ContentView: View {
                             Button {
                                 showingRolloverSheet = true
                             } label: {
-                                Label("Month Roll-Over...", systemImage: "arrow.triangle.2.circlepath")
+                                Label(loc["Month Roll-Over..."], systemImage: "arrow.triangle.2.circlepath")
                             }
                         }
                     } label: {
@@ -331,6 +332,7 @@ struct ContentView: View {
 // MARK: - Capital Overview Card
 
 private struct CapitalOverviewCard: View {
+    @Environment(\.localization) private var loc
     let breakdown: CapitalBreakdown
     let period: String
     let onTapConfigure: () -> Void
@@ -341,7 +343,7 @@ private struct CapitalOverviewCard: View {
         Button(action: onTapConfigure) {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
-                    Label("Free Money (Bank Cards)", systemImage: "wallet.pass.fill")
+                    Label(loc["Free Money (Bank Cards)"], systemImage: "wallet.pass.fill")
                         .font(.footnote.weight(.medium))
                         .foregroundStyle(.green)
 
@@ -350,7 +352,7 @@ private struct CapitalOverviewCard: View {
                     Button(action: onTapRollover) {
                         HStack(spacing: 3) {
                             Image(systemName: "arrow.triangle.2.circlepath")
-                            Text("Roll-Over")
+                            Text(loc["Roll-Over"])
                         }
                         .font(.caption2.weight(.semibold))
                         .foregroundStyle(Color.accentColor)
@@ -361,7 +363,7 @@ private struct CapitalOverviewCard: View {
                     }
 
                     HStack(spacing: 3) {
-                        Text("Configure")
+                        Text(loc["Configure"])
                             .font(.caption2.weight(.medium))
                         Image(systemName: "chevron.right")
                             .font(.caption2)
@@ -383,7 +385,7 @@ private struct CapitalOverviewCard: View {
 
                 HStack {
                     VStack(alignment: .leading, spacing: 1) {
-                        Text("Starting Deposit")
+                        Text(loc["Starting Deposit"])
                             .font(.caption2.weight(.regular))
                             .foregroundStyle(.secondary)
                         Text(formatCurrency(breakdown.startingDepositUAH) + " ₴")
@@ -395,7 +397,7 @@ private struct CapitalOverviewCard: View {
                     Button(action: onTapCashOut) {
                         VStack(alignment: .center, spacing: 1) {
                             HStack(spacing: 2) {
-                                Text("Cash Out")
+                                Text(loc["Cash Out"])
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.secondary)
                                 Image(systemName: "chevron.right")
@@ -412,7 +414,7 @@ private struct CapitalOverviewCard: View {
                     Spacer()
 
                     VStack(alignment: .trailing, spacing: 1) {
-                        Text("USDT Inventory")
+                        Text(loc["USDT Inventory"])
                             .font(.caption2.weight(.regular))
                             .foregroundStyle(.secondary)
                         Text(String(format: "%.2f USDT", breakdown.remainingUSDT))
@@ -441,6 +443,7 @@ private struct CapitalOverviewCard: View {
 // MARK: - Summary Metrics Component
 
 private struct SummaryMetricsView: View {
+    @Environment(\.localization) private var loc
     let avgBuyPrice: Double
     let totalPnL: Double
     let buyCount: Int
@@ -450,7 +453,7 @@ private struct SummaryMetricsView: View {
         VStack(spacing: 8) {
             // Hero card: PnL
             VStack(spacing: 4) {
-                Text("Total Net PnL")
+                Text(loc["Total Net PnL"])
                     .font(.caption.weight(.regular))
                     .foregroundStyle(.secondary)
 
@@ -476,15 +479,15 @@ private struct SummaryMetricsView: View {
             // Secondary metrics: Avg Buy Rate + Trade Count
             HStack(spacing: 8) {
                 MetricTile(
-                    title: "Avg Buy Price",
+                    title: loc["Avg Buy Price"],
                     value: avgBuyPrice > 0 ? String(format: "%.2f ₴", avgBuyPrice) : "—",
-                    subtitle: "per 1 USDT",
+                    subtitle: loc["per 1 USDT"],
                     systemImage: "chart.line.uptrend.xyaxis",
                     accentColor: .blue
                 )
 
                 MetricTile(
-                    title: "Total Trades",
+                    title: loc["Total Trades"],
                     value: "\(buyCount + sellCount)",
                     subtitle: "\(buyCount) Buy · \(sellCount) Sell",
                     systemImage: "arrow.left.arrow.right",
