@@ -7,7 +7,7 @@
         "key": "order.title.record_buy",
         "location": {
           "startingColumn": 49,
-          "startingLine": 364
+          "startingLine": 361
         }
       },
       {
@@ -15,7 +15,23 @@
         "key": "order.title.record_sell",
         "location": {
           "startingColumn": 76,
-          "startingLine": 364
+          "startingLine": 361
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.type.title",
+        "location": {
+          "startingColumn": 32,
+          "startingLine": 90
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.type.title",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 98
         }
       },
       {
@@ -23,7 +39,7 @@
         "key": "order.section.platform",
         "location": {
           "startingColumn": 30,
-          "startingLine": 106
+          "startingLine": 120
         }
       },
       {
@@ -31,7 +47,7 @@
         "key": "A bank account or card is required to track settlement turnover and financial monitoring limits.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 122
+          "startingLine": 136
         }
       },
       {
@@ -39,7 +55,7 @@
         "key": "No Bank Accounts Found",
         "location": {
           "startingColumn": 38,
-          "startingLine": 118
+          "startingLine": 132
         }
       },
       {
@@ -47,7 +63,7 @@
         "key": "bank.action.add_account",
         "location": {
           "startingColumn": 42,
-          "startingLine": 131
+          "startingLine": 145
         }
       },
       {
@@ -55,7 +71,7 @@
         "key": "common.action.add",
         "location": {
           "startingColumn": 46,
-          "startingLine": 159
+          "startingLine": 173
         }
       },
       {
@@ -63,7 +79,7 @@
         "key": "order.section.settlement",
         "location": {
           "startingColumn": 26,
-          "startingLine": 179
+          "startingLine": 193
         }
       },
       {
@@ -71,7 +87,7 @@
         "key": "Selected card: %@ · Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 185
+          "startingLine": 199
         }
       },
       {
@@ -79,7 +95,7 @@
         "key": "Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 187
+          "startingLine": 201
         }
       },
       {
@@ -87,7 +103,7 @@
         "key": "order.field.usdt",
         "location": {
           "startingColumn": 36,
-          "startingLine": 196
+          "startingLine": 210
         }
       },
       {
@@ -95,7 +111,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 201
+          "startingLine": 215
         }
       },
       {
@@ -103,7 +119,7 @@
         "key": "order.field.price_uah",
         "location": {
           "startingColumn": 36,
-          "startingLine": 214
+          "startingLine": 228
         }
       },
       {
@@ -111,7 +127,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 219
+          "startingLine": 233
         }
       },
       {
@@ -119,7 +135,7 @@
         "key": "order.field.total_uah",
         "location": {
           "startingColumn": 36,
-          "startingLine": 232
+          "startingLine": 246
         }
       },
       {
@@ -127,7 +143,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 237
+          "startingLine": 251
         }
       },
       {
@@ -135,7 +151,7 @@
         "key": "order.section.amounts_rate",
         "location": {
           "startingColumn": 26,
-          "startingLine": 248
+          "startingLine": 262
         }
       },
       {
@@ -143,7 +159,7 @@
         "key": "order.field.usdt",
         "location": {
           "startingColumn": 34,
-          "startingLine": 290
+          "startingLine": 304
         }
       },
       {
@@ -151,7 +167,7 @@
         "key": "order.field.fee_usdt",
         "location": {
           "startingColumn": 40,
-          "startingLine": 275
+          "startingLine": 289
         }
       },
       {
@@ -159,7 +175,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 281
+          "startingLine": 295
         }
       },
       {
@@ -167,7 +183,7 @@
         "key": "≈ %@ ₴ commission",
         "location": {
           "startingColumn": 38,
-          "startingLine": 298
+          "startingLine": 312
         }
       },
       {
@@ -175,7 +191,7 @@
         "key": "order.section.commission",
         "location": {
           "startingColumn": 26,
-          "startingLine": 306
+          "startingLine": 320
         }
       },
       {
@@ -183,7 +199,7 @@
         "key": "order.field.date_time",
         "location": {
           "startingColumn": 36,
-          "startingLine": 315
+          "startingLine": 329
         }
       },
       {
@@ -191,7 +207,7 @@
         "key": "",
         "location": {
           "startingColumn": 36,
-          "startingLine": 322
+          "startingLine": 336
         }
       },
       {
@@ -199,7 +215,7 @@
         "key": "order.field.note_placeholder",
         "location": {
           "startingColumn": 35,
-          "startingLine": 333
+          "startingLine": 347
         }
       },
       {
@@ -207,7 +223,7 @@
         "key": "order.section.details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 339
+          "startingLine": 353
         }
       },
       {
@@ -215,7 +231,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 368
+          "startingLine": 365
         }
       },
       {
@@ -223,7 +239,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 374
+          "startingLine": 371
         }
       },
       {
@@ -231,7 +247,7 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 382
+          "startingLine": 379
         }
       }
     ]

@@ -6,7 +6,7 @@
 	<integer>13</integer>
 	<key>logs</key>
 	<dict>
-		<key>D288DB5C-8109-46F5-AD4E-08B347AD7388</key>
+		<key>47458C42-A2C6-46D4-AFD7-7AC0665617C3</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>D288DB5C-8109-46F5-AD4E-08B347AD7388.xcactivitylog</string>
+			<string>47458C42-A2C6-46D4-AFD7-7AC0665617C3.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -40,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812406634.247962</real>
+			<real>812407578.05760205</real>
 			<key>timeStoppedRecording</key>
-			<real>812406646.51380098</real>
+			<real>812407585.11051404</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>D288DB5C-8109-46F5-AD4E-08B347AD7388</string>
+			<string>47458C42-A2C6-46D4-AFD7-7AC0665617C3</string>
 		</dict>
-		<key>D425C6B4-2109-491E-9D12-2ADA08A0A37E</key>
+		<key>8BD37BD4-567B-42B0-BD01-AD63F6930084</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,17 +57,17 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>D425C6B4-2109-491E-9D12-2ADA08A0A37E.xcactivitylog</string>
+			<string>8BD37BD4-567B-42B0-BD01-AD63F6930084.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
-				<string>E</string>
+				<string>S</string>
 				<key>totalNumberOfAnalyzerIssues</key>
 				<integer>0</integer>
 				<key>totalNumberOfErrors</key>
-				<integer>51</integer>
+				<integer>0</integer>
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
@@ -82,13 +82,139 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812406520.17786002</real>
+			<real>812407176.12313104</real>
 			<key>timeStoppedRecording</key>
-			<real>812406526.16996801</real>
+			<real>812407183.713467</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>D425C6B4-2109-491E-9D12-2ADA08A0A37E</string>
+			<string>8BD37BD4-567B-42B0-BD01-AD63F6930084</string>
+		</dict>
+		<key>93E8ECF0-B685-4A20-85ED-F9E8A6926B6B</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>93E8ECF0-B685-4A20-85ED-F9E8A6926B6B.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>0</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>timeStartedRecording</key>
+			<real>812407369.97428596</real>
+			<key>timeStoppedRecording</key>
+			<real>812407381.00809801</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>uniqueIdentifier</key>
+			<string>93E8ECF0-B685-4A20-85ED-F9E8A6926B6B</string>
+		</dict>
+		<key>ACC16632-E024-4634-8C6A-44C890A1B57E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>ACC16632-E024-4634-8C6A-44C890A1B57E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>152</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>timeStartedRecording</key>
+			<real>812407156.83623898</real>
+			<key>timeStoppedRecording</key>
+			<real>812407162.63698995</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>uniqueIdentifier</key>
+			<string>ACC16632-E024-4634-8C6A-44C890A1B57E</string>
+		</dict>
+		<key>F058B738-8777-48CB-8275-8842E5B9600C</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>F058B738-8777-48CB-8275-8842E5B9600C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+				<key>totalNumberOfAnalyzerIssues</key>
+				<integer>0</integer>
+				<key>totalNumberOfErrors</key>
+				<integer>152</integer>
+				<key>totalNumberOfTestFailures</key>
+				<integer>0</integer>
+				<key>totalNumberOfWarnings</key>
+				<integer>0</integer>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Arbi project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Arbi</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>timeStartedRecording</key>
+			<real>812407169.84638202</real>
+			<key>timeStoppedRecording</key>
+			<real>812407172.33455503</real>
+			<key>title</key>
+			<string>Building project Arbi with scheme Arbi</string>
+			<key>uniqueIdentifier</key>
+			<string>F058B738-8777-48CB-8275-8842E5B9600C</string>
 		</dict>
 	</dict>
 </dict>

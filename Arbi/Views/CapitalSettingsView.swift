@@ -244,8 +244,8 @@ struct CapitalSettingsView: View {
                     }
                 }
             .listSectionSpacing(.compact)
-            .contentMargins(.top, 8, for: .scrollContent)
-            .contentMargins(.bottom, 24, for: .scrollContent)
+            .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
+            .contentMargins(.bottom, SheetLayoutConstants.bottomContentMargin, for: .scrollContent)
             .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Capital (\(periodIdentifier))")
             .navigationBarTitleDisplayMode(.inline)
@@ -345,4 +345,14 @@ private struct CapitalFormRowLabel: View {
                 .lineLimit(1)
         }
     }
+}
+
+// MARK: - Sheet Layout Constants
+
+/// Standard layout and spacing constants for modal sheets and forms across the app.
+public enum SheetLayoutConstants {
+    /// Top content margin below the navigation header for modal form sheets
+    public static let topContentMargin: CGFloat = 8
+    /// Bottom content margin for modal form sheets
+    public static let bottomContentMargin: CGFloat = 24
 }

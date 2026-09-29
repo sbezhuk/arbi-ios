@@ -43,7 +43,6 @@ struct AddOrderView: View {
     @State private var showingAddAccountSheet: Bool = false
     @State private var timestamp: Date = Date()
     @State private var noteText: String = ""
-    @State private var headerHeight: CGFloat = 44
 
     @Query(filter: #Predicate<BankAccount> { !$0.isArchived }, sort: \BankAccount.createdAt)
     private var bankAccounts: [BankAccount]
@@ -86,21 +85,19 @@ struct AddOrderView: View {
 
                 // Layer 2 & 3: Scrollable Form with Edge Fade Mask
                 Form {
-                    // Layer 4: Header pinned control (Buy/Sell Segmented Picker)
-                    VStack(spacing: 0) {
+                    // Section 0: Order Type
+                    Section {
                         Picker("order.type.title", selection: $selectedType) {
                             ForEach(TransactionType.allCases, id: \.self) { type in
                                 Text(type.rawValue).tag(type)
                             }
                         }
                         .pickerStyle(.segmented)
-                        .padding(.horizontal, 16)
-                        .padding(.top, 6)
-                        .padding(.bottom, 6)
-                        .background(Color(uiColor: .systemGroupedBackground))
-                    }
-                    .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newHeight in
-                        headerHeight = newHeight
+                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    } header: {
+                        Text("order.type.title")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
                     }
                     
                     // Section 1: Platform Selector Chips
@@ -359,7 +356,7 @@ struct AddOrderView: View {
                 }
             }
             .listSectionSpacing(.compact)
-            .contentMargins(.top, headerHeight, for: .scrollContent)
+            .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
         }
         .navigationTitle(selectedType == .buy ? "order.title.record_buy" : "order.title.record_sell")
         .navigationBarTitleDisplayMode(.inline)

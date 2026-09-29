@@ -223,8 +223,8 @@ struct PeriodRolloverView: View {
                 .padding(.bottom, 24)
             }
             .listSectionSpacing(.compact)
-            .contentMargins(.top, 8, for: .scrollContent)
-            .contentMargins(.bottom, 24, for: .scrollContent)
+            .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
+            .contentMargins(.bottom, SheetLayoutConstants.bottomContentMargin, for: .scrollContent)
             .navigationTitle("rollover.title.close_month")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

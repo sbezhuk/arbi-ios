@@ -79,7 +79,7 @@ struct BankAccountsView: View {
                     }
                 }
             }
-            .contentMargins(.top, 8, for: .scrollContent)
+            .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
             .navigationTitle("bank.title.management")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
