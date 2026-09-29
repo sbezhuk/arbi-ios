@@ -7,31 +7,39 @@
         "key": "Spred Arbitrage",
         "location": {
           "startingColumn": 30,
-          "startingLine": 110
+          "startingLine": 138
+        }
+      },
+      {
+        "comment": "",
+        "key": "No bank accounts added yet.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 82
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 86
         }
       },
       {
         "comment": "",
         "key": "Bank Turnover Limits",
         "location": {
-          "startingColumn": 25,
-          "startingLine": 71
+          "startingColumn": 30,
+          "startingLine": 99
         }
       },
       {
         "comment": "",
-        "key": "Recent Transactions (%lld)",
+        "key": "Manage",
         "location": {
-          "startingColumn": 25,
-          "startingLine": 89
-        }
-      },
-      {
-        "comment": "",
-        "key": "No sell orders recorded yet. Sells will populate turnover stats per bank.",
-        "location": {
-          "startingColumn": 34,
-          "startingLine": 76
+          "startingColumn": 32,
+          "startingLine": 103
         }
       },
       {
@@ -39,15 +47,15 @@
         "key": "No Transactions",
         "location": {
           "startingColumn": 35,
-          "startingLine": 92
+          "startingLine": 115
         }
       },
       {
         "comment": "",
-        "key": "Record your first USDT ↔ UAH trade using the button below.",
+        "key": "Tap the + button in the toolbar to record your first trade.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 94
+          "startingLine": 117
         }
       },
       {
@@ -55,23 +63,15 @@
         "key": "Add Sample Trades",
         "location": {
           "startingColumn": 36,
-          "startingLine": 96
+          "startingLine": 119
         }
       },
       {
         "comment": "",
-        "key": "Manage Capital Settings",
+        "key": "Recent Transactions (%lld)",
         "location": {
-          "startingColumn": 41,
-          "startingLine": 118
-        }
-      },
-      {
-        "comment": "",
-        "key": "Capital",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 116
+          "startingColumn": 26,
+          "startingLine": 132
         }
       },
       {
@@ -79,15 +79,7 @@
         "key": "Add New Trade",
         "location": {
           "startingColumn": 41,
-          "startingLine": 128
-        }
-      },
-      {
-        "comment": "",
-        "key": "New Order",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 145
+          "startingLine": 147
         }
       },
       {
@@ -95,7 +87,7 @@
         "key": "Free Money (Bank Cards)",
         "location": {
           "startingColumn": 27,
-          "startingLine": 234
+          "startingLine": 254
         }
       },
       {
@@ -103,7 +95,7 @@
         "key": "Configure",
         "location": {
           "startingColumn": 30,
-          "startingLine": 241
+          "startingLine": 261
         }
       },
       {
@@ -111,7 +103,7 @@
         "key": "₴",
         "location": {
           "startingColumn": 26,
-          "startingLine": 254
+          "startingLine": 274
         }
       },
       {
@@ -119,7 +111,7 @@
         "key": "Starting Deposit",
         "location": {
           "startingColumn": 30,
-          "startingLine": 263
+          "startingLine": 283
         }
       },
       {
@@ -127,7 +119,7 @@
         "key": "Cash Out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 273
+          "startingLine": 293
         }
       },
       {
@@ -135,7 +127,7 @@
         "key": "USDT Inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 284
+          "startingLine": 304
         }
       },
       {
@@ -143,7 +135,7 @@
         "key": "Total Net PnL",
         "location": {
           "startingColumn": 22,
-          "startingLine": 322
+          "startingLine": 342
         }
       },
       {
@@ -151,7 +143,7 @@
         "key": "UAH",
         "location": {
           "startingColumn": 26,
-          "startingLine": 331
+          "startingLine": 351
         }
       },
       {
@@ -159,7 +151,7 @@
         "key": "%lld sell orders",
         "location": {
           "startingColumn": 22,
-          "startingLine": 473
+          "startingLine": 504
         }
       },
       {
@@ -167,7 +159,7 @@
         "key": "%@ · %@",
         "location": {
           "startingColumn": 22,
-          "startingLine": 515
+          "startingLine": 547
         }
       }
     ]

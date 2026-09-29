@@ -30,6 +30,8 @@ enum FeePreset: CaseIterable, Identifiable, Equatable {
 
 /// High-efficiency, single-handed input sheet for recording crypto P2P arbitrage trades.
 struct AddOrderView: View {
+    private static let formLabelFont: Font = .footnote
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
@@ -37,8 +39,13 @@ struct AddOrderView: View {
     @State private var selectedType: TransactionType = .buy
     @State private var selectedPlatform: ExchangePlatform = .binance
     @State private var selectedBank: BankType = .monoBank
+    @State private var selectedBankAccount: BankAccount?
+    @State private var showingAddAccountSheet: Bool = false
     @State private var timestamp: Date = Date()
     @State private var noteText: String = ""
+
+    @Query(filter: #Predicate<BankAccount> { !$0.isArchived }, sort: \BankAccount.createdAt)
+    private var bankAccounts: [BankAccount]
 
     // Numeric inputs represented as text to preserve localized decimals (comma/dot)
     @State private var usdtText: String = ""
@@ -66,7 +73,7 @@ struct AddOrderView: View {
     private var parsedFee: Double { parseDouble(feeText) }
 
     private var isValid: Bool {
-        parsedUSDT > 0 && parsedPrice > 0 && parsedUAH > 0
+        parsedUSDT > 0 && parsedPrice > 0 && parsedUAH > 0 && selectedBankAccount != nil
     }
 
     var body: some View {
@@ -80,12 +87,12 @@ struct AddOrderView: View {
                         }
                     }
                     .pickerStyle(.segmented)
-                    .listRowInsets(EdgeInsets(top: 8, leading: 12, bottom: 8, trailing: 12))
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     .listRowBackground(Color.clear)
                 }
 
                 // Section 2: Platform Selector Chips
-                Section("Exchange / Platform") {
+                Section {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
                             ForEach(ExchangePlatform.allCases, id: \.self) { platform in
@@ -97,36 +104,103 @@ struct AddOrderView: View {
                                 }
                             }
                         }
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } header: {
+                    Text("Exchange / Platform")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
 
-                // Section 3: Bank Selector Chips
-                Section("Bank Settlement") {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            ForEach(BankType.allCases, id: \.self) { bank in
-                                BankChip(
-                                    bank: bank,
-                                    isSelected: selectedBank == bank
-                                ) {
-                                    selectedBank = bank
-                                }
+                // Section 3: Bank Account Selector Chips
+                Section {
+                    if bankAccounts.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack(spacing: 8) {
+                                Image(systemName: "creditcard.trianglebadge.exclamationmark")
+                                    .foregroundStyle(.orange)
+                                Text("No Bank Accounts Found")
+                                    .font(.subheadline.weight(.medium))
                             }
+
+                            Text("A bank account or card is required to track settlement turnover and financial monitoring limits.")
+                                .font(.footnote)
+                                .foregroundStyle(.secondary)
+
+                            Button {
+                                showingAddAccountSheet = true
+                            } label: {
+                                HStack(spacing: 6) {
+                                    Image(systemName: "plus.circle.fill")
+                                    Text("Add Bank Account")
+                                        .fontWeight(.semibold)
+                                }
+                                .font(.subheadline)
+                                .frame(maxWidth: .infinity)
+                                .padding(.vertical, 8)
+                            }
+                            .buttonStyle(.borderedProminent)
                         }
                         .padding(.vertical, 4)
+                    } else {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                ForEach(bankAccounts) { account in
+                                    AccountChip(
+                                        account: account,
+                                        isSelected: selectedBankAccount?.id == account.id
+                                    ) {
+                                        selectedBankAccount = account
+                                    }
+                                }
+
+                                Button {
+                                    showingAddAccountSheet = true
+                                } label: {
+                                    HStack(spacing: 4) {
+                                        Image(systemName: "plus")
+                                            .font(.caption2)
+                                        Text("Add Bank")
+                                            .font(.caption.weight(.medium))
+                                    }
+                                    .padding(.horizontal, 12)
+                                    .padding(.vertical, 6)
+                                    .background(Color(uiColor: .secondarySystemGroupedBackground))
+                                    .foregroundStyle(Color.accentColor)
+                                    .clipShape(Capsule())
+                                    .overlay {
+                                        Capsule()
+                                            .stroke(Color.accentColor.opacity(0.3), lineWidth: 1)
+                                    }
+                                }
+                                .buttonStyle(.plain)
+                            }
+                            .padding(.vertical, 2)
+                        }
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } header: {
+                    Text("Bank Settlement")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                } footer: {
+                    if !bankAccounts.isEmpty, let selected = selectedBankAccount {
+                        if let card = selected.cardNumber, !card.isEmpty {
+                            Text("Selected card: \(card) · Turnover limit: \(Int(selected.turnoverLimitUAH / 1000))k ₴")
+                        } else {
+                            Text("Turnover limit: \(Int(selected.turnoverLimitUAH / 1000))k ₴")
+                        }
+                    }
                 }
 
                 // Section 4: Main Numeric Inputs with 2-way reactive calculations
-                Section("Trade Amounts & Rate") {
+                Section {
                     HStack {
                         Label("USDT", systemImage: "dollarsign.circle.fill")
-                            .font(.subheadline.weight(.regular))
+                            .font(Self.formLabelFont)
                             .foregroundStyle(.green)
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 100, alignment: .leading)
                         TextField("0.00", text: $usdtText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .usdt)
@@ -136,12 +210,13 @@ struct AddOrderView: View {
                                 handleUSDTChanged()
                             }
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     HStack {
                         Label("Price (UAH)", systemImage: "chart.line.uptrend.xyaxis")
-                            .font(.subheadline.weight(.regular))
+                            .font(Self.formLabelFont)
                             .foregroundStyle(.blue)
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 100, alignment: .leading)
                         TextField("0.00", text: $priceText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .price)
@@ -151,25 +226,31 @@ struct AddOrderView: View {
                                 handlePriceChanged()
                             }
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     HStack {
                         Label("Total UAH", systemImage: "hryvniasign.circle.fill")
-                            .font(.subheadline.weight(.regular))
+                            .font(Self.formLabelFont)
                             .foregroundStyle(.orange)
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 100, alignment: .leading)
                         TextField("0.00", text: $uahText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .totalUah)
                             .multilineTextAlignment(.trailing)
-                            .font(.body.weight(.medium).monospacedDigit())
+                            .font(.body.weight(.regular).monospacedDigit())
                             .onChange(of: uahText) { _, _ in
                                 handleUAHChanged()
                             }
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } header: {
+                    Text("Trade Amounts & Rate")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
 
                 // Section 5: Always-Visible Commission / Fee Section
-                Section("Commission / Fee") {
+                Section {
                     // Quick Preset Chips
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 8) {
@@ -182,17 +263,17 @@ struct AddOrderView: View {
                                 }
                             }
                         }
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     // Direct Numeric Fee Input in USDT
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: 2) {
                         HStack {
                             Label("Fee (USDT)", systemImage: "percent")
-                                .font(.subheadline.weight(.regular))
+                                .font(Self.formLabelFont)
                                 .foregroundStyle(.purple)
-                                .frame(width: 130, alignment: .leading)
+                                .frame(width: 100, alignment: .leading)
 
                             TextField("0.00", text: $feeText)
                                 .keyboardType(.decimalPad)
@@ -204,7 +285,7 @@ struct AddOrderView: View {
                                 }
 
                             Text("USDT")
-                                .font(.caption.weight(.regular))
+                                .font(.caption2.weight(.regular))
                                 .foregroundStyle(.secondary)
                         }
 
@@ -217,20 +298,47 @@ struct AddOrderView: View {
                             }
                         }
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                } header: {
+                    Text("Commission / Fee")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
 
                 // Section 6: Date & Optional Note
-                Section("Details & Note") {
-                    DatePicker("Date & Time", selection: $timestamp)
+                Section {
+                    HStack {
+                        Label("Date & Time", systemImage: "calendar")
+                            .font(Self.formLabelFont)
+                            .foregroundStyle(.secondary)
+
+                        Spacer()
+
+                        DatePicker("", selection: $timestamp)
+                            .labelsHidden()
+                            .datePickerStyle(.compact)
+                            .controlSize(.small)
+                            .font(.footnote)
+                    }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
 
                     HStack(spacing: 8) {
                         Image(systemName: "note.text")
+                            .font(.subheadline)
                             .foregroundStyle(.secondary)
+                            .frame(width: 16, alignment: .leading)
                         TextField("Optional trade note / counterparty", text: $noteText)
+                            .font(.subheadline.weight(.regular))
                             .focused($focusedField, equals: .note)
                     }
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                } header: {
+                    Text("Details & Note")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
             }
+            .listSectionSpacing(.compact)
             .navigationTitle(selectedType == .buy ? "Record Buy Order" : "Record Sell Order")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -245,7 +353,6 @@ struct AddOrderView: View {
                         saveOrder()
                     }
                     .disabled(!isValid)
-                    .fontWeight(.bold)
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -253,12 +360,22 @@ struct AddOrderView: View {
                     Button("Done") {
                         focusedField = nil
                     }
+                    .font(.subheadline.weight(.medium))
                 }
             }
             .task {
                 // Smoothly focus first input after sheet animation completes
-                try? await Task.sleep(nanoseconds: 150_000_000)
+                try? await Task.sleep(for: .milliseconds(150))
                 focusedField = .usdt
+            }
+            .onAppear {
+                autoSelectAccountIfNeeded(from: bankAccounts)
+            }
+            .onChange(of: bankAccounts) { _, newAccounts in
+                autoSelectAccountIfNeeded(from: newAccounts)
+            }
+            .sheet(isPresented: $showingAddAccountSheet) {
+                AddOrEditBankAccountView()
             }
         }
     }
@@ -347,10 +464,30 @@ struct AddOrderView: View {
         }
     }
 
+    // MARK: - Bank Account Auto-Selection
+
+    private func autoSelectAccountIfNeeded(from accounts: [BankAccount]) {
+        if let current = selectedBankAccount {
+            // Retain selection if still present among active accounts
+            if !accounts.contains(where: { $0.id == current.id }) {
+                selectedBankAccount = accounts.first
+            }
+        } else {
+            // Automatically select the first available account
+            selectedBankAccount = accounts.first
+        }
+    }
+
     // MARK: - Persistence
 
     private func saveOrder() {
-        guard isValid else { return }
+        guard isValid, let bankAccount = selectedBankAccount else { return }
+
+        // Sync legacy bank enum if matching
+        var bankFallback = selectedBank
+        if let matched = BankType.allCases.first(where: { bankAccount.name.localizedCaseInsensitiveContains($0.rawValue) }) {
+            bankFallback = matched
+        }
 
         let order = P2POrder(
             type: selectedType,
@@ -360,7 +497,8 @@ struct AddOrderView: View {
             feeUSDT: parsedFee,
             txFeeUSDT: 0.0, // Network fee temporarily removed from this screen
             platform: selectedPlatform,
-            bank: selectedBank,
+            bank: bankFallback,
+            bankAccount: bankAccount,
             timestamp: timestamp,
             note: noteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : noteText
         )
@@ -404,21 +542,21 @@ private struct PlatformChip: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 6) {
+            HStack(spacing: 5) {
                 Image(systemName: iconName)
-                    .font(.caption)
+                    .font(.caption2)
                 Text(platform.rawValue)
                     .font(.caption.weight(.medium))
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
             .background(isSelected ? Color.accentColor : Color(uiColor: .secondarySystemGroupedBackground))
             .foregroundStyle(isSelected ? Color.white : Color.primary)
             .clipShape(Capsule())
-            .overlay(
+            .overlay {
                 Capsule()
                     .stroke(isSelected ? Color.clear : Color.secondary.opacity(0.2), lineWidth: 1)
-            )
+            }
         }
         .buttonStyle(.plain)
     }
@@ -433,28 +571,28 @@ private struct PlatformChip: View {
     }
 }
 
-private struct BankChip: View {
-    let bank: BankType
+private struct AccountChip: View {
+    let account: BankAccount
     let isSelected: Bool
     let action: () -> Void
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 6) {
+            HStack(spacing: 5) {
                 Image(systemName: "building.columns.fill")
                     .font(.caption2)
-                Text(bank.rawValue)
+                Text(account.name)
                     .font(.caption.weight(.medium))
             }
-            .padding(.horizontal, 14)
-            .padding(.vertical, 8)
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
             .background(isSelected ? Color.indigo : Color(uiColor: .secondarySystemGroupedBackground))
             .foregroundStyle(isSelected ? Color.white : Color.primary)
             .clipShape(Capsule())
-            .overlay(
+            .overlay {
                 Capsule()
                     .stroke(isSelected ? Color.clear : Color.secondary.opacity(0.2), lineWidth: 1)
-            )
+            }
         }
         .buttonStyle(.plain)
     }
@@ -469,15 +607,15 @@ private struct FeePresetChip: View {
         Button(action: action) {
             Text(preset.label)
                 .font(.caption.weight(.medium))
-                .padding(.horizontal, 14)
-                .padding(.vertical, 7)
+                .padding(.horizontal, 12)
+                .padding(.vertical, 6)
                 .background(isSelected ? Color.purple : Color(uiColor: .secondarySystemGroupedBackground))
                 .foregroundStyle(isSelected ? Color.white : Color.primary)
                 .clipShape(Capsule())
-                .overlay(
-                    Capsule()
-                        .stroke(isSelected ? Color.clear : Color.secondary.opacity(0.2), lineWidth: 1)
-                )
+            .overlay {
+                Capsule()
+                    .stroke(isSelected ? Color.clear : Color.secondary.opacity(0.2), lineWidth: 1)
+            }
         }
         .buttonStyle(.plain)
     }

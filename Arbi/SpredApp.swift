@@ -7,6 +7,6 @@ struct SpredApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: [P2POrder.self, CapitalSettings.self])
+        .modelContainer(for: [P2POrder.self, CapitalSettings.self, BankAccount.self])
     }
 }

@@ -7,7 +7,7 @@
         "key": "Capital Settings",
         "location": {
           "startingColumn": 30,
-          "startingLine": 144
+          "startingLine": 216
         }
       },
       {
@@ -15,7 +15,7 @@
         "key": "Available Free Money (UAH)",
         "location": {
           "startingColumn": 30,
-          "startingLine": 56
+          "startingLine": 70
         }
       },
       {
@@ -23,7 +23,7 @@
         "key": "Remaining USDT",
         "location": {
           "startingColumn": 38,
-          "startingLine": 68
+          "startingLine": 82
         }
       },
       {
@@ -31,7 +31,7 @@
         "key": "Total Portfolio Equity",
         "location": {
           "startingColumn": 38,
-          "startingLine": 78
+          "startingLine": 92
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "Starting Deposit",
         "location": {
           "startingColumn": 31,
-          "startingLine": 92
+          "startingLine": 106
         }
       },
       {
@@ -47,7 +47,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 97
+          "startingLine": 111
         }
       },
       {
@@ -55,7 +55,7 @@
         "key": "%lldk ₴",
         "location": {
           "startingColumn": 40,
-          "startingLine": 108
+          "startingLine": 123
         }
       },
       {
@@ -63,7 +63,7 @@
         "key": "Starting Working Capital",
         "location": {
           "startingColumn": 26,
-          "startingLine": 119
+          "startingLine": 135
         }
       },
       {
@@ -71,15 +71,15 @@
         "key": "The initial cash pool in UAH you started trading with for this period.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 121
+          "startingLine": 139
         }
       },
       {
         "comment": "",
-        "key": "Cash Out",
+        "key": "Initial USDT",
         "location": {
           "startingColumn": 31,
-          "startingLine": 127
+          "startingLine": 145
         }
       },
       {
@@ -87,7 +87,63 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 132
+          "startingLine": 150
+        }
+      },
+      {
+        "comment": "",
+        "key": "Avg Buy Rate (₴)",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 164
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initial Crypto Value",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 174
+        }
+      },
+      {
+        "comment": "",
+        "key": "Initial Crypto Inventory",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 185
+        }
+      },
+      {
+        "comment": "",
+        "key": "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 189
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cash Out",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 195
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 200
         }
       },
       {
@@ -95,7 +151,7 @@
         "key": "Cash Out (To Cash)",
         "location": {
           "startingColumn": 26,
-          "startingLine": 139
+          "startingLine": 208
         }
       },
       {
@@ -103,7 +159,7 @@
         "key": "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 141
+          "startingLine": 212
         }
       },
       {
@@ -111,7 +167,7 @@
         "key": "Cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 148
+          "startingLine": 220
         }
       },
       {
@@ -119,7 +175,7 @@
         "key": "Save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 154
+          "startingLine": 226
         }
       },
       {
@@ -127,7 +183,7 @@
         "key": "Done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 162
+          "startingLine": 233
         }
       }
     ]

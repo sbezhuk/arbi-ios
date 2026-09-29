@@ -5,9 +5,11 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \P2POrder.timestamp, order: .reverse) private var orders: [P2POrder]
     @Query private var capitalSettingsList: [CapitalSettings]
+    @Query(sort: \BankAccount.createdAt, order: .forward) private var allBankAccounts: [BankAccount]
 
     @State private var showingAddOrderSheet: Bool = false
     @State private var showingCapitalSettingsSheet: Bool = false
+    @State private var showingBankAccountsSheet: Bool = false
 
     private var activeSettings: CapitalSettings? {
         capitalSettingsList.first(where: { $0.periodIdentifier == "global" })
@@ -29,15 +31,19 @@ struct ContentView: View {
     }
 
     private var avgBuyPrice: Double {
-        P2PCalculator.averageBuyPrice(orders: orders)
+        P2PCalculator.averageBuyPrice(orders: orders, settings: activeSettings)
     }
 
     private var totalPnL: Double {
         P2PCalculator.calculatePnL(orders: orders, avgBuyPrice: avgBuyPrice)
     }
 
-    private var bankStats: [BankTurnoverStat] {
-        P2PCalculator.bankTurnover(orders: orders)
+    private var activeBankAccounts: [BankAccount] {
+        allBankAccounts.filter { !$0.isArchived }
+    }
+
+    private var accountStats: [AccountTurnoverStat] {
+        P2PCalculator.accountTurnover(orders: orders, accounts: activeBankAccounts)
     }
 
     var body: some View {
@@ -68,56 +74,69 @@ struct ContentView: View {
                 }
 
                 // Section 3: Bank Turnover & Financial Monitoring Limits
-                Section("Bank Turnover Limits") {
-                    if bankStats.isEmpty {
+                Section {
+                    if activeBankAccounts.isEmpty {
                         HStack {
-                            Image(systemName: "info.circle")
+                            Image(systemName: "creditcard")
                                 .foregroundStyle(.secondary)
-                            Text("No sell orders recorded yet. Sells will populate turnover stats per bank.")
+                            Text("No bank accounts added yet.")
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
+                            Spacer()
+                            Button("Add") {
+                                showingBankAccountsSheet = true
+                            }
+                            .font(.footnote.weight(.medium))
                         }
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     } else {
-                        ForEach(bankStats) { stat in
-                            BankTurnoverRow(stat: stat)
+                        ForEach(accountStats) { stat in
+                            AccountTurnoverRow(stat: stat)
                         }
+                    }
+                } header: {
+                    HStack {
+                        Text("Bank Turnover Limits")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
+                        Spacer()
+                        Button("Manage") {
+                            showingBankAccountsSheet = true
+                        }
+                        .font(.caption.weight(.medium))
+                        .textCase(nil)
                     }
                 }
 
                 // Section 4: Recent Transactions
-                Section("Recent Transactions (\(orders.count))") {
+                Section {
                     if orders.isEmpty {
                         ContentUnavailableView {
                             Label("No Transactions", systemImage: "arrow.triangle.swap")
                         } description: {
-                            Text("Record your first USDT ↔ UAH trade using the button below.")
+                            Text("Tap the + button in the toolbar to record your first trade.")
                         } actions: {
                             Button("Add Sample Trades") {
                                 insertSampleData()
                             }
-                            .buttonStyle(.borderedProminent)
+                            .buttonStyle(.bordered)
                         }
-                        .padding(.vertical, 24)
+                        .padding(.vertical, 12)
                     } else {
                         ForEach(orders) { order in
                             OrderRowView(order: order)
                         }
                         .onDelete(perform: deleteOrders)
                     }
+                } header: {
+                    Text("Recent Transactions (\(orders.count))")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 }
             }
+            .listSectionSpacing(8)
             .navigationTitle("Spred Arbitrage")
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Button {
-                        showingCapitalSettingsSheet = true
-                    } label: {
-                        Label("Capital", systemImage: "banknote")
-                    }
-                    .accessibilityLabel("Manage Capital Settings")
-                }
-
                 ToolbarItem(placement: .primaryAction) {
                     Button {
                         showingAddOrderSheet = true
@@ -134,26 +153,8 @@ struct ContentView: View {
             .sheet(isPresented: $showingCapitalSettingsSheet) {
                 CapitalSettingsView()
             }
-            .overlay(alignment: .bottomTrailing) {
-                // Floating Action Button for rapid single-handed input
-                Button {
-                    showingAddOrderSheet = true
-                } label: {
-                    HStack(spacing: 8) {
-                        Image(systemName: "plus")
-                            .fontWeight(.bold)
-                        Text("New Order")
-                            .fontWeight(.semibold)
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 14)
-                    .background(Color.accentColor)
-                    .foregroundStyle(.white)
-                    .clipShape(Capsule())
-                    .shadow(color: .black.opacity(0.18), radius: 8, x: 0, y: 4)
-                }
-                .padding(.trailing, 20)
-                .padding(.bottom, 20)
+            .sheet(isPresented: $showingBankAccountsSheet) {
+                BankAccountsView()
             }
         }
     }
@@ -166,6 +167,20 @@ struct ContentView: View {
     }
 
     private func insertSampleData() {
+        var mono = allBankAccounts.first(where: { $0.name.contains("Mono") })
+        if mono == nil {
+            let newMono = BankAccount(name: "MonoBank (Black)", cardNumber: "4441 •••• 1234", turnoverLimitUAH: 150_000.0)
+            modelContext.insert(newMono)
+            mono = newMono
+        }
+
+        var privat = allBankAccounts.first(where: { $0.name.contains("Privat") })
+        if privat == nil {
+            let newPrivat = BankAccount(name: "PrivatBank (Gold)", cardNumber: "5168 •••• 9876", turnoverLimitUAH: 150_000.0)
+            modelContext.insert(newPrivat)
+            privat = newPrivat
+        }
+
         let sample1 = P2POrder(
             type: .buy,
             usdtAmount: 1000.0,
@@ -175,6 +190,7 @@ struct ContentView: View {
             txFeeUSDT: 0.0,
             platform: .binance,
             bank: .monoBank,
+            bankAccount: mono,
             timestamp: Date().addingTimeInterval(-3600 * 3),
             note: "Binance P2P Maker buy"
         )
@@ -188,6 +204,7 @@ struct ContentView: View {
             txFeeUSDT: 0.0,
             platform: .binance,
             bank: .monoBank,
+            bankAccount: mono,
             timestamp: Date().addingTimeInterval(-3600 * 2),
             note: "MonoBank card payout"
         )
@@ -201,6 +218,7 @@ struct ContentView: View {
             txFeeUSDT: 1.0,
             platform: .bybit,
             bank: .privatBank,
+            bankAccount: privat,
             timestamp: Date().addingTimeInterval(-3600 * 1),
             note: "Bybit P2P sell"
         )
@@ -213,6 +231,8 @@ struct ContentView: View {
             let defaultCapital = CapitalSettings(
                 startingDepositUAH: 100_000.0,
                 toCashUAH: 0.0,
+                initialUSDT: 500.0,
+                initialAvgBuyPrice: 41.10,
                 periodIdentifier: "global",
                 lastUpdated: Date()
             )
@@ -229,15 +249,15 @@ private struct CapitalOverviewCard: View {
 
     var body: some View {
         Button(action: onTapConfigure) {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Label("Free Money (Bank Cards)", systemImage: "wallet.pass.fill")
-                        .font(.subheadline.weight(.medium))
+                        .font(.footnote.weight(.medium))
                         .foregroundStyle(.green)
 
                     Spacer()
 
-                    HStack(spacing: 4) {
+                    HStack(spacing: 3) {
                         Text("Configure")
                             .font(.caption2.weight(.medium))
                         Image(systemName: "chevron.right")
@@ -248,7 +268,7 @@ private struct CapitalOverviewCard: View {
 
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
                     Text(formatCurrency(breakdown.freeUAH))
-                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .font(.system(size: 22, weight: .semibold, design: .rounded))
                         .foregroundStyle(breakdown.freeUAH >= 0 ? Color.primary : Color.red)
 
                     Text("₴")
@@ -259,43 +279,43 @@ private struct CapitalOverviewCard: View {
                 Divider()
 
                 HStack {
-                    VStack(alignment: .leading, spacing: 2) {
+                    VStack(alignment: .leading, spacing: 1) {
                         Text("Starting Deposit")
                             .font(.caption2.weight(.regular))
                             .foregroundStyle(.secondary)
                         Text(formatCurrency(breakdown.startingDepositUAH) + " ₴")
-                            .font(.caption.weight(.medium).monospacedDigit())
+                            .font(.footnote.weight(.medium).monospacedDigit())
                     }
 
                     Spacer()
 
-                    VStack(alignment: .center, spacing: 2) {
+                    VStack(alignment: .center, spacing: 1) {
                         Text("Cash Out")
                             .font(.caption2.weight(.regular))
                             .foregroundStyle(.secondary)
                         Text(formatCurrency(breakdown.toCashUAH) + " ₴")
-                            .font(.caption.weight(.medium).monospacedDigit())
+                            .font(.footnote.weight(.medium).monospacedDigit())
                             .foregroundStyle(breakdown.toCashUAH > 0 ? Color.orange : Color.primary)
                     }
 
                     Spacer()
 
-                    VStack(alignment: .trailing, spacing: 2) {
+                    VStack(alignment: .trailing, spacing: 1) {
                         Text("USDT Inventory")
                             .font(.caption2.weight(.regular))
                             .foregroundStyle(.secondary)
                         Text(String(format: "%.2f USDT", breakdown.remainingUSDT))
-                            .font(.caption.weight(.medium).monospacedDigit())
+                            .font(.footnote.weight(.medium).monospacedDigit())
                     }
                 }
             }
-            .padding(16)
+            .padding(10)
             .background(Color(uiColor: .secondarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
         }
         .buttonStyle(.plain)
         .padding(.horizontal, 4)
-        .padding(.top, 4)
+        .padding(.top, 2)
     }
 
     private func formatCurrency(_ value: Double) -> String {
@@ -316,20 +336,20 @@ private struct SummaryMetricsView: View {
     let sellCount: Int
 
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 8) {
             // Hero card: PnL
-            VStack(spacing: 6) {
+            VStack(spacing: 4) {
                 Text("Total Net PnL")
-                    .font(.subheadline.weight(.regular))
+                    .font(.caption.weight(.regular))
                     .foregroundStyle(.secondary)
 
                 HStack(alignment: .firstTextBaseline, spacing: 4) {
                     Text(pnlPrefix + formatCurrency(abs(totalPnL)))
-                        .font(.system(size: 24, weight: .semibold, design: .rounded))
+                        .font(.system(size: 22, weight: .semibold, design: .rounded))
                         .foregroundStyle(pnlColor)
 
                     Text("UAH")
-                        .font(.caption.weight(.regular))
+                        .font(.caption2.weight(.regular))
                         .foregroundStyle(pnlColor.opacity(0.8))
                 }
             }
@@ -343,7 +363,7 @@ private struct SummaryMetricsView: View {
             )
 
             // Secondary metrics: Avg Buy Rate + Trade Count
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
                 MetricTile(
                     title: "Avg Buy Price",
                     value: avgBuyPrice > 0 ? String(format: "%.2f ₴", avgBuyPrice) : "—",
@@ -402,13 +422,13 @@ private struct MetricTile: View {
     let accentColor: Color
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 4) {
             HStack {
                 Image(systemName: systemImage)
-                    .font(.caption.weight(.semibold))
+                    .font(.caption2.weight(.semibold))
                     .foregroundStyle(accentColor)
                 Text(title)
-                    .font(.caption.weight(.regular))
+                    .font(.caption2.weight(.regular))
                     .foregroundStyle(.secondary)
                 Spacer()
             }
@@ -420,44 +440,56 @@ private struct MetricTile: View {
                 .font(.caption2.weight(.regular))
                 .foregroundStyle(.secondary)
         }
-        .padding(12)
+        .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
 }
 
-// MARK: - Bank Turnover Row Component
+// MARK: - Account Turnover Row Component
 
-private struct BankTurnoverRow: View {
-    let stat: BankTurnoverStat
-
-    // Standard Ukrainian financial monitoring reference threshold (150,000 UAH/month)
-    private let monitoringLimitUAH: Double = 150_000.0
-
-    private var progress: Double {
-        min(stat.totalSellUAH / monitoringLimitUAH, 1.0)
-    }
+private struct AccountTurnoverRow: View {
+    let stat: AccountTurnoverStat
 
     private var progressColor: Color {
-        if progress >= 0.9 {
+        if stat.progress >= 0.9 {
             return .red
-        } else if progress >= 0.7 {
+        } else if stat.progress >= 0.7 {
             return .orange
         } else {
             return .indigo
         }
     }
 
+    private var limitSummaryLabel: String {
+        let limitString: String
+        if stat.turnoverLimitUAH >= 1000 {
+            limitString = "\(Int(stat.turnoverLimitUAH / 1000))k"
+        } else {
+            limitString = "\(Int(stat.turnoverLimitUAH)) ₴"
+        }
+        return String(format: "%.1f%% of %@ limit", stat.progress * 100, limitString)
+    }
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: 4) {
             HStack {
                 HStack(spacing: 6) {
-                    Image(systemName: "building.columns.fill")
-                        .font(.caption)
+                    Image(systemName: "creditcard.fill")
+                        .font(.caption2)
                         .foregroundStyle(.indigo)
-                    Text(stat.bank.rawValue)
-                        .font(.subheadline.weight(.medium))
+
+                    VStack(alignment: .leading, spacing: 1) {
+                        Text(stat.accountName)
+                            .font(.subheadline.weight(.medium))
+
+                        if let card = stat.cardNumber, !card.isEmpty {
+                            Text(card)
+                                .font(.caption2.weight(.regular).monospacedDigit())
+                                .foregroundStyle(.secondary)
+                        }
+                    }
                 }
 
                 Spacer()
@@ -466,7 +498,7 @@ private struct BankTurnoverRow: View {
                     .font(.subheadline.weight(.regular).monospacedDigit())
             }
 
-            ProgressView(value: progress)
+            ProgressView(value: stat.progress)
                 .tint(progressColor)
 
             HStack {
@@ -476,12 +508,12 @@ private struct BankTurnoverRow: View {
 
                 Spacer()
 
-                Text(String(format: "%.1f%% of 150k limit", progress * 100))
+                Text(limitSummaryLabel)
                     .font(.caption2.weight(.regular))
                     .foregroundStyle(progressColor)
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 2)
     }
 
     private func formatUAH(_ value: Double) -> String {
@@ -500,19 +532,20 @@ private struct OrderRowView: View {
     let order: P2POrder
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .top) {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .center) {
                 // Type badge
                 Text(order.type.rawValue.uppercased())
-                    .font(.caption2.weight(.semibold))
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 3)
+                    .font(.system(size: 10, weight: .bold))
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
                     .background(order.type == .buy ? Color.green.opacity(0.15) : Color.blue.opacity(0.15))
                     .foregroundStyle(order.type == .buy ? Color.green : Color.blue)
                     .clipShape(Capsule())
 
-                // Platform & Bank
-                Text("\(order.platform.rawValue) · \(order.bank.rawValue)")
+                // Platform & Bank Account
+                let bankTitle = order.bankAccount?.name ?? order.bank.rawValue
+                Text("\(order.platform.rawValue) · \(bankTitle)")
                     .font(.caption.weight(.regular))
                     .foregroundStyle(.secondary)
 
@@ -526,18 +559,18 @@ private struct OrderRowView: View {
 
             // Main amounts
             HStack(alignment: .firstTextBaseline) {
-                VStack(alignment: .leading, spacing: 2) {
+                VStack(alignment: .leading, spacing: 1) {
                     Text(String(format: "%.2f USDT", order.usdtAmount))
                         .font(.subheadline.weight(.medium).monospacedDigit())
 
                     Text(String(format: "@ %.2f ₴", order.price))
-                        .font(.caption.weight(.regular).monospacedDigit())
+                        .font(.caption2.weight(.regular).monospacedDigit())
                         .foregroundStyle(.secondary)
                 }
 
                 Spacer()
 
-                VStack(alignment: .trailing, spacing: 2) {
+                VStack(alignment: .trailing, spacing: 1) {
                     Text(String(format: "%.2f ₴", order.uahAmount))
                         .font(.subheadline.weight(.medium).monospacedDigit())
 
@@ -552,11 +585,11 @@ private struct OrderRowView: View {
 
             if let note = order.note, !note.isEmpty {
                 Text(note)
-                    .font(.caption.weight(.regular))
+                    .font(.caption2.weight(.regular))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, 1)
     }
 }

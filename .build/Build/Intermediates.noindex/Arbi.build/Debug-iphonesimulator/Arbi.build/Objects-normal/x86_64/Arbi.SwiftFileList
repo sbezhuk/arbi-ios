@@ -1,8 +1,10 @@
 /Users/stepanbezhuk/work/Arbi/Arbi/Engine/P2PCalculator.swift
+/Users/stepanbezhuk/work/Arbi/Arbi/Models/BankAccount.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/CapitalSettings.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/Enums.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/P2POrder.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/AddOrderView.swift
+/Users/stepanbezhuk/work/Arbi/Arbi/Views/BankAccountsView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/CapitalSettingsView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/ContentView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/SpredApp.swift

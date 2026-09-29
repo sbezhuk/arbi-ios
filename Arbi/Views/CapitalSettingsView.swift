@@ -11,12 +11,16 @@ struct CapitalSettingsView: View {
 
     @State private var depositText: String = ""
     @State private var toCashText: String = ""
+    @State private var initialUSDTText: String = ""
+    @State private var initialAvgBuyPriceText: String = ""
 
     @FocusState private var focusedField: Field?
 
     private enum Field: Hashable {
         case deposit
         case toCash
+        case initialUSDT
+        case initialAvgBuyPrice
     }
 
     private var activeSettings: CapitalSettings? {
@@ -31,10 +35,20 @@ struct CapitalSettingsView: View {
         parseDouble(toCashText)
     }
 
+    private var parsedInitialUSDT: Double {
+        parseDouble(initialUSDTText)
+    }
+
+    private var parsedInitialAvgBuyPrice: Double {
+        parseDouble(initialAvgBuyPriceText)
+    }
+
     private var simulatedSettings: CapitalSettings {
         CapitalSettings(
             startingDepositUAH: parsedDeposit,
             toCashUAH: parsedToCash,
+            initialUSDT: parsedInitialUSDT,
+            initialAvgBuyPrice: parsedInitialAvgBuyPrice,
             periodIdentifier: "global",
             lastUpdated: Date()
         )
@@ -52,38 +66,38 @@ struct CapitalSettingsView: View {
             Form {
                 // Section 1: Real-time Capital Simulation Card
                 Section {
-                    VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 6) {
                         Text("Available Free Money (UAH)")
-                            .font(.subheadline.weight(.regular))
+                            .font(.caption.weight(.regular))
                             .foregroundStyle(.secondary)
 
                         Text(formatCurrency(breakdown.freeUAH) + " ₴")
-                            .font(.system(size: 24, weight: .semibold, design: .rounded))
+                            .font(.system(size: 22, weight: .semibold, design: .rounded))
                             .foregroundStyle(breakdown.freeUAH >= 0 ? Color.green : Color.red)
 
                         Divider()
 
                         HStack {
-                            VStack(alignment: .leading, spacing: 2) {
+                            VStack(alignment: .leading, spacing: 1) {
                                 Text("Remaining USDT")
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.secondary)
                                 Text(String(format: "%.2f USDT", breakdown.remainingUSDT))
-                                    .font(.subheadline.weight(.medium).monospacedDigit())
+                                    .font(.footnote.weight(.medium).monospacedDigit())
                             }
 
                             Spacer()
 
-                            VStack(alignment: .trailing, spacing: 2) {
+                            VStack(alignment: .trailing, spacing: 1) {
                                 Text("Total Portfolio Equity")
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.secondary)
                                 Text(formatCurrency(breakdown.totalEquityUAH) + " ₴")
-                                    .font(.subheadline.weight(.medium).monospacedDigit())
+                                    .font(.footnote.weight(.medium).monospacedDigit())
                             }
                         }
                     }
-                    .padding(.vertical, 8)
+                    .padding(.vertical, 4)
                 }
 
                 // Section 2: Initial Working Deposit
@@ -92,7 +106,7 @@ struct CapitalSettingsView: View {
                         Label("Starting Deposit", systemImage: "banknote.fill")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.green)
-                            .frame(width: 140, alignment: .leading)
+                            .frame(width: 120, alignment: .leading)
 
                         TextField("0.00", text: $depositText)
                             .keyboardType(.decimalPad)
@@ -100,6 +114,7 @@ struct CapitalSettingsView: View {
                             .multilineTextAlignment(.trailing)
                             .font(.body.weight(.regular).monospacedDigit())
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     // Quick deposit presets
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -113,21 +128,74 @@ struct CapitalSettingsView: View {
                                 .tint(.green)
                             }
                         }
-                        .padding(.vertical, 4)
+                        .padding(.vertical, 2)
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
                     Text("Starting Working Capital")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 } footer: {
                     Text("The initial cash pool in UAH you started trading with for this period.")
                 }
 
-                // Section 3: Cash Out (To Cash)
+                // Section 3: Initial Crypto Inventory
+                Section {
+                    HStack {
+                        Label("Initial USDT", systemImage: "dollarsign.circle.fill")
+                            .font(.subheadline.weight(.regular))
+                            .foregroundStyle(.green)
+                            .frame(width: 120, alignment: .leading)
+
+                        TextField("0.00", text: $initialUSDTText)
+                            .keyboardType(.decimalPad)
+                            .focused($focusedField, equals: .initialUSDT)
+                            .multilineTextAlignment(.trailing)
+                            .font(.body.weight(.regular).monospacedDigit())
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+
+                    HStack {
+                        Label("Avg Buy Rate (₴)", systemImage: "chart.line.uptrend.xyaxis")
+                            .font(.subheadline.weight(.regular))
+                            .foregroundStyle(.blue)
+                            .frame(width: 120, alignment: .leading)
+
+                        TextField("0.00", text: $initialAvgBuyPriceText)
+                            .keyboardType(.decimalPad)
+                            .focused($focusedField, equals: .initialAvgBuyPrice)
+                            .multilineTextAlignment(.trailing)
+                            .font(.body.weight(.regular).monospacedDigit())
+                    }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+
+                    if parsedInitialUSDT > 0 && parsedInitialAvgBuyPrice > 0 {
+                        HStack {
+                            Text("Initial Crypto Value")
+                                .font(.caption2.weight(.regular))
+                                .foregroundStyle(.secondary)
+                            Spacer()
+                            Text(formatCurrency(parsedInitialUSDT * parsedInitialAvgBuyPrice) + " ₴")
+                                .font(.footnote.weight(.medium).monospacedDigit())
+                                .foregroundStyle(.secondary)
+                        }
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    }
+                } header: {
+                    Text("Initial Crypto Inventory")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                } footer: {
+                    Text("Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.")
+                }
+
+                // Section 4: Cash Out (To Cash)
                 Section {
                     HStack {
                         Label("Cash Out", systemImage: "arrow.down.forward.circle.fill")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.orange)
-                            .frame(width: 140, alignment: .leading)
+                            .frame(width: 120, alignment: .leading)
 
                         TextField("0.00", text: $toCashText)
                             .keyboardType(.decimalPad)
@@ -135,12 +203,16 @@ struct CapitalSettingsView: View {
                             .multilineTextAlignment(.trailing)
                             .font(.body.weight(.regular).monospacedDigit())
                     }
+                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
                     Text("Cash Out (To Cash)")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(.secondary)
                 } footer: {
                     Text("Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.")
                 }
             }
+            .listSectionSpacing(.compact)
             .navigationTitle("Capital Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -154,7 +226,6 @@ struct CapitalSettingsView: View {
                     Button("Save") {
                         saveSettings()
                     }
-                    .fontWeight(.bold)
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -162,12 +233,15 @@ struct CapitalSettingsView: View {
                     Button("Done") {
                         focusedField = nil
                     }
+                    .font(.subheadline.weight(.medium))
                 }
             }
             .onAppear {
                 if let settings = activeSettings {
                     depositText = settings.startingDepositUAH > 0 ? formatPlain(settings.startingDepositUAH) : ""
                     toCashText = settings.toCashUAH > 0 ? formatPlain(settings.toCashUAH) : ""
+                    initialUSDTText = settings.initialUSDT > 0 ? formatPlain(settings.initialUSDT) : ""
+                    initialAvgBuyPriceText = settings.initialAvgBuyPrice > 0 ? formatPlain(settings.initialAvgBuyPrice) : ""
                 }
             }
         }
@@ -177,11 +251,15 @@ struct CapitalSettingsView: View {
         if let existing = activeSettings {
             existing.startingDepositUAH = parsedDeposit
             existing.toCashUAH = parsedToCash
+            existing.initialUSDT = parsedInitialUSDT
+            existing.initialAvgBuyPrice = parsedInitialAvgBuyPrice
             existing.lastUpdated = Date()
         } else {
             let newSettings = CapitalSettings(
                 startingDepositUAH: parsedDeposit,
                 toCashUAH: parsedToCash,
+                initialUSDT: parsedInitialUSDT,
+                initialAvgBuyPrice: parsedInitialAvgBuyPrice,
                 periodIdentifier: "global",
                 lastUpdated: Date()
             )

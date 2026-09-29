@@ -7,7 +7,7 @@
         "key": "Record Buy Order",
         "location": {
           "startingColumn": 53,
-          "startingLine": 234
+          "startingLine": 342
         }
       },
       {
@@ -15,47 +15,7 @@
         "key": "Record Sell Order",
         "location": {
           "startingColumn": 74,
-          "startingLine": 234
-        }
-      },
-      {
-        "comment": "",
-        "key": "Exchange / Platform",
-        "location": {
-          "startingColumn": 25,
-          "startingLine": 88
-        }
-      },
-      {
-        "comment": "",
-        "key": "Bank Settlement",
-        "location": {
-          "startingColumn": 25,
-          "startingLine": 106
-        }
-      },
-      {
-        "comment": "",
-        "key": "Trade Amounts & Rate",
-        "location": {
-          "startingColumn": 25,
-          "startingLine": 124
-        }
-      },
-      {
-        "comment": "",
-        "key": "Commission / Fee",
-        "location": {
-          "startingColumn": 25,
-          "startingLine": 172
-        }
-      },
-      {
-        "comment": "",
-        "key": "Details & Note",
-        "location": {
-          "startingColumn": 25,
-          "startingLine": 223
+          "startingLine": 342
         }
       },
       {
@@ -63,7 +23,71 @@
         "key": "Order Type",
         "location": {
           "startingColumn": 28,
-          "startingLine": 77
+          "startingLine": 84
+        }
+      },
+      {
+        "comment": "",
+        "key": "Exchange / Platform",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 111
+        }
+      },
+      {
+        "comment": "",
+        "key": "A bank account or card is required to track settlement turnover and financial monitoring limits.",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "No Bank Accounts Found",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Bank Account",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 136
+        }
+      },
+      {
+        "comment": "",
+        "key": "Add Bank",
+        "location": {
+          "startingColumn": 46,
+          "startingLine": 164
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bank Settlement",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 184
+        }
+      },
+      {
+        "comment": "",
+        "key": "Selected card: %@ · Turnover limit: %lldk ₴",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "Turnover limit: %lldk ₴",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 192
         }
       },
       {
@@ -71,7 +95,7 @@
         "key": "USDT",
         "location": {
           "startingColumn": 31,
-          "startingLine": 126
+          "startingLine": 200
         }
       },
       {
@@ -79,7 +103,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 130
+          "startingLine": 204
         }
       },
       {
@@ -87,7 +111,7 @@
         "key": "Price (UAH)",
         "location": {
           "startingColumn": 31,
-          "startingLine": 141
+          "startingLine": 216
         }
       },
       {
@@ -95,7 +119,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 145
+          "startingLine": 220
         }
       },
       {
@@ -103,7 +127,7 @@
         "key": "Total UAH",
         "location": {
           "startingColumn": 31,
-          "startingLine": 156
+          "startingLine": 232
         }
       },
       {
@@ -111,7 +135,15 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 160
+          "startingLine": 236
+        }
+      },
+      {
+        "comment": "",
+        "key": "Trade Amounts & Rate",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 247
         }
       },
       {
@@ -119,7 +151,7 @@
         "key": "USDT",
         "location": {
           "startingColumn": 34,
-          "startingLine": 206
+          "startingLine": 287
         }
       },
       {
@@ -127,7 +159,7 @@
         "key": "Fee (USDT)",
         "location": {
           "startingColumn": 35,
-          "startingLine": 192
+          "startingLine": 273
         }
       },
       {
@@ -135,7 +167,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 197
+          "startingLine": 278
         }
       },
       {
@@ -143,15 +175,31 @@
         "key": "≈ %@ ₴ commission",
         "location": {
           "startingColumn": 38,
-          "startingLine": 214
+          "startingLine": 295
+        }
+      },
+      {
+        "comment": "",
+        "key": "Commission / Fee",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 303
         }
       },
       {
         "comment": "",
         "key": "Date & Time",
         "location": {
-          "startingColumn": 32,
-          "startingLine": 224
+          "startingColumn": 31,
+          "startingLine": 311
+        }
+      },
+      {
+        "comment": "",
+        "key": "",
+        "location": {
+          "startingColumn": 36,
+          "startingLine": 317
         }
       },
       {
@@ -159,7 +207,15 @@
         "key": "Optional trade note / counterparty",
         "location": {
           "startingColumn": 35,
-          "startingLine": 229
+          "startingLine": 330
+        }
+      },
+      {
+        "comment": "",
+        "key": "Details & Note",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 336
         }
       },
       {
@@ -167,7 +223,7 @@
         "key": "Cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 238
+          "startingLine": 346
         }
       },
       {
@@ -175,7 +231,7 @@
         "key": "Save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 244
+          "startingLine": 352
         }
       },
       {
@@ -183,7 +239,7 @@
         "key": "Done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 253
+          "startingLine": 360
         }
       }
     ]

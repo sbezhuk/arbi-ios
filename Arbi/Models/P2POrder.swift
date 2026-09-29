@@ -12,6 +12,7 @@ public final class P2POrder {
     public var txFeeUSDT: Double
     public var platform: ExchangePlatform
     public var bank: BankType
+    public var bankAccount: BankAccount?
     public var timestamp: Date
     public var note: String?
 
@@ -25,6 +26,7 @@ public final class P2POrder {
         txFeeUSDT: Double = 0.0,
         platform: ExchangePlatform = .binance,
         bank: BankType = .monoBank,
+        bankAccount: BankAccount? = nil,
         timestamp: Date = Date(),
         note: String? = nil
     ) {
@@ -37,6 +39,7 @@ public final class P2POrder {
         self.txFeeUSDT = txFeeUSDT
         self.platform = platform
         self.bank = bank
+        self.bankAccount = bankAccount
         self.timestamp = timestamp
         self.note = note
     }
