@@ -101,7 +101,7 @@ struct CapitalSettingsView: View {
                                 Spacer()
 
                                 VStack(alignment: .trailing, spacing: 1) {
-                                    Text("Total Portfolio Equity")
+                                    Text("capital.label.total_portfolio_equity")
                                         .font(.caption2.weight(.regular))
                                         .foregroundStyle(.secondary)
                                     Text(formatCurrency(breakdown.totalEquityUAH) + " ₴")
@@ -117,7 +117,7 @@ struct CapitalSettingsView: View {
                     Section {
                         HStack {
                             CapitalFormRowLabel(
-                                title: "Starting Deposit",
+                                title: "trades.card.starting_deposit",
                                 systemImage: "banknote.fill",
                                 iconColor: .green
                             )
@@ -152,7 +152,7 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("The initial cash pool in UAH you started trading with for this period.")
+                        Text("capital.footer.starting_deposit")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -161,7 +161,7 @@ struct CapitalSettingsView: View {
                     Section {
                         HStack {
                             CapitalFormRowLabel(
-                                title: "Initial USDT",
+                                title: "capital.field.initial_usdt",
                                 systemImage: "dollarsign.circle.fill",
                                 iconColor: .green
                             )
@@ -178,7 +178,7 @@ struct CapitalSettingsView: View {
 
                         HStack {
                             CapitalFormRowLabel(
-                                title: "Avg Buy Rate (₴)",
+                                title: "capital.field.avg_buy_rate",
                                 systemImage: "chart.line.uptrend.xyaxis",
                                 iconColor: .blue
                             )
@@ -210,7 +210,7 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.")
+                        Text("capital.footer.initial_crypto")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -219,7 +219,7 @@ struct CapitalSettingsView: View {
                     Section {
                         HStack {
                             CapitalFormRowLabel(
-                                title: "Cash Out",
+                                title: "trades.card.cash_out",
                                 systemImage: "arrow.down.forward.circle.fill",
                                 iconColor: .orange
                             )
@@ -238,7 +238,7 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.")
+                        Text("capital.footer.cash_out")
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
@@ -247,7 +247,7 @@ struct CapitalSettingsView: View {
             .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
             .contentMargins(.bottom, SheetLayoutConstants.bottomContentMargin, for: .scrollContent)
             .scrollDismissesKeyboard(.interactively)
-            .navigationTitle("Capital (\(periodIdentifier))")
+            .navigationTitle(LocalizationManager.shared.string("capital.title.period", periodIdentifier))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

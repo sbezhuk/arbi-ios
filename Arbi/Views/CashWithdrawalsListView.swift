@@ -28,11 +28,11 @@ struct CashWithdrawalsListView: View {
                 Section {
                     VStack(alignment: .leading, spacing: 6) {
                         HStack {
-                            Label("Total Withdrawn (\(periodIdentifier))", systemImage: "banknote.fill")
+                            Label(LocalizationManager.shared.string("withdrawal.label.total_withdrawn", periodIdentifier), systemImage: "banknote.fill")
                                 .font(.footnote.weight(.medium))
                                 .foregroundStyle(.orange)
                             Spacer()
-                            Text("\(periodWithdrawals.count) entries")
+                            Text(LocalizationManager.shared.string("withdrawal.label.entries_count", periodWithdrawals.count))
                                 .font(.caption2.weight(.regular))
                                 .foregroundStyle(.secondary)
                         }
@@ -47,7 +47,7 @@ struct CashWithdrawalsListView: View {
                                 .foregroundStyle(.secondary)
                         }
 
-                        Text("Total profit taken to physical cash or personal savings in \(PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)).")
+                        Text(LocalizationManager.shared.string("withdrawal.footer.total_withdrawn_description", PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)))
                             .font(.caption)
                             .foregroundStyle(.secondary)
                             .padding(.top, 2)
@@ -63,11 +63,11 @@ struct CashWithdrawalsListView: View {
                 Section {
                     if periodWithdrawals.isEmpty {
                         ContentUnavailableView {
-                            Label("No Withdrawals", systemImage: "banknote")
+                            Label("withdrawal.empty.title", systemImage: "banknote")
                         } description: {
-                            Text("No intermediate cash withdrawals recorded for \(PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)).")
+                            Text(LocalizationManager.shared.string("withdrawal.empty.description", PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)))
                         } actions: {
-                            Button("Log Cash Out") {
+                            Button("withdrawal.action.log_cash_out") {
                                 showingAddSheet = true
                             }
                             .buttonStyle(.borderedProminent)
@@ -81,18 +81,18 @@ struct CashWithdrawalsListView: View {
                     }
                 } header: {
                     if !periodWithdrawals.isEmpty {
-                        Text("Withdrawal History")
+                        Text("withdrawal.section.history")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     }
                 }
             }
             .listSectionSpacing(8)
-            .navigationTitle("Cash Out Log")
+            .navigationTitle("withdrawal.title.log")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Done") {
+                    Button("common.action.done") {
                         dismiss()
                     }
                 }
@@ -104,7 +104,7 @@ struct CashWithdrawalsListView: View {
                         Image(systemName: "plus")
                             .fontWeight(.semibold)
                     }
-                    .accessibilityLabel("Log Cash Out")
+                    .accessibilityLabel(Text("withdrawal.action.log_cash_out"))
                 }
             }
             .sheet(isPresented: $showingAddSheet) {

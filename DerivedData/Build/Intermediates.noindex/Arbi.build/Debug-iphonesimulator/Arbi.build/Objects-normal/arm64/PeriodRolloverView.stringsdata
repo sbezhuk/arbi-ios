@@ -12,7 +12,7 @@
       },
       {
         "comment": "",
-        "key": "Error",
+        "key": "common.alert.error",
         "location": {
           "startingColumn": 20,
           "startingLine": 244
@@ -20,7 +20,7 @@
       },
       {
         "comment": "",
-        "key": "Current Period",
+        "key": "rollover.label.current_period",
         "location": {
           "startingColumn": 34,
           "startingLine": 64
@@ -28,7 +28,7 @@
       },
       {
         "comment": "",
-        "key": "New Period",
+        "key": "rollover.label.new_period",
         "location": {
           "startingColumn": 34,
           "startingLine": 83
@@ -84,15 +84,7 @@
       },
       {
         "comment": "",
-        "key": "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@.",
-        "location": {
-          "startingColumn": 26,
-          "startingLine": 160
-        }
-      },
-      {
-        "comment": "",
-        "key": "Turnover Limits Reset",
+        "key": "rollover.notice.turnover_title",
         "location": {
           "startingColumn": 38,
           "startingLine": 174
@@ -100,7 +92,7 @@
       },
       {
         "comment": "",
-        "key": "Bank card turnover limits reset to 0 ₴ for the new calendar month.",
+        "key": "rollover.notice.turnover_description",
         "location": {
           "startingColumn": 38,
           "startingLine": 176
@@ -108,7 +100,7 @@
       },
       {
         "comment": "",
-        "key": "Realized PnL Resets",
+        "key": "rollover.notice.pnl_title",
         "location": {
           "startingColumn": 38,
           "startingLine": 190
@@ -116,7 +108,7 @@
       },
       {
         "comment": "",
-        "key": "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history.",
+        "key": "rollover.notice.pnl_description",
         "location": {
           "startingColumn": 38,
           "startingLine": 192
@@ -156,7 +148,7 @@
       },
       {
         "comment": "",
-        "key": "OK",
+        "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
           "startingLine": 245

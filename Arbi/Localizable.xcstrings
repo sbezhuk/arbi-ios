@@ -23,19 +23,7 @@
         }
       }
     },
-    "%@ (Current)" : {
-
-    },
-    "%lld entries" : {
-
-    },
-    "%lld sell orders" : {
-
-    },
     "%lldk ₴" : {
-
-    },
-    "≈ %@ ₴ commission" : {
 
     },
     "₴" : {
@@ -45,24 +33,6 @@
 
     },
     "150000" : {
-
-    },
-    "A bank account or card is required to track settlement turnover and financial monitoring limits." : {
-
-    },
-    "Add New Trade" : {
-
-    },
-    "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings." : {
-
-    },
-    "Archived Cards (%lld)" : {
-
-    },
-    "Avg Buy Rate (₴)" : {
-
-    },
-    "Bank card turnover limits reset to 0 ₴ for the new calendar month." : {
 
     },
     "bank.action.add_account" : {
@@ -129,6 +99,22 @@
         }
       }
     },
+    "bank.empty.no_accounts_found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Bank Accounts Found"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківські рахунки не знайдено"
+          }
+        }
+      }
+    },
     "bank.field.card_number" : {
       "localizations" : {
         "en" : {
@@ -145,6 +131,22 @@
         }
       }
     },
+    "bank.field.limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limit (₴)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт (₴)"
+          }
+        }
+      }
+    },
     "bank.field.title" : {
       "localizations" : {
         "en" : {
@@ -157,6 +159,86 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Назва"
+          }
+        }
+      }
+    },
+    "bank.footer.security_notice" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CVV and expiration date are never requested or stored for security and privacy."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CVV-код та термін дії ніколи не запитуються і не зберігаються задля безпеки та конфіденційності."
+          }
+        }
+      }
+    },
+    "bank.footer.turnover_limit_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly P2P turnover monitoring threshold for this specific bank or card."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Щомісячний поріг моніторингу P2P-обороту для цього банку або картки."
+          }
+        }
+      }
+    },
+    "bank.label.monthly_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "monthly limit"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "місячний ліміт"
+          }
+        }
+      }
+    },
+    "bank.placeholder.card_number" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optional (e.g. •••• 1234)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необов'язково (напр., •••• 1234)"
+          }
+        }
+      }
+    },
+    "bank.placeholder.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Mono Black (Main)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "напр., Моно Чорна (Основна)"
           }
         }
       }
@@ -189,6 +271,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Активні рахунки та картки"
+          }
+        }
+      }
+    },
+    "bank.section.archived_cards" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archived Cards (%lld)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Архівовані картки (%lld)"
+          }
+        }
+      }
+    },
+    "bank.section.turnover_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover Limit (UAH)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт обороту (UAH)"
           }
         }
       }
@@ -241,11 +356,85 @@
         }
       }
     },
-    "Cancel" : {
-
+    "capital.field.avg_buy_rate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avg Buy Rate (₴)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сер. ціна купівлі (₴)"
+          }
+        }
+      }
     },
-    "Capital (%@)" : {
-
+    "capital.field.initial_usdt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial USDT"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий USDT"
+          }
+        }
+      }
+    },
+    "capital.footer.cash_out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прибуток від арбітражу або оборотні кошти, виведені з банківських карток у готівку чи заощадження."
+          }
+        }
+      }
+    },
+    "capital.footer.initial_crypto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Spred."
+          }
+        }
+      }
+    },
+    "capital.footer.starting_deposit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The initial cash pool in UAH you started trading with for this period."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий пул коштів у гривні, з яким ви розпочали торгівлю в цьому періоді."
+          }
+        }
+      }
     },
     "capital.label.initial_crypto_inventory" : {
       "localizations" : {
@@ -295,11 +484,38 @@
         }
       }
     },
-    "Cash Out" : {
-
+    "capital.label.total_portfolio_equity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Portfolio Equity"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальний капітал портфеля"
+          }
+        }
+      }
     },
-    "Cash Out Log" : {
-
+    "capital.title.period" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capital (%@)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Капітал (%@)"
+          }
+        }
+      }
     },
     "common.action.add" : {
       "localizations" : {
@@ -413,6 +629,22 @@
         }
       }
     },
+    "common.action.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
+          }
+        }
+      }
+    },
     "common.action.save" : {
       "localizations" : {
         "en" : {
@@ -445,6 +677,39 @@
         }
       }
     },
+    "common.alert.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Помилка"
+          }
+        }
+      }
+    },
+    "common.error.unknown" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unknown error occurred."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сталася невідома помилка."
+          }
+        }
+      }
+    },
     "common.label.calendar_month" : {
       "localizations" : {
         "en" : {
@@ -457,6 +722,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Календарний місяць"
+          }
+        }
+      }
+    },
+    "common.label.other" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інше"
           }
         }
       }
@@ -494,57 +776,6 @@
         }
       }
     },
-    "Current Period" : {
-
-    },
-    "CVV and expiration date are never requested or stored for security and privacy." : {
-
-    },
-    "Date & Time" : {
-
-    },
-    "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring." : {
-
-    },
-    "Details" : {
-
-    },
-    "Done" : {
-
-    },
-    "e.g. Mono Black (Main)" : {
-
-    },
-    "e.g. Profit cash-out, USD exchange, personal withdrawal" : {
-
-    },
-    "Error" : {
-
-    },
-    "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred." : {
-
-    },
-    "Initial USDT" : {
-
-    },
-    "Limit (₴)" : {
-
-    },
-    "Log Cash Out" : {
-
-    },
-    "Log Cash Withdrawal" : {
-
-    },
-    "monthly limit" : {
-
-    },
-    "Monthly P2P turnover monitoring threshold for this specific bank or card." : {
-
-    },
-    "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history." : {
-
-    },
     "nav.tab.settings" : {
       "localizations" : {
         "en" : {
@@ -577,32 +808,39 @@
         }
       }
     },
-    "New Period" : {
-
+    "order.fee.approx_commission" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈ %@ ₴ commission"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈ %@ ₴ комісія"
+          }
+        }
+      }
     },
-    "No Bank Accounts Found" : {
-
-    },
-    "No intermediate cash withdrawals recorded for %@." : {
-
-    },
-    "No trades recorded in %@. Tap + to record a trade." : {
-
-    },
-    "No Withdrawals" : {
-
-    },
-    "None (Direct Cash)" : {
-
-    },
-    "Note / Description (Optional)" : {
-
-    },
-    "OK" : {
-
-    },
-    "Optional (e.g. •••• 1234)" : {
-
+    "order.fee.custom" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Власна"
+          }
+        }
+      }
     },
     "order.field.date_time" : {
       "localizations" : {
@@ -696,6 +934,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "USDT"
+          }
+        }
+      }
+    },
+    "order.footer.selected_card_turnover" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected card: %1 · Turnover limit: %2 ₴"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обрана картка: %1 · Ліміт обороту: %2 ₴"
+          }
+        }
+      }
+    },
+    "order.footer.turnover_limit" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover limit: %lldk ₴"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт обороту: %lldk ₴"
+          }
+        }
+      }
+    },
+    "order.label.fee_amount" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fee: %.3f USDT"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія: %.3f USDT"
           }
         }
       }
@@ -862,17 +1151,38 @@
         }
       }
     },
-    "Period Identifier" : {
-
+    "rollover.footer.summary_description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Залишок ліквідної гривні та криптоактивів автоматично стануть стартовим капіталом для %@."
+          }
+        }
+      }
     },
-    "Realized PnL Resets" : {
-
-    },
-    "Records cash taken out of working capital into physical cash or savings." : {
-
-    },
-    "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@." : {
-
+    "rollover.label.current_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Period"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поточний період"
+          }
+        }
+      }
     },
     "rollover.label.free_uah" : {
       "localizations" : {
@@ -906,6 +1216,22 @@
         }
       }
     },
+    "rollover.label.new_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Period"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новий період"
+          }
+        }
+      }
+    },
     "rollover.label.unliquidated_usdt" : {
       "localizations" : {
         "en" : {
@@ -934,6 +1260,70 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Середній курс закупки"
+          }
+        }
+      }
+    },
+    "rollover.notice.pnl_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лічильник щомісячного прибутку скидається до 0 ₴. Результати попереднього періоду зберігаються в історії."
+          }
+        }
+      }
+    },
+    "rollover.notice.pnl_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Realized PnL Resets"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скидання реалізованого PnL"
+          }
+        }
+      }
+    },
+    "rollover.notice.turnover_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank card turnover limits reset to 0 ₴ for the new calendar month."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміти обороту банківських карток скидаються до 0 ₴ на новий календарний місяць."
+          }
+        }
+      }
+    },
+    "rollover.notice.turnover_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover Limits Reset"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скидання лімітів обороту"
           }
         }
       }
@@ -1002,19 +1392,6 @@
         }
       }
     },
-    "Save" : {
-
-    },
-    "Selected card: %@ · Turnover limit: %lldk ₴" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Selected card: %1$@ · Turnover limit: %2$lldk ₴"
-          }
-        }
-      }
-    },
     "settings.action.export_csv" : {
       "localizations" : {
         "en" : {
@@ -1027,6 +1404,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Експорт у CSV"
+          }
+        }
+      }
+    },
+    "settings.footer.app_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створено для високочастотного P2P-арбітражу криптовалют та моніторингу банківських лімітів."
           }
         }
       }
@@ -1143,29 +1536,40 @@
         }
       }
     },
-    "Source Bank Card" : {
-
-    },
-    "Spred P2P Arbitrage Engine" : {
-
+    "settings.value.engine_name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spred P2P Arbitrage Engine"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Движок P2P-арбітражу Spred"
+          }
+        }
+      }
     },
     "Spred v%@" : {
 
     },
-    "Starting Deposit" : {
-
-    },
-    "The initial cash pool in UAH you started trading with for this period." : {
-
-    },
-    "Total Portfolio Equity" : {
-
-    },
-    "Total profit taken to physical cash or personal savings in %@." : {
-
-    },
-    "Total Withdrawn (%@)" : {
-
+    "trades.action.add_trade" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add New Trade"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати нову угоду"
+          }
+        }
+      }
     },
     "trades.action.configure" : {
       "localizations" : {
@@ -1296,6 +1700,23 @@
         }
       }
     },
+    "trades.empty.no_trades_in_period" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No trades recorded in %@. Tap + to record a trade."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає угод за %@. Натисніть +, щоб записати угоду."
+          }
+        }
+      }
+    },
     "trades.empty.no_transactions" : {
       "localizations" : {
         "en" : {
@@ -1308,6 +1729,57 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Немає операцій"
+          }
+        }
+      }
+    },
+    "trades.limits.progress_summary" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f%% of %@ limit"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f%% від ліміту %@"
+          }
+        }
+      }
+    },
+    "trades.limits.sell_orders_count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sell orders"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld угод продажу"
+          }
+        }
+      }
+    },
+    "trades.period.current" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Current)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Поточний)"
           }
         }
       }
@@ -1345,7 +1817,6 @@
       }
     },
     "trades.stats.avg_buy_price" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1357,6 +1828,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Сер. ціна купівлі"
+          }
+        }
+      }
+    },
+    "trades.stats.buy_sell_breakdown" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Buy · %lld Sell"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Купівля · %lld Продаж"
           }
         }
       }
@@ -1378,7 +1866,6 @@
       }
     },
     "trades.stats.total_trades" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1410,23 +1897,268 @@
         }
       }
     },
-    "Turnover Limit (UAH)" : {
-
-    },
-    "Turnover limit: %lldk ₴" : {
-
-    },
-    "Turnover Limits Reset" : {
-
-    },
     "UAH" : {
 
     },
-    "Withdrawal Amount (UAH)" : {
-
+    "withdrawal.action.log_cash_out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Cash Out"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати виведення"
+          }
+        }
+      }
     },
-    "Withdrawal History" : {
-
+    "withdrawal.empty.description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No intermediate cash withdrawals recorded for %@."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає записів про проміжні виведення готівки за %@."
+          }
+        }
+      }
+    },
+    "withdrawal.empty.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Withdrawals"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає виведень"
+          }
+        }
+      }
+    },
+    "withdrawal.field.period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Period Identifier"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ідентифікатор періоду"
+          }
+        }
+      }
+    },
+    "withdrawal.field.source_card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Bank Card"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківська картка списування"
+          }
+        }
+      }
+    },
+    "withdrawal.footer.amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Records cash taken out of working capital into physical cash or savings."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фіксує виведення коштів з робочого капіталу в готівку чи заощадження."
+          }
+        }
+      }
+    },
+    "withdrawal.footer.total_withdrawn_description" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total profit taken to physical cash or personal savings in %@."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальний прибуток, виведений у готівку або особисті заощадження в %@."
+          }
+        }
+      }
+    },
+    "withdrawal.label.entries_count" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld entries"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld записів"
+          }
+        }
+      }
+    },
+    "withdrawal.label.total_withdrawn" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Withdrawn (%@)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього виведено (%@)"
+          }
+        }
+      }
+    },
+    "withdrawal.option.direct_cash" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None (Direct Cash)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без картки (Готівка)"
+          }
+        }
+      }
+    },
+    "withdrawal.placeholder.note" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Profit cash-out, USD exchange, personal withdrawal"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "напр., Виведення прибутку, обмін на USD, особисті потреби"
+          }
+        }
+      }
+    },
+    "withdrawal.section.amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Withdrawal Amount (UAH)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума виведення (UAH)"
+          }
+        }
+      }
+    },
+    "withdrawal.section.history" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Withdrawal History"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Історія виведень"
+          }
+        }
+      }
+    },
+    "withdrawal.section.note" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note / Description (Optional)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примітка / Опис (Необов'язково)"
+          }
+        }
+      }
+    },
+    "withdrawal.title.log" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cash Out Log"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Журнал виведень"
+          }
+        }
+      }
+    },
+    "withdrawal.title.record" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Cash Withdrawal"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати виведення готівки"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

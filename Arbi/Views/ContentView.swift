@@ -136,7 +136,7 @@ struct ContentView: View {
                         ContentUnavailableView {
                             Label("trades.empty.no_transactions", systemImage: "arrow.triangle.swap")
                         } description: {
-                            Text("No trades recorded in \(PeriodRolloverService.formattedPeriodDisplay(selectedPeriod)). Tap + to record a trade.")
+                            Text(LocalizationManager.shared.string("trades.empty.no_trades_in_period", PeriodRolloverService.formattedPeriodDisplay(selectedPeriod)))
                         } actions: {
                             Button("trades.empty.add_sample") {
                                 insertSampleData()
@@ -167,10 +167,11 @@ struct ContentView: View {
                             Button {
                                 selectedPeriod = PeriodRolloverService.currentPeriodIdentifier()
                             } label: {
+                                let currentLabel = LocalizationManager.shared.string("trades.period.current", PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier()))
                                 if selectedPeriod == PeriodRolloverService.currentPeriodIdentifier() {
-                                    Label("\(PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier())) (Current)", systemImage: "checkmark")
+                                    Label(currentLabel, systemImage: "checkmark")
                                 } else {
-                                    Text("\(PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier())) (Current)")
+                                    Text(currentLabel)
                                 }
                             }
 
@@ -223,7 +224,7 @@ struct ContentView: View {
                         Image(systemName: "plus.circle.fill")
                             .font(.title3)
                     }
-                    .accessibilityLabel("Add New Trade")
+                    .accessibilityLabel(Text("trades.action.add_trade"))
                 }
             }
             .sheet(isPresented: $showingAddOrderSheet) {
@@ -477,17 +478,19 @@ private struct SummaryMetricsView: View {
             // Secondary metrics: Avg Buy Rate + Trade Count
             HStack(spacing: 8) {
                 MetricTile(
-                    title: "Avg Buy Price",
+                    title: "trades.stats.avg_buy_price",
                     value: avgBuyPrice > 0 ? String(format: "%.2f ₴", avgBuyPrice) : "—",
-                    subtitle: "per 1 USDT",
+                    subtitle: "common.label.per_usdt",
+                    isSubtitleKey: true,
                     systemImage: "chart.line.uptrend.xyaxis",
                     accentColor: .blue
                 )
 
                 MetricTile(
-                    title: "Total Trades",
+                    title: "trades.stats.total_trades",
                     value: "\(buyCount + sellCount)",
-                    subtitle: "\(buyCount) Buy · \(sellCount) Sell",
+                    subtitle: LocalizationManager.shared.string("trades.stats.buy_sell_breakdown", buyCount, sellCount),
+                    isSubtitleKey: false,
                     systemImage: "arrow.left.arrow.right",
                     accentColor: .purple
                 )
@@ -527,9 +530,10 @@ private struct SummaryMetricsView: View {
 }
 
 private struct MetricTile: View {
-    let title: String
+    let title: LocalizedStringKey
     let value: String
     let subtitle: String
+    var isSubtitleKey: Bool = true
     let systemImage: String
     let accentColor: Color
 
@@ -548,9 +552,15 @@ private struct MetricTile: View {
             Text(value)
                 .font(.callout.weight(.medium).monospacedDigit())
 
-            Text(subtitle)
-                .font(.caption2.weight(.regular))
-                .foregroundStyle(.secondary)
+            if isSubtitleKey {
+                Text(LocalizedStringKey(subtitle))
+                    .font(.caption2.weight(.regular))
+                    .foregroundStyle(.secondary)
+            } else {
+                Text(subtitle)
+                    .font(.caption2.weight(.regular))
+                    .foregroundStyle(.secondary)
+            }
         }
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -581,7 +591,7 @@ private struct AccountTurnoverRow: View {
         } else {
             limitString = "\(Int(stat.turnoverLimitUAH)) ₴"
         }
-        return String(format: "%.1f%% of %@ limit", stat.progress * 100, limitString)
+        return LocalizationManager.shared.string("trades.limits.progress_summary", stat.progress * 100, limitString)
     }
 
     var body: some View {
@@ -614,7 +624,7 @@ private struct AccountTurnoverRow: View {
                 .tint(progressColor)
 
             HStack {
-                Text("\(stat.sellOrdersCount) sell orders")
+                Text(LocalizationManager.shared.string("trades.limits.sell_orders_count", stat.sellOrdersCount))
                     .font(.caption2.weight(.regular))
                     .foregroundStyle(.secondary)
 
@@ -647,7 +657,8 @@ private struct OrderRowView: View {
         VStack(alignment: .leading, spacing: 4) {
             HStack(alignment: .center) {
                 // Type badge
-                Text(order.type.rawValue.uppercased())
+                Text(LocalizedStringKey(order.type.localizedKey))
+                    .textCase(.uppercase)
                     .font(.system(size: 10, weight: .bold))
                     .padding(.horizontal, 6)
                     .padding(.vertical, 2)
@@ -657,7 +668,7 @@ private struct OrderRowView: View {
 
                 // Platform & Bank Account
                 let bankTitle = order.bankAccount?.name ?? order.bank.rawValue
-                Text("\(order.platform.rawValue) · \(bankTitle)")
+                Text("\(order.platform.displayName) · \(bankTitle)")
                     .font(.caption.weight(.regular))
                     .foregroundStyle(.secondary)
 
@@ -688,7 +699,7 @@ private struct OrderRowView: View {
 
                     if order.feeUSDT > 0 || order.txFeeUSDT > 0 {
                         let totalFee = order.feeUSDT + order.txFeeUSDT
-                        Text(String(format: "Fee: %.3f USDT", totalFee))
+                        Text(LocalizationManager.shared.string("order.label.fee_amount", totalFee))
                             .font(.caption2.weight(.regular).monospacedDigit())
                             .foregroundStyle(.orange)
                     }

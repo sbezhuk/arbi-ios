@@ -64,7 +64,7 @@ struct BankAccountsView: View {
                 }
 
                 if !archivedAccounts.isEmpty {
-                    Section("Archived Cards (\(archivedAccounts.count))") {
+                    Section(LocalizationManager.shared.string("bank.section.archived_cards", archivedAccounts.count)) {
                         ForEach(archivedAccounts) { account in
                             BankAccountRow(account: account)
                                 .swipeActions(edge: .trailing) {
@@ -104,10 +104,10 @@ struct BankAccountsView: View {
             .sheet(item: $accountToEdit) { account in
                 AddOrEditBankAccountView(editingAccount: account)
             }
-            .alert("Error", isPresented: $showingErrorAlert) {
-                Button("OK", role: .cancel) { }
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) { }
             } message: {
-                Text(errorMessage ?? "An unknown error occurred.")
+                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
             }
         }
     }
@@ -173,7 +173,7 @@ private struct BankAccountRow: View {
                     .font(.subheadline.weight(.regular).monospacedDigit())
                     .foregroundStyle(.secondary)
 
-                Text("monthly limit")
+                Text("bank.label.monthly_limit")
                     .font(.caption2.weight(.regular))
                     .foregroundStyle(.tertiary)
             }
@@ -222,7 +222,7 @@ struct AddOrEditBankAccountView: View {
                             .foregroundStyle(.indigo)
                             .frame(width: 100, alignment: .leading)
 
-                        TextField("e.g. Mono Black (Main)", text: $name)
+                        TextField("bank.placeholder.name", text: $name)
                             .font(.body.weight(.regular))
                     }
 
@@ -232,18 +232,18 @@ struct AddOrEditBankAccountView: View {
                             .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
 
-                        TextField("Optional (e.g. •••• 1234)", text: $cardNumber)
+                        TextField("bank.placeholder.card_number", text: $cardNumber)
                             .font(.body.monospacedDigit().weight(.regular))
                     }
                 } header: {
                     Text("bank.section.account_details")
                 } footer: {
-                    Text("CVV and expiration date are never requested or stored for security and privacy.")
+                    Text("bank.footer.security_notice")
                 }
 
                 Section {
                     HStack {
-                        Label("Limit (₴)", systemImage: "chart.line.uptrend.xyaxis")
+                        Label("bank.field.limit", systemImage: "chart.line.uptrend.xyaxis")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.orange)
                             .frame(width: 100, alignment: .leading)
@@ -268,9 +268,9 @@ struct AddOrEditBankAccountView: View {
                         .padding(.vertical, 4)
                     }
                 } header: {
-                    Text("Turnover Limit (UAH)")
+                    Text("bank.section.turnover_limit")
                 } footer: {
-                    Text("Monthly P2P turnover monitoring threshold for this specific bank or card.")
+                    Text("bank.footer.turnover_limit_description")
                 }
             }
             .navigationTitle(editingAccount == nil ? "bank.title.new_account" : "bank.title.edit_account")
@@ -297,10 +297,10 @@ struct AddOrEditBankAccountView: View {
                     limitText = String(format: "%.0f", account.turnoverLimitUAH)
                 }
             }
-            .alert("Error", isPresented: $showingErrorAlert) {
-                Button("OK", role: .cancel) { }
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) { }
             } message: {
-                Text(errorMessage ?? "An unknown error occurred.")
+                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
             }
         }
     }

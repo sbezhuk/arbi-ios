@@ -10,26 +10,58 @@
 	<string>Банківський рахунок або картка потрібні для обліку обороту та лімітів фінмоніторингу.</string>
 	<key>bank.empty.no_accounts</key>
 	<string>Банківські картки ще не додані.</string>
+	<key>bank.empty.no_accounts_found</key>
+	<string>Банківські рахунки не знайдено</string>
 	<key>bank.field.card_number</key>
 	<string>Номер картки</string>
+	<key>bank.field.limit</key>
+	<string>Ліміт (₴)</string>
 	<key>bank.field.title</key>
 	<string>Назва</string>
+	<key>bank.footer.security_notice</key>
+	<string>CVV-код та термін дії ніколи не запитуються і не зберігаються задля безпеки та конфіденційності.</string>
+	<key>bank.footer.turnover_limit_description</key>
+	<string>Щомісячний поріг моніторингу P2P-обороту для цього банку або картки.</string>
+	<key>bank.label.monthly_limit</key>
+	<string>місячний ліміт</string>
+	<key>bank.placeholder.card_number</key>
+	<string>Необов'язково (напр., •••• 1234)</string>
+	<key>bank.placeholder.name</key>
+	<string>напр., Моно Чорна (Основна)</string>
 	<key>bank.section.account_details</key>
 	<string>Деталі рахунку</string>
 	<key>bank.section.active_accounts</key>
 	<string>Активні рахунки та картки</string>
+	<key>bank.section.archived_cards</key>
+	<string>Архівовані картки (%lld)</string>
+	<key>bank.section.turnover_limit</key>
+	<string>Ліміт обороту (UAH)</string>
 	<key>bank.title.edit_account</key>
 	<string>Редагувати рахунок</string>
 	<key>bank.title.management</key>
 	<string>Банківські картки</string>
 	<key>bank.title.new_account</key>
 	<string>Новий банківський рахунок</string>
+	<key>capital.field.avg_buy_rate</key>
+	<string>Сер. ціна купівлі (₴)</string>
+	<key>capital.field.initial_usdt</key>
+	<string>Початковий USDT</string>
+	<key>capital.footer.cash_out</key>
+	<string>Прибуток від арбітражу або оборотні кошти, виведені з банківських карток у готівку чи заощадження.</string>
+	<key>capital.footer.initial_crypto</key>
+	<string>Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Spred.</string>
+	<key>capital.footer.starting_deposit</key>
+	<string>Початковий пул коштів у гривні, з яким ви розпочали торгівлю в цьому періоді.</string>
 	<key>capital.label.initial_crypto_inventory</key>
 	<string>Початковий крипторезерв</string>
 	<key>capital.label.initial_crypto_value</key>
 	<string>Початкова вартість криптоактивів</string>
 	<key>capital.label.starting_working_capital</key>
 	<string>Початковий робочий капітал</string>
+	<key>capital.label.total_portfolio_equity</key>
+	<string>Загальний капітал портфеля</string>
+	<key>capital.title.period</key>
+	<string>Капітал (%@)</string>
 	<key>common.action.add</key>
 	<string>Додати</string>
 	<key>common.action.archive</key>
@@ -44,12 +76,20 @@
 	<string>Готово</string>
 	<key>common.action.manage</key>
 	<string>Керувати</string>
+	<key>common.action.ok</key>
+	<string>ОК</string>
 	<key>common.action.save</key>
 	<string>Зберегти</string>
 	<key>common.action.unarchive</key>
 	<string>Розархівувати</string>
+	<key>common.alert.error</key>
+	<string>Помилка</string>
+	<key>common.error.unknown</key>
+	<string>Сталася невідома помилка.</string>
 	<key>common.label.calendar_month</key>
 	<string>Календарний місяць</string>
+	<key>common.label.other</key>
+	<string>Інше</string>
 	<key>common.label.per_usdt</key>
 	<string>за 1 USDT</string>
 	<key>common.status.coming_soon</key>
@@ -58,6 +98,10 @@
 	<string>Налаштування</string>
 	<key>nav.tab.trades</key>
 	<string>Угоди</string>
+	<key>order.fee.approx_commission</key>
+	<string>≈ %@ ₴ комісія</string>
+	<key>order.fee.custom</key>
+	<string>Власна</string>
 	<key>order.field.date_time</key>
 	<string>Дата та час</string>
 	<key>order.field.fee_usdt</key>
@@ -70,6 +114,12 @@
 	<string>Всього UAH</string>
 	<key>order.field.usdt</key>
 	<string>USDT</string>
+	<key>order.footer.selected_card_turnover</key>
+	<string>Обрана картка: %1 · Ліміт обороту: %2 ₴</string>
+	<key>order.footer.turnover_limit</key>
+	<string>Ліміт обороту: %lldk ₴</string>
+	<key>order.label.fee_amount</key>
+	<string>Комісія: %.3f USDT</string>
 	<key>order.section.amounts_rate</key>
 	<string>Суми угоди та курс</string>
 	<key>order.section.commission</key>
@@ -90,14 +140,28 @@
 	<string>Продаж</string>
 	<key>order.type.title</key>
 	<string>Тип угоди</string>
+	<key>rollover.footer.summary_description</key>
+	<string>Залишок ліквідної гривні та криптоактивів автоматично стануть стартовим капіталом для %@.</string>
+	<key>rollover.label.current_period</key>
+	<string>Поточний період</string>
 	<key>rollover.label.free_uah</key>
 	<string>Вільні кошти (UAH)</string>
 	<key>rollover.label.net_pnl</key>
 	<string>Чистий прибуток (PnL)</string>
+	<key>rollover.label.new_period</key>
+	<string>Новий період</string>
 	<key>rollover.label.unliquidated_usdt</key>
 	<string>Залишок USDT</string>
 	<key>rollover.label.weighted_cost</key>
 	<string>Середній курс закупки</string>
+	<key>rollover.notice.pnl_description</key>
+	<string>Лічильник щомісячного прибутку скидається до 0 ₴. Результати попереднього періоду зберігаються в історії.</string>
+	<key>rollover.notice.pnl_title</key>
+	<string>Скидання реалізованого PnL</string>
+	<key>rollover.notice.turnover_description</key>
+	<string>Ліміти обороту банківських карток скидаються до 0 ₴ на новий календарний місяць.</string>
+	<key>rollover.notice.turnover_title</key>
+	<string>Скидання лімітів обороту</string>
 	<key>rollover.section.summary</key>
 	<string>Підсумки періоду</string>
 	<key>rollover.section.transition</key>
@@ -108,6 +172,8 @@
 	<string>Закриття місяця</string>
 	<key>settings.action.export_csv</key>
 	<string>Експорт у CSV</string>
+	<key>settings.footer.app_description</key>
+	<string>Створено для високочастотного P2P-арбітражу криптовалют та моніторингу банківських лімітів.</string>
 	<key>settings.label.build</key>
 	<string>Збірка</string>
 	<key>settings.label.engine</key>
@@ -122,6 +188,10 @@
 	<string>Мова</string>
 	<key>settings.title</key>
 	<string>Налаштування</string>
+	<key>settings.value.engine_name</key>
+	<string>Движок P2P-арбітражу Spred</string>
+	<key>trades.action.add_trade</key>
+	<string>Додати нову угоду</string>
 	<key>trades.action.configure</key>
 	<string>Налаштувати</string>
 	<key>trades.action.rollover</key>
@@ -138,19 +208,61 @@
 	<string>Залишок USDT</string>
 	<key>trades.empty.add_sample</key>
 	<string>Додати зразки угод</string>
+	<key>trades.empty.no_trades_in_period</key>
+	<string>Немає угод за %@. Натисніть +, щоб записати угоду.</string>
 	<key>trades.empty.no_transactions</key>
 	<string>Немає операцій</string>
+	<key>trades.limits.progress_summary</key>
+	<string>%.1f%% від ліміту %@</string>
+	<key>trades.limits.sell_orders_count</key>
+	<string>%lld угод продажу</string>
+	<key>trades.period.current</key>
+	<string>%@ (Поточний)</string>
 	<key>trades.section.bank_limits</key>
 	<string>Ліміти по банках</string>
 	<key>trades.section.recent_transactions</key>
 	<string>Останні операції</string>
 	<key>trades.stats.avg_buy_price</key>
 	<string>Сер. ціна купівлі</string>
+	<key>trades.stats.buy_sell_breakdown</key>
+	<string>%lld Купівля · %lld Продаж</string>
 	<key>trades.stats.net_pnl</key>
 	<string>Чистий прибуток</string>
 	<key>trades.stats.total_trades</key>
 	<string>Всього угод</string>
 	<key>trades.title.spread_arbitrage</key>
 	<string>P2P Арбітраж</string>
+	<key>withdrawal.action.log_cash_out</key>
+	<string>Записати виведення</string>
+	<key>withdrawal.empty.description</key>
+	<string>Немає записів про проміжні виведення готівки за %@.</string>
+	<key>withdrawal.empty.title</key>
+	<string>Немає виведень</string>
+	<key>withdrawal.field.period</key>
+	<string>Ідентифікатор періоду</string>
+	<key>withdrawal.field.source_card</key>
+	<string>Банківська картка списування</string>
+	<key>withdrawal.footer.amount</key>
+	<string>Фіксує виведення коштів з робочого капіталу в готівку чи заощадження.</string>
+	<key>withdrawal.footer.total_withdrawn_description</key>
+	<string>Загальний прибуток, виведений у готівку або особисті заощадження в %@.</string>
+	<key>withdrawal.label.entries_count</key>
+	<string>%lld записів</string>
+	<key>withdrawal.label.total_withdrawn</key>
+	<string>Всього виведено (%@)</string>
+	<key>withdrawal.option.direct_cash</key>
+	<string>Без картки (Готівка)</string>
+	<key>withdrawal.placeholder.note</key>
+	<string>напр., Виведення прибутку, обмін на USD, особисті потреби</string>
+	<key>withdrawal.section.amount</key>
+	<string>Сума виведення (UAH)</string>
+	<key>withdrawal.section.history</key>
+	<string>Історія виведень</string>
+	<key>withdrawal.section.note</key>
+	<string>Примітка / Опис (Необов'язково)</string>
+	<key>withdrawal.title.log</key>
+	<string>Журнал виведень</string>
+	<key>withdrawal.title.record</key>
+	<string>Записати виведення готівки</string>
 </dict>
 </plist>

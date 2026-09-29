@@ -52,7 +52,7 @@ public struct PeriodRolloverService {
     }
 
     /// Formats a period identifier into human-readable text (e.g. "09.2026" -> "September 2026").
-    nonisolated public static func formattedPeriodDisplay(_ period: String) -> String {
+    nonisolated public static func formattedPeriodDisplay(_ period: String, locale: Locale? = nil) -> String {
         let parts = period.split(separator: ".")
         guard parts.count == 2,
               let month = Int(parts[0]),
@@ -62,7 +62,16 @@ public struct PeriodRolloverService {
         }
 
         let dateFormatter = DateFormatter()
-        let monthName = dateFormatter.monthSymbols[month - 1]
+        if let locale {
+            dateFormatter.locale = locale
+        } else if let savedLang = UserDefaults.standard.string(forKey: "app_language") {
+            dateFormatter.locale = Locale(identifier: savedLang)
+        } else {
+            dateFormatter.locale = Locale(identifier: "en")
+        }
+        let symbols = dateFormatter.standaloneMonthSymbols ?? dateFormatter.monthSymbols ?? []
+        let rawMonth = symbols[month - 1]
+        let monthName = rawMonth.capitalized(with: dateFormatter.locale)
         return "\(monthName) \(year)"
     }
 

@@ -20,6 +20,7 @@ public enum AppLanguage: String, CaseIterable, Identifiable {
 /// String resolution is handled natively by SwiftUI via `.environment(\.locale)` and `Localizable.xcstrings`.
 @Observable
 final class LocalizationManager {
+    static let shared = LocalizationManager()
 
     /// Current active language, persisted to UserDefaults.
     var currentLanguage: AppLanguage {
@@ -43,6 +44,13 @@ final class LocalizationManager {
     /// Used by `LocalizationTests` to verify xcstrings resolution.
     subscript(_ key: String) -> String {
         key.localized(for: currentLanguage)
+    }
+
+    /// Formats a localized string key with positional format arguments in the active language.
+    func string(_ key: String, _ args: CVarArg...) -> String {
+        let template = key.localized(for: currentLanguage)
+        guard !args.isEmpty else { return template }
+        return String(format: template, locale: Locale(identifier: currentLanguage.rawValue), arguments: args)
     }
 }
 

@@ -4,7 +4,7 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Log Cash Withdrawal",
+        "key": "withdrawal.title.record",
         "location": {
           "startingColumn": 30,
           "startingLine": 109
@@ -28,7 +28,7 @@
       },
       {
         "comment": "",
-        "key": "Withdrawal Amount (UAH)",
+        "key": "withdrawal.section.amount",
         "location": {
           "startingColumn": 26,
           "startingLine": 64
@@ -36,7 +36,7 @@
       },
       {
         "comment": "",
-        "key": "Records cash taken out of working capital into physical cash or savings.",
+        "key": "withdrawal.footer.amount",
         "location": {
           "startingColumn": 26,
           "startingLine": 66
@@ -44,7 +44,7 @@
       },
       {
         "comment": "",
-        "key": "Date & Time",
+        "key": "order.field.date_time",
         "location": {
           "startingColumn": 32,
           "startingLine": 71
@@ -52,7 +52,7 @@
       },
       {
         "comment": "",
-        "key": "Source Bank Card",
+        "key": "withdrawal.field.source_card",
         "location": {
           "startingColumn": 28,
           "startingLine": 73
@@ -60,7 +60,7 @@
       },
       {
         "comment": "",
-        "key": "None (Direct Cash)",
+        "key": "withdrawal.option.direct_cash",
         "location": {
           "startingColumn": 30,
           "startingLine": 74
@@ -76,7 +76,7 @@
       },
       {
         "comment": "",
-        "key": "Period Identifier",
+        "key": "withdrawal.field.period",
         "location": {
           "startingColumn": 30,
           "startingLine": 88
@@ -84,7 +84,7 @@
       },
       {
         "comment": "",
-        "key": "Details",
+        "key": "order.section.details",
         "location": {
           "startingColumn": 26,
           "startingLine": 99
@@ -92,7 +92,7 @@
       },
       {
         "comment": "",
-        "key": "e.g. Profit cash-out, USD exchange, personal withdrawal",
+        "key": "withdrawal.placeholder.note",
         "location": {
           "startingColumn": 31,
           "startingLine": 104
@@ -100,7 +100,7 @@
       },
       {
         "comment": "",
-        "key": "Note / Description (Optional)",
+        "key": "withdrawal.section.note",
         "location": {
           "startingColumn": 26,
           "startingLine": 106
@@ -108,7 +108,7 @@
       },
       {
         "comment": "",
-        "key": "Cancel",
+        "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
           "startingLine": 113
@@ -116,7 +116,7 @@
       },
       {
         "comment": "",
-        "key": "Save",
+        "key": "common.action.save",
         "location": {
           "startingColumn": 28,
           "startingLine": 119

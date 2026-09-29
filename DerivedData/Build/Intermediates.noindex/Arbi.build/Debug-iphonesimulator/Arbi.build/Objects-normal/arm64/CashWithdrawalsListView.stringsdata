@@ -4,34 +4,10 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "Cash Out Log",
+        "key": "withdrawal.title.log",
         "location": {
           "startingColumn": 30,
           "startingLine": 91
-        }
-      },
-      {
-        "comment": "",
-        "key": "Total profit taken to physical cash or personal savings in %@.",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 50
-        }
-      },
-      {
-        "comment": "",
-        "key": "%lld entries",
-        "location": {
-          "startingColumn": 34,
-          "startingLine": 35
-        }
-      },
-      {
-        "comment": "",
-        "key": "Total Withdrawn (%@)",
-        "location": {
-          "startingColumn": 35,
-          "startingLine": 31
         }
       },
       {
@@ -44,7 +20,7 @@
       },
       {
         "comment": "",
-        "key": "No Withdrawals",
+        "key": "withdrawal.empty.title",
         "location": {
           "startingColumn": 35,
           "startingLine": 66
@@ -52,15 +28,7 @@
       },
       {
         "comment": "",
-        "key": "No intermediate cash withdrawals recorded for %@.",
-        "location": {
-          "startingColumn": 34,
-          "startingLine": 68
-        }
-      },
-      {
-        "comment": "",
-        "key": "Log Cash Out",
+        "key": "withdrawal.action.log_cash_out",
         "location": {
           "startingColumn": 36,
           "startingLine": 70
@@ -68,7 +36,7 @@
       },
       {
         "comment": "",
-        "key": "Withdrawal History",
+        "key": "withdrawal.section.history",
         "location": {
           "startingColumn": 30,
           "startingLine": 84
@@ -76,7 +44,7 @@
       },
       {
         "comment": "",
-        "key": "Done",
+        "key": "common.action.done",
         "location": {
           "startingColumn": 28,
           "startingLine": 95
@@ -84,9 +52,9 @@
       },
       {
         "comment": "",
-        "key": "Log Cash Out",
+        "key": "withdrawal.action.log_cash_out",
         "location": {
-          "startingColumn": 41,
+          "startingColumn": 46,
           "startingLine": 107
         }
       }

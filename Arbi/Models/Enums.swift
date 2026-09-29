@@ -4,6 +4,17 @@ import Foundation
 public enum TransactionType: String, Codable, CaseIterable, Sendable {
     case buy = "Buy"
     case sell = "Sell"
+
+    public var localizedKey: String {
+        switch self {
+        case .buy: return "order.type.buy"
+        case .sell: return "order.type.sell"
+        }
+    }
+
+    public var localizedTitle: String {
+        LocalizationManager.shared[localizedKey]
+    }
 }
 
 /// Supported crypto exchange / wallet platforms.
@@ -12,6 +23,15 @@ public enum ExchangePlatform: String, Codable, CaseIterable, Sendable {
     case tgWallet = "TG Wallet"
     case bybit = "ByBit"
     case other = "Other"
+
+    public var displayName: String {
+        switch self {
+        case .binance: return "Binance"
+        case .tgWallet: return "TG Wallet"
+        case .bybit: return "ByBit"
+        case .other: return LocalizationManager.shared["common.label.other"]
+        }
+    }
 }
 
 /// Supported Ukrainian and international banking institutions.

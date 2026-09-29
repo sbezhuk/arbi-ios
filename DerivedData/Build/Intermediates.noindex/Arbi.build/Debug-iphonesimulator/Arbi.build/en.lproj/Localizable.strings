@@ -10,26 +10,58 @@
 	<string>A bank account or card is required to track settlement turnover and financial monitoring limits.</string>
 	<key>bank.empty.no_accounts</key>
 	<string>No bank accounts added yet.</string>
+	<key>bank.empty.no_accounts_found</key>
+	<string>No Bank Accounts Found</string>
 	<key>bank.field.card_number</key>
 	<string>Card No.</string>
+	<key>bank.field.limit</key>
+	<string>Limit (₴)</string>
 	<key>bank.field.title</key>
 	<string>Title</string>
+	<key>bank.footer.security_notice</key>
+	<string>CVV and expiration date are never requested or stored for security and privacy.</string>
+	<key>bank.footer.turnover_limit_description</key>
+	<string>Monthly P2P turnover monitoring threshold for this specific bank or card.</string>
+	<key>bank.label.monthly_limit</key>
+	<string>monthly limit</string>
+	<key>bank.placeholder.card_number</key>
+	<string>Optional (e.g. •••• 1234)</string>
+	<key>bank.placeholder.name</key>
+	<string>e.g. Mono Black (Main)</string>
 	<key>bank.section.account_details</key>
 	<string>Account Details</string>
 	<key>bank.section.active_accounts</key>
 	<string>Active Accounts &amp; Cards</string>
+	<key>bank.section.archived_cards</key>
+	<string>Archived Cards (%lld)</string>
+	<key>bank.section.turnover_limit</key>
+	<string>Turnover Limit (UAH)</string>
 	<key>bank.title.edit_account</key>
 	<string>Edit Account</string>
 	<key>bank.title.management</key>
 	<string>Bank Accounts</string>
 	<key>bank.title.new_account</key>
 	<string>New Bank Account</string>
+	<key>capital.field.avg_buy_rate</key>
+	<string>Avg Buy Rate (₴)</string>
+	<key>capital.field.initial_usdt</key>
+	<string>Initial USDT</string>
+	<key>capital.footer.cash_out</key>
+	<string>Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings.</string>
+	<key>capital.footer.initial_crypto</key>
+	<string>Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred.</string>
+	<key>capital.footer.starting_deposit</key>
+	<string>The initial cash pool in UAH you started trading with for this period.</string>
 	<key>capital.label.initial_crypto_inventory</key>
 	<string>Initial Crypto Inventory</string>
 	<key>capital.label.initial_crypto_value</key>
 	<string>Initial Crypto Value</string>
 	<key>capital.label.starting_working_capital</key>
 	<string>Starting Working Capital</string>
+	<key>capital.label.total_portfolio_equity</key>
+	<string>Total Portfolio Equity</string>
+	<key>capital.title.period</key>
+	<string>Capital (%@)</string>
 	<key>common.action.add</key>
 	<string>Add</string>
 	<key>common.action.archive</key>
@@ -44,12 +76,20 @@
 	<string>Done</string>
 	<key>common.action.manage</key>
 	<string>Manage</string>
+	<key>common.action.ok</key>
+	<string>OK</string>
 	<key>common.action.save</key>
 	<string>Save</string>
 	<key>common.action.unarchive</key>
 	<string>Unarchive</string>
+	<key>common.alert.error</key>
+	<string>Error</string>
+	<key>common.error.unknown</key>
+	<string>An unknown error occurred.</string>
 	<key>common.label.calendar_month</key>
 	<string>Calendar Month</string>
+	<key>common.label.other</key>
+	<string>Other</string>
 	<key>common.label.per_usdt</key>
 	<string>per 1 USDT</string>
 	<key>common.status.coming_soon</key>
@@ -58,6 +98,10 @@
 	<string>Settings</string>
 	<key>nav.tab.trades</key>
 	<string>Trades</string>
+	<key>order.fee.approx_commission</key>
+	<string>≈ %@ ₴ commission</string>
+	<key>order.fee.custom</key>
+	<string>Custom</string>
 	<key>order.field.date_time</key>
 	<string>Date &amp; Time</string>
 	<key>order.field.fee_usdt</key>
@@ -70,6 +114,12 @@
 	<string>Total UAH</string>
 	<key>order.field.usdt</key>
 	<string>USDT</string>
+	<key>order.footer.selected_card_turnover</key>
+	<string>Selected card: %1 · Turnover limit: %2 ₴</string>
+	<key>order.footer.turnover_limit</key>
+	<string>Turnover limit: %lldk ₴</string>
+	<key>order.label.fee_amount</key>
+	<string>Fee: %.3f USDT</string>
 	<key>order.section.amounts_rate</key>
 	<string>Trade Amounts &amp; Rate</string>
 	<key>order.section.commission</key>
@@ -90,14 +140,28 @@
 	<string>Sell</string>
 	<key>order.type.title</key>
 	<string>Order Type</string>
+	<key>rollover.footer.summary_description</key>
+	<string>Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@.</string>
+	<key>rollover.label.current_period</key>
+	<string>Current Period</string>
 	<key>rollover.label.free_uah</key>
 	<string>Available Free UAH</string>
 	<key>rollover.label.net_pnl</key>
 	<string>Net Realized PnL</string>
+	<key>rollover.label.new_period</key>
+	<string>New Period</string>
 	<key>rollover.label.unliquidated_usdt</key>
 	<string>Unliquidated USDT</string>
 	<key>rollover.label.weighted_cost</key>
 	<string>Weighted Cost Basis</string>
+	<key>rollover.notice.pnl_description</key>
+	<string>Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history.</string>
+	<key>rollover.notice.pnl_title</key>
+	<string>Realized PnL Resets</string>
+	<key>rollover.notice.turnover_description</key>
+	<string>Bank card turnover limits reset to 0 ₴ for the new calendar month.</string>
+	<key>rollover.notice.turnover_title</key>
+	<string>Turnover Limits Reset</string>
 	<key>rollover.section.summary</key>
 	<string>Closing Period Summary</string>
 	<key>rollover.section.transition</key>
@@ -108,6 +172,8 @@
 	<string>Close Month</string>
 	<key>settings.action.export_csv</key>
 	<string>Export to CSV</string>
+	<key>settings.footer.app_description</key>
+	<string>Designed for high-frequency crypto P2P arbitrage and bank limit monitoring.</string>
 	<key>settings.label.build</key>
 	<string>Build</string>
 	<key>settings.label.engine</key>
@@ -122,6 +188,10 @@
 	<string>Language</string>
 	<key>settings.title</key>
 	<string>Settings</string>
+	<key>settings.value.engine_name</key>
+	<string>Spred P2P Arbitrage Engine</string>
+	<key>trades.action.add_trade</key>
+	<string>Add New Trade</string>
 	<key>trades.action.configure</key>
 	<string>Configure</string>
 	<key>trades.action.rollover</key>
@@ -138,19 +208,61 @@
 	<string>USDT Inventory</string>
 	<key>trades.empty.add_sample</key>
 	<string>Add Sample Trades</string>
+	<key>trades.empty.no_trades_in_period</key>
+	<string>No trades recorded in %@. Tap + to record a trade.</string>
 	<key>trades.empty.no_transactions</key>
 	<string>No Transactions</string>
+	<key>trades.limits.progress_summary</key>
+	<string>%.1f%% of %@ limit</string>
+	<key>trades.limits.sell_orders_count</key>
+	<string>%lld sell orders</string>
+	<key>trades.period.current</key>
+	<string>%@ (Current)</string>
 	<key>trades.section.bank_limits</key>
 	<string>Bank Turnover Limits</string>
 	<key>trades.section.recent_transactions</key>
 	<string>Recent Transactions</string>
 	<key>trades.stats.avg_buy_price</key>
 	<string>Avg Buy Price</string>
+	<key>trades.stats.buy_sell_breakdown</key>
+	<string>%lld Buy · %lld Sell</string>
 	<key>trades.stats.net_pnl</key>
 	<string>Total Net PnL</string>
 	<key>trades.stats.total_trades</key>
 	<string>Total Trades</string>
 	<key>trades.title.spread_arbitrage</key>
 	<string>Spread Arbitrage</string>
+	<key>withdrawal.action.log_cash_out</key>
+	<string>Log Cash Out</string>
+	<key>withdrawal.empty.description</key>
+	<string>No intermediate cash withdrawals recorded for %@.</string>
+	<key>withdrawal.empty.title</key>
+	<string>No Withdrawals</string>
+	<key>withdrawal.field.period</key>
+	<string>Period Identifier</string>
+	<key>withdrawal.field.source_card</key>
+	<string>Source Bank Card</string>
+	<key>withdrawal.footer.amount</key>
+	<string>Records cash taken out of working capital into physical cash or savings.</string>
+	<key>withdrawal.footer.total_withdrawn_description</key>
+	<string>Total profit taken to physical cash or personal savings in %@.</string>
+	<key>withdrawal.label.entries_count</key>
+	<string>%lld entries</string>
+	<key>withdrawal.label.total_withdrawn</key>
+	<string>Total Withdrawn (%@)</string>
+	<key>withdrawal.option.direct_cash</key>
+	<string>None (Direct Cash)</string>
+	<key>withdrawal.placeholder.note</key>
+	<string>e.g. Profit cash-out, USD exchange, personal withdrawal</string>
+	<key>withdrawal.section.amount</key>
+	<string>Withdrawal Amount (UAH)</string>
+	<key>withdrawal.section.history</key>
+	<string>Withdrawal History</string>
+	<key>withdrawal.section.note</key>
+	<string>Note / Description (Optional)</string>
+	<key>withdrawal.title.log</key>
+	<string>Cash Out Log</string>
+	<key>withdrawal.title.record</key>
+	<string>Log Cash Withdrawal</string>
 </dict>
 </plist>

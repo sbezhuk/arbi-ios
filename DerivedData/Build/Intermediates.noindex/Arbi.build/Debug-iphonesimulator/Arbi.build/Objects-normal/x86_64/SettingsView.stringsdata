@@ -7,7 +7,7 @@
         "key": "settings.title",
         "location": {
           "startingColumn": 30,
-          "startingLine": 109
+          "startingLine": 110
         }
       },
       {
@@ -15,7 +15,7 @@
         "key": "settings.section.language",
         "location": {
           "startingColumn": 26,
-          "startingLine": 43
+          "startingLine": 44
         }
       },
       {
@@ -23,7 +23,7 @@
         "key": "settings.action.export_csv",
         "location": {
           "startingColumn": 30,
-          "startingLine": 56
+          "startingLine": 57
         }
       },
       {
@@ -31,7 +31,7 @@
         "key": "common.status.coming_soon",
         "location": {
           "startingColumn": 30,
-          "startingLine": 63
+          "startingLine": 64
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "settings.section.data_export",
         "location": {
           "startingColumn": 26,
-          "startingLine": 68
+          "startingLine": 69
         }
       },
       {
@@ -47,7 +47,7 @@
         "key": "settings.label.version",
         "location": {
           "startingColumn": 30,
-          "startingLine": 76
+          "startingLine": 77
         }
       },
       {
@@ -55,7 +55,7 @@
         "key": "Spred v%@",
         "location": {
           "startingColumn": 30,
-          "startingLine": 78
+          "startingLine": 79
         }
       },
       {
@@ -63,7 +63,7 @@
         "key": "settings.label.build",
         "location": {
           "startingColumn": 30,
-          "startingLine": 84
+          "startingLine": 85
         }
       },
       {
@@ -71,15 +71,15 @@
         "key": "settings.label.engine",
         "location": {
           "startingColumn": 30,
-          "startingLine": 92
+          "startingLine": 93
         }
       },
       {
         "comment": "",
-        "key": "Spred P2P Arbitrage Engine",
+        "key": "settings.value.engine_name",
         "location": {
           "startingColumn": 30,
-          "startingLine": 94
+          "startingLine": 95
         }
       },
       {
@@ -87,15 +87,15 @@
         "key": "settings.section.app_info",
         "location": {
           "startingColumn": 26,
-          "startingLine": 99
+          "startingLine": 100
         }
       },
       {
         "comment": "",
-        "key": "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring.",
+        "key": "settings.footer.app_description",
         "location": {
           "startingColumn": 26,
-          "startingLine": 103
+          "startingLine": 104
         }
       }
     ]

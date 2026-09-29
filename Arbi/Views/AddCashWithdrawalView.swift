@@ -61,17 +61,17 @@ struct AddCashWithdrawalView: View {
                     }
                     .padding(.vertical, 4)
                 } header: {
-                    Text("Withdrawal Amount (UAH)")
+                    Text("withdrawal.section.amount")
                 } footer: {
-                    Text("Records cash taken out of working capital into physical cash or savings.")
+                    Text("withdrawal.footer.amount")
                 }
 
                 // Section 2: Details & Source Bank Account
                 Section {
-                    DatePicker("Date & Time", selection: $timestamp)
+                    DatePicker("order.field.date_time", selection: $timestamp)
 
-                    Picker("Source Bank Card", selection: $selectedBankAccount) {
-                        Text("None (Direct Cash)").tag(nil as BankAccount?)
+                    Picker("withdrawal.field.source_card", selection: $selectedBankAccount) {
+                        Text("withdrawal.option.direct_cash").tag(nil as BankAccount?)
                         ForEach(activeBankAccounts) { account in
                             HStack {
                                 Text(account.name)
@@ -85,7 +85,7 @@ struct AddCashWithdrawalView: View {
                     }
 
                     HStack {
-                        Text("Period Identifier")
+                        Text("withdrawal.field.period")
                         Spacer()
                         Text(targetPeriod)
                             .font(.footnote.weight(.semibold).monospacedDigit())
@@ -96,27 +96,27 @@ struct AddCashWithdrawalView: View {
                             .clipShape(Capsule())
                     }
                 } header: {
-                    Text("Details")
+                    Text("order.section.details")
                 }
 
                 // Section 3: Note
                 Section {
-                    TextField("e.g. Profit cash-out, USD exchange, personal withdrawal", text: $note)
+                    TextField("withdrawal.placeholder.note", text: $note)
                 } header: {
-                    Text("Note / Description (Optional)")
+                    Text("withdrawal.section.note")
                 }
             }
-            .navigationTitle("Log Cash Withdrawal")
+            .navigationTitle("withdrawal.title.record")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("common.action.cancel") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button("common.action.save") {
                         saveWithdrawal()
                     }
                     .fontWeight(.bold)

@@ -61,7 +61,7 @@ struct PeriodRolloverView: View {
                 Section {
                     HStack(spacing: 16) {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("Current Period")
+                            Text("rollover.label.current_period")
                                 .font(.caption2.weight(.medium))
                                 .foregroundStyle(.secondary)
                             Text(closingPeriod)
@@ -80,7 +80,7 @@ struct PeriodRolloverView: View {
                         Spacer()
 
                         VStack(alignment: .trailing, spacing: 3) {
-                            Text("New Period")
+                            Text("rollover.label.new_period")
                                 .font(.caption2.weight(.medium))
                                 .foregroundStyle(.secondary)
                             Text(nextPeriod)
@@ -157,7 +157,7 @@ struct PeriodRolloverView: View {
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 } footer: {
-                    Text("Remaining liquid UAH and crypto inventory will automatically become the starting capital for \(nextPeriod).")
+                    Text(LocalizationManager.shared.string("rollover.footer.summary_description", nextPeriod))
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
@@ -171,9 +171,9 @@ struct PeriodRolloverView: View {
                                 .frame(width: 22, alignment: .center)
                                 .foregroundStyle(.blue)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("Turnover Limits Reset")
+                                Text("rollover.notice.turnover_title")
                                     .font(.footnote.weight(.semibold))
-                                Text("Bank card turnover limits reset to 0 ₴ for the new calendar month.")
+                                Text("rollover.notice.turnover_description")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
@@ -187,9 +187,9 @@ struct PeriodRolloverView: View {
                                 .frame(width: 22, alignment: .center)
                                 .foregroundStyle(.green)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("Realized PnL Resets")
+                                Text("rollover.notice.pnl_title")
                                     .font(.footnote.weight(.semibold))
-                                Text("Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history.")
+                                Text("rollover.notice.pnl_description")
                                     .font(.caption)
                                     .foregroundStyle(.secondary)
                             }
@@ -241,10 +241,10 @@ struct PeriodRolloverView: View {
                     .fontWeight(.semibold)
                 }
             }
-            .alert("Error", isPresented: $showingErrorAlert) {
-                Button("OK", role: .cancel) {}
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) {}
             } message: {
-                Text(errorMessage ?? "An unknown error occurred.")
+                Text(errorMessage ?? LocalizationManager.shared["common.error.unknown"])
             }
         }
     }

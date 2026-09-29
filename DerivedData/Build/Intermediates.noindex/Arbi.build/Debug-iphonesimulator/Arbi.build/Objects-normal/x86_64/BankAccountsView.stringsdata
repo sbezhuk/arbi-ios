@@ -12,18 +12,10 @@
       },
       {
         "comment": "",
-        "key": "Error",
+        "key": "common.alert.error",
         "location": {
           "startingColumn": 20,
           "startingLine": 107
-        }
-      },
-      {
-        "comment": "",
-        "key": "Archived Cards (%lld)",
-        "location": {
-          "startingColumn": 29,
-          "startingLine": 67
         }
       },
       {
@@ -100,7 +92,7 @@
       },
       {
         "comment": "",
-        "key": "OK",
+        "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
           "startingLine": 108
@@ -108,7 +100,7 @@
       },
       {
         "comment": "",
-        "key": "monthly limit",
+        "key": "bank.label.monthly_limit",
         "location": {
           "startingColumn": 22,
           "startingLine": 176
@@ -132,7 +124,7 @@
       },
       {
         "comment": "",
-        "key": "Error",
+        "key": "common.alert.error",
         "location": {
           "startingColumn": 20,
           "startingLine": 300
@@ -148,7 +140,7 @@
       },
       {
         "comment": "",
-        "key": "e.g. Mono Black (Main)",
+        "key": "bank.placeholder.name",
         "location": {
           "startingColumn": 35,
           "startingLine": 225
@@ -164,7 +156,7 @@
       },
       {
         "comment": "",
-        "key": "Optional (e.g. •••• 1234)",
+        "key": "bank.placeholder.card_number",
         "location": {
           "startingColumn": 35,
           "startingLine": 235
@@ -180,7 +172,7 @@
       },
       {
         "comment": "",
-        "key": "CVV and expiration date are never requested or stored for security and privacy.",
+        "key": "bank.footer.security_notice",
         "location": {
           "startingColumn": 26,
           "startingLine": 241
@@ -188,7 +180,7 @@
       },
       {
         "comment": "",
-        "key": "Limit (₴)",
+        "key": "bank.field.limit",
         "location": {
           "startingColumn": 31,
           "startingLine": 246
@@ -212,7 +204,7 @@
       },
       {
         "comment": "",
-        "key": "Turnover Limit (UAH)",
+        "key": "bank.section.turnover_limit",
         "location": {
           "startingColumn": 26,
           "startingLine": 271
@@ -220,7 +212,7 @@
       },
       {
         "comment": "",
-        "key": "Monthly P2P turnover monitoring threshold for this specific bank or card.",
+        "key": "bank.footer.turnover_limit_description",
         "location": {
           "startingColumn": 26,
           "startingLine": 273
@@ -244,7 +236,7 @@
       },
       {
         "comment": "",
-        "key": "OK",
+        "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
           "startingLine": 301

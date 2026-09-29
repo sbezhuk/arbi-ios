@@ -22,6 +22,7 @@ struct SettingsView: View {
                         Button {
                             withAnimation(.easeInOut(duration: 0.2)) {
                                 selectedLanguage = language
+                                LocalizationManager.shared.setLanguage(language)
                             }
                         } label: {
                             HStack {
@@ -91,7 +92,7 @@ struct SettingsView: View {
                     HStack {
                         Text("settings.label.engine")
                         Spacer()
-                        Text("Spred P2P Arbitrage Engine")
+                        Text("settings.value.engine_name")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
@@ -100,7 +101,7 @@ struct SettingsView: View {
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 } footer: {
-                    Text("Designed for high-frequency crypto P2P arbitrage and bank limit monitoring.")
+                    Text("settings.footer.app_description")
                         .font(.footnote)
                         .foregroundStyle(.secondary)
                 }

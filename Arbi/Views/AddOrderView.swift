@@ -22,7 +22,7 @@ enum FeePreset: CaseIterable, Identifiable, Equatable {
 
     /// UI label dynamically computed from rate
     var label: String {
-        guard let rate else { return "Custom" }
+        guard let rate else { return LocalizationManager.shared["order.fee.custom"] }
         let percentInt = Int((rate * 100).rounded())
         return "\(percentInt)%"
     }
@@ -89,7 +89,7 @@ struct AddOrderView: View {
                     Section {
                         Picker("order.type.title", selection: $selectedType) {
                             ForEach(TransactionType.allCases, id: \.self) { type in
-                                Text(type.rawValue).tag(type)
+                                Text(LocalizedStringKey(type.localizedKey)).tag(type)
                             }
                         }
                         .pickerStyle(.segmented)
@@ -129,11 +129,11 @@ struct AddOrderView: View {
                             HStack(spacing: 8) {
                                 Image(systemName: "creditcard.trianglebadge.exclamationmark")
                                     .foregroundStyle(.orange)
-                                Text("No Bank Accounts Found")
+                                Text("bank.empty.no_accounts_found")
                                     .font(.subheadline.weight(.medium))
                             }
 
-                            Text("A bank account or card is required to track settlement turnover and financial monitoring limits.")
+                            Text("bank.empty.description")
                                 .font(.footnote)
                                 .foregroundStyle(.secondary)
 
@@ -196,9 +196,9 @@ struct AddOrderView: View {
                 } footer: {
                     if !bankAccounts.isEmpty, let selected = selectedBankAccount {
                         if let card = selected.cardNumber, !card.isEmpty {
-                            Text("Selected card: \(card) · Turnover limit: \(Int(selected.turnoverLimitUAH / 1000))k ₴")
+                            Text(LocalizationManager.shared.string("order.footer.selected_card_turnover", card, Int(selected.turnoverLimitUAH / 1000)))
                         } else {
-                            Text("Turnover limit: \(Int(selected.turnoverLimitUAH / 1000))k ₴")
+                            Text(LocalizationManager.shared.string("order.footer.turnover_limit", Int(selected.turnoverLimitUAH / 1000)))
                         }
                     }
                 }
@@ -309,7 +309,7 @@ struct AddOrderView: View {
                         if parsedFee > 0 && parsedPrice > 0 {
                             HStack {
                                 Spacer()
-                                Text("≈ \(formatCurrency(parsedFee * parsedPrice)) ₴ commission")
+                                Text(LocalizationManager.shared.string("order.fee.approx_commission", formatCurrency(parsedFee * parsedPrice)))
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.purple.opacity(0.85))
                             }
@@ -606,7 +606,7 @@ private struct PlatformChip: View {
             HStack(spacing: 5) {
                 Image(systemName: iconName)
                     .font(.caption2)
-                Text(platform.rawValue)
+                Text(platform.displayName)
                     .font(.caption.weight(.medium))
             }
             .padding(.horizontal, 12)

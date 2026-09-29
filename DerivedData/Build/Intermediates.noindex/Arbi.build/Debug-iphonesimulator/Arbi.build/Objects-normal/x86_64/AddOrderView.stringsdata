@@ -44,7 +44,7 @@
       },
       {
         "comment": "",
-        "key": "A bank account or card is required to track settlement turnover and financial monitoring limits.",
+        "key": "bank.empty.description",
         "location": {
           "startingColumn": 34,
           "startingLine": 136
@@ -52,7 +52,7 @@
       },
       {
         "comment": "",
-        "key": "No Bank Accounts Found",
+        "key": "bank.empty.no_accounts_found",
         "location": {
           "startingColumn": 38,
           "startingLine": 132
@@ -80,22 +80,6 @@
         "location": {
           "startingColumn": 26,
           "startingLine": 193
-        }
-      },
-      {
-        "comment": "",
-        "key": "Selected card: %@ · Turnover limit: %lldk ₴",
-        "location": {
-          "startingColumn": 34,
-          "startingLine": 199
-        }
-      },
-      {
-        "comment": "",
-        "key": "Turnover limit: %lldk ₴",
-        "location": {
-          "startingColumn": 34,
-          "startingLine": 201
         }
       },
       {
@@ -176,14 +160,6 @@
         "location": {
           "startingColumn": 39,
           "startingLine": 295
-        }
-      },
-      {
-        "comment": "",
-        "key": "≈ %@ ₴ commission",
-        "location": {
-          "startingColumn": 38,
-          "startingLine": 312
         }
       },
       {
