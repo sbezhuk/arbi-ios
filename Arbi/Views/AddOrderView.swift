@@ -34,7 +34,6 @@ struct AddOrderView: View {
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.localization) private var loc
 
     // Form states
     @State private var selectedType: TransactionType = .buy
@@ -104,7 +103,7 @@ struct AddOrderView: View {
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
-                        Text(loc["Exchange / Platform"])
+                        Text("order.section.platform")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     }
@@ -129,7 +128,7 @@ struct AddOrderView: View {
                             } label: {
                                 HStack(spacing: 6) {
                                     Image(systemName: "plus.circle.fill")
-                                    Text(loc["Add Bank Account"])
+                                    Text("bank.action.add_account")
                                         .fontWeight(.semibold)
                                 }
                                 .font(.subheadline)
@@ -157,7 +156,7 @@ struct AddOrderView: View {
                                     HStack(spacing: 4) {
                                         Image(systemName: "plus")
                                             .font(.caption2)
-                                        Text(loc["Add Bank"])
+                                        Text("common.action.add")
                                             .font(.caption.weight(.medium))
                                     }
                                     .padding(.horizontal, 12)
@@ -177,7 +176,7 @@ struct AddOrderView: View {
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     }
                 } header: {
-                    Text(loc["Bank Settlement"])
+                    Text("order.section.settlement")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 } footer: {
@@ -194,7 +193,7 @@ struct AddOrderView: View {
                 Section {
                     HStack {
                         FormRowLabel(
-                            title: "USDT",
+                            title: "order.field.usdt",
                             systemImage: "dollarsign.circle.fill",
                             color: .green,
                             fixedWidth: FormRowConstants.numericLabelWidth
@@ -212,7 +211,7 @@ struct AddOrderView: View {
 
                     HStack {
                         FormRowLabel(
-                            title: "Price (UAH)",
+                            title: "order.field.price_uah",
                             systemImage: "chart.line.uptrend.xyaxis",
                             color: .blue,
                             fixedWidth: FormRowConstants.numericLabelWidth
@@ -230,7 +229,7 @@ struct AddOrderView: View {
 
                     HStack {
                         FormRowLabel(
-                            title: "Total UAH",
+                            title: "order.field.total_uah",
                             systemImage: "hryvniasign.circle.fill",
                             color: .orange,
                             fixedWidth: FormRowConstants.numericLabelWidth
@@ -246,7 +245,7 @@ struct AddOrderView: View {
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
-                    Text(loc["Trade Amounts & Rate"])
+                    Text("order.section.amounts_rate")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -273,7 +272,7 @@ struct AddOrderView: View {
                     VStack(alignment: .leading, spacing: 2) {
                         HStack {
                             FormRowLabel(
-                                title: loc["Fee (USDT)"],
+                                title: "order.field.fee_usdt",
                                 systemImage: "percent",
                                 color: .purple,
                                 fixedWidth: FormRowConstants.numericLabelWidth
@@ -288,7 +287,7 @@ struct AddOrderView: View {
                                     handleFeeTextEdited()
                                 }
 
-                            Text("USDT")
+                            Text("order.field.usdt")
                                 .font(.caption2.weight(.regular))
                                 .foregroundStyle(.secondary)
                         }
@@ -304,7 +303,7 @@ struct AddOrderView: View {
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
-                    Text(loc["Commission / Fee"])
+                    Text("order.section.commission")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -313,7 +312,7 @@ struct AddOrderView: View {
                 Section {
                     HStack {
                         FormRowLabel(
-                            title: loc["Date & Time"],
+                            title: "order.field.date_time",
                             systemImage: "calendar",
                             color: .secondary
                         )
@@ -331,13 +330,13 @@ struct AddOrderView: View {
                     HStack(spacing: FormRowConstants.spacing) {
                         FormRowIcon(systemImage: "note.text", color: .secondary)
 
-                        TextField(loc["Optional trade note / counterparty"], text: $noteText)
+                        TextField("order.field.note_placeholder", text: $noteText)
                             .font(.subheadline.weight(.regular))
                             .focused($focusedField, equals: .note)
                     }
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 } header: {
-                    Text(loc["Details & Note"])
+                    Text("order.section.details")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -349,7 +348,7 @@ struct AddOrderView: View {
 
             // Layer 4: Header pinned control (Buy/Sell Segmented Picker)
             VStack(spacing: 0) {
-                Picker(loc["Order Type"], selection: $selectedType) {
+                Picker("order.type.title", selection: $selectedType) {
                     ForEach(TransactionType.allCases, id: \.self) { type in
                         Text(type.rawValue).tag(type)
                     }
@@ -364,17 +363,17 @@ struct AddOrderView: View {
                 headerHeight = newHeight
             }
         }
-        .navigationTitle(selectedType == .buy ? loc["Record Buy Order"] : loc["Record Sell Order"])
+        .navigationTitle(selectedType == .buy ? "order.title.record_buy" : "order.title.record_sell")
         .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(loc["Cancel"]) {
+                    Button("common.action.cancel") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(loc["Save"]) {
+                    Button("common.action.save") {
                         saveOrder()
                     }
                     .disabled(!isValid)
@@ -382,7 +381,7 @@ struct AddOrderView: View {
 
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    Button(loc["Done"]) {
+                    Button("common.action.done") {
                         focusedField = nil
                     }
                     .font(.subheadline.weight(.medium))
@@ -583,7 +582,7 @@ private struct FormRowIcon: View {
 
 /// Reusable icon + text label component ensuring exact vertical and horizontal alignment
 private struct FormRowLabel: View {
-    let title: String
+    let title: LocalizedStringKey
     let systemImage: String
     let color: Color
     var fixedWidth: CGFloat? = nil

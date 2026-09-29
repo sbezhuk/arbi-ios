@@ -5,7 +5,6 @@ import SwiftData
 struct BankAccountsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.localization) private var loc
 
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allAccounts: [BankAccount]
     @State private var showingAddSheet: Bool = false
@@ -33,11 +32,11 @@ struct BankAccountsView: View {
                 Section {
                     if activeAccounts.isEmpty {
                         ContentUnavailableView {
-                            Label("No Active Bank Accounts", systemImage: "building.columns")
+                            Label("bank.empty.no_accounts", systemImage: "building.columns")
                         } description: {
-                            Text("Add your bank accounts to track specific card turnover and financial monitoring limits.")
+                            Text("bank.empty.description")
                         } actions: {
-                            Button("Add Default Ukrainian Banks") {
+                            Button("bank.action.add_defaults") {
                                 seedDefaultAccounts()
                             }
                             .buttonStyle(.borderedProminent)
@@ -54,20 +53,20 @@ struct BankAccountsView: View {
                                     Button(role: .destructive) {
                                         deleteAccount(account)
                                     } label: {
-                                        Label("Delete", systemImage: "trash")
+                                        Label("common.action.delete", systemImage: "trash")
                                     }
 
                                     Button {
                                         toggleArchive(account)
                                     } label: {
-                                        Label("Archive", systemImage: "archivebox")
+                                        Label("common.action.archive", systemImage: "archivebox")
                                     }
                                     .tint(.orange)
                                 }
                         }
                     }
                 } header: {
-                    Text("Active Accounts & Cards")
+                    Text("bank.section.active_accounts")
                 }
 
                 if !archivedAccounts.isEmpty {
@@ -78,7 +77,7 @@ struct BankAccountsView: View {
                                     Button {
                                         toggleArchive(account)
                                     } label: {
-                                        Label("Unarchive", systemImage: "arrow.up.bin")
+                                        Label("common.action.unarchive", systemImage: "arrow.up.bin")
                                     }
                                     .tint(.green)
                                 }
@@ -89,11 +88,11 @@ struct BankAccountsView: View {
             .scrollEdgeFade()
             .ignoresSafeArea(edges: .bottom)
         }
-        .navigationTitle(loc["Bank Accounts"])
+        .navigationTitle("bank.title.management")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(loc["Done"]) {
+                    Button("common.action.done") {
                         dismiss()
                     }
                 }
@@ -104,7 +103,7 @@ struct BankAccountsView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel(loc["Add Bank Account"])
+                    .accessibilityLabel("bank.action.add_account")
                 }
             }
             .sheet(isPresented: $showingAddSheet) {
@@ -226,7 +225,7 @@ struct AddOrEditBankAccountView: View {
             Form {
                 Section {
                     HStack {
-                        Label("Title", systemImage: "building.columns.fill")
+                        Label("bank.field.title", systemImage: "building.columns.fill")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.indigo)
                             .frame(width: 100, alignment: .leading)
@@ -236,7 +235,7 @@ struct AddOrEditBankAccountView: View {
                     }
 
                     HStack {
-                        Label("Card No.", systemImage: "creditcard")
+                        Label("bank.field.card_number", systemImage: "creditcard")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
@@ -245,7 +244,7 @@ struct AddOrEditBankAccountView: View {
                             .font(.body.monospacedDigit().weight(.regular))
                     }
                 } header: {
-                    Text("Account Details")
+                    Text("bank.section.account_details")
                 } footer: {
                     Text("CVV and expiration date are never requested or stored for security and privacy.")
                 }
@@ -282,17 +281,17 @@ struct AddOrEditBankAccountView: View {
                     Text("Monthly P2P turnover monitoring threshold for this specific bank or card.")
                 }
             }
-            .navigationTitle(editingAccount == nil ? "New Bank Account" : "Edit Account")
+            .navigationTitle(editingAccount == nil ? "bank.title.new_account" : "bank.title.edit_account")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("common.action.cancel") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button("common.action.save") {
                         save()
                     }
                     .disabled(!isValid)

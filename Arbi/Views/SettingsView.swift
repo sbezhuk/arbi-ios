@@ -3,7 +3,7 @@ import SwiftUI
 /// Settings view providing dynamic language switching and app metadata.
 /// Bank Accounts and Capital Settings are managed exclusively from the Home dashboard.
 struct SettingsView: View {
-    @Environment(\.localization) private var loc
+    @AppStorage("app_language") private var selectedLanguage: AppLanguage = .ukrainian
 
     private var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
@@ -21,7 +21,7 @@ struct SettingsView: View {
                     ForEach(AppLanguage.allCases) { language in
                         Button {
                             withAnimation(.easeInOut(duration: 0.2)) {
-                                loc.setLanguage(language)
+                                selectedLanguage = language
                             }
                         } label: {
                             HStack {
@@ -31,7 +31,7 @@ struct SettingsView: View {
 
                                 Spacer()
 
-                                if loc.currentLanguage == language {
+                                if selectedLanguage == language {
                                     Image(systemName: "checkmark")
                                         .font(.body.weight(.semibold))
                                         .foregroundStyle(Color.accentColor)
@@ -40,7 +40,7 @@ struct SettingsView: View {
                         }
                     }
                 } header: {
-                    Text(loc["Language / Мова"])
+                    Text("settings.section.language")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -53,19 +53,19 @@ struct SettingsView: View {
                             .frame(width: 24, alignment: .leading)
                             .foregroundStyle(.secondary)
 
-                        Text(loc["Export to CSV"])
+                        Text("settings.action.export_csv")
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.secondary)
                             .lineLimit(1)
 
                         Spacer()
 
-                        Text(loc["Coming Soon"])
+                        Text("common.status.coming_soon")
                             .font(.caption)
                             .foregroundStyle(.tertiary)
                     }
                 } header: {
-                    Text(loc["Data & Export"])
+                    Text("settings.section.data_export")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -73,7 +73,7 @@ struct SettingsView: View {
                 // Section 3: App Information
                 Section {
                     HStack {
-                        Text(loc["Version"])
+                        Text("settings.label.version")
                         Spacer()
                         Text("Spred v\(appVersion)")
                             .font(.callout.monospacedDigit())
@@ -81,7 +81,7 @@ struct SettingsView: View {
                     }
 
                     HStack {
-                        Text(loc["Build"])
+                        Text("settings.label.build")
                         Spacer()
                         Text(buildNumber)
                             .font(.callout.monospacedDigit())
@@ -89,14 +89,14 @@ struct SettingsView: View {
                     }
 
                     HStack {
-                        Text(loc["Engine"])
+                        Text("settings.label.engine")
                         Spacer()
-                        Text(loc["Spred P2P Arbitrage Engine"])
+                        Text("Spred P2P Arbitrage Engine")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
                     }
                 } header: {
-                    Text(loc["App Information"])
+                    Text("settings.section.app_info")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 } footer: {
@@ -108,7 +108,7 @@ struct SettingsView: View {
             .listSectionSpacing(8)
             .bottomScrollFade()
             .ignoresSafeArea(edges: .bottom)
-            .navigationTitle(loc["Settings"])
+            .navigationTitle("settings.title")
             .navigationBarTitleDisplayMode(.large)
         }
     }

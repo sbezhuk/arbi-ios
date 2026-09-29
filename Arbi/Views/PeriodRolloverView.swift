@@ -93,7 +93,7 @@ struct PeriodRolloverView: View {
                     .padding(.vertical, 4)
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
-                    Text("Period Transition")
+                    Text("rollover.section.transition")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -102,7 +102,7 @@ struct PeriodRolloverView: View {
                 Section {
                     HStack {
                         RolloverRowLabel(
-                            title: "Available Free UAH",
+                            title: "rollover.label.free_uah",
                             systemImage: "banknote.fill",
                             color: .indigo
                         )
@@ -115,7 +115,7 @@ struct PeriodRolloverView: View {
 
                     HStack {
                         RolloverRowLabel(
-                            title: "Unliquidated USDT",
+                            title: "rollover.label.unliquidated_usdt",
                             systemImage: "dollarsign.circle.fill",
                             color: .teal
                         )
@@ -128,7 +128,7 @@ struct PeriodRolloverView: View {
                     if closingBreakdown.remainingUSDT > 0 {
                         HStack {
                             RolloverRowLabel(
-                                title: "Weighted Cost Basis",
+                                title: "rollover.label.weighted_cost",
                                 systemImage: "scalemass.fill",
                                 color: .secondary
                             )
@@ -142,7 +142,7 @@ struct PeriodRolloverView: View {
 
                     HStack {
                         RolloverRowLabel(
-                            title: "Realized Net PnL",
+                            title: "rollover.label.net_pnl",
                             systemImage: "chart.line.uptrend.xyaxis",
                             color: .green
                         )
@@ -153,7 +153,7 @@ struct PeriodRolloverView: View {
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
-                    Text("Carry-Over Balances")
+                    Text("rollover.section.summary")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 } footer: {
@@ -198,7 +198,7 @@ struct PeriodRolloverView: View {
                     .padding(.vertical, 4)
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 } header: {
-                    Text("What Resets")
+                    Text("rollover.section.what_changes")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -210,7 +210,7 @@ struct PeriodRolloverView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("Confirm & Start Next Month")
+                            Text("common.action.confirm")
                                 .font(.body.weight(.semibold))
                             Spacer()
                         }
@@ -225,17 +225,17 @@ struct PeriodRolloverView: View {
             .listSectionSpacing(.compact)
             .contentMargins(.bottom, 24, for: .scrollContent)
             .bottomScrollFade()
-            .navigationTitle("Close Month")
+            .navigationTitle("rollover.title.close_month")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
+                    Button("common.action.cancel") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Confirm") {
+                    Button("common.action.confirm") {
                         performRollover()
                     }
                     .fontWeight(.semibold)
@@ -285,7 +285,7 @@ struct PeriodRolloverView: View {
 // MARK: - Aligned Form Row Label Component
 
 private struct RolloverRowLabel: View {
-    let title: String
+    let title: LocalizedStringKey
     let systemImage: String
     let color: Color
 

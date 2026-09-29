@@ -5,7 +5,6 @@ import SwiftData
 struct CapitalSettingsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.localization) private var loc
 
     var periodIdentifier: String = PeriodRolloverService.currentPeriodIdentifier()
 
@@ -86,7 +85,7 @@ struct CapitalSettingsView: View {
                     // Section 1: Real-time Capital Simulation Card
                     Section {
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("Available Free Money (UAH)")
+                            Text("rollover.label.free_uah")
                                 .font(.caption.weight(.regular))
                                 .foregroundStyle(.secondary)
 
@@ -98,7 +97,7 @@ struct CapitalSettingsView: View {
 
                             HStack {
                                 VStack(alignment: .leading, spacing: 1) {
-                                    Text("Remaining USDT")
+                                    Text("rollover.label.unliquidated_usdt")
                                         .font(.caption2.weight(.regular))
                                         .foregroundStyle(.secondary)
                                     Text(String(format: "%.2f USDT", breakdown.remainingUSDT))
@@ -155,7 +154,7 @@ struct CapitalSettingsView: View {
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
-                        Text("Starting Working Capital")
+                        Text("capital.label.starting_working_capital")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
@@ -202,7 +201,7 @@ struct CapitalSettingsView: View {
 
                         if parsedInitialUSDT > 0 && parsedInitialAvgBuyPrice > 0 {
                             HStack {
-                                Text("Initial Crypto Value")
+                                Text("capital.label.initial_crypto_value")
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.secondary)
                                 Spacer()
@@ -213,7 +212,7 @@ struct CapitalSettingsView: View {
                             .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                         }
                     } header: {
-                        Text("Initial Crypto Inventory")
+                        Text("capital.label.initial_crypto_inventory")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
@@ -241,7 +240,7 @@ struct CapitalSettingsView: View {
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
-                        Text("Cash Out (To Cash)")
+                        Text("trades.card.cash_out")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
@@ -260,20 +259,20 @@ struct CapitalSettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button(loc["Cancel"]) {
+                    Button("common.action.cancel") {
                         dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button(loc["Save"]) {
+                    Button("common.action.save") {
                         saveSettings()
                     }
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
-                    Button(loc["Done"]) {
+                    Button("common.action.done") {
                         focusedField = nil
                     }
                     .font(.subheadline.weight(.medium))
@@ -337,7 +336,7 @@ struct CapitalSettingsView: View {
 // MARK: - Aligned Form Row Label Component
 
 private struct CapitalFormRowLabel: View {
-    let title: String
+    let title: LocalizedStringKey
     let systemImage: String
     let iconColor: Color
 
