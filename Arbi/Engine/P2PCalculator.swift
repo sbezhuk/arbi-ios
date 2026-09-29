@@ -180,12 +180,15 @@ public struct P2PCalculator {
     }
 
     /// Calculates available free cash (UAH), remaining USDT inventory, and total equity.
+    /// Incorporates dynamic intermediate cash withdrawals alongside any manual settings toCashUAH.
     public static func calculateCapitalBreakdown(
         orders: [P2POrder],
-        settings: CapitalSettings?
+        settings: CapitalSettings?,
+        withdrawals: [CashWithdrawal] = []
     ) -> CapitalBreakdown {
         let starting = settings?.startingDepositUAH ?? 0.0
-        let toCash = settings?.toCashUAH ?? 0.0
+        let loggedCashOut = withdrawals.reduce(0.0) { $0 + $1.amountUAH }
+        let toCash = (settings?.toCashUAH ?? 0.0) + loggedCashOut
         let initUSDT = max(0.0, settings?.initialUSDT ?? 0.0)
         let initAvgPrice = max(0.0, settings?.initialAvgBuyPrice ?? 0.0)
 

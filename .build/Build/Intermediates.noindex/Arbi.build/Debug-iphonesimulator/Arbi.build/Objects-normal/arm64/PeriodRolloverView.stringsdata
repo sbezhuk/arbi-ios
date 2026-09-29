@@ -1,0 +1,232 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PeriodRolloverView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Month Roll-Over",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 254
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 270
+        }
+      },
+      {
+        "comment": "",
+        "key": "Closing Period",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 89
+        }
+      },
+      {
+        "comment": "",
+        "key": "New Period",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 108
+        }
+      },
+      {
+        "comment": "",
+        "key": "Month Transition",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 120
+        }
+      },
+      {
+        "comment": "",
+        "key": "Available Free UAH",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "Net Realized PnL",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "Unliquidated USDT",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 144
+        }
+      },
+      {
+        "comment": "",
+        "key": "Weighted Cost Basis",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "Closing Period Summary (%@)",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 162
+        }
+      },
+      {
+        "comment": "",
+        "key": "Allocation Strategy",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 167
+        }
+      },
+      {
+        "comment": "",
+        "key": "Starting Capital (₴)",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 177
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 180
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cash Out (Optional)",
+        "location": {
+          "startingColumn": 35,
+          "startingLine": 187
+        }
+      },
+      {
+        "comment": "",
+        "key": "0.00",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 190
+        }
+      },
+      {
+        "comment": "",
+        "key": "Next Month Starting UAH",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 198
+        }
+      },
+      {
+        "comment": "",
+        "key": "Working Capital for %@",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 207
+        }
+      },
+      {
+        "comment": "",
+        "key": "Reinvests total available free money from %@ into %@'s starting capital, less any optional cash out.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 211
+        }
+      },
+      {
+        "comment": "",
+        "key": "Retains original base working deposit for %@ while setting aside realized profits and optional cash withdrawals.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 213
+        }
+      },
+      {
+        "comment": "",
+        "key": "Manually set the exact starting UAH deposit available for P2P trading in %@.",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 215
+        }
+      },
+      {
+        "comment": "",
+        "key": "Turnover Limits & Realized PnL Reset",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 226
+        }
+      },
+      {
+        "comment": "",
+        "key": "Bank card turnover and realized profit/loss reset to 0 ₴ for %@.",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 228
+        }
+      },
+      {
+        "comment": "",
+        "key": "Crypto Inventory Carries Over",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 240
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ USDT carries over as starting inventory with its exact cost basis (%@ ₴).",
+        "location": {
+          "startingColumn": 38,
+          "startingLine": 242
+        }
+      },
+      {
+        "comment": "",
+        "key": "Rollover Details",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 250
+        }
+      },
+      {
+        "comment": "",
+        "key": "Cancel",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 258
+        }
+      },
+      {
+        "comment": "",
+        "key": "Confirm Rollover",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 264
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 271
+        }
+      }
+    ]
+  },
+  "version": 1
+}

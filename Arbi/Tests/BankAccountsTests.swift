@@ -8,6 +8,7 @@ import SwiftData
 /// 4. Immediate state updates
 /// 5. Duplicate prevention and idempotency
 /// 6. Error handling & rollback
+@MainActor
 public enum BankAccountsTests {
     public static func runAllTests() throws {
         print("--- Running BankAccountsTests ---")
@@ -22,7 +23,7 @@ public enum BankAccountsTests {
     }
 
     private static func makeInMemoryContainer() throws -> ModelContainer {
-        let schema = Schema([P2POrder.self, CapitalSettings.self, BankAccount.self])
+        let schema = Schema([P2POrder.self, CapitalSettings.self, BankAccount.self, CashWithdrawal.self])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true)
         return try ModelContainer(for: schema, configurations: [config])
     }

@@ -7,7 +7,7 @@
         "key": "Spread Arbitrage",
         "location": {
           "startingColumn": 30,
-          "startingLine": 140
+          "startingLine": 150
         }
       },
       {
@@ -15,7 +15,7 @@
         "key": "No bank accounts added yet.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 82
+          "startingLine": 92
         }
       },
       {
@@ -23,15 +23,15 @@
         "key": "Add",
         "location": {
           "startingColumn": 36,
-          "startingLine": 86
+          "startingLine": 96
         }
       },
       {
         "comment": "",
-        "key": "Bank Turnover Limits",
+        "key": "Bank Turnover Limits (%@)",
         "location": {
           "startingColumn": 30,
-          "startingLine": 99
+          "startingLine": 109
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "Manage",
         "location": {
           "startingColumn": 32,
-          "startingLine": 103
+          "startingLine": 113
         }
       },
       {
@@ -47,15 +47,15 @@
         "key": "No Transactions",
         "location": {
           "startingColumn": 35,
-          "startingLine": 115
+          "startingLine": 125
         }
       },
       {
         "comment": "",
-        "key": "Tap the + button in the toolbar to record your first trade.",
+        "key": "No trades recorded in %@. Tap + to record a trade.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 117
+          "startingLine": 127
         }
       },
       {
@@ -63,7 +63,7 @@
         "key": "Add Sample Trades",
         "location": {
           "startingColumn": 36,
-          "startingLine": 119
+          "startingLine": 129
         }
       },
       {
@@ -71,7 +71,39 @@
         "key": "Recent Transactions (%lld)",
         "location": {
           "startingColumn": 26,
-          "startingLine": 132
+          "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "Calendar Month",
+        "location": {
+          "startingColumn": 33,
+          "startingLine": 155
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ (Current)",
+        "location": {
+          "startingColumn": 42,
+          "startingLine": 162
+        }
+      },
+      {
+        "comment": "",
+        "key": "%@ (Current)",
+        "location": {
+          "startingColumn": 43,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
+        "key": "Month Roll-Over...",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 193
         }
       },
       {
@@ -79,7 +111,7 @@
         "key": "Add New Trade",
         "location": {
           "startingColumn": 41,
-          "startingLine": 150
+          "startingLine": 215
         }
       },
       {
@@ -87,7 +119,15 @@
         "key": "Free Money (Bank Cards)",
         "location": {
           "startingColumn": 27,
-          "startingLine": 257
+          "startingLine": 330
+        }
+      },
+      {
+        "comment": "",
+        "key": "Roll-Over",
+        "location": {
+          "startingColumn": 34,
+          "startingLine": 339
         }
       },
       {
@@ -95,7 +135,7 @@
         "key": "Configure",
         "location": {
           "startingColumn": 30,
-          "startingLine": 264
+          "startingLine": 350
         }
       },
       {
@@ -103,7 +143,7 @@
         "key": "₴",
         "location": {
           "startingColumn": 26,
-          "startingLine": 277
+          "startingLine": 363
         }
       },
       {
@@ -111,7 +151,7 @@
         "key": "Starting Deposit",
         "location": {
           "startingColumn": 30,
-          "startingLine": 286
+          "startingLine": 372
         }
       },
       {
@@ -119,7 +159,7 @@
         "key": "Cash Out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 296
+          "startingLine": 382
         }
       },
       {
@@ -127,7 +167,7 @@
         "key": "USDT Inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 307
+          "startingLine": 393
         }
       },
       {
@@ -135,7 +175,7 @@
         "key": "Total Net PnL",
         "location": {
           "startingColumn": 22,
-          "startingLine": 345
+          "startingLine": 431
         }
       },
       {
@@ -143,7 +183,7 @@
         "key": "UAH",
         "location": {
           "startingColumn": 26,
-          "startingLine": 354
+          "startingLine": 440
         }
       },
       {
@@ -151,7 +191,7 @@
         "key": "%lld sell orders",
         "location": {
           "startingColumn": 22,
-          "startingLine": 508
+          "startingLine": 594
         }
       },
       {
@@ -159,7 +199,7 @@
         "key": "%@ · %@",
         "location": {
           "startingColumn": 22,
-          "startingLine": 551
+          "startingLine": 637
         }
       }
     ]

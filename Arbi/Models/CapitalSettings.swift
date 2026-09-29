@@ -29,3 +29,12 @@ public final class CapitalSettings {
         self.lastUpdated = lastUpdated
     }
 }
+
+public extension CapitalSettings {
+    /// Finds settings matching the specific period identifier, falling back to global settings if available.
+    static func settings(for period: String, in list: [CapitalSettings]) -> CapitalSettings? {
+        list.first(where: { $0.periodIdentifier == period })
+            ?? list.first(where: { $0.periodIdentifier == "global" })
+    }
+}
+

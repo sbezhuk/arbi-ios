@@ -14,6 +14,10 @@ public final class BankAccount {
     @Relationship(deleteRule: .nullify, inverse: \P2POrder.bankAccount)
     public var orders: [P2POrder]?
 
+    // Relationship: all cash withdrawals drawn from this bank account
+    @Relationship(deleteRule: .nullify, inverse: \CashWithdrawal.bankAccount)
+    public var withdrawals: [CashWithdrawal]?
+
     public init(
         id: UUID = UUID(),
         name: String,

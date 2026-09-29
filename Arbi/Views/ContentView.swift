@@ -6,36 +6,49 @@ struct ContentView: View {
     @Query(sort: \P2POrder.timestamp, order: .reverse) private var orders: [P2POrder]
     @Query private var capitalSettingsList: [CapitalSettings]
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allBankAccounts: [BankAccount]
+    @Query(sort: \CashWithdrawal.timestamp, order: .reverse) private var allWithdrawals: [CashWithdrawal]
 
+    @State private var selectedPeriod: String = PeriodRolloverService.currentPeriodIdentifier()
     @State private var showingAddOrderSheet: Bool = false
     @State private var showingCapitalSettingsSheet: Bool = false
     @State private var showingBankAccountsSheet: Bool = false
+    @State private var showingRolloverSheet: Bool = false
+    @State private var showingWithdrawalsSheet: Bool = false
 
     private var activeSettings: CapitalSettings? {
-        capitalSettingsList.first(where: { $0.periodIdentifier == "global" })
+        CapitalSettings.settings(for: selectedPeriod, in: capitalSettingsList)
+    }
+
+    private var periodOrders: [P2POrder] {
+        PeriodRolloverService.ordersForPeriod(selectedPeriod, orders: orders)
+    }
+
+    private var periodWithdrawals: [CashWithdrawal] {
+        PeriodRolloverService.withdrawalsForPeriod(selectedPeriod, withdrawals: allWithdrawals)
     }
 
     private var capitalBreakdown: CapitalBreakdown {
         P2PCalculator.calculateCapitalBreakdown(
-            orders: orders,
-            settings: activeSettings
+            orders: periodOrders,
+            settings: activeSettings,
+            withdrawals: periodWithdrawals
         )
     }
 
     private var buyOrdersCount: Int {
-        orders.filter { $0.type == .buy }.count
+        periodOrders.filter { $0.type == .buy }.count
     }
 
     private var sellOrdersCount: Int {
-        orders.filter { $0.type == .sell }.count
+        periodOrders.filter { $0.type == .sell }.count
     }
 
     private var avgBuyPrice: Double {
-        P2PCalculator.averageBuyPrice(orders: orders, settings: activeSettings)
+        P2PCalculator.averageBuyPrice(orders: periodOrders, settings: activeSettings)
     }
 
     private var totalPnL: Double {
-        P2PCalculator.calculatePnL(orders: orders, avgBuyPrice: avgBuyPrice)
+        P2PCalculator.calculatePnL(orders: periodOrders, avgBuyPrice: avgBuyPrice)
     }
 
     private var activeBankAccounts: [BankAccount] {
@@ -43,7 +56,7 @@ struct ContentView: View {
     }
 
     private var accountStats: [AccountTurnoverStat] {
-        P2PCalculator.accountTurnover(orders: orders, accounts: activeBankAccounts)
+        P2PCalculator.accountTurnover(orders: periodOrders, accounts: activeBankAccounts)
     }
 
     var body: some View {
@@ -53,8 +66,15 @@ struct ContentView: View {
                 Section {
                     CapitalOverviewCard(
                         breakdown: capitalBreakdown,
+                        period: selectedPeriod,
                         onTapConfigure: {
                             showingCapitalSettingsSheet = true
+                        },
+                        onTapRollover: {
+                            showingRolloverSheet = true
+                        },
+                        onTapCashOut: {
+                            showingWithdrawalsSheet = true
                         }
                     )
                     .listRowInsets(EdgeInsets())
@@ -96,7 +116,7 @@ struct ContentView: View {
                     }
                 } header: {
                     HStack {
-                        Text("Bank Turnover Limits")
+                        Text("Bank Turnover Limits (\(selectedPeriod))")
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                         Spacer()
@@ -110,11 +130,11 @@ struct ContentView: View {
 
                 // Section 4: Recent Transactions
                 Section {
-                    if orders.isEmpty {
+                    if periodOrders.isEmpty {
                         ContentUnavailableView {
                             Label("No Transactions", systemImage: "arrow.triangle.swap")
                         } description: {
-                            Text("Tap the + button in the toolbar to record your first trade.")
+                            Text("No trades recorded in \(PeriodRolloverService.formattedPeriodDisplay(selectedPeriod)). Tap + to record a trade.")
                         } actions: {
                             Button("Add Sample Trades") {
                                 insertSampleData()
@@ -123,13 +143,13 @@ struct ContentView: View {
                         }
                         .padding(.vertical, 12)
                     } else {
-                        ForEach(orders) { order in
+                        ForEach(periodOrders) { order in
                             OrderRowView(order: order)
                         }
                         .onDelete(perform: deleteOrders)
                     }
                 } header: {
-                    Text("Recent Transactions (\(orders.count))")
+                    Text("Recent Transactions (\(periodOrders.count))")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(.secondary)
                 }
@@ -140,6 +160,61 @@ struct ContentView: View {
             .navigationTitle("Spread Arbitrage")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Menu {
+                        Section("Calendar Month") {
+                            Button {
+                                selectedPeriod = PeriodRolloverService.currentPeriodIdentifier()
+                            } label: {
+                                if selectedPeriod == PeriodRolloverService.currentPeriodIdentifier() {
+                                    Label("\(PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier())) (Current)", systemImage: "checkmark")
+                                } else {
+                                    Text("\(PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier())) (Current)")
+                                }
+                            }
+
+                            let prev = PeriodRolloverService.previousPeriodIdentifier(before: PeriodRolloverService.currentPeriodIdentifier())
+                            Button {
+                                selectedPeriod = prev
+                            } label: {
+                                if selectedPeriod == prev {
+                                    Label(PeriodRolloverService.formattedPeriodDisplay(prev), systemImage: "checkmark")
+                                } else {
+                                    Text(PeriodRolloverService.formattedPeriodDisplay(prev))
+                                }
+                            }
+
+                            let next = PeriodRolloverService.nextPeriodIdentifier(after: PeriodRolloverService.currentPeriodIdentifier())
+                            Button {
+                                selectedPeriod = next
+                            } label: {
+                                if selectedPeriod == next {
+                                    Label(PeriodRolloverService.formattedPeriodDisplay(next), systemImage: "checkmark")
+                                } else {
+                                    Text(PeriodRolloverService.formattedPeriodDisplay(next))
+                                }
+                            }
+                        }
+
+                        Section {
+                            Button {
+                                showingRolloverSheet = true
+                            } label: {
+                                Label("Month Roll-Over...", systemImage: "arrow.triangle.2.circlepath")
+                            }
+                        }
+                    } label: {
+                        HStack(spacing: 3) {
+                            Image(systemName: "calendar")
+                            Text(selectedPeriod)
+                                .font(.footnote.weight(.semibold).monospacedDigit())
+                            Image(systemName: "chevron.down")
+                                .font(.caption2.weight(.semibold))
+                        }
+                        .foregroundStyle(.primary)
+                    }
+                }
+
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingAddOrderSheet = true
@@ -154,19 +229,28 @@ struct ContentView: View {
                 AddOrderView()
             }
             .sheet(isPresented: $showingCapitalSettingsSheet) {
-                CapitalSettingsView()
+                CapitalSettingsView(periodIdentifier: selectedPeriod)
             }
             .sheet(isPresented: $showingBankAccountsSheet) {
                 BankAccountsView()
+            }
+            .sheet(isPresented: $showingRolloverSheet) {
+                PeriodRolloverView(closingPeriod: selectedPeriod) { newPeriod in
+                    selectedPeriod = newPeriod
+                }
+            }
+            .sheet(isPresented: $showingWithdrawalsSheet) {
+                CashWithdrawalsListView(periodIdentifier: selectedPeriod)
             }
         }
     }
 
     private func deleteOrders(at offsets: IndexSet) {
         for index in offsets {
-            let order = orders[index]
+            let order = periodOrders[index]
             modelContext.delete(order)
         }
+        try? modelContext.save()
     }
 
     private func insertSampleData() {
@@ -248,7 +332,10 @@ struct ContentView: View {
 
 private struct CapitalOverviewCard: View {
     let breakdown: CapitalBreakdown
+    let period: String
     let onTapConfigure: () -> Void
+    let onTapRollover: () -> Void
+    let onTapCashOut: () -> Void
 
     var body: some View {
         Button(action: onTapConfigure) {
@@ -259,6 +346,19 @@ private struct CapitalOverviewCard: View {
                         .foregroundStyle(.green)
 
                     Spacer()
+
+                    Button(action: onTapRollover) {
+                        HStack(spacing: 3) {
+                            Image(systemName: "arrow.triangle.2.circlepath")
+                            Text("Roll-Over")
+                        }
+                        .font(.caption2.weight(.semibold))
+                        .foregroundStyle(Color.accentColor)
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(Color.accentColor.opacity(0.12))
+                        .clipShape(Capsule())
+                    }
 
                     HStack(spacing: 3) {
                         Text("Configure")
@@ -292,14 +392,22 @@ private struct CapitalOverviewCard: View {
 
                     Spacer()
 
-                    VStack(alignment: .center, spacing: 1) {
-                        Text("Cash Out")
-                            .font(.caption2.weight(.regular))
-                            .foregroundStyle(.secondary)
-                        Text(formatCurrency(breakdown.toCashUAH) + " ₴")
-                            .font(.footnote.weight(.medium).monospacedDigit())
-                            .foregroundStyle(breakdown.toCashUAH > 0 ? Color.orange : Color.primary)
+                    Button(action: onTapCashOut) {
+                        VStack(alignment: .center, spacing: 1) {
+                            HStack(spacing: 2) {
+                                Text("Cash Out")
+                                    .font(.caption2.weight(.regular))
+                                    .foregroundStyle(.secondary)
+                                Image(systemName: "chevron.right")
+                                    .font(.system(size: 8))
+                                    .foregroundStyle(.secondary)
+                            }
+                            Text(formatCurrency(breakdown.toCashUAH) + " ₴")
+                                .font(.footnote.weight(.medium).monospacedDigit())
+                                .foregroundStyle(breakdown.toCashUAH > 0 ? Color.orange : Color.primary)
+                        }
                     }
+                    .buttonStyle(.plain)
 
                     Spacer()
 
