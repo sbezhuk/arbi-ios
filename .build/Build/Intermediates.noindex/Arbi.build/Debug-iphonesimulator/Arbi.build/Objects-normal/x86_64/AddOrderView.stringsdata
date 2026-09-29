@@ -6,31 +6,31 @@
         "comment": "",
         "key": "Record Buy Order",
         "location": {
-          "startingColumn": 53,
-          "startingLine": 342
+          "startingColumn": 49,
+          "startingLine": 353
         }
       },
       {
         "comment": "",
         "key": "Record Sell Order",
         "location": {
-          "startingColumn": 74,
-          "startingLine": 342
+          "startingColumn": 70,
+          "startingLine": 353
         }
       },
       {
         "comment": "",
         "key": "Order Type",
         "location": {
-          "startingColumn": 28,
-          "startingLine": 84
+          "startingColumn": 24,
+          "startingLine": 83
         }
       },
       {
         "comment": "",
         "key": "Exchange / Platform",
         "location": {
-          "startingColumn": 26,
+          "startingColumn": 30,
           "startingLine": 111
         }
       },
@@ -92,10 +92,10 @@
       },
       {
         "comment": "",
-        "key": "USDT",
+        "key": "0.00",
         "location": {
-          "startingColumn": 31,
-          "startingLine": 200
+          "startingColumn": 35,
+          "startingLine": 206
         }
       },
       {
@@ -103,15 +103,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 204
-        }
-      },
-      {
-        "comment": "",
-        "key": "Price (UAH)",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 216
+          "startingLine": 224
         }
       },
       {
@@ -119,23 +111,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 220
-        }
-      },
-      {
-        "comment": "",
-        "key": "Total UAH",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 232
-        }
-      },
-      {
-        "comment": "",
-        "key": "0.00",
-        "location": {
-          "startingColumn": 35,
-          "startingLine": 236
+          "startingLine": 242
         }
       },
       {
@@ -143,7 +119,7 @@
         "key": "Trade Amounts & Rate",
         "location": {
           "startingColumn": 26,
-          "startingLine": 247
+          "startingLine": 253
         }
       },
       {
@@ -151,15 +127,7 @@
         "key": "USDT",
         "location": {
           "startingColumn": 34,
-          "startingLine": 287
-        }
-      },
-      {
-        "comment": "",
-        "key": "Fee (USDT)",
-        "location": {
-          "startingColumn": 35,
-          "startingLine": 273
+          "startingLine": 295
         }
       },
       {
@@ -167,7 +135,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 278
+          "startingLine": 286
         }
       },
       {
@@ -175,7 +143,7 @@
         "key": "≈ %@ ₴ commission",
         "location": {
           "startingColumn": 38,
-          "startingLine": 295
+          "startingLine": 303
         }
       },
       {
@@ -183,14 +151,6 @@
         "key": "Commission / Fee",
         "location": {
           "startingColumn": 26,
-          "startingLine": 303
-        }
-      },
-      {
-        "comment": "",
-        "key": "Date & Time",
-        "location": {
-          "startingColumn": 31,
           "startingLine": 311
         }
       },
@@ -199,7 +159,7 @@
         "key": "",
         "location": {
           "startingColumn": 36,
-          "startingLine": 317
+          "startingLine": 327
         }
       },
       {
@@ -207,7 +167,7 @@
         "key": "Optional trade note / counterparty",
         "location": {
           "startingColumn": 35,
-          "startingLine": 330
+          "startingLine": 338
         }
       },
       {
@@ -215,7 +175,7 @@
         "key": "Details & Note",
         "location": {
           "startingColumn": 26,
-          "startingLine": 336
+          "startingLine": 344
         }
       },
       {
@@ -223,7 +183,7 @@
         "key": "Cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 346
+          "startingLine": 357
         }
       },
       {
@@ -231,7 +191,7 @@
         "key": "Save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 352
+          "startingLine": 363
         }
       },
       {
@@ -239,7 +199,7 @@
         "key": "Done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 360
+          "startingLine": 371
         }
       }
     ]

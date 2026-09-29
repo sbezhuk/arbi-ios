@@ -151,7 +151,7 @@
         "key": "%lld sell orders",
         "location": {
           "startingColumn": 22,
-          "startingLine": 504
+          "startingLine": 505
         }
       },
       {
@@ -159,7 +159,7 @@
         "key": "%@ · %@",
         "location": {
           "startingColumn": 22,
-          "startingLine": 547
+          "startingLine": 548
         }
       }
     ]

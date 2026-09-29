@@ -30,7 +30,7 @@ enum FeePreset: CaseIterable, Identifiable, Equatable {
 
 /// High-efficiency, single-handed input sheet for recording crypto P2P arbitrage trades.
 struct AddOrderView: View {
-    private static let formLabelFont: Font = .footnote
+    fileprivate static let formLabelFont: Font = FormRowConstants.labelFont
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
@@ -78,40 +78,40 @@ struct AddOrderView: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                // Section 1: Transaction Type Segment
-                Section {
-                    Picker("Order Type", selection: $selectedType) {
-                        ForEach(TransactionType.allCases, id: \.self) { type in
-                            Text(type.rawValue).tag(type)
-                        }
+            VStack(spacing: 0) {
+                // Transaction Type Segmented Control
+                Picker("Order Type", selection: $selectedType) {
+                    ForEach(TransactionType.allCases, id: \.self) { type in
+                        Text(type.rawValue).tag(type)
                     }
-                    .pickerStyle(.segmented)
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                    .listRowBackground(Color.clear)
                 }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 16)
+                .padding(.top, 6)
+                .padding(.bottom, 6)
 
-                // Section 2: Platform Selector Chips
-                Section {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 8) {
-                            ForEach(ExchangePlatform.allCases, id: \.self) { platform in
-                                PlatformChip(
-                                    platform: platform,
-                                    isSelected: selectedPlatform == platform
-                                ) {
-                                    selectedPlatform = platform
+                Form {
+                    // Section 1: Platform Selector Chips
+                    Section {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 8) {
+                                ForEach(ExchangePlatform.allCases, id: \.self) { platform in
+                                    PlatformChip(
+                                        platform: platform,
+                                        isSelected: selectedPlatform == platform
+                                    ) {
+                                        selectedPlatform = platform
+                                    }
                                 }
                             }
+                            .padding(.vertical, 2)
                         }
-                        .padding(.vertical, 2)
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    } header: {
+                        Text("Exchange / Platform")
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(.secondary)
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                } header: {
-                    Text("Exchange / Platform")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
 
                 // Section 3: Bank Account Selector Chips
                 Section {
@@ -197,10 +197,12 @@ struct AddOrderView: View {
                 // Section 4: Main Numeric Inputs with 2-way reactive calculations
                 Section {
                     HStack {
-                        Label("USDT", systemImage: "dollarsign.circle.fill")
-                            .font(Self.formLabelFont)
-                            .foregroundStyle(.green)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "USDT",
+                            systemImage: "dollarsign.circle.fill",
+                            color: .green,
+                            fixedWidth: FormRowConstants.numericLabelWidth
+                        )
                         TextField("0.00", text: $usdtText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .usdt)
@@ -213,10 +215,12 @@ struct AddOrderView: View {
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     HStack {
-                        Label("Price (UAH)", systemImage: "chart.line.uptrend.xyaxis")
-                            .font(Self.formLabelFont)
-                            .foregroundStyle(.blue)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "Price (UAH)",
+                            systemImage: "chart.line.uptrend.xyaxis",
+                            color: .blue,
+                            fixedWidth: FormRowConstants.numericLabelWidth
+                        )
                         TextField("0.00", text: $priceText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .price)
@@ -229,10 +233,12 @@ struct AddOrderView: View {
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                     HStack {
-                        Label("Total UAH", systemImage: "hryvniasign.circle.fill")
-                            .font(Self.formLabelFont)
-                            .foregroundStyle(.orange)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "Total UAH",
+                            systemImage: "hryvniasign.circle.fill",
+                            color: .orange,
+                            fixedWidth: FormRowConstants.numericLabelWidth
+                        )
                         TextField("0.00", text: $uahText)
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .totalUah)
@@ -270,10 +276,12 @@ struct AddOrderView: View {
                     // Direct Numeric Fee Input in USDT
                     VStack(alignment: .leading, spacing: 2) {
                         HStack {
-                            Label("Fee (USDT)", systemImage: "percent")
-                                .font(Self.formLabelFont)
-                                .foregroundStyle(.purple)
-                                .frame(width: 100, alignment: .leading)
+                            FormRowLabel(
+                                title: "Fee (USDT)",
+                                systemImage: "percent",
+                                color: .purple,
+                                fixedWidth: FormRowConstants.numericLabelWidth
+                            )
 
                             TextField("0.00", text: $feeText)
                                 .keyboardType(.decimalPad)
@@ -308,9 +316,11 @@ struct AddOrderView: View {
                 // Section 6: Date & Optional Note
                 Section {
                     HStack {
-                        Label("Date & Time", systemImage: "calendar")
-                            .font(Self.formLabelFont)
-                            .foregroundStyle(.secondary)
+                        FormRowLabel(
+                            title: "Date & Time",
+                            systemImage: "calendar",
+                            color: .secondary
+                        )
 
                         Spacer()
 
@@ -322,11 +332,9 @@ struct AddOrderView: View {
                     }
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
 
-                    HStack(spacing: 8) {
-                        Image(systemName: "note.text")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .frame(width: 16, alignment: .leading)
+                    HStack(spacing: FormRowConstants.spacing) {
+                        FormRowIcon(systemImage: "note.text", color: .secondary)
+
                         TextField("Optional trade note / counterparty", text: $noteText)
                             .font(.subheadline.weight(.regular))
                             .focused($focusedField, equals: .note)
@@ -339,8 +347,11 @@ struct AddOrderView: View {
                 }
             }
             .listSectionSpacing(.compact)
-            .navigationTitle(selectedType == .buy ? "Record Buy Order" : "Record Sell Order")
-            .navigationBarTitleDisplayMode(.inline)
+            .contentMargins(.top, 0, for: .scrollContent)
+        }
+        .background(Color(uiColor: .systemGroupedBackground))
+        .navigationTitle(selectedType == .buy ? "Record Buy Order" : "Record Sell Order")
+        .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
@@ -530,6 +541,46 @@ struct AddOrderView: View {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
+    }
+}
+
+// MARK: - Aligned Form Row Components
+
+enum FormRowConstants {
+    static let labelFont: Font = .footnote
+    static let iconWidth: CGFloat = 20
+    static let spacing: CGFloat = 8
+    static let numericLabelWidth: CGFloat = 105
+}
+
+/// Reusable icon component aligned to a fixed column
+private struct FormRowIcon: View {
+    let systemImage: String
+    let color: Color
+    var font: Font = FormRowConstants.labelFont
+
+    var body: some View {
+        Image(systemName: systemImage)
+            .font(font)
+            .frame(width: FormRowConstants.iconWidth, alignment: .center)
+            .foregroundStyle(color)
+    }
+}
+
+/// Reusable icon + text label component ensuring exact vertical and horizontal alignment
+private struct FormRowLabel: View {
+    let title: String
+    let systemImage: String
+    let color: Color
+    var fixedWidth: CGFloat? = nil
+
+    var body: some View {
+        HStack(spacing: FormRowConstants.spacing) {
+            FormRowIcon(systemImage: systemImage, color: color)
+            Text(title)
+                .font(FormRowConstants.labelFont)
+        }
+        .frame(width: fixedWidth, alignment: .leading)
     }
 }
 
