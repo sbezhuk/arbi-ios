@@ -23,3 +23,34 @@ public enum BankType: String, Codable, CaseIterable, Sendable {
     case privatBank = "PrivatBank"
     case other = "Other"
 }
+
+public extension BankType {
+    /// Predefined Ukrainian banks
+    static var defaultUkrainianBanks: [BankType] {
+        [.monoBank, .privatBank, .aBank, .pumb, .senseBank]
+    }
+
+    /// Canonical display title for accounts of this bank
+    var defaultAccountName: String {
+        switch self {
+        case .monoBank:
+            return "MonoBank (Black)"
+        case .privatBank:
+            return "PrivatBank"
+        case .aBank:
+            return "A-Bank"
+        case .pumb:
+            return "PUMB"
+        case .senseBank:
+            return "Sense Bank"
+        case .other:
+            return "Other Bank"
+        }
+    }
+
+    /// Default monthly turnover monitoring limit in UAH
+    var defaultTurnoverLimit: Double {
+        150_000.0
+    }
+}
+

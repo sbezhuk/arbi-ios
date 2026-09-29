@@ -7,7 +7,15 @@
         "key": "Bank Accounts",
         "location": {
           "startingColumn": 26,
-          "startingLine": 89
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 115
         }
       },
       {
@@ -15,7 +23,7 @@
         "key": "Archived Cards (%lld)",
         "location": {
           "startingColumn": 29,
-          "startingLine": 71
+          "startingLine": 73
         }
       },
       {
@@ -23,7 +31,7 @@
         "key": "No Active Bank Accounts",
         "location": {
           "startingColumn": 35,
-          "startingLine": 33
+          "startingLine": 35
         }
       },
       {
@@ -31,7 +39,7 @@
         "key": "Add your bank accounts to track specific card turnover and financial monitoring limits.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 35
+          "startingLine": 37
         }
       },
       {
@@ -39,7 +47,7 @@
         "key": "Add Default Ukrainian Banks",
         "location": {
           "startingColumn": 36,
-          "startingLine": 37
+          "startingLine": 39
         }
       },
       {
@@ -47,7 +55,7 @@
         "key": "Delete",
         "location": {
           "startingColumn": 47,
-          "startingLine": 54
+          "startingLine": 56
         }
       },
       {
@@ -55,7 +63,7 @@
         "key": "Archive",
         "location": {
           "startingColumn": 47,
-          "startingLine": 60
+          "startingLine": 62
         }
       },
       {
@@ -63,7 +71,7 @@
         "key": "Active Accounts & Cards",
         "location": {
           "startingColumn": 26,
-          "startingLine": 67
+          "startingLine": 69
         }
       },
       {
@@ -71,7 +79,7 @@
         "key": "Unarchive",
         "location": {
           "startingColumn": 47,
-          "startingLine": 78
+          "startingLine": 80
         }
       },
       {
@@ -79,7 +87,7 @@
         "key": "Done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 93
+          "startingLine": 95
         }
       },
       {
@@ -87,7 +95,15 @@
         "key": "Add Bank Account",
         "location": {
           "startingColumn": 41,
-          "startingLine": 104
+          "startingLine": 106
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 116
         }
       },
       {
@@ -95,7 +111,7 @@
         "key": "monthly limit",
         "location": {
           "startingColumn": 22,
-          "startingLine": 168
+          "startingLine": 184
         }
       },
       {
@@ -103,7 +119,7 @@
         "key": "New Bank Account",
         "location": {
           "startingColumn": 54,
-          "startingLine": 266
+          "startingLine": 284
         }
       },
       {
@@ -111,7 +127,15 @@
         "key": "Edit Account",
         "location": {
           "startingColumn": 75,
-          "startingLine": 266
+          "startingLine": 284
+        }
+      },
+      {
+        "comment": "",
+        "key": "Error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 308
         }
       },
       {
@@ -119,7 +143,7 @@
         "key": "Title",
         "location": {
           "startingColumn": 31,
-          "startingLine": 210
+          "startingLine": 228
         }
       },
       {
@@ -127,7 +151,7 @@
         "key": "e.g. Mono Black (Main)",
         "location": {
           "startingColumn": 35,
-          "startingLine": 215
+          "startingLine": 233
         }
       },
       {
@@ -135,7 +159,7 @@
         "key": "Card No.",
         "location": {
           "startingColumn": 31,
-          "startingLine": 220
+          "startingLine": 238
         }
       },
       {
@@ -143,7 +167,7 @@
         "key": "Optional (e.g. •••• 1234)",
         "location": {
           "startingColumn": 35,
-          "startingLine": 225
+          "startingLine": 243
         }
       },
       {
@@ -151,7 +175,7 @@
         "key": "Account Details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 229
+          "startingLine": 247
         }
       },
       {
@@ -159,7 +183,7 @@
         "key": "CVV and expiration date are never requested or stored for security and privacy.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 231
+          "startingLine": 249
         }
       },
       {
@@ -167,7 +191,7 @@
         "key": "Limit (₴)",
         "location": {
           "startingColumn": 31,
-          "startingLine": 236
+          "startingLine": 254
         }
       },
       {
@@ -175,7 +199,7 @@
         "key": "150000",
         "location": {
           "startingColumn": 35,
-          "startingLine": 241
+          "startingLine": 259
         }
       },
       {
@@ -183,7 +207,7 @@
         "key": "%lldk ₴",
         "location": {
           "startingColumn": 40,
-          "startingLine": 250
+          "startingLine": 268
         }
       },
       {
@@ -191,7 +215,7 @@
         "key": "Turnover Limit (UAH)",
         "location": {
           "startingColumn": 26,
-          "startingLine": 261
+          "startingLine": 279
         }
       },
       {
@@ -199,7 +223,7 @@
         "key": "Monthly P2P turnover monitoring threshold for this specific bank or card.",
         "location": {
           "startingColumn": 26,
-          "startingLine": 263
+          "startingLine": 281
         }
       },
       {
@@ -207,7 +231,7 @@
         "key": "Cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 270
+          "startingLine": 288
         }
       },
       {
@@ -215,7 +239,15 @@
         "key": "Save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 276
+          "startingLine": 294
+        }
+      },
+      {
+        "comment": "",
+        "key": "OK",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 309
         }
       }
     ]

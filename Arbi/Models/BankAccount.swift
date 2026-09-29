@@ -30,3 +30,50 @@ public final class BankAccount {
         self.createdAt = createdAt
     }
 }
+
+public extension BankAccount {
+    /// Resolves the corresponding BankType based on the account name
+    var bankType: BankType {
+        BankType.allCases.first(where: { name.localizedCaseInsensitiveContains($0.rawValue) }) ?? .other
+    }
+
+    /// Creates a default BankAccount instance for a given BankType
+    static func createDefault(for bank: BankType) -> BankAccount {
+        BankAccount(
+            name: bank.defaultAccountName,
+            turnoverLimitUAH: bank.defaultTurnoverLimit
+        )
+    }
+
+    /// Creates and persists default Ukrainian bank accounts if they don't already exist.
+    /// If an existing default bank account was archived, unarchives it so it is active.
+    /// Returns the newly created or restored accounts.
+    @discardableResult
+    static func seedDefaultUkrainianBanks(in context: ModelContext) throws -> [BankAccount] {
+        let descriptor = FetchDescriptor<BankAccount>()
+        let existingAccounts = try context.fetch(descriptor)
+
+        var addedOrRestoredAccounts: [BankAccount] = []
+        for bank in BankType.defaultUkrainianBanks {
+            if let existing = existingAccounts.first(where: {
+                $0.bankType == bank || $0.name.localizedCaseInsensitiveContains(bank.rawValue)
+            }) {
+                if existing.isArchived {
+                    existing.isArchived = false
+                    addedOrRestoredAccounts.append(existing)
+                }
+            } else {
+                let newAccount = BankAccount.createDefault(for: bank)
+                context.insert(newAccount)
+                addedOrRestoredAccounts.append(newAccount)
+            }
+        }
+
+        if !addedOrRestoredAccounts.isEmpty {
+            try context.save()
+        }
+
+        return addedOrRestoredAccounts
+    }
+}
+

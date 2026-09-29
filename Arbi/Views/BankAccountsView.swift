@@ -9,6 +9,8 @@ struct BankAccountsView: View {
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allAccounts: [BankAccount]
     @State private var showingAddSheet: Bool = false
     @State private var accountToEdit: BankAccount?
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert: Bool = false
 
     private var activeAccounts: [BankAccount] {
         allAccounts.filter { !$0.isArchived }
@@ -110,29 +112,43 @@ struct BankAccountsView: View {
             .sheet(item: $accountToEdit) { account in
                 AddOrEditBankAccountView(editingAccount: account)
             }
+            .alert("Error", isPresented: $showingErrorAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(errorMessage ?? "An unknown error occurred.")
+            }
         }
     }
 
     private func toggleArchive(_ account: BankAccount) {
         account.isArchived.toggle()
+        do {
+            try modelContext.save()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
     }
 
     private func deleteAccount(_ account: BankAccount) {
         modelContext.delete(account)
+        do {
+            try modelContext.save()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
     }
 
     private func seedDefaultAccounts() {
-        let defaults: [(String, Double)] = [
-            ("MonoBank (Black)", 150_000.0),
-            ("PrivatBank", 150_000.0),
-            ("A-Bank", 150_000.0),
-            ("PUMB", 150_000.0),
-            ("Sense Bank", 150_000.0)
-        ]
-
-        for (name, limit) in defaults {
-            let account = BankAccount(name: name, turnoverLimitUAH: limit)
-            modelContext.insert(account)
+        do {
+            try BankAccount.seedDefaultUkrainianBanks(in: modelContext)
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
         }
     }
 }
@@ -192,6 +208,8 @@ struct AddOrEditBankAccountView: View {
     @State private var name: String = ""
     @State private var cardNumber: String = ""
     @State private var limitText: String = "150000"
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert: Bool = false
 
     private var parsedLimit: Double {
         let cleaned = limitText.replacingOccurrences(of: ",", with: ".")
@@ -287,6 +305,11 @@ struct AddOrEditBankAccountView: View {
                     limitText = String(format: "%.0f", account.turnoverLimitUAH)
                 }
             }
+            .alert("Error", isPresented: $showingErrorAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(errorMessage ?? "An unknown error occurred.")
+            }
         }
     }
 
@@ -309,6 +332,13 @@ struct AddOrEditBankAccountView: View {
             modelContext.insert(newAccount)
         }
 
-        dismiss()
+        do {
+            try modelContext.save()
+            dismiss()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
     }
 }

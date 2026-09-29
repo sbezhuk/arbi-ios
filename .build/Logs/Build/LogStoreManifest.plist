@@ -6,7 +6,7 @@
 	<integer>13</integer>
 	<key>logs</key>
 	<dict>
-		<key>4FFC639E-12CA-490E-B8C0-9F91DD94A499</key>
+		<key>38CF2114-7C46-4BAD-B309-039038DDC119</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,49 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>4FFC639E-12CA-490E-B8C0-9F91DD94A499.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>E</string>
-				<key>totalNumberOfAnalyzerIssues</key>
-				<integer>0</integer>
-				<key>totalNumberOfErrors</key>
-				<integer>2</integer>
-				<key>totalNumberOfTestFailures</key>
-				<integer>0</integer>
-				<key>totalNumberOfWarnings</key>
-				<integer>0</integer>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>Arbi project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>Arbi</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Building project Arbi with scheme Arbi</string>
-			<key>timeStartedRecording</key>
-			<real>812392706.57600999</real>
-			<key>timeStoppedRecording</key>
-			<real>812392709.84159803</real>
-			<key>title</key>
-			<string>Building project Arbi with scheme Arbi</string>
-			<key>uniqueIdentifier</key>
-			<string>4FFC639E-12CA-490E-B8C0-9F91DD94A499</string>
-		</dict>
-		<key>8DB5CD20-6F62-495C-8151-8564277A51BF</key>
-		<dict>
-			<key>className</key>
-			<string>IDECommandLineBuildLog</string>
-			<key>documentTypeString</key>
-			<string>&lt;nil&gt;</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
-			<key>fileName</key>
-			<string>8DB5CD20-6F62-495C-8151-8564277A51BF.xcactivitylog</string>
+			<string>38CF2114-7C46-4BAD-B309-039038DDC119.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812392823.19288099</real>
+			<real>812393335.15843296</real>
 			<key>timeStoppedRecording</key>
-			<real>812392824.853212</real>
+			<real>812393344.24834597</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>8DB5CD20-6F62-495C-8151-8564277A51BF</string>
+			<string>38CF2114-7C46-4BAD-B309-039038DDC119</string>
 		</dict>
-		<key>93244B0F-F5FE-4351-8024-3FA1D21F2139</key>
+		<key>D4F39453-0770-4D7C-99BB-6883AADCEC45</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -99,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>93244B0F-F5FE-4351-8024-3FA1D21F2139.xcactivitylog</string>
+			<string>D4F39453-0770-4D7C-99BB-6883AADCEC45.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -124,15 +82,15 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812392776.45821202</real>
+			<real>812393569.62832701</real>
 			<key>timeStoppedRecording</key>
-			<real>812392781.49754596</real>
+			<real>812393577.81249797</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>93244B0F-F5FE-4351-8024-3FA1D21F2139</string>
+			<string>D4F39453-0770-4D7C-99BB-6883AADCEC45</string>
 		</dict>
-		<key>BF35EE72-2AE2-42F5-B256-3F2BF49D6EC0</key>
+		<key>F5C49070-ECD7-4E46-B25E-E847ED93B818</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -141,7 +99,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>BF35EE72-2AE2-42F5-B256-3F2BF49D6EC0.xcactivitylog</string>
+			<string>F5C49070-ECD7-4E46-B25E-E847ED93B818.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -164,15 +122,15 @@
 			<key>schemeIdentifier-sharedScheme</key>
 			<integer>1</integer>
 			<key>signature</key>
-			<string>Building project Arbi with scheme Arbi</string>
+			<string>Building project Arbi for testing with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812392508.56611204</real>
+			<real>812393197.72611797</real>
 			<key>timeStoppedRecording</key>
-			<real>812392516.05604005</real>
+			<real>812393201.01330602</real>
 			<key>title</key>
-			<string>Building project Arbi with scheme Arbi</string>
+			<string>Building project Arbi for testing with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>BF35EE72-2AE2-42F5-B256-3F2BF49D6EC0</string>
+			<string>F5C49070-ECD7-4E46-B25E-E847ED93B818</string>
 		</dict>
 	</dict>
 </dict>
