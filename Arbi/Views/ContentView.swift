@@ -10,6 +10,7 @@ struct ContentView: View {
     @State private var showingAddOrderSheet: Bool = false
     @State private var showingCapitalSettingsSheet: Bool = false
     @State private var showingBankAccountsSheet: Bool = false
+    @State private var headerHeight: CGFloat = 52
 
     private var activeSettings: CapitalSettings? {
         capitalSettingsList.first(where: { $0.periodIdentifier == "global" })
@@ -48,7 +49,13 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack {
-            List {
+            ZStack(alignment: .top) {
+                // Layer 1: Screen background
+                Color(uiColor: .systemGroupedBackground)
+                    .ignoresSafeArea()
+
+                // Layer 2 & 3: Scrollable content & Edge Fade Mask
+                List {
                 // Section 1: Free Money & Capital Card
                 Section {
                     CapitalOverviewCard(
@@ -135,18 +142,38 @@ struct ContentView: View {
                 }
             }
             .listSectionSpacing(8)
-            .navigationTitle("Spred Arbitrage")
-            .toolbar {
-                ToolbarItem(placement: .primaryAction) {
+            .contentMargins(.top, headerHeight, for: .scrollContent)
+            .scrollEdgeFade(headerHeight: headerHeight)
+            .ignoresSafeArea(edges: .bottom)
+
+            // Layer 4: Header (always above everything)
+            VStack(spacing: 0) {
+                HStack(alignment: .center) {
+                    Text("Spred Arbitrage")
+                        .font(.title.weight(.bold))
+                        .foregroundStyle(.primary)
+
+                    Spacer()
+
                     Button {
                         showingAddOrderSheet = true
                     } label: {
                         Image(systemName: "plus.circle.fill")
-                            .font(.title3)
+                            .font(.title2)
+                            .foregroundStyle(Color.accentColor)
                     }
                     .accessibilityLabel("Add New Trade")
                 }
+                .padding(.horizontal, 16)
+                .padding(.top, 8)
+                .padding(.bottom, 10)
             }
+            .background(Color(uiColor: .systemGroupedBackground).ignoresSafeArea(edges: .top))
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newHeight in
+                headerHeight = newHeight
+            }
+        }
+        .toolbar(.hidden, for: .navigationBar)
             .sheet(isPresented: $showingAddOrderSheet) {
                 AddOrderView()
             }

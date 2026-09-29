@@ -63,7 +63,13 @@ struct CapitalSettingsView: View {
 
     var body: some View {
         NavigationStack {
-            Form {
+            ZStack {
+                // Layer 1: Screen background
+                Color(uiColor: .systemGroupedBackground)
+                    .ignoresSafeArea()
+
+                // Layer 2 & 3: Scrollable Form with Edge Fade Mask
+                Form {
                 // Section 1: Real-time Capital Simulation Card
                 Section {
                     VStack(alignment: .leading, spacing: 6) {
@@ -213,7 +219,10 @@ struct CapitalSettingsView: View {
                 }
             }
             .listSectionSpacing(.compact)
-            .navigationTitle("Capital Settings")
+            .scrollEdgeFade()
+            .ignoresSafeArea(edges: .bottom)
+        }
+        .navigationTitle("Capital Settings")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {

@@ -7,7 +7,7 @@
         "key": "Record Buy Order",
         "location": {
           "startingColumn": 49,
-          "startingLine": 353
+          "startingLine": 366
         }
       },
       {
@@ -15,15 +15,7 @@
         "key": "Record Sell Order",
         "location": {
           "startingColumn": 70,
-          "startingLine": 353
-        }
-      },
-      {
-        "comment": "",
-        "key": "Order Type",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 83
+          "startingLine": 366
         }
       },
       {
@@ -31,7 +23,7 @@
         "key": "Exchange / Platform",
         "location": {
           "startingColumn": 30,
-          "startingLine": 111
+          "startingLine": 106
         }
       },
       {
@@ -39,7 +31,7 @@
         "key": "A bank account or card is required to track settlement turnover and financial monitoring limits.",
         "location": {
           "startingColumn": 34,
-          "startingLine": 127
+          "startingLine": 122
         }
       },
       {
@@ -47,7 +39,7 @@
         "key": "No Bank Accounts Found",
         "location": {
           "startingColumn": 38,
-          "startingLine": 123
+          "startingLine": 118
         }
       },
       {
@@ -55,7 +47,7 @@
         "key": "Add Bank Account",
         "location": {
           "startingColumn": 42,
-          "startingLine": 136
+          "startingLine": 131
         }
       },
       {
@@ -63,7 +55,7 @@
         "key": "Add Bank",
         "location": {
           "startingColumn": 46,
-          "startingLine": 164
+          "startingLine": 159
         }
       },
       {
@@ -71,7 +63,7 @@
         "key": "Bank Settlement",
         "location": {
           "startingColumn": 26,
-          "startingLine": 184
+          "startingLine": 179
         }
       },
       {
@@ -79,7 +71,7 @@
         "key": "Selected card: %@ · Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 190
+          "startingLine": 185
         }
       },
       {
@@ -87,7 +79,7 @@
         "key": "Turnover limit: %lldk ₴",
         "location": {
           "startingColumn": 34,
-          "startingLine": 192
+          "startingLine": 187
         }
       },
       {
@@ -95,7 +87,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 206
+          "startingLine": 201
         }
       },
       {
@@ -103,7 +95,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 224
+          "startingLine": 219
         }
       },
       {
@@ -111,7 +103,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 35,
-          "startingLine": 242
+          "startingLine": 237
         }
       },
       {
@@ -119,7 +111,7 @@
         "key": "Trade Amounts & Rate",
         "location": {
           "startingColumn": 26,
-          "startingLine": 253
+          "startingLine": 248
         }
       },
       {
@@ -127,7 +119,7 @@
         "key": "USDT",
         "location": {
           "startingColumn": 34,
-          "startingLine": 295
+          "startingLine": 290
         }
       },
       {
@@ -135,7 +127,7 @@
         "key": "0.00",
         "location": {
           "startingColumn": 39,
-          "startingLine": 286
+          "startingLine": 281
         }
       },
       {
@@ -143,7 +135,7 @@
         "key": "≈ %@ ₴ commission",
         "location": {
           "startingColumn": 38,
-          "startingLine": 303
+          "startingLine": 298
         }
       },
       {
@@ -151,7 +143,7 @@
         "key": "Commission / Fee",
         "location": {
           "startingColumn": 26,
-          "startingLine": 311
+          "startingLine": 306
         }
       },
       {
@@ -159,7 +151,7 @@
         "key": "",
         "location": {
           "startingColumn": 36,
-          "startingLine": 327
+          "startingLine": 322
         }
       },
       {
@@ -167,7 +159,7 @@
         "key": "Optional trade note / counterparty",
         "location": {
           "startingColumn": 35,
-          "startingLine": 338
+          "startingLine": 333
         }
       },
       {
@@ -175,7 +167,15 @@
         "key": "Details & Note",
         "location": {
           "startingColumn": 26,
-          "startingLine": 344
+          "startingLine": 339
+        }
+      },
+      {
+        "comment": "",
+        "key": "Order Type",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 351
         }
       },
       {
@@ -183,7 +183,7 @@
         "key": "Cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 357
+          "startingLine": 370
         }
       },
       {
@@ -191,7 +191,7 @@
         "key": "Save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 363
+          "startingLine": 376
         }
       },
       {
@@ -199,7 +199,7 @@
         "key": "Done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 371
+          "startingLine": 384
         }
       }
     ]

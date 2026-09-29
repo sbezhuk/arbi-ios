@@ -43,6 +43,7 @@ struct AddOrderView: View {
     @State private var showingAddAccountSheet: Bool = false
     @State private var timestamp: Date = Date()
     @State private var noteText: String = ""
+    @State private var headerHeight: CGFloat = 44
 
     @Query(filter: #Predicate<BankAccount> { !$0.isArchived }, sort: \BankAccount.createdAt)
     private var bankAccounts: [BankAccount]
@@ -78,18 +79,12 @@ struct AddOrderView: View {
 
     var body: some View {
         NavigationStack {
-            VStack(spacing: 0) {
-                // Transaction Type Segmented Control
-                Picker("Order Type", selection: $selectedType) {
-                    ForEach(TransactionType.allCases, id: \.self) { type in
-                        Text(type.rawValue).tag(type)
-                    }
-                }
-                .pickerStyle(.segmented)
-                .padding(.horizontal, 16)
-                .padding(.top, 6)
-                .padding(.bottom, 6)
+            ZStack(alignment: .top) {
+                // Layer 1: Screen background
+                Color(uiColor: .systemGroupedBackground)
+                    .ignoresSafeArea()
 
+                // Layer 2 & 3: Scrollable Form with Edge Fade Mask
                 Form {
                     // Section 1: Platform Selector Chips
                     Section {
@@ -347,9 +342,27 @@ struct AddOrderView: View {
                 }
             }
             .listSectionSpacing(.compact)
-            .contentMargins(.top, 0, for: .scrollContent)
+            .contentMargins(.top, headerHeight, for: .scrollContent)
+            .scrollEdgeFade(headerHeight: headerHeight)
+            .ignoresSafeArea(edges: .bottom)
+
+            // Layer 4: Header pinned control (Buy/Sell Segmented Picker)
+            VStack(spacing: 0) {
+                Picker("Order Type", selection: $selectedType) {
+                    ForEach(TransactionType.allCases, id: \.self) { type in
+                        Text(type.rawValue).tag(type)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal, 16)
+                .padding(.top, 6)
+                .padding(.bottom, 6)
+                .background(Color(uiColor: .systemGroupedBackground))
+            }
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { newHeight in
+                headerHeight = newHeight
+            }
         }
-        .background(Color(uiColor: .systemGroupedBackground))
         .navigationTitle(selectedType == .buy ? "Record Buy Order" : "Record Sell Order")
         .navigationBarTitleDisplayMode(.inline)
             .toolbar {
