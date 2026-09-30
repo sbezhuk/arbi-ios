@@ -48,9 +48,9 @@ public enum LocalizationTests {
         assert(manager["nav.tab.settings"] == "Налаштування", "Tabs: Settings -> Налаштування")
 
         // Home Dashboard
-        assert(manager["trades.stats.net_pnl"] == "Чистий прибуток", "Dashboard: Total Net PnL")
+        assert(manager["trades.stats.net_pnl"] == "Чистий P&L", "Dashboard: Net P&L")
         assert(manager["trades.card.free_money_bank_cards"] == "Вільний капітал (Картки)", "Dashboard: Free Money")
-        assert(manager["trades.section.bank_limits"] == "Ліміти по банках", "Dashboard: Bank Turnover Limits")
+        assert(manager["trades.section.bank_limits"] == "Ліміти банків", "Dashboard: Bank Limits")
         assert(manager["trades.stats.avg_buy_price"] == "Сер. ціна купівлі", "Dashboard: Avg Buy Price")
         assert(manager["trades.stats.total_trades"] == "Всього угод", "Dashboard: Total Trades")
         assert(manager["trades.action.add_trade"] == "Додати нову угоду", "Dashboard: Add New Trade")
@@ -112,9 +112,9 @@ public enum LocalizationTests {
         assert(manager["nav.tab.settings"] == "Settings", "Tabs: Settings -> Settings")
 
         // Home Dashboard
-        assert(manager["trades.stats.net_pnl"] == "Total Net PnL", "Dashboard: Total Net PnL")
+        assert(manager["trades.stats.net_pnl"] == "Net P&L", "Dashboard: Net P&L")
         assert(manager["trades.card.free_money_bank_cards"] == "Free Money (Bank Cards)", "Dashboard: Free Money")
-        assert(manager["trades.section.bank_limits"] == "Bank Turnover Limits", "Dashboard: Bank Turnover Limits")
+        assert(manager["trades.section.bank_limits"] == "Bank Limits", "Dashboard: Bank Limits")
         assert(manager["trades.stats.avg_buy_price"] == "Avg Buy Price", "Dashboard: Avg Buy Price")
         assert(manager["trades.stats.total_trades"] == "Total Trades", "Dashboard: Total Trades")
         assert(manager["trades.action.add_trade"] == "Add New Trade", "Dashboard: Add New Trade")

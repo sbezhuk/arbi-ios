@@ -1,2086 +1,2123 @@
 {
-  "sourceLanguage": "en",
-  "strings": {
-    "bank.action.add_account": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add Bank Account"
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%lld" : {
+
+    },
+    "bank.action.add_account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Bank Account"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати банківський рахунок"
+          }
+        }
+      }
+    },
+    "bank.action.add_defaults" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Default Ukrainian Banks"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати стандартні українські банки"
+          }
+        }
+      }
+    },
+    "bank.empty.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A bank account or card is required to track settlement turnover and financial monitoring limits."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати банківський рахунок"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківський рахунок або картка потрібні для обліку обороту та лімітів фінмоніторингу."
           }
         }
       }
     },
-    "bank.action.add_defaults": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add Default Ukrainian Banks"
+    "bank.empty.no_accounts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No bank accounts added yet."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати стандартні українські банки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківські картки ще не додані."
           }
         }
       }
     },
-    "bank.empty.description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "A bank account or card is required to track settlement turnover and financial monitoring limits."
+    "bank.empty.no_accounts_found" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Bank Accounts Found"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банківський рахунок або картка потрібні для обліку обороту та лімітів фінмоніторингу."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківські рахунки не знайдено"
           }
         }
       }
     },
-    "bank.empty.no_accounts": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No bank accounts added yet."
+    "bank.field.card_number" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Card No."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банківські картки ще не додані."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер картки"
           }
         }
       }
     },
-    "bank.empty.no_accounts_found": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Bank Accounts Found"
+    "bank.field.limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limit (₴)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банківські рахунки не знайдено"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт (₴)"
           }
         }
       }
     },
-    "bank.field.card_number": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Card No."
+    "bank.field.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Title"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Номер картки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
           }
         }
       }
     },
-    "bank.field.limit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Limit (₴)"
+    "bank.footer.security_notice" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CVV and expiration date are never requested or stored for security and privacy."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ліміт (₴)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CVV-код та термін дії ніколи не запитуються і не зберігаються задля безпеки та конфіденційності."
           }
         }
       }
     },
-    "bank.field.title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Title"
+    "bank.footer.turnover_limit_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly P2P turnover monitoring threshold for this specific bank or card."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Назва"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Щомісячний поріг моніторингу P2P-обороту для цього банку або картки."
           }
         }
       }
     },
-    "bank.footer.security_notice": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CVV and expiration date are never requested or stored for security and privacy."
+    "bank.label.monthly_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "monthly limit"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "CVV-код та термін дії ніколи не запитуються і не зберігаються задля безпеки та конфіденційності."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "місячний ліміт"
           }
         }
       }
     },
-    "bank.footer.turnover_limit_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Monthly P2P turnover monitoring threshold for this specific bank or card."
+    "bank.placeholder.card_number" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optional (e.g. •••• 1234)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Щомісячний поріг моніторингу P2P-обороту для цього банку або картки."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Необов'язково (напр., •••• 1234)"
           }
         }
       }
     },
-    "bank.label.monthly_limit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "monthly limit"
+    "bank.placeholder.name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Mono Black (Main)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "місячний ліміт"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "напр., Моно Чорна (Основна)"
           }
         }
       }
     },
-    "bank.placeholder.card_number": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Optional (e.g. •••• 1234)"
+    "bank.section.account_details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Account Details"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Необов'язково (напр., •••• 1234)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деталі рахунку"
           }
         }
       }
     },
-    "bank.placeholder.name": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "e.g. Mono Black (Main)"
+    "bank.section.active_accounts" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Active Accounts & Cards"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "напр., Моно Чорна (Основна)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Активні рахунки та картки"
           }
         }
       }
     },
-    "bank.section.account_details": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Account Details"
+    "bank.section.archived_cards" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archived Cards (%lld)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Деталі рахунку"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Архівовані картки (%lld)"
           }
         }
       }
     },
-    "bank.section.active_accounts": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Active Accounts & Cards"
+    "bank.section.turnover_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover Limit (UAH)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Активні рахунки та картки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт обороту (UAH)"
           }
         }
       }
     },
-    "bank.section.archived_cards": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Archived Cards (%lld)"
+    "bank.title.edit_account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Account"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Архівовані картки (%lld)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редагувати рахунок"
           }
         }
       }
     },
-    "bank.section.turnover_limit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turnover Limit (UAH)"
+    "bank.title.management" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank Accounts"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ліміт обороту (UAH)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківські картки"
           }
         }
       }
     },
-    "bank.title.edit_account": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Edit Account"
+    "bank.title.new_account" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Bank Account"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Редагувати рахунок"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новий банківський рахунок"
           }
         }
       }
     },
-    "bank.title.management": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bank Accounts"
+    "capital.field.avg_buy_rate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avg Buy Rate (₴)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банківські картки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сер. ціна купівлі (₴)"
           }
         }
       }
     },
-    "bank.title.new_account": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Bank Account"
+    "capital.field.initial_usdt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial USDT"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Новий банківський рахунок"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий USDT"
           }
         }
       }
     },
-    "capital.field.avg_buy_rate": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Avg Buy Rate (₴)"
+    "capital.footer.cash_out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сер. ціна купівлі (₴)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Прибуток від арбітражу або оборотні кошти, виведені з банківських карток у готівку чи заощадження."
           }
         }
       }
     },
-    "capital.field.initial_usdt": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Initial USDT"
+    "capital.footer.initial_crypto" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початковий USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Spred."
           }
         }
       }
     },
-    "capital.footer.cash_out": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Arbitrage profits or working funds withdrawn from bank cards to physical cash or savings."
+    "capital.footer.starting_deposit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The initial cash pool in UAH you started trading with for this period."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Прибуток від арбітражу або оборотні кошти, виведені з банківських карток у готівку чи заощадження."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий пул коштів у гривні, з яким ви розпочали торгівлю в цьому періоді."
           }
         }
       }
     },
-    "capital.footer.initial_crypto": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred."
+    "capital.label.initial_crypto_inventory" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial Crypto Inventory"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Spred."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий крипторезерв"
           }
         }
       }
     },
-    "capital.footer.starting_deposit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "The initial cash pool in UAH you started trading with for this period."
+    "capital.label.initial_crypto_value" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Initial Crypto Value"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початковий пул коштів у гривні, з яким ви розпочали торгівлю в цьому періоді."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початкова вартість криптоактивів"
           }
         }
       }
     },
-    "capital.label.initial_crypto_inventory": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Initial Crypto Inventory"
+    "capital.label.starting_working_capital" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting Working Capital"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початковий крипторезерв"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий робочий капітал"
           }
         }
       }
     },
-    "capital.label.initial_crypto_value": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Initial Crypto Value"
+    "capital.label.total_portfolio_equity" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Portfolio Equity"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початкова вартість криптоактивів"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальний капітал портфеля"
           }
         }
       }
     },
-    "capital.label.starting_working_capital": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Starting Working Capital"
+    "capital.title.period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Capital (%@)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початковий робочий капітал"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Капітал (%@)"
           }
         }
       }
     },
-    "capital.label.total_portfolio_equity": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total Portfolio Equity"
+    "common.action.add" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Загальний капітал портфеля"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати"
           }
         }
       }
     },
-    "capital.title.period": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Capital (%@)"
+    "common.action.archive" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archive"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Капітал (%@)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Архівувати"
           }
         }
       }
     },
-    "common.action.add": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add"
+    "common.action.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скасувати"
           }
         }
       }
     },
-    "common.action.archive": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Archive"
+    "common.action.confirm" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirm"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Архівувати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтвердити"
           }
         }
       }
     },
-    "common.action.cancel": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cancel"
+    "common.action.delete" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Delete"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скасувати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Видалити"
           }
         }
       }
     },
-    "common.action.confirm": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Confirm"
+    "common.action.done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Done"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Підтвердити"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готово"
           }
         }
       }
     },
-    "common.action.delete": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Delete"
+    "common.action.manage" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Manage"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Видалити"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Керувати"
           }
         }
       }
     },
-    "common.action.done": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Done"
+    "common.action.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Готово"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ОК"
           }
         }
       }
     },
-    "common.action.manage": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Manage"
+    "common.action.save" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Керувати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберегти"
           }
         }
       }
     },
-    "common.action.ok": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "OK"
+    "common.action.see_all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "See all"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ОК"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Переглянути все"
           }
         }
       }
     },
-    "common.action.save": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Save"
+    "common.action.unarchive" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unarchive"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Зберегти"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розархівувати"
           }
         }
       }
     },
-    "common.action.unarchive": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unarchive"
+    "common.alert.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Error"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Розархівувати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Помилка"
           }
         }
       }
     },
-    "common.alert.error": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Error"
+    "common.error.unknown" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unknown error occurred."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Помилка"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сталася невідома помилка."
           }
         }
       }
     },
-    "common.error.unknown": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "An unknown error occurred."
+    "common.label.calendar_month" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendar Month"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сталася невідома помилка."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Календарний місяць"
           }
         }
       }
     },
-    "common.label.calendar_month": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Calendar Month"
+    "common.label.other" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Other"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Календарний місяць"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інше"
           }
         }
       }
     },
-    "common.label.other": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Other"
+    "common.label.per_usdt" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "per 1 USDT"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Інше"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "за 1 USDT"
           }
         }
       }
     },
-    "common.label.per_usdt": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "per 1 USDT"
+    "common.status.coming_soon" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coming Soon"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "за 1 USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Незабаром"
           }
         }
       }
     },
-    "common.status.coming_soon": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Coming Soon"
+    "nav.tab.settings" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Незабаром"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
     },
-    "nav.tab.settings": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "nav.tab.trades" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trades"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Налаштування"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Угоди"
           }
         }
       }
     },
-    "nav.tab.trades": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trades"
+    "order.fee.approx_commission" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈ %@ ₴ commission"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Угоди"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "≈ %@ ₴ комісія"
           }
         }
       }
     },
-    "order.fee.approx_commission": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "≈ %@ ₴ commission"
+    "order.fee.custom" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Custom"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "≈ %@ ₴ комісія"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Власна"
           }
         }
       }
     },
-    "order.fee.custom": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Custom"
+    "order.field.date_time" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date & Time"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Власна"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата та час"
           }
         }
       }
     },
-    "order.field.date_time": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Date & Time"
+    "order.field.fee_usdt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fee (USDT)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дата та час"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія (USDT)"
           }
         }
       }
     },
-    "order.field.fee_usdt": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fee (USDT)"
+    "order.field.note_placeholder" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optional trade note / counterparty"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Комісія (USDT)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примітка / контрагент"
           }
         }
       }
     },
-    "order.field.note_placeholder": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Optional trade note / counterparty"
+    "order.field.price_uah" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Price (UAH)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Примітка / контрагент"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ціна (UAH)"
           }
         }
       }
     },
-    "order.field.price_uah": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Price (UAH)"
+    "order.field.total_uah" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total UAH"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ціна (UAH)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього UAH"
           }
         }
       }
     },
-    "order.field.total_uah": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total UAH"
+    "order.field.usdt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "USDT"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Всього UAH"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "USDT"
           }
         }
       }
     },
-    "order.field.usdt": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "USDT"
+    "order.footer.selected_card_turnover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selected card: %1 · Turnover limit: %2 ₴"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обрана картка: %1 · Ліміт обороту: %2 ₴"
           }
         }
       }
     },
-    "order.footer.selected_card_turnover": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Selected card: %1 · Turnover limit: %2 ₴"
+    "order.footer.turnover_limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover limit: %lldk ₴"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Обрана картка: %1 · Ліміт обороту: %2 ₴"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміт обороту: %lldk ₴"
           }
         }
       }
     },
-    "order.footer.turnover_limit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turnover limit: %lldk ₴"
+    "order.label.fee_amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fee: %.3f USDT"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ліміт обороту: %lldk ₴"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія: %.3f USDT"
           }
         }
       }
     },
-    "order.label.fee_amount": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fee: %.3f USDT"
+    "order.section.amounts_rate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trade Amounts & Rate"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Комісія: %.3f USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суми угоди та курс"
           }
         }
       }
     },
-    "order.section.amounts_rate": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trade Amounts & Rate"
+    "order.section.commission" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commission / Fee"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Суми угоди та курс"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія"
           }
         }
       }
     },
-    "order.section.commission": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Commission / Fee"
+    "order.section.details" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Details & Note"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Комісія"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Деталі та примітка"
           }
         }
       }
     },
-    "order.section.details": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Details & Note"
+    "order.section.platform" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exchange / Platform"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Деталі та примітка"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Біржа / платформа"
           }
         }
       }
     },
-    "order.section.platform": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Exchange / Platform"
+    "order.section.settlement" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank Settlement"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Біржа / платформа"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банк розрахунку"
           }
         }
       }
     },
-    "order.section.settlement": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bank Settlement"
+    "order.title.record_buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record Buy Order"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банк розрахунку"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати купівлю"
           }
         }
       }
     },
-    "order.title.record_buy": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Record Buy Order"
+    "order.title.record_sell" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Record Sell Order"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Записати купівлю"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати продаж"
           }
         }
       }
     },
-    "order.title.record_sell": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Record Sell Order"
+    "order.type.buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buy"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Записати продаж"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Купівля"
           }
         }
       }
     },
-    "order.type.buy": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Buy"
+    "order.type.sell" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sell"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Купівля"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продаж"
           }
         }
       }
     },
-    "order.type.sell": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sell"
+    "order.type.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Order Type"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Продаж"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип угоди"
           }
         }
       }
     },
-    "order.type.title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Order Type"
+    "rollover.footer.summary_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Тип угоди"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Залишок ліквідної гривні та криптоактивів автоматично стануть стартовим капіталом для %@."
           }
         }
       }
     },
-    "rollover.footer.summary_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Remaining liquid UAH and crypto inventory will automatically become the starting capital for %@."
+    "rollover.label.current_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Current Period"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Залишок ліквідної гривні та криптоактивів автоматично стануть стартовим капіталом для %@."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поточний період"
           }
         }
       }
     },
-    "rollover.label.current_period": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Current Period"
+    "rollover.label.free_uah" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available Free UAH"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Поточний період"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вільні кошти (UAH)"
           }
         }
       }
     },
-    "rollover.label.free_uah": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Available Free UAH"
+    "rollover.label.net_pnl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Net Realized PnL"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вільні кошти (UAH)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чистий прибуток (PnL)"
           }
         }
       }
     },
-    "rollover.label.net_pnl": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Net Realized PnL"
+    "rollover.label.new_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New Period"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Чистий прибуток (PnL)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Новий період"
           }
         }
       }
     },
-    "rollover.label.new_period": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "New Period"
+    "rollover.label.unliquidated_usdt" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unliquidated USDT"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Новий період"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Залишок USDT"
           }
         }
       }
     },
-    "rollover.label.unliquidated_usdt": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unliquidated USDT"
+    "rollover.label.weighted_cost" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weighted Cost Basis"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Залишок USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Середній курс закупки"
           }
         }
       }
     },
-    "rollover.label.weighted_cost": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Weighted Cost Basis"
+    "rollover.notice.pnl_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Середній курс закупки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Лічильник щомісячного прибутку скидається до 0 ₴. Результати попереднього періоду зберігаються в історії."
           }
         }
       }
     },
-    "rollover.notice.pnl_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Monthly profit counter resets to 0 ₴. Previous period performance remains saved in history."
+    "rollover.notice.pnl_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Realized PnL Resets"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Лічильник щомісячного прибутку скидається до 0 ₴. Результати попереднього періоду зберігаються в історії."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скидання реалізованого PnL"
           }
         }
       }
     },
-    "rollover.notice.pnl_title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Realized PnL Resets"
+    "rollover.notice.turnover_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank card turnover limits reset to 0 ₴ for the new calendar month."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скидання реалізованого PnL"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміти обороту банківських карток скидаються до 0 ₴ на новий календарний місяць."
           }
         }
       }
     },
-    "rollover.notice.turnover_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bank card turnover limits reset to 0 ₴ for the new calendar month."
+    "rollover.notice.turnover_title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Turnover Limits Reset"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ліміти обороту банківських карток скидаються до 0 ₴ на новий календарний місяць."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скидання лімітів обороту"
           }
         }
       }
     },
-    "rollover.notice.turnover_title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Turnover Limits Reset"
+    "rollover.section.summary" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Closing Period Summary"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Скидання лімітів обороту"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підсумки періоду"
           }
         }
       }
     },
-    "rollover.section.summary": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Closing Period Summary"
+    "rollover.section.transition" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Period Transition"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Підсумки періоду"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перехід періоду"
           }
         }
       }
     },
-    "rollover.section.transition": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Period Transition"
+    "rollover.section.what_changes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "What Changes After Rollover"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Перехід періоду"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Що зміниться після переходу"
           }
         }
       }
     },
-    "rollover.section.what_changes": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "What Changes After Rollover"
+    "rollover.title.close_month" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close Month"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Що зміниться після переходу"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закриття місяця"
           }
         }
       }
     },
-    "rollover.title.close_month": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Close Month"
+    "settings.action.export_csv" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Export to CSV"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Закриття місяця"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експорт у CSV"
           }
         }
       }
     },
-    "settings.action.export_csv": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Export to CSV"
+    "settings.footer.app_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Експорт у CSV"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створено для високочастотного P2P-арбітражу криптовалют та моніторингу банківських лімітів."
           }
         }
       }
     },
-    "settings.footer.app_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Designed for high-frequency crypto P2P arbitrage and bank limit monitoring."
+    "settings.label.build" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Build"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Створено для високочастотного P2P-арбітражу криптовалют та моніторингу банківських лімітів."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Збірка"
           }
         }
       }
     },
-    "settings.label.build": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Build"
+    "settings.label.engine" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Engine"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Збірка"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Двигун"
           }
         }
       }
     },
-    "settings.label.engine": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Engine"
+    "settings.label.version" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Version"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Двигун"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія"
           }
         }
       }
     },
-    "settings.label.version": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Version"
+    "settings.section.app_info" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Information"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Версія"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про застосунок"
           }
         }
       }
     },
-    "settings.section.app_info": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "App Information"
+    "settings.section.data_export" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Data & Export"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Про застосунок"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дані та експорт"
           }
         }
       }
     },
-    "settings.section.data_export": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Data & Export"
+    "settings.section.language" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Language"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Дані та експорт"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Мова"
           }
         }
       }
     },
-    "settings.section.language": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Language"
+    "settings.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Мова"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштування"
           }
         }
       }
     },
-    "settings.title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Settings"
+    "settings.value.engine_name" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spred P2P Arbitrage Engine"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Налаштування"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Движок P2P-арбітражу Spred"
           }
         }
       }
     },
-    "settings.value.engine_name": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spred P2P Arbitrage Engine"
+    "trades.action.add_trade" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add New Trade"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Движок P2P-арбітражу Spred"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати нову угоду"
           }
         }
       }
     },
-    "trades.action.add_trade": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add New Trade"
+    "trades.action.configure" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configure"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати нову угоду"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштувати"
           }
         }
       }
     },
-    "trades.action.configure": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Configure"
+    "trades.action.rollover" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Roll-Over"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Налаштувати"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перенести"
           }
         }
       }
     },
-    "trades.action.rollover": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Roll-Over"
+    "trades.card.cash_out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cash Out"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Перенести"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виведення готівки"
           }
         }
       }
     },
-    "trades.card.cash_out": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cash Out"
+    "trades.card.free_money_bank_cards" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Free Money (Bank Cards)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Виведення готівки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вільний капітал (Картки)"
           }
         }
       }
     },
-    "trades.card.free_money_bank_cards": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Free Money (Bank Cards)"
+    "trades.card.starting_deposit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Starting Deposit"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Вільний капітал (Картки)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початковий депозит"
           }
         }
       }
     },
-    "trades.card.starting_deposit": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Starting Deposit"
+    "trades.card.usdt_inventory" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "USDT Inventory"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Початковий депозит"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Залишок USDT"
           }
         }
       }
     },
-    "trades.card.usdt_inventory": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "USDT Inventory"
+    "trades.empty.add_sample" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Sample Trades"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Залишок USDT"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Додати зразки угод"
           }
         }
       }
     },
-    "trades.empty.add_sample": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Add Sample Trades"
+    "trades.empty.no_trades_in_period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No trades recorded in %@. Tap + to record a trade."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Додати зразки угод"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає угод за %@. Натисніть +, щоб записати угоду."
           }
         }
       }
     },
-    "trades.empty.no_trades_in_period": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No trades recorded in %@. Tap + to record a trade."
+    "trades.empty.no_transactions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Transactions"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає угод за %@. Натисніть +, щоб записати угоду."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає операцій"
           }
         }
       }
     },
-    "trades.empty.no_transactions": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Transactions"
+    "trades.limits.progress_summary" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f%% of %@ limit"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає операцій"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.1f%% від ліміту %@"
           }
         }
       }
     },
-    "trades.limits.progress_summary": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%.1f%% of %@ limit"
+    "trades.limits.sell_orders_count" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld sell orders"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%.1f%% від ліміту %@"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld угод продажу"
           }
         }
       }
     },
-    "trades.limits.sell_orders_count": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld sell orders"
+    "trades.period.current" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Current)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld угод продажу"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ (Поточний)"
           }
         }
       }
     },
-    "trades.period.current": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ (Current)"
+    "trades.section.available_capital" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Available capital"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%@ (Поточний)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступний капітал"
           }
         }
       }
     },
-    "trades.section.bank_limits": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Bank Turnover Limits"
+    "trades.section.bank_limits" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bank Limits"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ліміти по банках"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліміти банків"
           }
         }
       }
     },
-    "trades.section.recent_transactions": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Recent Transactions"
+    "trades.section.recent_transactions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recent Transactions"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Останні операції"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Останні операції"
           }
         }
       }
     },
-    "trades.stats.avg_buy_price": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Avg Buy Price"
+    "trades.stats.avg_buy_price" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avg Buy Price"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сер. ціна купівлі"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сер. ціна купівлі"
           }
         }
       }
     },
-    "trades.stats.buy_sell_breakdown": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld Buy · %lld Sell"
+    "trades.stats.buy_sell_breakdown" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Buy · %lld Sell"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld Купівля · %lld Продаж"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Купівля · %lld Продаж"
           }
         }
       }
     },
-    "trades.stats.net_pnl": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total Net PnL"
+    "trades.stats.net_pnl" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Net P&L"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Чистий прибуток"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чистий P&L"
           }
         }
       }
     },
-    "trades.stats.total_trades": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total Trades"
+    "trades.stats.total_trades" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Trades"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Всього угод"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього угод"
           }
         }
       }
     },
-    "trades.title.spread_arbitrage": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Spread Arbitrage"
+    "trades.title.spread_arbitrage" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spread Arbitrage"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "P2P Арбітраж"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "P2P Арбітраж"
           }
         }
       }
     },
-    "withdrawal.action.log_cash_out": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Log Cash Out"
+    "withdrawal.action.log_cash_out" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Cash Out"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Записати виведення"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати виведення"
           }
         }
       }
     },
-    "withdrawal.empty.description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No intermediate cash withdrawals recorded for %@."
+    "withdrawal.empty.description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No intermediate cash withdrawals recorded for %@."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає записів про проміжні виведення готівки за %@."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає записів про проміжні виведення готівки за %@."
           }
         }
       }
     },
-    "withdrawal.empty.title": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "No Withdrawals"
+    "withdrawal.empty.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Withdrawals"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Немає виведень"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає виведень"
           }
         }
       }
     },
-    "withdrawal.field.period": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Period Identifier"
+    "withdrawal.field.period" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Period Identifier"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ідентифікатор періоду"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ідентифікатор періоду"
           }
         }
       }
     },
-    "withdrawal.field.source_card": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Source Bank Card"
+    "withdrawal.field.source_card" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Source Bank Card"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Банківська картка списування"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Банківська картка списування"
           }
         }
       }
     },
-    "withdrawal.footer.amount": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Records cash taken out of working capital into physical cash or savings."
+    "withdrawal.footer.amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Records cash taken out of working capital into physical cash or savings."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Фіксує виведення коштів з робочого капіталу в готівку чи заощадження."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Фіксує виведення коштів з робочого капіталу в готівку чи заощадження."
           }
         }
       }
     },
-    "withdrawal.footer.total_withdrawn_description": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total profit taken to physical cash or personal savings in %@."
+    "withdrawal.footer.total_withdrawn_description" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total profit taken to physical cash or personal savings in %@."
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Загальний прибуток, виведений у готівку або особисті заощадження в %@."
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальний прибуток, виведений у готівку або особисті заощадження в %@."
           }
         }
       }
     },
-    "withdrawal.label.entries_count": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld entries"
+    "withdrawal.label.entries_count" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld entries"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "%lld записів"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld записів"
           }
         }
       }
     },
-    "withdrawal.label.total_withdrawn": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Total Withdrawn (%@)"
+    "withdrawal.label.total_withdrawn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Withdrawn (%@)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Всього виведено (%@)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього виведено (%@)"
           }
         }
       }
     },
-    "withdrawal.option.direct_cash": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "None (Direct Cash)"
+    "withdrawal.option.direct_cash" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "None (Direct Cash)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Без картки (Готівка)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без картки (Готівка)"
           }
         }
       }
     },
-    "withdrawal.placeholder.note": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "e.g. Profit cash-out, USD exchange, personal withdrawal"
+    "withdrawal.placeholder.note" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Profit cash-out, USD exchange, personal withdrawal"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "напр., Виведення прибутку, обмін на USD, особисті потреби"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "напр., Виведення прибутку, обмін на USD, особисті потреби"
           }
         }
       }
     },
-    "withdrawal.section.amount": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Withdrawal Amount (UAH)"
+    "withdrawal.section.amount" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Withdrawal Amount (UAH)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Сума виведення (UAH)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сума виведення (UAH)"
           }
         }
       }
     },
-    "withdrawal.section.history": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Withdrawal History"
+    "withdrawal.section.history" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Withdrawal History"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Історія виведень"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Історія виведень"
           }
         }
       }
     },
-    "withdrawal.section.note": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Note / Description (Optional)"
+    "withdrawal.section.note" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Note / Description (Optional)"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Примітка / Опис (Необов'язково)"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примітка / Опис (Необов'язково)"
           }
         }
       }
     },
-    "withdrawal.title.log": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Cash Out Log"
+    "withdrawal.title.log" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cash Out Log"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Журнал виведень"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Журнал виведень"
           }
         }
       }
     },
-    "withdrawal.title.record": {
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Log Cash Withdrawal"
+    "withdrawal.title.record" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Log Cash Withdrawal"
           }
         },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Записати виведення готівки"
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Записати виведення готівки"
           }
         }
       }
     }
   },
-  "version": "1.0"
+  "version" : "1.0"
 }

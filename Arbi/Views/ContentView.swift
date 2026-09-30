@@ -62,39 +62,33 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                // Section 1: Free Money & Capital Card
                 Section {
-                    CapitalOverviewCard(
-                        breakdown: capitalBreakdown,
-                        period: selectedPeriod,
-                        onTapConfigure: {
-                            showingCapitalSettingsSheet = true
-                        },
-                        onTapRollover: {
-                            showingRolloverSheet = true
-                        },
-                        onTapCashOut: {
-                            showingWithdrawalsSheet = true
-                        }
+                    PeriodPickerRow(
+                        selectedPeriod: selectedPeriod,
+                        onSelectPeriod: { selectedPeriod = $0 },
+                        onRollover: { showingRolloverSheet = true }
                     )
-                    .listRowInsets(EdgeInsets())
+                    .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                     .listRowBackground(Color.clear)
                 }
 
-                // Section 2: Dashboard Overview Cards
+                // Section 1: Dashboard overview
                 Section {
                     SummaryMetricsView(
                         avgBuyPrice: avgBuyPrice,
                         totalPnL: totalPnL,
                         buyCount: buyOrdersCount,
-                        sellCount: sellOrdersCount
+                        sellCount: sellOrdersCount,
+                        availableCapital: capitalBreakdown.freeUAH,
+                        onTapManage: { showingCapitalSettingsSheet = true },
+                        onTapCashOut: { showingWithdrawalsSheet = true }
                     )
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
                 }
                 .listSectionSpacing(0)
 
-                // Section 3: Bank Turnover & Financial Monitoring Limits
+                // Section 2: Bank Turnover & Financial Monitoring Limits
                 Section {
                     if activeBankAccounts.isEmpty {
                         HStack {
@@ -118,11 +112,8 @@ struct ContentView: View {
                 } header: {
                     HStack {
                         Text("trades.section.bank_limits")
-                        Text(verbatim: " (\(selectedPeriod))")
-                            .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
                         Spacer()
-                            Button("common.action.manage") {
+                        Button("common.action.see_all") {
                             showingBankAccountsSheet = true
                         }
                         .font(.caption.weight(.medium))
@@ -130,7 +121,7 @@ struct ContentView: View {
                     }
                 }
 
-                // Section 4: Recent Transactions
+                // Section 3: Recent Transactions
                 Section {
                     if periodOrders.isEmpty {
                         ContentUnavailableView {
@@ -158,65 +149,10 @@ struct ContentView: View {
                 }
             }
             .listSectionSpacing(8)
+            .contentMargins(.bottom, 56, for: .scrollContent)
             .navigationTitle("trades.title.spread_arbitrage")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
-                    Menu {
-                        Section("common.label.calendar_month") {
-                            Button {
-                                selectedPeriod = PeriodRolloverService.currentPeriodIdentifier()
-                            } label: {
-                                let currentLabel = LocalizationManager.shared.string("trades.period.current", PeriodRolloverService.formattedPeriodDisplay(PeriodRolloverService.currentPeriodIdentifier()))
-                                if selectedPeriod == PeriodRolloverService.currentPeriodIdentifier() {
-                                    Label(currentLabel, systemImage: "checkmark")
-                                } else {
-                                    Text(currentLabel)
-                                }
-                            }
-
-                            let prev = PeriodRolloverService.previousPeriodIdentifier(before: PeriodRolloverService.currentPeriodIdentifier())
-                            Button {
-                                selectedPeriod = prev
-                            } label: {
-                                if selectedPeriod == prev {
-                                    Label(PeriodRolloverService.formattedPeriodDisplay(prev), systemImage: "checkmark")
-                                } else {
-                                    Text(PeriodRolloverService.formattedPeriodDisplay(prev))
-                                }
-                            }
-
-                            let next = PeriodRolloverService.nextPeriodIdentifier(after: PeriodRolloverService.currentPeriodIdentifier())
-                            Button {
-                                selectedPeriod = next
-                            } label: {
-                                if selectedPeriod == next {
-                                    Label(PeriodRolloverService.formattedPeriodDisplay(next), systemImage: "checkmark")
-                                } else {
-                                    Text(PeriodRolloverService.formattedPeriodDisplay(next))
-                                }
-                            }
-                        }
-
-                        Section {
-                            Button {
-                                showingRolloverSheet = true
-                            } label: {
-                                Label("rollover.title.close_month", systemImage: "arrow.triangle.2.circlepath")
-                            }
-                        }
-                    } label: {
-                        HStack(spacing: 3) {
-                            Image(systemName: "calendar")
-                            Text(selectedPeriod)
-                                .font(.footnote.weight(.semibold).monospacedDigit())
-                            Image(systemName: "chevron.down")
-                                .font(.caption2.weight(.semibold))
-                        }
-                        .foregroundStyle(.primary)
-                    }
-                }
-
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingAddOrderSheet = true
@@ -447,55 +383,73 @@ private struct SummaryMetricsView: View {
     let totalPnL: Double
     let buyCount: Int
     let sellCount: Int
+    let availableCapital: Double
+    let onTapManage: () -> Void
+    let onTapCashOut: () -> Void
 
     var body: some View {
-        VStack(spacing: 8) {
-            // Hero card: PnL
-            VStack(spacing: 4) {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 1) {
+                Text(pnlPrefix + HomeFormatters.uah(abs(totalPnL)))
+                    .font(.system(size: 28, weight: .semibold, design: .rounded))
+                    .foregroundStyle(pnlColor)
                 Text("trades.stats.net_pnl")
-                    .font(.caption.weight(.regular))
+                    .font(.subheadline)
                     .foregroundStyle(.secondary)
+            }
 
-                HStack(alignment: .firstTextBaseline, spacing: 4) {
-                    Text(pnlPrefix + formatCurrency(abs(totalPnL)))
-                        .font(.system(size: 22, weight: .semibold, design: .rounded))
-                        .foregroundStyle(pnlColor)
-
-                    Text(verbatim: "UAH")
-                        .font(.caption2.weight(.regular))
-                        .foregroundStyle(pnlColor.opacity(0.8))
+            HStack(alignment: .firstTextBaseline) {
+                Text("trades.section.available_capital")
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Text(HomeFormatters.uah(availableCapital))
+                    .font(.subheadline.weight(.semibold).monospacedDigit())
+                Menu {
+                    Button("common.action.manage", action: onTapManage)
+                    Button("trades.card.cash_out", action: onTapCashOut)
+                } label: {
+                    HStack(spacing: 3) {
+                        Text("common.action.manage")
+                        Image(systemName: "chevron.down")
+                            .font(.caption2.weight(.semibold))
+                    }
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(Color.accentColor)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 16)
-            .background(pnlColor.opacity(0.1))
-            .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .stroke(pnlColor.opacity(0.25), lineWidth: 1)
-            )
 
-            // Secondary metrics: Avg Buy Rate + Trade Count
-            HStack(spacing: 8) {
-                MetricTile(
-                    title: "trades.stats.avg_buy_price",
-                    value: avgBuyPrice > 0 ? String(format: "%.2f ₴", avgBuyPrice) : "—",
-                    subtitle: "common.label.per_usdt",
-                    systemImage: "chart.line.uptrend.xyaxis",
-                    accentColor: .blue
-                )
+            Divider()
 
-                MetricTile(
-                    title: "trades.stats.total_trades",
-                    value: "\(buyCount + sellCount)",
-                    subtitleText: LocalizationManager.shared.string("trades.stats.buy_sell_breakdown", buyCount, sellCount),
-                    systemImage: "arrow.left.arrow.right",
-                    accentColor: .purple
-                )
+            HStack(alignment: .top, spacing: 0) {
+                VStack(alignment: .leading, spacing: 3) {
+                    Text("trades.stats.avg_buy_price")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text(avgBuyPrice > 0 ? HomeFormatters.rate(avgBuyPrice) + " ₴" : "—")
+                        .font(.subheadline.weight(.medium).monospacedDigit())
+                }
+
+                Spacer()
+
+                VStack(alignment: .trailing, spacing: 3) {
+                    Text("trades.stats.total_trades")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    Text("\(buyCount + sellCount)")
+                        .font(.subheadline.weight(.medium).monospacedDigit())
+                    Text(LocalizationManager.shared.string("trades.stats.buy_sell_breakdown", buyCount, sellCount))
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
         }
+        .padding(16)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .clipShape(ContainerRelativeShape())
         .padding(.horizontal, 4)
-        .padding(.vertical, 8)
+        .padding(.vertical, 4)
     }
 
     private var pnlColor: Color {
@@ -504,7 +458,7 @@ private struct SummaryMetricsView: View {
         } else if totalPnL < 0 {
             return .red
         } else {
-            return .secondary
+            return .primary
         }
     }
 
@@ -518,12 +472,55 @@ private struct SummaryMetricsView: View {
         }
     }
 
-    private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
+}
+
+private struct PeriodPickerRow: View {
+    let selectedPeriod: String
+    let onSelectPeriod: (String) -> Void
+    let onRollover: () -> Void
+
+    var body: some View {
+        Menu {
+            Section("common.label.calendar_month") {
+                ForEach(periodOptions, id: \.self) { period in
+                    Button {
+                        onSelectPeriod(period)
+                    } label: {
+                        if period == selectedPeriod {
+                            Label(PeriodRolloverService.formattedPeriodDisplay(period), systemImage: "checkmark")
+                        } else {
+                            Text(PeriodRolloverService.formattedPeriodDisplay(period))
+                        }
+                    }
+                }
+            }
+
+            Section {
+                Button {
+                    onRollover()
+                } label: {
+                    Label("rollover.title.close_month", systemImage: "arrow.triangle.2.circlepath")
+                }
+            }
+        } label: {
+            HStack(spacing: 4) {
+                Text(PeriodRolloverService.formattedPeriodDisplay(selectedPeriod))
+                    .font(.subheadline)
+                Image(systemName: "chevron.down")
+                    .font(.caption2.weight(.semibold))
+            }
+            .foregroundStyle(.secondary)
+        }
+        .accessibilityLabel(Text("common.label.calendar_month"))
+    }
+
+    private var periodOptions: [String] {
+        let current = PeriodRolloverService.currentPeriodIdentifier()
+        return [
+            PeriodRolloverService.previousPeriodIdentifier(before: current),
+            current,
+            PeriodRolloverService.nextPeriodIdentifier(after: current)
+        ]
     }
 }
 
@@ -612,68 +609,50 @@ private struct AccountTurnoverRow: View {
         }
     }
 
-    private var limitSummaryLabel: String {
-        let limitString: String
-        if stat.turnoverLimitUAH >= 1000 {
-            limitString = "\(Int(stat.turnoverLimitUAH / 1000))k"
-        } else {
-            limitString = "\(Int(stat.turnoverLimitUAH)) ₴"
-        }
-        return LocalizationManager.shared.string("trades.limits.progress_summary", stat.progress * 100, limitString)
-    }
-
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
-                HStack(spacing: 6) {
-                    Image(systemName: "creditcard.fill")
-                        .font(.caption2)
-                        .foregroundStyle(.indigo)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(HomeDisplayNames.bankAccount(stat.accountName))
+                        .font(.subheadline.weight(.medium))
 
-                    VStack(alignment: .leading, spacing: 1) {
-                        Text(stat.accountName)
-                            .font(.subheadline.weight(.medium))
-
-                        if let card = stat.cardNumber, !card.isEmpty {
-                            Text(card)
-                                .font(.caption2.weight(.regular).monospacedDigit())
-                                .foregroundStyle(.secondary)
-                        }
+                    if let card = maskedCardNumber, !card.isEmpty {
+                        Text(card)
+                            .font(.caption.monospacedDigit())
+                            .foregroundStyle(.secondary)
                     }
                 }
 
                 Spacer()
 
-                Text(formatUAH(stat.totalSellUAH))
-                    .font(.subheadline.weight(.regular).monospacedDigit())
+                Text(HomeFormatters.percent(stat.progress))
+                    .font(.caption.weight(.medium).monospacedDigit())
+                    .foregroundStyle(progressColor)
             }
 
             ProgressView(value: stat.progress)
                 .tint(progressColor)
 
-            HStack {
-                Text(LocalizationManager.shared.string("trades.limits.sell_orders_count", stat.sellOrdersCount))
-                    .font(.caption2.weight(.regular))
+            HStack(alignment: .firstTextBaseline) {
+                Text(HomeFormatters.uah(stat.totalSellUAH))
+                    .font(.caption.monospacedDigit())
                     .foregroundStyle(.secondary)
-
                 Spacer()
-
-                Text(limitSummaryLabel)
-                    .font(.caption2.weight(.regular))
-                    .foregroundStyle(progressColor)
+                Text("/ " + HomeFormatters.uah(stat.turnoverLimitUAH))
+                    .font(.caption.monospacedDigit())
+                    .foregroundStyle(.tertiary)
             }
         }
-        .padding(.vertical, 2)
+        .padding(.vertical, 4)
     }
 
-    private func formatUAH(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        let formatted = formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
-        return "\(formatted) ₴"
+    private var maskedCardNumber: String? {
+        guard let card = stat.cardNumber, !card.isEmpty else { return nil }
+        let digits = card.filter(\.isNumber)
+        guard digits.count >= 4 else { return card }
+        return "•••• " + digits.suffix(4)
     }
+
 }
 
 // MARK: - Order Row Component
@@ -683,71 +662,84 @@ private struct OrderRowView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            HStack(alignment: .center) {
-                // Type badge
-                Group {
-                    switch order.type {
-                    case .buy:
-                        Text("order.type.buy")
-                    case .sell:
-                        Text("order.type.sell")
-                    }
+            HStack(alignment: .firstTextBaseline, spacing: 8) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(order.type.localizedTitle.uppercased())
+                        .font(.caption.weight(.semibold))
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 3)
+                        .background((order.type == .buy ? Color.green : Color.blue).opacity(0.12))
+                        .clipShape(Capsule())
+                        .foregroundStyle(order.type == .buy ? Color.green : Color.blue)
+
+                    let bankTitle = HomeDisplayNames.bankAccount(order.bankAccount?.name ?? order.bank.rawValue)
+                    Text(verbatim: "\(order.platform.displayName) · \(bankTitle)")
+                        .font(.subheadline)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.8)
                 }
-                .textCase(.uppercase)
-                .font(.system(size: 10, weight: .bold))
-                .padding(.horizontal, 6)
-                .padding(.vertical, 2)
-                .background(order.type == .buy ? Color.green.opacity(0.15) : Color.blue.opacity(0.15))
-                .foregroundStyle(order.type == .buy ? Color.green : Color.blue)
-                .clipShape(Capsule())
 
-                // Platform & Bank Account
-                let bankTitle = order.bankAccount?.name ?? order.bank.rawValue
-                Text(verbatim: "\(order.platform.displayName) · \(bankTitle)")
-                    .font(.caption.weight(.regular))
+                Spacer(minLength: 8)
+
+                Text(HomeFormatters.uah(order.uahAmount))
+                    .font(.callout.weight(.medium).monospacedDigit())
+            }
+
+            HStack(alignment: .firstTextBaseline) {
+                Text(HomeFormatters.usdt(order.usdtAmount) + " · " + HomeFormatters.rate(order.price) + " ₴")
+                    .font(.caption.monospacedDigit())
                     .foregroundStyle(.secondary)
-
                 Spacer()
-
-                // Timestamp
-                Text(order.timestamp.formatted(date: .abbreviated, time: .shortened))
-                    .font(.caption2.weight(.regular))
+                Text(order.timestamp.formatted(date: .omitted, time: .shortened))
+                    .font(.caption.monospacedDigit())
                     .foregroundStyle(.tertiary)
             }
-
-            // Main amounts
-            HStack(alignment: .firstTextBaseline) {
-                VStack(alignment: .leading, spacing: 1) {
-                    Text(String(format: "%.2f USDT", order.usdtAmount))
-                        .font(.subheadline.weight(.medium).monospacedDigit())
-
-                    Text(String(format: "@ %.2f ₴", order.price))
-                        .font(.caption2.weight(.regular).monospacedDigit())
-                        .foregroundStyle(.secondary)
-                }
-
-                Spacer()
-
-                VStack(alignment: .trailing, spacing: 1) {
-                    Text(String(format: "%.2f ₴", order.uahAmount))
-                        .font(.subheadline.weight(.medium).monospacedDigit())
-
-                    if order.feeUSDT > 0 || order.txFeeUSDT > 0 {
-                        let totalFee = order.feeUSDT + order.txFeeUSDT
-                        Text(LocalizationManager.shared.string("order.label.fee_amount", totalFee))
-                            .font(.caption2.weight(.regular).monospacedDigit())
-                            .foregroundStyle(.orange)
-                    }
-                }
-            }
-
-            if let note = order.note, !note.isEmpty {
-                Text(note)
-                    .font(.caption2.weight(.regular))
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
         }
-        .padding(.vertical, 1)
+        .padding(.vertical, 3)
+    }
+
+}
+
+private enum HomeFormatters {
+    static func uah(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 0, maximumFractionDigits: 2) + " ₴"
+    }
+
+    static func rate(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2)
+    }
+
+    static func usdt(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2) + " USDT"
+    }
+
+    static func percent(_ progress: Double) -> String {
+        decimal(progress * 100, minimumFractionDigits: 1, maximumFractionDigits: 1) + "%"
+    }
+
+    private static func decimal(
+        _ value: Double,
+        minimumFractionDigits: Int,
+        maximumFractionDigits: Int
+    ) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
+        formatter.minimumFractionDigits = minimumFractionDigits
+        formatter.maximumFractionDigits = maximumFractionDigits
+        return formatter.string(from: NSNumber(value: value)) ?? String(value)
+    }
+}
+
+private enum HomeDisplayNames {
+    static func bankAccount(_ name: String) -> String {
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard let openParen = trimmedName.firstIndex(of: "(") else { return trimmedName }
+
+        let bank = trimmedName[..<openParen].trimmingCharacters(in: .whitespacesAndNewlines)
+        let type = trimmedName[trimmedName.index(after: openParen)...]
+            .trimmingCharacters(in: CharacterSet(charactersIn: ") "))
+        guard !bank.isEmpty else { return trimmedName }
+        return type.isEmpty ? bank : "\(bank) · \(type)"
     }
 }
