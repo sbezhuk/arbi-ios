@@ -101,11 +101,11 @@ struct AddOrderView: View {
                             }
                         }
                         .pickerStyle(.segmented)
-                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
                         Text("order.type.title")
                             .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color(uiColor: .secondaryLabel))
                     }
                     
                     // Section 1: Platform Selector Chips
@@ -121,13 +121,12 @@ struct AddOrderView: View {
                                     }
                                 }
                             }
-                            .padding(.vertical, 2)
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
                         Text("order.section.platform")
                             .font(.footnote.weight(.semibold))
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(Color(uiColor: .secondaryLabel))
                     }
 
                 // Section 3: Bank Account Selector Chips
@@ -136,7 +135,7 @@ struct AddOrderView: View {
                         VStack(alignment: .leading, spacing: 10) {
                             HStack(spacing: 8) {
                                 Image(systemName: "creditcard.trianglebadge.exclamationmark")
-                                    .foregroundStyle(.orange)
+                                    .foregroundStyle(.secondary)
                                 Text("bank.empty.no_accounts_found")
                                     .font(.subheadline.weight(.medium))
                             }
@@ -193,14 +192,13 @@ struct AddOrderView: View {
                                 }
                                 .buttonStyle(.plain)
                             }
-                            .padding(.vertical, 2)
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     }
                 } header: {
                     Text("order.section.settlement")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
                     if !bankAccounts.isEmpty, let selected = selectedBankAccount {
                         if let card = selected.cardNumber, !card.isEmpty {
@@ -217,7 +215,7 @@ struct AddOrderView: View {
                         FormRowLabel(
                             title: "order.field.usdt",
                             systemImage: "dollarsign.circle.fill",
-                            color: .green,
+                            color: .secondary,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
                         TextField(String(""), text: $usdtText, prompt: Text(verbatim: "0.00"))
@@ -235,7 +233,7 @@ struct AddOrderView: View {
                         FormRowLabel(
                             title: "order.field.price_uah",
                             systemImage: "chart.line.uptrend.xyaxis",
-                            color: .blue,
+                            color: .secondary,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
                         TextField(String(""), text: $priceText, prompt: Text(verbatim: "0.00"))
@@ -253,7 +251,7 @@ struct AddOrderView: View {
                         FormRowLabel(
                             title: "order.field.total_uah",
                             systemImage: "hryvniasign.circle.fill",
-                            color: .orange,
+                            color: .secondary,
                             fixedWidth: FormRowConstants.numericLabelWidth
                         )
                         TextField(String(""), text: $uahText, prompt: Text(verbatim: "0.00"))
@@ -269,7 +267,7 @@ struct AddOrderView: View {
                 } header: {
                     Text("order.section.amounts_rate")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 // Section 5: Always-Visible Commission / Fee Section
@@ -286,7 +284,6 @@ struct AddOrderView: View {
                                 }
                             }
                         }
-                        .padding(.vertical, 2)
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -296,7 +293,7 @@ struct AddOrderView: View {
                             FormRowLabel(
                                 title: "order.field.fee_usdt",
                                 systemImage: "percent",
-                                color: .purple,
+                                color: .secondary,
                                 fixedWidth: FormRowConstants.numericLabelWidth
                             )
 
@@ -319,7 +316,7 @@ struct AddOrderView: View {
                                 Spacer()
                                 Text(LocalizationManager.shared.string("order.fee.approx_commission", formatCurrency(parsedFee * parsedPrice)))
                                     .font(.caption2.weight(.regular))
-                                    .foregroundStyle(.purple.opacity(0.85))
+                                    .foregroundStyle(.secondary)
                             }
                         }
                     }
@@ -327,7 +324,7 @@ struct AddOrderView: View {
                 } header: {
                     Text("order.section.commission")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 // Section 6: Date & Optional Note
@@ -362,7 +359,7 @@ struct AddOrderView: View {
                 } header: {
                     Text("order.section.details")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
             }
             .listSectionSpacing(.compact)
@@ -657,7 +654,7 @@ private struct AccountChip: View {
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 6)
-            .background(isSelected ? Color.indigo : Color(uiColor: .secondarySystemGroupedBackground))
+            .background(isSelected ? Color.accentColor : Color(uiColor: .secondarySystemGroupedBackground))
             .foregroundStyle(isSelected ? Color.white : Color.primary)
             .clipShape(Capsule())
             .overlay {
@@ -686,7 +683,7 @@ private struct FeePresetChip: View {
             .font(.caption.weight(.medium))
                 .padding(.horizontal, 12)
                 .padding(.vertical, 6)
-                .background(isSelected ? Color.purple : Color(uiColor: .secondarySystemGroupedBackground))
+                .background(isSelected ? Color.accentColor : Color(uiColor: .secondarySystemGroupedBackground))
                 .foregroundStyle(isSelected ? Color.white : Color.primary)
                 .clipShape(Capsule())
             .overlay {
