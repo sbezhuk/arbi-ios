@@ -1883,13 +1883,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No intermediate cash withdrawals recorded for %@."
+            "value" : "No cash outs recorded for %@."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Немає записів про проміжні виведення готівки за %@."
+            "value" : "Немає виведень за %@."
           }
         }
       }
@@ -1899,13 +1899,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "No Withdrawals"
+            "value" : "No withdrawals yet"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Немає виведень"
+            "value" : "Виведень ще немає"
           }
         }
       }
@@ -1958,22 +1958,6 @@
         }
       }
     },
-    "withdrawal.footer.total_withdrawn_description" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Total profit taken to physical cash or personal savings in %@."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Загальний прибуток, виведений у готівку або особисті заощадження в %@."
-          }
-        }
-      }
-    },
     "withdrawal.label.entries_count" : {
       "localizations" : {
         "en" : {
@@ -1990,18 +1974,67 @@
         }
       }
     },
-    "withdrawal.label.total_withdrawn" : {
+    "withdrawal.label.entries_count.few" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Total Withdrawn (%@)"
+            "value" : "%lld entries"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Всього виведено (%@)"
+            "value" : "%lld записи"
+          }
+        }
+      }
+    },
+    "withdrawal.label.entries_count.many" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld entries"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld записів"
+          }
+        }
+      }
+    },
+    "withdrawal.label.entries_count.one" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld entry"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld запис"
+          }
+        }
+      }
+    },
+    "withdrawal.label.total_withdrawn" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total Withdrawn"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Всього виведено"
           }
         }
       }

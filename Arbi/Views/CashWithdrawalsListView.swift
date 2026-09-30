@@ -28,33 +28,29 @@ struct CashWithdrawalsListView: View {
                 Section {
                     VStack(alignment: .leading, spacing: 6) {
                         HStack {
-                            Label(LocalizationManager.shared.string("withdrawal.label.total_withdrawn", periodIdentifier), systemImage: "banknote.fill")
-                                .font(.footnote.weight(.medium))
+                            Label("withdrawal.label.total_withdrawn", systemImage: "banknote.fill")
+                                .font(.caption.weight(.medium))
                                 .foregroundStyle(.orange)
                             Spacer()
-                            Text(LocalizationManager.shared.string("withdrawal.label.entries_count", periodWithdrawals.count))
-                                .font(.caption2.weight(.regular))
+                            Text(entryCountLabel)
+                                .font(.caption)
                                 .foregroundStyle(.secondary)
                         }
 
                         HStack(alignment: .firstTextBaseline, spacing: 4) {
-                            Text(formatCurrency(totalWithdrawn))
-                                .font(.system(size: 26, weight: .bold, design: .rounded))
+                            Text(CashOutFormatters.uah(totalWithdrawn))
+                                .font(.system(size: 26, weight: .semibold, design: .rounded))
                                 .foregroundStyle(totalWithdrawn > 0 ? Color.orange : Color.primary)
-
-                            Text(verbatim: "₴")
-                                .font(.subheadline.weight(.semibold))
-                                .foregroundStyle(.secondary)
                         }
 
-                        Text(LocalizationManager.shared.string("withdrawal.footer.total_withdrawn_description", PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)))
-                            .font(.caption)
+                        Text(formattedPeriodDisplay)
+                            .font(.subheadline)
                             .foregroundStyle(.secondary)
-                            .padding(.top, 2)
                     }
-                    .padding(10)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 16)
                     .background(Color(uiColor: .secondarySystemGroupedBackground))
-                    .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+                    .clipShape(ContainerRelativeShape())
                     .listRowInsets(EdgeInsets())
                     .listRowBackground(Color.clear)
                 }
@@ -62,17 +58,24 @@ struct CashWithdrawalsListView: View {
                 // Section 2: Withdrawals List
                 Section {
                     if periodWithdrawals.isEmpty {
-                        ContentUnavailableView {
-                            Label("withdrawal.empty.title", systemImage: "banknote")
-                        } description: {
-                            Text(LocalizationManager.shared.string("withdrawal.empty.description", PeriodRolloverService.formattedPeriodDisplay(periodIdentifier)))
-                        } actions: {
-                            Button("withdrawal.action.log_cash_out") {
-                                showingAddSheet = true
-                            }
-                            .buttonStyle(.borderedProminent)
+                        VStack(spacing: 0) {
+                            Image(systemName: "banknote")
+                                .font(.title2)
+                                .foregroundStyle(.secondary)
+                                .padding(.bottom, 6)
+
+                            Text("withdrawal.empty.title")
+                                .font(.subheadline.weight(.medium))
+                                .padding(.bottom, 6)
+
+                            Text(LocalizationManager.shared.string("withdrawal.empty.description", formattedPeriodDisplay))
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                                .fixedSize(horizontal: false, vertical: true)
                         }
-                        .padding(.vertical, 16)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 24)
                     } else {
                         ForEach(periodWithdrawals) { withdrawal in
                             CashWithdrawalRow(withdrawal: withdrawal)
@@ -87,7 +90,8 @@ struct CashWithdrawalsListView: View {
                     }
                 }
             }
-            .listSectionSpacing(8)
+            .listSectionSpacing(12)
+            .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
             .navigationTitle("withdrawal.title.log")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -121,13 +125,37 @@ struct CashWithdrawalsListView: View {
         try? modelContext.save()
     }
 
-    private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = " "
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
+    private var formattedPeriodDisplay: String {
+        PeriodRolloverService.formattedPeriodDisplay(
+            periodIdentifier,
+            locale: Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
+        )
+    }
+
+    private var entryCountLabel: String {
+        let language = LocalizationManager.shared.currentLanguage
+        let key: String
+        switch language {
+        case .english:
+            key = periodWithdrawals.count == 1
+                ? "withdrawal.label.entries_count.one"
+                : "withdrawal.label.entries_count.many"
+        case .ukrainian:
+            let count = periodWithdrawals.count
+            if count % 10 == 1 && count % 100 != 11 {
+                key = "withdrawal.label.entries_count.one"
+            } else if (2...4).contains(count % 10) && !(12...14).contains(count % 100) {
+                key = "withdrawal.label.entries_count.few"
+            } else {
+                key = "withdrawal.label.entries_count.many"
+            }
+        }
+        let template = LocalizationManager.shared[raw: key]
+        return String(
+            format: template,
+            locale: Locale(identifier: language.rawValue),
+            arguments: [periodWithdrawals.count]
+        )
     }
 }
 
@@ -144,7 +172,7 @@ private struct CashWithdrawalRow: View {
 
             VStack(alignment: .leading, spacing: 3) {
                 HStack(spacing: 6) {
-                    Text(formatCurrency(withdrawal.amountUAH) + " ₴")
+                    Text(CashOutFormatters.uah(withdrawal.amountUAH))
                         .font(.body.weight(.semibold).monospacedDigit())
                         .foregroundStyle(Color.primary)
 
@@ -179,19 +207,22 @@ private struct CashWithdrawalRow: View {
         .padding(.vertical, 4)
     }
 
-    private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.groupingSeparator = " "
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
-    }
-
     private func formatDate(_ date: Date) -> String {
         let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter.string(from: date)
+    }
+}
+
+private enum CashOutFormatters {
+    static func uah(_ value: Double) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        return (formatter.string(from: NSNumber(value: value)) ?? String(value)) + " ₴"
     }
 }

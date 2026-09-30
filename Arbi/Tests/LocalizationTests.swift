@@ -84,8 +84,10 @@ public enum LocalizationTests {
         assert(manager["withdrawal.title.log"] == "Журнал виведень", "Withdrawal Log Title")
         assert(manager["withdrawal.title.record"] == "Записати виведення готівки", "Withdrawal Record Title")
         assert(manager["withdrawal.action.log_cash_out"] == "Записати виведення", "Withdrawal Log Action")
-        assert(manager.string("withdrawal.label.total_withdrawn", "09.2026") == "Всього виведено (09.2026)", "Withdrawal Total Label")
+        assert(manager["withdrawal.label.total_withdrawn"] == "Всього виведено", "Withdrawal Total Label")
         assert(manager.string("withdrawal.label.entries_count", 3) == "3 записів", "Withdrawal Entries Count")
+        assert(manager.string("withdrawal.label.entries_count.one", 1) == "1 запис", "Withdrawal Singular Count")
+        assert(manager.string("withdrawal.label.entries_count.few", 2) == "2 записи", "Withdrawal Few Count")
 
         // Rollover
         assert(manager["rollover.label.current_period"] == "Поточний період", "Rollover Current Period")
@@ -146,8 +148,9 @@ public enum LocalizationTests {
         assert(manager["withdrawal.title.log"] == "Cash Out Log", "Withdrawal Log Title")
         assert(manager["withdrawal.title.record"] == "Log Cash Withdrawal", "Withdrawal Record Title")
         assert(manager["withdrawal.action.log_cash_out"] == "Log Cash Out", "Withdrawal Log Action")
-        assert(manager.string("withdrawal.label.total_withdrawn", "09.2026") == "Total Withdrawn (09.2026)", "Withdrawal Total Label")
+        assert(manager["withdrawal.label.total_withdrawn"] == "Total Withdrawn", "Withdrawal Total Label")
         assert(manager.string("withdrawal.label.entries_count", 3) == "3 entries", "Withdrawal Entries Count")
+        assert(manager.string("withdrawal.label.entries_count.one", 1) == "1 entry", "Withdrawal Singular Count")
 
         // Rollover
         assert(manager["rollover.label.current_period"] == "Current Period", "Rollover Current Period")
