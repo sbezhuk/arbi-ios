@@ -7,6 +7,7 @@ struct BankAccountsView: View {
     @Environment(\.dismiss) private var dismiss
 
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allAccounts: [BankAccount]
+    @Query(sort: \P2POrder.timestamp, order: .reverse) private var allOrders: [P2POrder]
     @State private var showingAddSheet: Bool = false
     @State private var accountToEdit: BankAccount?
     @State private var errorMessage: String?
@@ -18,6 +19,17 @@ struct BankAccountsView: View {
 
     private var archivedAccounts: [BankAccount] {
         allAccounts.filter { $0.isArchived }
+    }
+
+    private var turnoverStatsByID: [UUID: AccountTurnoverStat] {
+        let periodOrders = PeriodRolloverService.ordersForPeriod(
+            PeriodRolloverService.currentPeriodIdentifier(),
+            orders: allOrders
+        )
+        return Dictionary(
+            uniqueKeysWithValues: P2PCalculator.accountTurnover(orders: periodOrders, accounts: allAccounts)
+                .map { ($0.id, $0) }
+        )
     }
 
     var body: some View {
@@ -38,44 +50,54 @@ struct BankAccountsView: View {
                         .padding(.vertical, 12)
                     } else {
                         ForEach(activeAccounts) { account in
-                            BankAccountRow(account: account)
-                                .contentShape(Rectangle())
-                                .onTapGesture {
-                                    accountToEdit = account
-                                }
-                                .swipeActions(edge: .trailing) {
-                                    Button(role: .destructive) {
-                                        deleteAccount(account)
-                                    } label: {
-                                        Label("common.action.delete", systemImage: "trash")
+                            if let stat = turnoverStatsByID[account.id] {
+                                BankAccountRow(stat: stat)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture {
+                                        accountToEdit = account
                                     }
+                                    .swipeActions(edge: .trailing) {
+                                        Button(role: .destructive) {
+                                            deleteAccount(account)
+                                        } label: {
+                                            Label("common.action.delete", systemImage: "trash")
+                                        }
 
-                                    Button {
-                                        toggleArchive(account)
-                                    } label: {
-                                        Label("common.action.archive", systemImage: "archivebox")
+                                        Button {
+                                            toggleArchive(account)
+                                        } label: {
+                                            Label("common.action.archive", systemImage: "archivebox")
+                                        }
+                                        .tint(.orange)
                                     }
-                                    .tint(.orange)
                                 }
                         }
                     }
                 } header: {
                     Text("bank.section.active_accounts")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 if !archivedAccounts.isEmpty {
-                    Section(LocalizationManager.shared.string("bank.section.archived_cards", archivedAccounts.count)) {
+                    Section {
                         ForEach(archivedAccounts) { account in
-                            BankAccountRow(account: account)
-                                .swipeActions(edge: .trailing) {
-                                    Button {
-                                        toggleArchive(account)
-                                    } label: {
-                                        Label("common.action.unarchive", systemImage: "arrow.up.bin")
+                            if let stat = turnoverStatsByID[account.id] {
+                                BankAccountRow(stat: stat)
+                                    .swipeActions(edge: .trailing) {
+                                        Button {
+                                            toggleArchive(account)
+                                        } label: {
+                                            Label("common.action.unarchive", systemImage: "arrow.up.bin")
+                                        }
+                                        .tint(.green)
                                     }
-                                    .tint(.green)
-                                }
+                            }
                         }
+                    } header: {
+                        Text(LocalizationManager.shared.string("bank.section.archived_cards", archivedAccounts.count))
+                            .font(.footnote.weight(.semibold))
+                            .foregroundStyle(Color(uiColor: .secondaryLabel))
                     }
                 }
             }
@@ -150,47 +172,81 @@ struct BankAccountsView: View {
 }
 
 private struct BankAccountRow: View {
-    let account: BankAccount
+    let stat: AccountTurnoverStat
 
-    var body: some View {
-        HStack(spacing: 12) {
-            Image(systemName: "creditcard.fill")
-                .font(.title3)
-                .foregroundStyle(account.isArchived ? Color.secondary : Color.indigo)
-
-            VStack(alignment: .leading, spacing: 3) {
-                Text(account.name)
-                    .font(.subheadline.weight(.medium))
-                    .foregroundStyle(account.isArchived ? .secondary : .primary)
-
-                if let card = account.cardNumber, !card.isEmpty {
-                    Text(card)
-                        .font(.caption2.monospacedDigit().weight(.regular))
-                        .foregroundStyle(.secondary)
-                }
-            }
-
-            Spacer()
-
-            VStack(alignment: .trailing, spacing: 3) {
-                Text(formatCurrency(account.turnoverLimitUAH) + " ₴")
-                    .font(.subheadline.weight(.regular).monospacedDigit())
-                    .foregroundStyle(.secondary)
-
-                Text("bank.label.monthly_limit")
-                    .font(.caption2.weight(.regular))
-                    .foregroundStyle(.tertiary)
-            }
-        }
-        .padding(.vertical, 4)
+    private var progress: Double {
+        min(max(stat.progress, 0), 1)
     }
 
-    private func formatCurrency(_ value: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 0
-        return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.0f", value)
+    private var progressColor: Color {
+        if stat.progress >= 0.9 {
+            return .red
+        } else if stat.progress >= 0.7 {
+            return .orange
+        } else {
+            return .indigo
+        }
+    }
+
+    private var maskedCardNumber: String? {
+        guard let card = stat.cardNumber, !card.isEmpty else { return nil }
+        let digits = card.filter(\.isNumber)
+        guard digits.count >= 4 else { return card }
+        return "•••• " + String(digits.suffix(4))
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .top) {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(HomeDisplayNames.bankAccount(stat.accountName))
+                        .font(.subheadline.weight(.medium))
+                        .foregroundStyle(.primary)
+                        .lineLimit(1)
+                        .truncationMode(.tail)
+
+                    if let card = maskedCardNumber {
+                        Text(card)
+                            .font(.caption.monospacedDigit())
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+
+                Text(HomeFormatters.percent(progress))
+                    .font(.caption.weight(.medium).monospacedDigit())
+                    .foregroundStyle(progressColor)
+            }
+
+            ProgressView(value: progress)
+                .tint(progressColor)
+
+            HStack(alignment: .firstTextBaseline) {
+                HStack(spacing: 4) {
+                    Text(HomeFormatters.uah(stat.totalSellUAH))
+                        .font(.caption.monospacedDigit())
+                        .foregroundStyle(.secondary)
+                    Text("bank.label.used")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer()
+
+                HStack(spacing: 4) {
+                    Text(HomeFormatters.uah(stat.turnoverLimitUAH))
+                        .font(.caption.monospacedDigit())
+                        .foregroundStyle(.tertiary)
+                    Text("bank.label.limit")
+                        .font(.caption)
+                    .foregroundStyle(.tertiary)
+                }
+            }
+        }
+        .padding(.vertical, 8)
+        .alignmentGuide(.listRowSeparatorLeading) { dimensions in
+            dimensions[.leading]
+        }
     }
 }
 

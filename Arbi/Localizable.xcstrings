@@ -164,7 +164,24 @@
         }
       }
     },
+    "bank.label.limit" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "limit"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ліміт"
+          }
+        }
+      }
+    },
     "bank.label.monthly_limit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -176,6 +193,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "місячний ліміт"
+          }
+        }
+      }
+    },
+    "bank.label.used" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "used"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "використано"
           }
         }
       }

@@ -700,7 +700,7 @@ private struct OrderRowView: View {
 
 }
 
-private enum HomeFormatters {
+enum HomeFormatters {
     static func uah(_ value: Double) -> String {
         decimal(value, minimumFractionDigits: 0, maximumFractionDigits: 2) + " ₴"
     }
@@ -731,7 +731,7 @@ private enum HomeFormatters {
     }
 }
 
-private enum HomeDisplayNames {
+enum HomeDisplayNames {
     static func bankAccount(_ name: String) -> String {
         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
         guard let openParen = trimmedName.firstIndex(of: "(") else { return trimmedName }
