@@ -89,13 +89,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Card No."
+            "value" : "Card"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Номер картки"
+            "value" : "Картка"
           }
         }
       }
@@ -185,13 +185,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Optional (e.g. •••• 1234)"
+            "value" : "Optional · •••• 1234"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Необов'язково (напр., •••• 1234)"
+            "value" : "Необов’язково · •••• 1234"
           }
         }
       }

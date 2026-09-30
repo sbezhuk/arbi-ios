@@ -223,7 +223,7 @@ struct AddOrEditBankAccountView: View {
                     HStack {
                         Label("bank.field.title", systemImage: "building.columns.fill")
                             .font(.subheadline.weight(.regular))
-                            .foregroundStyle(.indigo)
+                            .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
 
                         TextField("bank.placeholder.name", text: $name)
@@ -241,15 +241,19 @@ struct AddOrEditBankAccountView: View {
                     }
                 } header: {
                     Text("bank.section.account_details")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
                     Text("bank.footer.security_notice")
+                        .font(.caption)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 Section {
                     HStack {
                         Label("bank.field.limit", systemImage: "chart.line.uptrend.xyaxis")
                             .font(.subheadline.weight(.regular))
-                            .foregroundStyle(.orange)
+                            .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
 
                         TextField(String(""), text: $limitText, prompt: Text(verbatim: "150000"))
@@ -268,15 +272,19 @@ struct AddOrEditBankAccountView: View {
                                 }
                                 .font(.caption.weight(.medium))
                                 .buttonStyle(.bordered)
-                                .tint(.orange)
+                                .tint(isPresetSelected(amount) ? Color.accentColor : Color.secondary)
                             }
                         }
                         .padding(.vertical, 4)
                     }
                 } header: {
                     Text("bank.section.turnover_limit")
+                        .font(.footnote.weight(.semibold))
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
                     Text("bank.footer.turnover_limit_description")
+                        .font(.caption)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
             }
             .navigationTitle(editingAccount == nil ? "bank.title.new_account" : "bank.title.edit_account")
@@ -342,5 +350,10 @@ struct AddOrEditBankAccountView: View {
             errorMessage = error.localizedDescription
             showingErrorAlert = true
         }
+    }
+
+    private func isPresetSelected(_ amount: Int) -> Bool {
+        let cleaned = limitText.replacingOccurrences(of: ",", with: ".")
+        return Double(cleaned) == Double(amount)
     }
 }
