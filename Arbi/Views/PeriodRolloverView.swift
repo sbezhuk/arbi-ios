@@ -90,12 +90,11 @@ struct PeriodRolloverView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    .padding(.vertical, 4)
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 16, leading: 16, bottom: 16, trailing: 16))
                 } header: {
                     Text("rollover.section.transition")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 // Section 2: Carry-Over Balances Card
@@ -104,26 +103,26 @@ struct PeriodRolloverView: View {
                         RolloverRowLabel(
                             title: "rollover.label.free_uah",
                             systemImage: "banknote.fill",
-                            color: .indigo
+                            color: .secondary
                         )
                         Spacer()
-                        Text(formatCurrency(closingBreakdown.freeUAH) + " ₴")
+                        Text(RolloverFormatters.uah(closingBreakdown.freeUAH))
                             .font(.body.weight(.medium).monospacedDigit())
                             .foregroundStyle(closingBreakdown.freeUAH >= 0 ? Color.green : Color.red)
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
 
                     HStack {
                         RolloverRowLabel(
                             title: "rollover.label.unliquidated_usdt",
                             systemImage: "dollarsign.circle.fill",
-                            color: .teal
+                            color: .secondary
                         )
                         Spacer()
-                        Text(String(format: "%.2f USDT", closingBreakdown.remainingUSDT))
+                        Text(RolloverFormatters.usdt(closingBreakdown.remainingUSDT))
                             .font(.body.weight(.medium).monospacedDigit())
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
 
                     if closingBreakdown.remainingUSDT > 0 {
                         HStack {
@@ -133,33 +132,33 @@ struct PeriodRolloverView: View {
                                 color: .secondary
                             )
                             Spacer()
-                            Text(String(format: "%.2f ₴/USDT", closingAvgBuyPrice))
+                            Text(RolloverFormatters.rate(closingAvgBuyPrice) + " ₴/USDT")
                                 .font(.footnote.weight(.regular).monospacedDigit())
                                 .foregroundStyle(.secondary)
                         }
-                        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                     }
 
                     HStack {
                         RolloverRowLabel(
                             title: "rollover.label.net_pnl",
                             systemImage: "chart.line.uptrend.xyaxis",
-                            color: .green
+                            color: closingBreakdown.netPnLUAH >= 0 ? .green : .red
                         )
                         Spacer()
-                        Text((closingBreakdown.netPnLUAH >= 0 ? "+" : "") + formatCurrency(closingBreakdown.netPnLUAH) + " ₴")
+                        Text(RolloverFormatters.signedUAH(closingBreakdown.netPnLUAH))
                             .font(.body.weight(.medium).monospacedDigit())
                             .foregroundStyle(closingBreakdown.netPnLUAH >= 0 ? Color.green : Color.red)
                     }
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 } header: {
                     Text("rollover.section.summary")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
                     Text(LocalizationManager.shared.string("rollover.footer.summary_description", nextPeriod))
                         .font(.caption)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
                 // Section 3: Reset Notice Card
@@ -169,7 +168,7 @@ struct PeriodRolloverView: View {
                             Image(systemName: "arrow.counterclockwise.circle.fill")
                                 .font(.title3)
                                 .frame(width: 22, alignment: .center)
-                                .foregroundStyle(.blue)
+                                .foregroundStyle(.secondary)
                             VStack(alignment: .leading, spacing: 2) {
                                 Text("rollover.notice.turnover_title")
                                     .font(.footnote.weight(.semibold))
@@ -195,32 +194,13 @@ struct PeriodRolloverView: View {
                             }
                         }
                     }
-                    .padding(.vertical, 4)
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 } header: {
                     Text("rollover.section.what_changes")
                         .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
                 }
 
-                // Section 4: Action Button
-                Section {
-                    Button {
-                        performRollover()
-                    } label: {
-                        HStack {
-                            Spacer()
-                            Text("common.action.confirm")
-                                .font(.body.weight(.semibold))
-                            Spacer()
-                        }
-                    }
-                    .buttonStyle(.borderedProminent)
-                    .controlSize(.large)
-                    .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
-                    .listRowBackground(Color.clear)
-                }
-                .padding(.bottom, 24)
             }
             .listSectionSpacing(.compact)
             .contentMargins(.top, SheetLayoutConstants.topContentMargin, for: .scrollContent)
@@ -235,10 +215,10 @@ struct PeriodRolloverView: View {
                 }
 
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("common.action.confirm") {
+                    Button("common.action.save") {
                         performRollover()
                     }
-                    .fontWeight(.semibold)
+                    .fontWeight(.bold)
                 }
             }
             .alert("common.alert.error", isPresented: $showingErrorAlert) {
@@ -276,13 +256,36 @@ struct PeriodRolloverView: View {
         }
     }
 
-    private func formatCurrency(_ value: Double) -> String {
+}
+
+private enum RolloverFormatters {
+    static func uah(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 0, maximumFractionDigits: 2) + " ₴"
+    }
+
+    static func rate(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2)
+    }
+
+    static func usdt(_ value: Double) -> String {
+        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2) + " USDT"
+    }
+
+    static func signedUAH(_ value: Double) -> String {
+        (value >= 0 ? "+" : "-") + uah(abs(value))
+    }
+
+    private static func decimal(
+        _ value: Double,
+        minimumFractionDigits: Int,
+        maximumFractionDigits: Int
+    ) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
-        formatter.groupingSeparator = " "
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
+        formatter.locale = Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
+        formatter.minimumFractionDigits = minimumFractionDigits
+        formatter.maximumFractionDigits = maximumFractionDigits
+        return formatter.string(from: NSNumber(value: value)) ?? String(value)
     }
 }
 
