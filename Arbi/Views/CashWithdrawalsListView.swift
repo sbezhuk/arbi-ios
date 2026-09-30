@@ -26,7 +26,7 @@ struct CashWithdrawalsListView: View {
             List {
                 // Section 1: Summary Card
                 Section {
-                    VStack(alignment: .leading, spacing: 6) {
+                    VStack(alignment: .leading, spacing: 0) {
                         HStack {
                             Label("withdrawal.label.total_withdrawn", systemImage: "banknote.fill")
                                 .font(.caption.weight(.medium))
@@ -39,13 +39,15 @@ struct CashWithdrawalsListView: View {
 
                         HStack(alignment: .firstTextBaseline, spacing: 4) {
                             Text(CashOutFormatters.uah(totalWithdrawn))
-                                .font(.system(size: 26, weight: .semibold, design: .rounded))
+                                .font(.system(size: 28, weight: .semibold, design: .rounded))
                                 .foregroundStyle(totalWithdrawn > 0 ? Color.orange : Color.primary)
                         }
+                        .padding(.top, 8)
 
                         Text(formattedPeriodDisplay)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
+                            .padding(.top, 4)
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 16)

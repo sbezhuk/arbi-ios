@@ -444,7 +444,8 @@ private struct SummaryMetricsView: View {
                 }
             }
         }
-        .padding(16)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Color(uiColor: .secondarySystemGroupedBackground))
         .clipShape(ContainerRelativeShape())
