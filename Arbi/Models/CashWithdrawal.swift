@@ -3,11 +3,11 @@ import SwiftData
 
 @Model
 public final class CashWithdrawal {
-    public var id: UUID
-    public var amountUAH: Double
-    public var timestamp: Date
+    public var id: UUID = UUID()
+    public var amountUAH: Double = 0.0
+    public var timestamp: Date = Date()
     public var note: String?
-    public var periodIdentifier: String // e.g. "09.2026"
+    public var periodIdentifier: String = PeriodRolloverService.currentPeriodIdentifier() // e.g. "09.2026"
     
     // Optional relationship to track which bank card the cash was drawn from
     public var bankAccount: BankAccount?

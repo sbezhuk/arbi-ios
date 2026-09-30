@@ -3,6 +3,7 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @EnvironmentObject private var synchronizationReadiness: CloudKitSynchronizationReadiness
     @Query(sort: \P2POrder.timestamp, order: .reverse) private var orders: [P2POrder]
     @Query private var capitalSettingsList: [CapitalSettings]
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allBankAccounts: [BankAccount]
@@ -59,9 +60,21 @@ struct ContentView: View {
         P2PCalculator.accountTurnover(orders: periodOrders, accounts: activeBankAccounts)
     }
 
+    private var localStoreIsEmpty: Bool {
+        orders.isEmpty
+            && capitalSettingsList.isEmpty
+            && allBankAccounts.isEmpty
+            && allWithdrawals.isEmpty
+    }
+
     var body: some View {
         NavigationStack {
-            List {
+            if synchronizationReadiness.shouldShowRestoring(localStoreIsEmpty: localStoreIsEmpty) {
+                CloudKitRestoreView()
+                    .navigationTitle("trades.title.spread_arbitrage")
+                    .navigationBarTitleDisplayMode(.large)
+            } else {
+                List {
                 Section {
                     PeriodPickerRow(
                         selectedPeriod: selectedPeriod,
@@ -179,6 +192,7 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingWithdrawalsSheet) {
                 CashWithdrawalsListView(periodIdentifier: selectedPeriod)
+                }
             }
         }
     }

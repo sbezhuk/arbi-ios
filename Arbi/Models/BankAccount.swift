@@ -3,12 +3,12 @@ import SwiftData
 
 @Model
 public final class BankAccount {
-    public var id: UUID
-    public var name: String                // e.g. "Mono Black (Main)", "A-Bank Drop 1"
+    public var id: UUID = UUID()
+    public var name: String = ""          // e.g. "Mono Black (Main)", "A-Bank Drop 1"
     public var cardNumber: String?         // Optional 16-digit or last 4 digits (e.g. "4441 •••• 1234")
-    public var turnoverLimitUAH: Double    // Custom limit, e.g. 150_000.0 or 100_000.0
-    public var isArchived: Bool            // For hiding inactive cards
-    public var createdAt: Date
+    public var turnoverLimitUAH: Double = 150_000.0 // Custom limit, e.g. 150_000.0 or 100_000.0
+    public var isArchived: Bool = false             // For hiding inactive cards
+    public var createdAt: Date = Date()
 
     // Relationship: all orders settled to this bank account
     @Relationship(deleteRule: .nullify, inverse: \P2POrder.bankAccount)
@@ -80,4 +80,3 @@ public extension BankAccount {
         return addedOrRestoredAccounts
     }
 }
-

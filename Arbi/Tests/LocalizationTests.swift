@@ -105,6 +105,7 @@ public enum LocalizationTests {
         assert(manager["common.action.ok"] == "ОК", "Action: OK")
         assert(manager["common.alert.error"] == "Помилка", "Alert: Error")
         assert(manager["common.label.other"] == "Інше", "Label: Other")
+        assert(manager["sync.restore.message"] == "Відновлення ваших даних з iCloud…", "Sync restore message")
 
         // 2. Verify English core strings
         manager.setLanguage(.english)
@@ -168,6 +169,7 @@ public enum LocalizationTests {
         assert(manager["common.action.ok"] == "OK", "Action: OK")
         assert(manager["common.alert.error"] == "Error", "Alert: Error")
         assert(manager["common.label.other"] == "Other", "Label: Other")
+        assert(manager["sync.restore.message"] == "Restoring your data from iCloud…", "Sync restore message")
     }
 
     public static func testMissingKeyFallback() throws {
@@ -191,7 +193,7 @@ public enum LocalizationTests {
         "(%@)",
         "0.00",
         "150000",
-        "Spred v%@",
+        "Arbi v%@",
         "UAH",
         "₴"
     ]

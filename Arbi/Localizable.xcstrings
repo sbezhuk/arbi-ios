@@ -4,6 +4,9 @@
     "%lld" : {
 
     },
+    "Arbi data is temporarily unavailable" : {
+
+    },
     "bank.action.add_account" : {
       "localizations" : {
         "en" : {
@@ -1558,6 +1561,9 @@
         }
       }
     },
+    "The existing local database was preserved. Please restart Arbi or contact support." : {
+
+    },
     "trades.action.add_trade" : {
       "localizations" : {
         "en" : {
@@ -2180,6 +2186,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Записати виведення готівки"
+          }
+        }
+      }
+    },
+    "sync.restore.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restoring your data from iCloud…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відновлення ваших даних з iCloud…"
           }
         }
       }

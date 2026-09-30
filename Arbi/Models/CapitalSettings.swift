@@ -3,13 +3,13 @@ import SwiftData
 
 @Model
 public final class CapitalSettings {
-    public var id: UUID
-    public var startingDepositUAH: Double
-    public var toCashUAH: Double
-    public var initialUSDT: Double           // Existing USDT holding at onboarding/period start
-    public var initialAvgBuyPrice: Double    // Average acquisition rate in UAH for initial USDT
-    public var periodIdentifier: String // e.g. "2026-09" or "global"
-    public var lastUpdated: Date
+    public var id: UUID = UUID()
+    public var startingDepositUAH: Double = 0.0
+    public var toCashUAH: Double = 0.0
+    public var initialUSDT: Double = 0.0           // Existing USDT holding at onboarding/period start
+    public var initialAvgBuyPrice: Double = 0.0    // Average acquisition rate in UAH for initial USDT
+    public var periodIdentifier: String = "global" // e.g. "2026-09" or "global"
+    public var lastUpdated: Date = Date()
 
     public init(
         id: UUID = UUID(),
@@ -37,4 +37,3 @@ public extension CapitalSettings {
             ?? list.first(where: { $0.periodIdentifier == "global" })
     }
 }
-
