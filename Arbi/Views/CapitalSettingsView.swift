@@ -16,6 +16,9 @@ struct CapitalSettingsView: View {
     @State private var toCashText: String = ""
     @State private var initialUSDTText: String = ""
     @State private var initialAvgBuyPriceText: String = ""
+    @State private var attemptedSave: Bool = false
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert: Bool = false
 
     @FocusState private var focusedField: Field?
 
@@ -44,6 +47,17 @@ struct CapitalSettingsView: View {
 
     private var parsedInitialAvgBuyPrice: Double {
         parseDouble(initialAvgBuyPriceText)
+    }
+
+    private var validationResult: FormValidationResult {
+        CapitalSettingsDraftValidator.validate(
+            CapitalSettingsDraft(
+                startingDepositUAH: NumericInput(text: depositText),
+                toCashUAH: NumericInput(text: toCashText),
+                initialUSDT: NumericInput(text: initialUSDTText),
+                initialAvgBuyPrice: NumericInput(text: initialAvgBuyPriceText)
+            )
+        )
     }
 
     private var simulatedSettings: CapitalSettings {
@@ -119,7 +133,8 @@ struct CapitalSettingsView: View {
                             CapitalFormRowLabel(
                                 title: "trades.card.starting_deposit",
                                 systemImage: "banknote.fill",
-                                iconColor: .green
+                                iconColor: .green,
+                                required: true
                             )
 
                             Spacer()
@@ -129,6 +144,7 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .deposit)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
+                            validationMessage(for: "deposit")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -165,7 +181,8 @@ struct CapitalSettingsView: View {
                             CapitalFormRowLabel(
                                 title: "capital.field.initial_usdt",
                                 systemImage: "dollarsign.circle.fill",
-                                iconColor: .green
+                                iconColor: .green,
+                                required: true
                             )
 
                             Spacer()
@@ -175,6 +192,7 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .initialUSDT)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
+                            validationMessage(for: "initial_usdt")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -192,6 +210,7 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .initialAvgBuyPrice)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
+                            validationMessage(for: "initial_avg_price")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -223,7 +242,8 @@ struct CapitalSettingsView: View {
                             CapitalFormRowLabel(
                                 title: "trades.card.cash_out",
                                 systemImage: "arrow.down.forward.circle.fill",
-                                iconColor: .orange
+                                iconColor: .orange,
+                                required: true
                             )
 
                             Spacer()
@@ -233,6 +253,7 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .toCash)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
+                            validationMessage(for: "to_cash")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
@@ -260,8 +281,10 @@ struct CapitalSettingsView: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("common.action.save") {
+                        attemptedSave = true
                         saveSettings()
                     }
+                    .disabled(!validationResult.isValid)
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -280,10 +303,18 @@ struct CapitalSettingsView: View {
                     initialAvgBuyPriceText = settings.initialAvgBuyPrice > 0 ? formatPlain(settings.initialAvgBuyPrice) : ""
                 }
             }
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) {}
+            } message: {
+                Text(verbatim: errorMessage ?? "")
+            }
         }
     }
 
     private func saveSettings() {
+        attemptedSave = true
+        guard validationResult.isValid else { return }
+
         if let existing = settingsList.first(where: { $0.periodIdentifier == periodIdentifier }) {
             existing.startingDepositUAH = parsedDeposit
             existing.toCashUAH = parsedToCash
@@ -301,14 +332,27 @@ struct CapitalSettingsView: View {
             )
             modelContext.insert(newSettings)
         }
-        try? modelContext.save()
-        dismiss()
+        do {
+            try modelContext.save()
+            dismiss()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
     }
 
     private func parseDouble(_ text: String) -> Double {
-        let cleaned = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: ",", with: ".")
-        return Double(cleaned) ?? 0.0
+        NumericInput(text: text).value ?? 0.0
+    }
+
+    @ViewBuilder
+    private func validationMessage(for field: String) -> some View {
+        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
+            Text(LocalizedStringKey(issue.messageKey))
+                .font(.caption)
+                .foregroundStyle(.red)
+        }
     }
 
     private func formatPlain(_ value: Double) -> String {
@@ -333,6 +377,7 @@ private struct CapitalFormRowLabel: View {
     let title: LocalizedStringKey
     let systemImage: String
     let iconColor: Color
+    var required: Bool = false
 
     var body: some View {
         HStack(spacing: 8) {
@@ -341,9 +386,14 @@ private struct CapitalFormRowLabel: View {
                 .frame(width: 24, alignment: .leading)
                 .foregroundStyle(iconColor)
 
-            Text(title)
-                .font(.subheadline.weight(.regular))
-                .foregroundStyle(.primary)
+            HStack(spacing: 2) {
+                Text(title)
+                if required {
+                    Text("*").foregroundStyle(.secondary)
+                }
+            }
+            .font(.subheadline.weight(.regular))
+            .foregroundStyle(.primary)
                 .lineLimit(1)
         }
     }

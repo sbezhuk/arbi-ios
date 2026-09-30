@@ -56,6 +56,9 @@ struct AddOrderView: View {
     // Fee preset state (default is Custom)
     @State private var selectedFeePreset: FeePreset = .custom
     @State private var isProgrammaticFeeUpdate: Bool = false
+    @State private var attemptedSave: Bool = false
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert: Bool = false
 
     @FocusState private var focusedField: Field?
 
@@ -72,8 +75,20 @@ struct AddOrderView: View {
     private var parsedUAH: Double { parseDouble(uahText) }
     private var parsedFee: Double { parseDouble(feeText) }
 
+    private var validationResult: FormValidationResult {
+        P2POrderDraftValidator.validate(
+            P2POrderDraft(
+                usdtAmount: NumericInput(text: usdtText),
+                price: NumericInput(text: priceText),
+                uahAmount: NumericInput(text: uahText),
+                feeUSDT: NumericInput(text: feeText),
+                bankAccount: selectedBankAccount
+            )
+        )
+    }
+
     private var isValid: Bool {
-        parsedUSDT > 0 && parsedPrice > 0 && parsedUAH > 0 && selectedBankAccount != nil
+        validationResult.isValid
     }
 
     var body: some View {
@@ -196,15 +211,24 @@ struct AddOrderView: View {
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     }
                 } header: {
-                    Text("order.section.settlement")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+                    HStack(spacing: 2) {
+                        Text("order.section.settlement")
+                        Text("*").foregroundStyle(.secondary)
+                    }
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
                     if !bankAccounts.isEmpty, let selected = selectedBankAccount {
                         if let card = selected.cardNumber, !card.isEmpty {
                             Text(LocalizationManager.shared.string("order.footer.selected_card_turnover", card, Int(selected.turnoverLimitUAH / 1000)))
                         } else {
                             Text(LocalizationManager.shared.string("order.footer.turnover_limit", Int(selected.turnoverLimitUAH / 1000)))
+                        }
+                    } else {
+                        if attemptedSave, let issue = validationResult.issue(for: "bank_account") {
+                            Text(LocalizedStringKey(issue.messageKey))
+                                .font(.caption)
+                                .foregroundStyle(.red)
                         }
                     }
                 }
@@ -216,7 +240,8 @@ struct AddOrderView: View {
                             title: "order.field.usdt",
                             systemImage: "dollarsign.circle.fill",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth
+                            fixedWidth: FormRowConstants.numericLabelWidth,
+                            required: true
                         )
                         TextField(String(""), text: $usdtText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
@@ -226,6 +251,7 @@ struct AddOrderView: View {
                             .onChange(of: usdtText) { _, _ in
                                 handleUSDTChanged()
                             }
+                        validationMessage(for: "usdt")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -234,7 +260,8 @@ struct AddOrderView: View {
                             title: "order.field.price_uah",
                             systemImage: "chart.line.uptrend.xyaxis",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth
+                            fixedWidth: FormRowConstants.numericLabelWidth,
+                            required: true
                         )
                         TextField(String(""), text: $priceText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
@@ -244,6 +271,7 @@ struct AddOrderView: View {
                             .onChange(of: priceText) { _, _ in
                                 handlePriceChanged()
                             }
+                        validationMessage(for: "price")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -252,7 +280,8 @@ struct AddOrderView: View {
                             title: "order.field.total_uah",
                             systemImage: "hryvniasign.circle.fill",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth
+                            fixedWidth: FormRowConstants.numericLabelWidth,
+                            required: true
                         )
                         TextField(String(""), text: $uahText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
@@ -262,6 +291,7 @@ struct AddOrderView: View {
                             .onChange(of: uahText) { _, _ in
                                 handleUAHChanged()
                             }
+                        validationMessage(for: "uah")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
@@ -305,6 +335,8 @@ struct AddOrderView: View {
                                 .onChange(of: feeText) { _, _ in
                                     handleFeeTextEdited()
                                 }
+
+                            validationMessage(for: "fee")
 
                             Text("order.field.usdt")
                                 .font(.caption2.weight(.regular))
@@ -376,6 +408,7 @@ struct AddOrderView: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("common.action.save") {
+                        attemptedSave = true
                         saveOrder()
                     }
                     .disabled(!isValid)
@@ -402,6 +435,11 @@ struct AddOrderView: View {
             }
             .sheet(isPresented: $showingAddAccountSheet) {
                 AddOrEditBankAccountView()
+            }
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) {}
+            } message: {
+                Text(verbatim: errorMessage ?? "")
             }
         }
     }
@@ -507,6 +545,7 @@ struct AddOrderView: View {
     // MARK: - Persistence
 
     private func saveOrder() {
+        attemptedSave = true
         guard isValid, let bankAccount = selectedBankAccount else { return }
 
         // Sync legacy bank enum if matching
@@ -530,15 +569,29 @@ struct AddOrderView: View {
         )
 
         modelContext.insert(order)
-        dismiss()
+        do {
+            try modelContext.save()
+            dismiss()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
     }
 
     // MARK: - Parsing & Formatting Helpers
 
     private func parseDouble(_ text: String) -> Double {
-        let cleaned = text.trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: ",", with: ".")
-        return Double(cleaned) ?? 0.0
+        NumericInput(text: text).value ?? 0.0
+    }
+
+    @ViewBuilder
+    private func validationMessage(for field: String) -> some View {
+        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
+            Text(LocalizedStringKey(issue.messageKey))
+                .font(.caption)
+                .foregroundStyle(.red)
+        }
     }
 
     private func formatNumber(_ value: Double, maxDecimals: Int) -> String {
@@ -588,14 +641,20 @@ private struct FormRowLabel: View {
     let systemImage: String
     let color: Color
     var fixedWidth: CGFloat? = nil
+    var required: Bool = false
 
     var body: some View {
         HStack(spacing: FormRowConstants.spacing) {
             FormRowIcon(systemImage: systemImage, color: color)
-            Text(title)
-                .font(FormRowConstants.labelFont.weight(.regular))
-                .foregroundStyle(.primary)
-                .lineLimit(1)
+            HStack(spacing: 2) {
+                Text(title)
+                if required {
+                    Text("*").foregroundStyle(.secondary)
+                }
+            }
+            .font(FormRowConstants.labelFont.weight(.regular))
+            .foregroundStyle(.primary)
+            .lineLimit(1)
         }
         .frame(width: fixedWidth, alignment: .leading)
     }

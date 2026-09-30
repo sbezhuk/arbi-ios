@@ -262,14 +262,26 @@ struct AddOrEditBankAccountView: View {
     @State private var limitText: String = "150000"
     @State private var errorMessage: String?
     @State private var showingErrorAlert: Bool = false
+    @State private var attemptedSave: Bool = false
+    @FocusState private var focusedField: Field?
 
-    private var parsedLimit: Double {
-        let cleaned = limitText.replacingOccurrences(of: ",", with: ".")
-        return Double(cleaned) ?? 150_000.0
+    private enum Field: Hashable {
+        case name
+        case limit
+    }
+
+    private var parsedLimit: Double? {
+        NumericInput(text: limitText).value
+    }
+
+    private var validationResult: FormValidationResult {
+        BankAccountDraftValidator.validate(
+            BankAccountDraft(name: name, turnoverLimitUAH: NumericInput(text: limitText))
+        )
     }
 
     private var isValid: Bool {
-        !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && parsedLimit > 0
+        validationResult.isValid
     }
 
     var body: some View {
@@ -277,13 +289,22 @@ struct AddOrEditBankAccountView: View {
             Form {
                 Section {
                     HStack {
-                        Label("bank.field.title", systemImage: "building.columns.fill")
+                            Label {
+                                HStack(spacing: 2) {
+                                    Text("bank.field.title")
+                                    Text("*").foregroundStyle(.secondary)
+                                }
+                            } icon: {
+                                Image(systemName: "building.columns.fill")
+                            }
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
 
                         TextField("bank.placeholder.name", text: $name)
                             .font(.body.weight(.regular))
+                            .focused($focusedField, equals: .name)
+                        validationMessage(for: "name")
                     }
 
                     HStack {
@@ -307,7 +328,14 @@ struct AddOrEditBankAccountView: View {
 
                 Section {
                     HStack {
-                        Label("bank.field.limit", systemImage: "chart.line.uptrend.xyaxis")
+                            Label {
+                                HStack(spacing: 2) {
+                                    Text("bank.field.limit")
+                                    Text("*").foregroundStyle(.secondary)
+                                }
+                            } icon: {
+                                Image(systemName: "chart.line.uptrend.xyaxis")
+                            }
                             .font(.subheadline.weight(.regular))
                             .foregroundStyle(.secondary)
                             .frame(width: 100, alignment: .leading)
@@ -316,6 +344,8 @@ struct AddOrEditBankAccountView: View {
                             .keyboardType(.numberPad)
                             .font(.body.monospacedDigit().weight(.regular))
                             .multilineTextAlignment(.trailing)
+                            .focused($focusedField, equals: .limit)
+                        validationMessage(for: "limit")
                     }
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -354,6 +384,7 @@ struct AddOrEditBankAccountView: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("common.action.save") {
+                        attemptedSave = true
                         save()
                     }
                     .disabled(!isValid)
@@ -380,7 +411,8 @@ struct AddOrEditBankAccountView: View {
     }
 
     private func save() {
-        guard isValid else { return }
+        attemptedSave = true
+        guard isValid, let parsedLimit else { return }
 
         let trimmedCard = cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
         let finalCardNumber = trimmedCard.isEmpty ? nil : trimmedCard
@@ -409,7 +441,15 @@ struct AddOrEditBankAccountView: View {
     }
 
     private func isPresetSelected(_ amount: Int) -> Bool {
-        let cleaned = limitText.replacingOccurrences(of: ",", with: ".")
-        return Double(cleaned) == Double(amount)
+        parsedLimit == Double(amount)
+    }
+
+    @ViewBuilder
+    private func validationMessage(for field: String) -> some View {
+        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
+            Text(LocalizedStringKey(issue.messageKey))
+                .font(.caption)
+                .foregroundStyle(.red)
+        }
     }
 }

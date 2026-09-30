@@ -47,6 +47,7 @@ struct SpredApp: App {
                 try BankAccountsTests.runAllTests()
                 try PeriodRolloverTests.runAllTests()
                 try CashWithdrawalTests.runAllTests()
+                try FormValidationTests.runAllTests()
                 try LocalizationTests.runAllTests()
                 try CloudKitPersistenceTests.runAllTests()
                 try CloudKitSynchronizationReadinessTests.runAllTests()

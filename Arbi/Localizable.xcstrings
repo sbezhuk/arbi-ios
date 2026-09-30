@@ -2190,6 +2190,54 @@
         }
       }
     },
+    "validation.bank_account_archived" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose an active bank account." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Виберіть активний банківський рахунок." } }
+      }
+    },
+    "validation.bank_account_required" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Select a bank account." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Виберіть банківський рахунок." } }
+      }
+    },
+    "validation.initial_price_without_inventory" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter an average price only when initial USDT is greater than zero." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Вкажіть середню ціну лише за наявності початкового USDT." } }
+      }
+    },
+    "validation.invalid_number" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a valid number." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Введіть коректне число." } }
+      }
+    },
+    "validation.must_be_finite" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a finite number." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Введіть скінченне число." } }
+      }
+    },
+    "validation.must_be_non_negative" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter zero or a positive value." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Введіть нуль або додатне значення." } }
+      }
+    },
+    "validation.must_be_positive" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Enter a value greater than zero." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Введіть значення більше за нуль." } }
+      }
+    },
+    "validation.required" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Required." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Обов’язкове поле." } }
+      }
+    },
     "sync.restore.message" : {
       "localizations" : {
         "en" : {

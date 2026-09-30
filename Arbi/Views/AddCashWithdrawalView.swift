@@ -17,13 +17,14 @@ struct AddCashWithdrawalView: View {
     @State private var timestamp: Date = Date()
     @State private var selectedBankAccount: BankAccount?
     @State private var note: String = ""
+    @State private var attemptedSave: Bool = false
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert: Bool = false
 
     @FocusState private var isAmountFocused: Bool
 
     private var parsedAmount: Double {
-        let cleaned = amountText.trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: ",", with: ".")
-        return Double(cleaned) ?? 0.0
+        NumericInput(text: amountText).value ?? 0.0
     }
 
     private var targetPeriod: String {
@@ -31,7 +32,13 @@ struct AddCashWithdrawalView: View {
     }
 
     private var isValid: Bool {
-        parsedAmount > 0
+        validationResult.isValid
+    }
+
+    private var validationResult: FormValidationResult {
+        CashWithdrawalDraftValidator.validate(
+            CashWithdrawalDraft(amountUAH: NumericInput(text: amountText), timestamp: timestamp)
+        )
     }
 
     var body: some View {
@@ -43,11 +50,14 @@ struct AddCashWithdrawalView: View {
                         Text(verbatim: "₴")
                             .font(.title2.weight(.bold))
                             .foregroundStyle(Color.accentColor)
+                        Text("*")
+                            .foregroundStyle(.secondary)
 
                         TextField(String(""), text: $amountText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                             .focused($isAmountFocused)
+                        validationMessage(for: "amount")
 
                         if !amountText.isEmpty {
                             Button {
@@ -117,6 +127,7 @@ struct AddCashWithdrawalView: View {
 
                 ToolbarItem(placement: .confirmationAction) {
                     Button("common.action.save") {
+                        attemptedSave = true
                         saveWithdrawal()
                     }
                     .fontWeight(.bold)
@@ -129,10 +140,16 @@ struct AddCashWithdrawalView: View {
                 }
                 isAmountFocused = true
             }
+            .alert("common.alert.error", isPresented: $showingErrorAlert) {
+                Button("common.action.ok", role: .cancel) {}
+            } message: {
+                Text(verbatim: errorMessage ?? "")
+            }
         }
     }
 
     private func saveWithdrawal() {
+        attemptedSave = true
         guard isValid else { return }
 
         let withdrawal = CashWithdrawal(
@@ -144,9 +161,23 @@ struct AddCashWithdrawalView: View {
         )
 
         modelContext.insert(withdrawal)
-        try? modelContext.save()
+        do {
+            try modelContext.save()
+            onSaved?(withdrawal)
+            dismiss()
+        } catch {
+            modelContext.rollback()
+            errorMessage = error.localizedDescription
+            showingErrorAlert = true
+        }
+    }
 
-        onSaved?(withdrawal)
-        dismiss()
+    @ViewBuilder
+    private func validationMessage(for field: String) -> some View {
+        if (attemptedSave || isAmountFocused), let issue = validationResult.issue(for: field) {
+            Text(LocalizedStringKey(issue.messageKey))
+                .font(.caption)
+                .foregroundStyle(.red)
+        }
     }
 }
