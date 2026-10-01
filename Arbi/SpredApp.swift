@@ -53,6 +53,14 @@ struct SpredApp: App {
                 try CloudKitSynchronizationReadinessTests.runAllTests()
                 try AccountingPnLTests.runAllTests()
                 try TransactionsPaginationTests.runAllTests()
+                try HomeAccountingOptimizationTests.runAllTests()
+                Task { @MainActor in
+                    do {
+                        try await HomeInvalidationTests.runAllTests()
+                    } catch {
+                        fatalError("HomeInvalidationTests failed: \(error)")
+                    }
+                }
                 print("🎉 ALL TESTS PASSED SUCCESSFULLY! 🎉")
             } catch {
                 fatalError("Unit tests failed: \(error)")

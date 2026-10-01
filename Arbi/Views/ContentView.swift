@@ -4,7 +4,6 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @EnvironmentObject private var synchronizationReadiness: CloudKitSynchronizationReadiness
-    @Query(sort: \P2POrder.timestamp, order: .reverse) private var orders: [P2POrder]
     @Query private var capitalSettingsList: [CapitalSettings]
     @Query(sort: \BankAccount.createdAt, order: .forward) private var allBankAccounts: [BankAccount]
     @Query(sort: \CashWithdrawal.timestamp, order: .reverse) private var allWithdrawals: [CashWithdrawal]
@@ -18,56 +17,29 @@ struct ContentView: View {
     @State private var showingWithdrawalsSheet: Bool = false
     @State private var showingAllTransactions: Bool = false
 
+    // Bounded UI & Accounting State
+    @State private var recentOrders: [P2POrder] = []
+    @State private var periodOrdersCount: Int = 0
+    @State private var accountingSummary: PeriodAccountingSummary = .zero
+    @State private var totalLifetimeOrdersCount: Int = 0
+
+    // Invalidation & Stale Reload Protection
+    @State private var invalidator = HomeInvalidationPipeline()
+
     private var activeSettings: CapitalSettings? {
         CapitalSettings.settings(for: selectedPeriod, in: capitalSettingsList)
-    }
-
-    private var periodOrders: [P2POrder] {
-        PeriodRolloverService.ordersForPeriod(selectedPeriod, orders: orders)
-    }
-
-    private var recentOrders: [P2POrder] {
-        Array(periodOrders.prefix(5))
     }
 
     private var periodWithdrawals: [CashWithdrawal] {
         PeriodRolloverService.withdrawalsForPeriod(selectedPeriod, withdrawals: allWithdrawals)
     }
 
-    private var capitalBreakdown: CapitalBreakdown {
-        P2PCalculator.calculateCapitalBreakdown(
-            orders: periodOrders,
-            settings: activeSettings,
-            withdrawals: periodWithdrawals
-        )
-    }
-
-    private var buyOrdersCount: Int {
-        periodOrders.filter { $0.type == .buy }.count
-    }
-
-    private var sellOrdersCount: Int {
-        periodOrders.filter { $0.type == .sell }.count
-    }
-
-    private var avgBuyPrice: Double {
-        P2PCalculator.averageBuyPrice(orders: periodOrders, settings: activeSettings)
-    }
-
-    private var totalPnL: Double {
-        P2PCalculator.calculatePnL(orders: periodOrders, avgBuyPrice: avgBuyPrice)
-    }
-
     private var activeBankAccounts: [BankAccount] {
         allBankAccounts.filter { !$0.isArchived }
     }
 
-    private var accountStats: [AccountTurnoverStat] {
-        P2PCalculator.accountTurnover(orders: periodOrders, accounts: activeBankAccounts)
-    }
-
     private var localStoreIsEmpty: Bool {
-        orders.isEmpty
+        totalLifetimeOrdersCount == 0
             && capitalSettingsList.isEmpty
             && allBankAccounts.isEmpty
             && allWithdrawals.isEmpty
@@ -94,11 +66,11 @@ struct ContentView: View {
                 // Section 1: Dashboard overview
                 Section {
                     SummaryMetricsView(
-                        avgBuyPrice: avgBuyPrice,
-                        totalPnL: totalPnL,
-                        buyCount: buyOrdersCount,
-                        sellCount: sellOrdersCount,
-                        availableCapital: capitalBreakdown.freeUAH,
+                        avgBuyPrice: accountingSummary.avgBuyPrice,
+                        totalPnL: accountingSummary.netPnL,
+                        buyCount: accountingSummary.buyOrdersCount,
+                        sellCount: accountingSummary.sellOrdersCount,
+                        availableCapital: accountingSummary.availableCapital,
                         onTapManage: { showingCapitalSettingsSheet = true },
                         onTapCashOut: { showingWithdrawalsSheet = true }
                     )
@@ -124,7 +96,7 @@ struct ContentView: View {
                         }
                         .padding(.vertical, 2)
                     } else {
-                        ForEach(accountStats) { stat in
+                        ForEach(accountingSummary.accountStats) { stat in
                             AccountTurnoverRow(stat: stat)
                         }
                     }
@@ -142,7 +114,7 @@ struct ContentView: View {
 
                 // Section 3: Recent Transactions
                 Section {
-                    if periodOrders.isEmpty {
+                    if periodOrdersCount == 0 {
                         ContentUnavailableView {
                             Label("trades.empty.no_transactions", systemImage: "arrow.triangle.swap")
                         } description: {
@@ -169,12 +141,12 @@ struct ContentView: View {
                     HStack {
                         HStack(spacing: 4) {
                             Text("trades.section.recent_transactions")
-                            Text(verbatim: " (\(periodOrders.count))")
+                            Text(verbatim: " (\(periodOrdersCount))")
                                 .font(.footnote.weight(.semibold))
                                 .foregroundStyle(.secondary)
                         }
                         Spacer()
-                        if periodOrders.count > 5 {
+                        if periodOrdersCount > 5 {
                             Button {
                                 showingAllTransactions = true
                             } label: {
@@ -224,6 +196,21 @@ struct ContentView: View {
             .sheet(isPresented: $showingWithdrawalsSheet) {
                 CashWithdrawalsListView(periodIdentifier: selectedPeriod)
             }
+            .onAppear {
+                invalidator.onReload = { generation in
+                    loadHomeData(generation: generation)
+                }
+                invalidateHomeData()
+            }
+            .onChange(of: selectedPeriod) { _, _ in
+                invalidateHomeData()
+            }
+            .onReceive(NotificationCenter.default.publisher(for: ModelContext.didSave)) { _ in
+                invalidateHomeData()
+            }
+            .onReceive(CloudKitPersistence.remoteStoreChangePublisher) { _ in
+                invalidateHomeData()
+            }
             }
         }
     }
@@ -234,6 +221,52 @@ struct ContentView: View {
             modelContext.delete(order)
         }
         try? modelContext.save()
+    }
+
+    private func invalidateHomeData() {
+        invalidator.invalidate()
+    }
+
+    private func loadHomeData(generation: Int) {
+        guard generation == invalidator.loadGeneration else { return }
+        let period = selectedPeriod
+        do {
+            let count = try PeriodAccountingService.fetchPeriodOrdersCount(
+                modelContext: modelContext,
+                periodIdentifier: period
+            )
+            guard generation == invalidator.loadGeneration else { return }
+
+            let recent = try PeriodAccountingService.fetchRecentOrders(
+                modelContext: modelContext,
+                periodIdentifier: period,
+                limit: 5
+            )
+            guard generation == invalidator.loadGeneration else { return }
+
+            let summary = try PeriodAccountingService.fetchSummary(
+                modelContext: modelContext,
+                periodIdentifier: period,
+                settings: activeSettings,
+                withdrawals: periodWithdrawals,
+                activeBankAccounts: activeBankAccounts
+            )
+            guard generation == invalidator.loadGeneration else { return }
+
+            let totalCount = try modelContext.fetchCount(FetchDescriptor<P2POrder>())
+            guard generation == invalidator.loadGeneration else { return }
+
+            self.periodOrdersCount = count
+            self.recentOrders = recent
+            self.accountingSummary = summary
+            self.totalLifetimeOrdersCount = totalCount
+        } catch {
+            guard generation == invalidator.loadGeneration else { return }
+            self.recentOrders = []
+            self.periodOrdersCount = 0
+            self.accountingSummary = .zero
+            self.totalLifetimeOrdersCount = 0
+        }
     }
 
     private func insertSampleData() {
@@ -308,6 +341,8 @@ struct ContentView: View {
             )
             modelContext.insert(defaultCapital)
         }
+
+        try? modelContext.save()
     }
 }
 

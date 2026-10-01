@@ -2,6 +2,7 @@ import Foundation
 import OSLog
 import SwiftData
 import CoreData
+import Combine
 #if DEBUG
 import CloudKit
 #endif
@@ -14,6 +15,27 @@ import CloudKit
 /// application-level identifiers.
 @MainActor
 enum CloudKitPersistence {
+    /// A publisher that emits when external/remote changes (such as CloudKit background sync imports) occur.
+    /// Encapsulates Core Data store notifications away from view layers.
+    static var remoteStoreChangePublisher: AnyPublisher<Void, Never> {
+        let remoteChange = NotificationCenter.default
+            .publisher(for: NSNotification.Name.NSPersistentStoreRemoteChange)
+            .map { _ in () }
+
+        let cloudKitImport = NotificationCenter.default
+            .publisher(for: NSPersistentCloudKitContainer.eventChangedNotification)
+            .compactMap { notification -> Void? in
+                guard let event = notification.userInfo?[
+                    NSPersistentCloudKitContainer.eventNotificationUserInfoKey
+                ] as? NSPersistentCloudKitContainer.Event else {
+                    return nil
+                }
+                return (event.type == .import && event.endDate != nil) ? () : nil
+            }
+
+        return Publishers.Merge(remoteChange, cloudKitImport)
+            .eraseToAnyPublisher()
+    }
     /// This follows the app's bundle identifier. It must also be created in
     /// the Apple Developer portal and assigned to the app target.
     static let containerIdentifier = "iCloud.com.arbi.production"
