@@ -100,7 +100,9 @@ struct AddCashWithdrawalView: View {
 
                     HStack {
                         Text("withdrawal.field.period")
-                        Spacer()
+                            .lineLimit(1)
+                            .layoutPriority(1)
+                        Spacer(minLength: 8)
                         Text(targetPeriod)
                             .font(.footnote.weight(.semibold).monospacedDigit())
                             .foregroundStyle(.secondary)

@@ -1,0 +1,24 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PersistenceFailureView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "Arbi data is temporarily unavailable",
+        "location": {
+          "startingColumn": 19,
+          "startingLine": 8
+        }
+      },
+      {
+        "comment": "",
+        "key": "The existing local database was preserved. Please restart Arbi or contact support.",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 11
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -130,14 +130,14 @@ struct CapitalSettingsView: View {
                     // Section 2: Initial Working Deposit
                     Section {
                         HStack {
-                            CapitalFormRowLabel(
+                            FormRowLabel(
                                 title: "trades.card.starting_deposit",
                                 systemImage: "banknote.fill",
-                                iconColor: .green,
+                                color: .green,
                                 required: true
                             )
 
-                            Spacer()
+                            Spacer(minLength: 8)
 
                             TextField(String(""), text: $depositText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
@@ -180,14 +180,14 @@ struct CapitalSettingsView: View {
                     // Section 3: Initial Crypto Inventory
                     Section {
                         HStack {
-                            CapitalFormRowLabel(
+                            FormRowLabel(
                                 title: "capital.field.initial_usdt",
                                 systemImage: "dollarsign.circle.fill",
-                                iconColor: .green,
+                                color: .green,
                                 required: true
                             )
 
-                            Spacer()
+                            Spacer(minLength: 8)
 
                             TextField(String(""), text: $initialUSDTText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
@@ -198,13 +198,13 @@ struct CapitalSettingsView: View {
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
                         HStack {
-                            CapitalFormRowLabel(
+                            FormRowLabel(
                                 title: "capital.field.avg_buy_rate",
                                 systemImage: "chart.line.uptrend.xyaxis",
-                                iconColor: .blue
+                                color: .blue
                             )
 
-                            Spacer()
+                            Spacer(minLength: 8)
 
                             TextField(String(""), text: $initialAvgBuyPriceText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
@@ -242,14 +242,14 @@ struct CapitalSettingsView: View {
                     // Section 4: Cash Out (To Cash)
                     Section {
                         HStack {
-                            CapitalFormRowLabel(
+                            FormRowLabel(
                                 title: "trades.card.cash_out",
                                 systemImage: "arrow.down.forward.circle.fill",
-                                iconColor: .orange,
+                                color: .orange,
                                 required: true
                             )
 
-                            Spacer()
+                            Spacer(minLength: 8)
 
                             TextField(String(""), text: $toCashText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
@@ -363,34 +363,6 @@ struct CapitalSettingsView: View {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
-    }
-}
-
-// MARK: - Aligned Form Row Label Component
-
-private struct CapitalFormRowLabel: View {
-    let title: LocalizedStringKey
-    let systemImage: String
-    let iconColor: Color
-    var required: Bool = false
-
-    var body: some View {
-        HStack(spacing: 8) {
-            Image(systemName: systemImage)
-                .font(.subheadline)
-                .frame(width: 24, alignment: .leading)
-                .foregroundStyle(iconColor)
-
-            HStack(spacing: 2) {
-                Text(title)
-                if required {
-                    Text("*").foregroundStyle(.secondary)
-                }
-            }
-            .font(.subheadline.weight(.regular))
-            .foregroundStyle(.primary)
-                .lineLimit(1)
-        }
     }
 }
 

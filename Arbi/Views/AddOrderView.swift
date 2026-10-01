@@ -244,9 +244,9 @@ struct AddOrderView: View {
                             title: "order.field.usdt",
                             systemImage: "dollarsign.circle.fill",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth,
                             required: true
                         )
+                        Spacer(minLength: 8)
                         TextField(String(""), text: $usdtText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .usdt)
@@ -263,9 +263,9 @@ struct AddOrderView: View {
                             title: "order.field.price_uah",
                             systemImage: "chart.line.uptrend.xyaxis",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth,
                             required: true
                         )
+                        Spacer(minLength: 8)
                         TextField(String(""), text: $priceText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .price)
@@ -282,9 +282,9 @@ struct AddOrderView: View {
                             title: "order.field.total_uah",
                             systemImage: "hryvniasign.circle.fill",
                             color: .secondary,
-                            fixedWidth: FormRowConstants.numericLabelWidth,
                             required: true
                         )
+                        Spacer(minLength: 8)
                         TextField(String(""), text: $uahText, prompt: Text(verbatim: "0.00"))
                             .keyboardType(.decimalPad)
                             .focused($focusedField, equals: .totalUah)
@@ -330,9 +330,10 @@ struct AddOrderView: View {
                             FormRowLabel(
                                 title: "order.field.fee_usdt",
                                 systemImage: "percent",
-                                color: .secondary,
-                                fixedWidth: FormRowConstants.numericLabelWidth
+                                color: .secondary
                             )
+
+                            Spacer(minLength: 8)
 
                             TextField(String(""), text: $feeText, prompt: Text(verbatim: "0.00"))
                                 .keyboardType(.decimalPad)
@@ -379,7 +380,7 @@ struct AddOrderView: View {
                             color: .secondary
                         )
 
-                        Spacer()
+                        Spacer(minLength: 8)
 
                         DatePicker(selection: $timestamp) {
                             Text(verbatim: "")
@@ -610,54 +611,6 @@ struct AddOrderView: View {
         formatter.minimumFractionDigits = 2
         formatter.maximumFractionDigits = 2
         return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.2f", value)
-    }
-}
-
-// MARK: - Aligned Form Row Components
-
-enum FormRowConstants {
-    static let labelFont: Font = .subheadline
-    static let iconWidth: CGFloat = 22
-    static let spacing: CGFloat = 8
-    static let numericLabelWidth: CGFloat = 112
-}
-
-/// Reusable icon component aligned to a fixed column
-private struct FormRowIcon: View {
-    let systemImage: String
-    let color: Color
-    var font: Font = FormRowConstants.labelFont
-
-    var body: some View {
-        Image(systemName: systemImage)
-            .font(font)
-            .frame(width: FormRowConstants.iconWidth, alignment: .leading)
-            .foregroundStyle(color)
-    }
-}
-
-/// Reusable icon + text label component ensuring exact vertical and horizontal alignment
-private struct FormRowLabel: View {
-    let title: LocalizedStringKey
-    let systemImage: String
-    let color: Color
-    var fixedWidth: CGFloat? = nil
-    var required: Bool = false
-
-    var body: some View {
-        HStack(spacing: FormRowConstants.spacing) {
-            FormRowIcon(systemImage: systemImage, color: color)
-            HStack(spacing: 2) {
-                Text(title)
-                if required {
-                    Text("*").foregroundStyle(.secondary)
-                }
-            }
-            .font(FormRowConstants.labelFont.weight(.regular))
-            .foregroundStyle(.primary)
-            .lineLimit(1)
-        }
-        .frame(width: fixedWidth, alignment: .leading)
     }
 }
 

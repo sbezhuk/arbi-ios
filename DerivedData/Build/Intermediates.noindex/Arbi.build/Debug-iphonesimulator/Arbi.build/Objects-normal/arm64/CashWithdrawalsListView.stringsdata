@@ -7,39 +7,23 @@
         "key": "withdrawal.title.log",
         "location": {
           "startingColumn": 30,
-          "startingLine": 91
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.footer.total_withdrawn_description",
-        "location": {
-          "startingColumn": 64,
-          "startingLine": 50
+          "startingLine": 97
         }
       },
       {
         "comment": "",
         "key": "withdrawal.label.total_withdrawn",
         "location": {
-          "startingColumn": 69,
+          "startingColumn": 35,
           "startingLine": 31
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.label.entries_count",
-        "location": {
-          "startingColumn": 68,
-          "startingLine": 35
         }
       },
       {
         "comment": "",
         "key": "withdrawal.empty.title",
         "location": {
-          "startingColumn": 35,
-          "startingLine": 66
+          "startingColumn": 34,
+          "startingLine": 69
         }
       },
       {
@@ -47,15 +31,7 @@
         "key": "withdrawal.empty.description",
         "location": {
           "startingColumn": 68,
-          "startingLine": 68
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.action.log_cash_out",
-        "location": {
-          "startingColumn": 36,
-          "startingLine": 70
+          "startingLine": 73
         }
       },
       {
@@ -63,7 +39,7 @@
         "key": "withdrawal.section.history",
         "location": {
           "startingColumn": 30,
-          "startingLine": 84
+          "startingLine": 89
         }
       },
       {
@@ -71,7 +47,7 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 95
+          "startingLine": 101
         }
       },
       {
@@ -79,7 +55,7 @@
         "key": "withdrawal.action.log_cash_out",
         "location": {
           "startingColumn": 46,
-          "startingLine": 107
+          "startingLine": 113
         }
       }
     ]

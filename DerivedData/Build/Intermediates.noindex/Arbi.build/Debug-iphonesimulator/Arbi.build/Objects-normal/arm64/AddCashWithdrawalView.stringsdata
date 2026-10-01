@@ -7,7 +7,23 @@
         "key": "withdrawal.title.record",
         "location": {
           "startingColumn": 30,
-          "startingLine": 109
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.alert.error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 148
+        }
+      },
+      {
+        "comment": "",
+        "key": "*",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 53
         }
       },
       {
@@ -15,15 +31,15 @@
         "key": "withdrawal.section.amount",
         "location": {
           "startingColumn": 26,
-          "startingLine": 64
+          "startingLine": 73
         }
       },
       {
         "comment": "",
         "key": "withdrawal.footer.amount",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 66
+          "startingColumn": 37,
+          "startingLine": 79
         }
       },
       {
@@ -31,7 +47,7 @@
         "key": "order.field.date_time",
         "location": {
           "startingColumn": 32,
-          "startingLine": 71
+          "startingLine": 85
         }
       },
       {
@@ -39,7 +55,7 @@
         "key": "withdrawal.field.source_card",
         "location": {
           "startingColumn": 28,
-          "startingLine": 73
+          "startingLine": 87
         }
       },
       {
@@ -47,7 +63,7 @@
         "key": "withdrawal.option.direct_cash",
         "location": {
           "startingColumn": 30,
-          "startingLine": 74
+          "startingLine": 88
         }
       },
       {
@@ -55,7 +71,7 @@
         "key": "withdrawal.field.period",
         "location": {
           "startingColumn": 30,
-          "startingLine": 88
+          "startingLine": 102
         }
       },
       {
@@ -63,7 +79,7 @@
         "key": "order.section.details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 99
+          "startingLine": 115
         }
       },
       {
@@ -71,7 +87,7 @@
         "key": "withdrawal.placeholder.note",
         "location": {
           "startingColumn": 31,
-          "startingLine": 104
+          "startingLine": 120
         }
       },
       {
@@ -79,7 +95,7 @@
         "key": "withdrawal.section.note",
         "location": {
           "startingColumn": 26,
-          "startingLine": 106
+          "startingLine": 122
         }
       },
       {
@@ -87,7 +103,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 113
+          "startingLine": 129
         }
       },
       {
@@ -95,7 +111,15 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 119
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.ok",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 149
         }
       }
     ]

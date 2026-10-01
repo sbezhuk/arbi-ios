@@ -7,7 +7,15 @@
         "key": "capital.title.period",
         "location": {
           "startingColumn": 64,
-          "startingLine": 252
+          "startingLine": 278
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.alert.error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 310
         }
       },
       {
@@ -15,7 +23,7 @@
         "key": "rollover.label.free_uah",
         "location": {
           "startingColumn": 34,
-          "startingLine": 82
+          "startingLine": 96
         }
       },
       {
@@ -23,7 +31,7 @@
         "key": "rollover.label.unliquidated_usdt",
         "location": {
           "startingColumn": 42,
-          "startingLine": 94
+          "startingLine": 108
         }
       },
       {
@@ -31,7 +39,7 @@
         "key": "capital.label.total_portfolio_equity",
         "location": {
           "startingColumn": 42,
-          "startingLine": 104
+          "startingLine": 118
         }
       },
       {
@@ -39,7 +47,7 @@
         "key": "trades.card.starting_deposit",
         "location": {
           "startingColumn": 40,
-          "startingLine": 120
+          "startingLine": 134
         }
       },
       {
@@ -47,15 +55,15 @@
         "key": "capital.label.starting_working_capital",
         "location": {
           "startingColumn": 30,
-          "startingLine": 153
+          "startingLine": 168
         }
       },
       {
         "comment": "",
         "key": "capital.footer.starting_deposit",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 157
+          "startingColumn": 41,
+          "startingLine": 176
         }
       },
       {
@@ -63,7 +71,7 @@
         "key": "capital.field.initial_usdt",
         "location": {
           "startingColumn": 40,
-          "startingLine": 166
+          "startingLine": 184
         }
       },
       {
@@ -71,7 +79,7 @@
         "key": "capital.field.avg_buy_rate",
         "location": {
           "startingColumn": 40,
-          "startingLine": 183
+          "startingLine": 202
         }
       },
       {
@@ -79,7 +87,7 @@
         "key": "capital.label.initial_crypto_value",
         "location": {
           "startingColumn": 38,
-          "startingLine": 200
+          "startingLine": 219
         }
       },
       {
@@ -87,15 +95,15 @@
         "key": "capital.label.initial_crypto_inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 211
+          "startingLine": 230
         }
       },
       {
         "comment": "",
         "key": "capital.footer.initial_crypto",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 215
+          "startingColumn": 41,
+          "startingLine": 238
         }
       },
       {
@@ -103,7 +111,7 @@
         "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 40,
-          "startingLine": 224
+          "startingLine": 246
         }
       },
       {
@@ -111,15 +119,15 @@
         "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 30,
-          "startingLine": 239
+          "startingLine": 262
         }
       },
       {
         "comment": "",
         "key": "capital.footer.cash_out",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 243
+          "startingColumn": 41,
+          "startingLine": 270
         }
       },
       {
@@ -127,7 +135,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 256
+          "startingLine": 282
         }
       },
       {
@@ -135,7 +143,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 262
+          "startingLine": 288
         }
       },
       {
@@ -143,7 +151,15 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 269
+          "startingLine": 296
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.ok",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 311
         }
       }
     ]

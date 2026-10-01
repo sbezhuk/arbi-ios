@@ -1,0 +1,30 @@
+{
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Services/CloudKitSynchronizationReadiness.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CloudKitSynchronizationReadiness.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CloudKitSynchronizationReadiness.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CloudKitSynchronizationReadiness.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CloudKitSynchronizationReadiness.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CloudKitSynchronizationReadiness.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Services/LocalizationManager.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/LocalizationManager.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/LocalizationManager.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/LocalizationManager.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/LocalizationManager.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/LocalizationManager.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Tests/BankAccountsTests.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/BankAccountsTests.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/BankAccountsTests.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/BankAccountsTests.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/BankAccountsTests.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/BankAccountsTests.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Tests/CashWithdrawalTests.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CashWithdrawalTests.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CashWithdrawalTests.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CashWithdrawalTests.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CashWithdrawalTests.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/CashWithdrawalTests.swiftdeps"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/MainTabView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/MainTabView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/MainTabView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/MainTabView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/MainTabView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/MainTabView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PeriodRolloverView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PeriodRolloverView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PeriodRolloverView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PeriodRolloverView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PeriodRolloverView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PeriodRolloverView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PersistenceFailureView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PersistenceFailureView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PersistenceFailureView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PersistenceFailureView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PersistenceFailureView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/PersistenceFailureView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/SectionValidationFooter.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/SectionValidationFooter.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/SectionValidationFooter.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/SectionValidationFooter.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/SectionValidationFooter.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphoneos/Arbi.build/Objects-normal/arm64/SectionValidationFooter.swiftdeps"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/CloudKitRestoreView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "sync.restore.message",
+        "location": {
+          "startingColumn": 18,
+          "startingLine": 9
+        }
+      }
+    ]
+  },
+  "version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/FormRowLabel.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "*",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 65
+        }
+      }
+    ]
+  },
+  "version": 1
+}

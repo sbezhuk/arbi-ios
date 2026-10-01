@@ -289,17 +289,12 @@ struct AddOrEditBankAccountView: View {
             Form {
                 Section {
                     HStack {
-                            Label {
-                                HStack(spacing: 2) {
-                                    Text("bank.field.title")
-                                    Text("*").foregroundStyle(.secondary)
-                                }
-                            } icon: {
-                                Image(systemName: "building.columns.fill")
-                            }
-                            .font(.subheadline.weight(.regular))
-                            .foregroundStyle(.secondary)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "bank.field.title",
+                            systemImage: "building.columns.fill",
+                            color: .secondary,
+                            required: true
+                        )
 
                         TextField("bank.placeholder.name", text: $name)
                             .font(.body.weight(.regular))
@@ -307,10 +302,11 @@ struct AddOrEditBankAccountView: View {
                     }
 
                     HStack {
-                        Label("bank.field.card_number", systemImage: "creditcard")
-                            .font(.subheadline.weight(.regular))
-                            .foregroundStyle(.secondary)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "bank.field.card_number",
+                            systemImage: "creditcard",
+                            color: .secondary
+                        )
 
                         TextField("bank.placeholder.card_number", text: $cardNumber)
                             .font(.body.monospacedDigit().weight(.regular))
@@ -330,17 +326,14 @@ struct AddOrEditBankAccountView: View {
 
                 Section {
                     HStack {
-                            Label {
-                                HStack(spacing: 2) {
-                                    Text("bank.field.limit")
-                                    Text("*").foregroundStyle(.secondary)
-                                }
-                            } icon: {
-                                Image(systemName: "chart.line.uptrend.xyaxis")
-                            }
-                            .font(.subheadline.weight(.regular))
-                            .foregroundStyle(.secondary)
-                            .frame(width: 100, alignment: .leading)
+                        FormRowLabel(
+                            title: "bank.field.limit",
+                            systemImage: "chart.line.uptrend.xyaxis",
+                            color: .secondary,
+                            required: true
+                        )
+
+                        Spacer(minLength: 8)
 
                         TextField(String(""), text: $limitText, prompt: Text(verbatim: "150000"))
                             .keyboardType(.numberPad)

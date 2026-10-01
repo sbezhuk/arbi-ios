@@ -1,0 +1,23 @@
+{
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PersistenceFailureView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/PersistenceFailureView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/PersistenceFailureView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/PersistenceFailureView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/PersistenceFailureView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/PersistenceFailureView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/SectionValidationFooter.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SectionValidationFooter.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SectionValidationFooter.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SectionValidationFooter.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SectionValidationFooter.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SectionValidationFooter.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/SettingsView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SettingsView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SettingsView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SettingsView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SettingsView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/arm64/SettingsView.swiftdeps"
+  }
+}
