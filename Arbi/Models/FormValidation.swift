@@ -50,6 +50,43 @@ public struct FormValidationResult: Equatable, Sendable {
     public func issue(for field: String) -> FieldValidationIssue? {
         issues.first { $0.field == field }
     }
+
+    public func issues(for fields: [String]) -> [FieldValidationIssue] {
+        issues.filter { issue in fields.contains(issue.field) }
+    }
+
+    /// Resolves standardized, user-facing section-level validation messages for the given fields.
+    ///
+    /// - For validation failures caused by missing/empty required input (even a single field),
+    ///   always presents a single standardized message ("validation.required_fields").
+    /// - If any required fields are missing in the section, only that required message is presented;
+    ///   it is never duplicated or stacked with secondary rule failures.
+    /// - If all required fields are present but contain invalid values, concise user-facing messages
+    ///   are presented without duplication.
+    public func sectionErrorMessages(for fields: [String]) -> [String] {
+        let matchedIssues = issues(for: fields)
+        guard !matchedIssues.isEmpty else { return [] }
+
+        let isRequiredFailure: (FieldValidationIssue) -> Bool = { issue in
+            issue.messageKey == "validation.required" || issue.messageKey == "validation.bank_account_required"
+        }
+
+        let hasRequiredFailure = matchedIssues.contains(where: isRequiredFailure)
+
+        if hasRequiredFailure {
+            // A section containing one or several invalid required fields renders only "Fill in the required fields."
+            return ["validation.required_fields"]
+        }
+
+        var messages: [String] = []
+        for issue in matchedIssues {
+            if !messages.contains(issue.messageKey) {
+                messages.append(issue.messageKey)
+            }
+        }
+
+        return messages
+    }
 }
 
 public struct P2POrderDraft {

@@ -416,13 +416,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Existing USDT inventory and weighted acquisition price prior to tracking trades in Spred."
+            "value" : "Existing USDT inventory and weighted acquisition price prior to tracking trades in Arbi."
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "translated",
-            "value" : "Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Spred."
+            "state" : "needs_review",
+            "value" : "Наявні залишки USDT та середньозважена ціна придбання до початку обліку угод у Arbi."
           }
         }
       }
@@ -1553,13 +1553,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spred P2P Arbitrage Engine"
+            "value" : "Arbi P2P Arbitrage Engine"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Движок P2P-арбітражу Spred"
+            "value" : "Движок P2P-арбітражу Arbi"
           }
         }
       }
@@ -1937,36 +1937,19 @@
         }
       }
     },
-    "validation.bank_account_required" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select a bank account."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Виберіть банківський рахунок."
-          }
-        }
-      }
-    },
     "validation.initial_price_without_inventory" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Enter an average price only when initial USDT is greater than zero."
+            "value" : "Average price requires initial USDT."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вкажіть середню ціну лише за наявності початкового USDT."
+            "value" : "Середня ціна вимагає початкового USDT."
           }
         }
       }
@@ -2039,19 +2022,19 @@
         }
       }
     },
-    "validation.required" : {
+    "validation.required_fields" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Required."
+            "value" : "Fill in the required fields."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Обов’язкове поле."
+            "value" : "Заповніть обов’язкові поля."
           }
         }
       }

@@ -218,17 +218,21 @@ struct AddOrderView: View {
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
-                    if !bankAccounts.isEmpty, let selected = selectedBankAccount {
-                        if let card = selected.cardNumber, !card.isEmpty {
-                            Text(LocalizationManager.shared.string("order.footer.selected_card_turnover", card, Int(selected.turnoverLimitUAH / 1000)))
-                        } else {
-                            Text(LocalizationManager.shared.string("order.footer.turnover_limit", Int(selected.turnoverLimitUAH / 1000)))
-                        }
-                    } else {
-                        if attemptedSave, let issue = validationResult.issue(for: "bank_account") {
-                            Text(LocalizedStringKey(issue.messageKey))
-                                .font(.caption)
-                                .foregroundStyle(.red)
+                    SectionValidationFooter(
+                        result: validationResult,
+                        field: "bank_account",
+                        isVisible: attemptedSave
+                    ) {
+                        if !bankAccounts.isEmpty, let selected = selectedBankAccount {
+                            if let card = selected.cardNumber, !card.isEmpty {
+                                Text(LocalizationManager.shared.string("order.footer.selected_card_turnover", card, Int(selected.turnoverLimitUAH / 1000)))
+                                    .font(.caption)
+                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+                            } else {
+                                Text(LocalizationManager.shared.string("order.footer.turnover_limit", Int(selected.turnoverLimitUAH / 1000)))
+                                    .font(.caption)
+                                    .foregroundStyle(Color(uiColor: .secondaryLabel))
+                            }
                         }
                     }
                 }
@@ -251,7 +255,6 @@ struct AddOrderView: View {
                             .onChange(of: usdtText) { _, _ in
                                 handleUSDTChanged()
                             }
-                        validationMessage(for: "usdt")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -271,7 +274,6 @@ struct AddOrderView: View {
                             .onChange(of: priceText) { _, _ in
                                 handlePriceChanged()
                             }
-                        validationMessage(for: "price")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -291,13 +293,18 @@ struct AddOrderView: View {
                             .onChange(of: uahText) { _, _ in
                                 handleUAHChanged()
                             }
-                        validationMessage(for: "uah")
                     }
                     .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                 } header: {
                     Text("order.section.amounts_rate")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
+                } footer: {
+                    SectionValidationFooter(
+                        result: validationResult,
+                        fields: ["usdt", "price", "uah"],
+                        isVisible: attemptedSave
+                    )
                 }
 
                 // Section 5: Always-Visible Commission / Fee Section
@@ -336,8 +343,6 @@ struct AddOrderView: View {
                                     handleFeeTextEdited()
                                 }
 
-                            validationMessage(for: "fee")
-
                             Text("order.field.usdt")
                                 .font(.caption2.weight(.regular))
                                 .foregroundStyle(.secondary)
@@ -357,6 +362,12 @@ struct AddOrderView: View {
                     Text("order.section.commission")
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
+                } footer: {
+                    SectionValidationFooter(
+                        result: validationResult,
+                        field: "fee",
+                        isVisible: attemptedSave
+                    )
                 }
 
                 // Section 6: Date & Optional Note
@@ -411,7 +422,6 @@ struct AddOrderView: View {
                         attemptedSave = true
                         saveOrder()
                     }
-                    .disabled(!isValid)
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -583,15 +593,6 @@ struct AddOrderView: View {
 
     private func parseDouble(_ text: String) -> Double {
         NumericInput(text: text).value ?? 0.0
-    }
-
-    @ViewBuilder
-    private func validationMessage(for field: String) -> some View {
-        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
-            Text(LocalizedStringKey(issue.messageKey))
-                .font(.caption)
-                .foregroundStyle(.red)
-        }
     }
 
     private func formatNumber(_ value: Double, maxDecimals: Int) -> String {

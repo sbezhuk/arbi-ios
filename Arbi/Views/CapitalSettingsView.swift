@@ -144,7 +144,6 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .deposit)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
-                            validationMessage(for: "deposit")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -170,9 +169,12 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("capital.footer.starting_deposit")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        SectionValidationFooter(
+                            result: validationResult,
+                            field: "deposit",
+                            isVisible: attemptedSave,
+                            helperText: "capital.footer.starting_deposit"
+                        )
                     }
 
                     // Section 3: Initial Crypto Inventory
@@ -192,7 +194,6 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .initialUSDT)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
-                            validationMessage(for: "initial_usdt")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -210,7 +211,6 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .initialAvgBuyPrice)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
-                            validationMessage(for: "initial_avg_price")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
 
@@ -231,9 +231,12 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("capital.footer.initial_crypto")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        SectionValidationFooter(
+                            result: validationResult,
+                            fields: ["initial_usdt", "initial_avg_price"],
+                            isVisible: attemptedSave,
+                            helperText: "capital.footer.initial_crypto"
+                        )
                     }
 
                     // Section 4: Cash Out (To Cash)
@@ -253,7 +256,6 @@ struct CapitalSettingsView: View {
                                 .focused($focusedField, equals: .toCash)
                                 .multilineTextAlignment(.trailing)
                                 .font(.body.weight(.regular).monospacedDigit())
-                            validationMessage(for: "to_cash")
                         }
                         .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
                     } header: {
@@ -261,9 +263,12 @@ struct CapitalSettingsView: View {
                             .font(.footnote.weight(.semibold))
                             .foregroundStyle(.secondary)
                     } footer: {
-                        Text("capital.footer.cash_out")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+                        SectionValidationFooter(
+                            result: validationResult,
+                            field: "to_cash",
+                            isVisible: attemptedSave,
+                            helperText: "capital.footer.cash_out"
+                        )
                     }
                 }
             .listSectionSpacing(.compact)
@@ -284,7 +289,6 @@ struct CapitalSettingsView: View {
                         attemptedSave = true
                         saveSettings()
                     }
-                    .disabled(!validationResult.isValid)
                 }
 
                 ToolbarItemGroup(placement: .keyboard) {
@@ -344,15 +348,6 @@ struct CapitalSettingsView: View {
 
     private func parseDouble(_ text: String) -> Double {
         NumericInput(text: text).value ?? 0.0
-    }
-
-    @ViewBuilder
-    private func validationMessage(for field: String) -> some View {
-        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
-            Text(LocalizedStringKey(issue.messageKey))
-                .font(.caption)
-                .foregroundStyle(.red)
-        }
     }
 
     private func formatPlain(_ value: Double) -> String {

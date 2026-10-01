@@ -57,7 +57,6 @@ struct AddCashWithdrawalView: View {
                             .keyboardType(.decimalPad)
                             .font(.system(size: 28, weight: .bold, design: .rounded))
                             .focused($isAmountFocused)
-                        validationMessage(for: "amount")
 
                         if !amountText.isEmpty {
                             Button {
@@ -73,7 +72,12 @@ struct AddCashWithdrawalView: View {
                 } header: {
                     Text("withdrawal.section.amount")
                 } footer: {
-                    Text("withdrawal.footer.amount")
+                    SectionValidationFooter(
+                        result: validationResult,
+                        field: "amount",
+                        isVisible: attemptedSave,
+                        helperText: "withdrawal.footer.amount"
+                    )
                 }
 
                 // Section 2: Details & Source Bank Account
@@ -131,7 +135,6 @@ struct AddCashWithdrawalView: View {
                         saveWithdrawal()
                     }
                     .fontWeight(.bold)
-                    .disabled(!isValid)
                 }
             }
             .onAppear {
@@ -169,15 +172,6 @@ struct AddCashWithdrawalView: View {
             modelContext.rollback()
             errorMessage = error.localizedDescription
             showingErrorAlert = true
-        }
-    }
-
-    @ViewBuilder
-    private func validationMessage(for field: String) -> some View {
-        if (attemptedSave || isAmountFocused), let issue = validationResult.issue(for: field) {
-            Text(LocalizedStringKey(issue.messageKey))
-                .font(.caption)
-                .foregroundStyle(.red)
         }
     }
 }

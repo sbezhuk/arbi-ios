@@ -304,7 +304,6 @@ struct AddOrEditBankAccountView: View {
                         TextField("bank.placeholder.name", text: $name)
                             .font(.body.weight(.regular))
                             .focused($focusedField, equals: .name)
-                        validationMessage(for: "name")
                     }
 
                     HStack {
@@ -321,9 +320,12 @@ struct AddOrEditBankAccountView: View {
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
-                    Text("bank.footer.security_notice")
-                        .font(.caption)
-                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+                    SectionValidationFooter(
+                        result: validationResult,
+                        field: "name",
+                        isVisible: attemptedSave,
+                        helperText: "bank.footer.security_notice"
+                    )
                 }
 
                 Section {
@@ -345,7 +347,6 @@ struct AddOrEditBankAccountView: View {
                             .font(.body.monospacedDigit().weight(.regular))
                             .multilineTextAlignment(.trailing)
                             .focused($focusedField, equals: .limit)
-                        validationMessage(for: "limit")
                     }
 
                     ScrollView(.horizontal, showsIndicators: false) {
@@ -368,9 +369,12 @@ struct AddOrEditBankAccountView: View {
                         .font(.footnote.weight(.semibold))
                         .foregroundStyle(Color(uiColor: .secondaryLabel))
                 } footer: {
-                    Text("bank.footer.turnover_limit_description")
-                        .font(.caption)
-                        .foregroundStyle(Color(uiColor: .secondaryLabel))
+                    SectionValidationFooter(
+                        result: validationResult,
+                        field: "limit",
+                        isVisible: attemptedSave,
+                        helperText: "bank.footer.turnover_limit_description"
+                    )
                 }
             }
             .navigationTitle(editingAccount == nil ? "bank.title.new_account" : "bank.title.edit_account")
@@ -387,7 +391,6 @@ struct AddOrEditBankAccountView: View {
                         attemptedSave = true
                         save()
                     }
-                    .disabled(!isValid)
                     .fontWeight(.bold)
                 }
             }
@@ -442,14 +445,5 @@ struct AddOrEditBankAccountView: View {
 
     private func isPresetSelected(_ amount: Int) -> Bool {
         parsedLimit == Double(amount)
-    }
-
-    @ViewBuilder
-    private func validationMessage(for field: String) -> some View {
-        if (attemptedSave || focusedField != nil), let issue = validationResult.issue(for: field) {
-            Text(LocalizedStringKey(issue.messageKey))
-                .font(.caption)
-                .foregroundStyle(.red)
-        }
     }
 }
