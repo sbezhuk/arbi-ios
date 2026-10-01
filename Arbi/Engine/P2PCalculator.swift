@@ -109,28 +109,41 @@ public struct P2PCalculator {
         averageBuyPrice(orders: orders, settings: nil)
     }
 
-    /// Calculates net Profit & Loss in UAH.
-    /// Formula:
+    /// Calculates gross Profit & Loss in UAH from completed sell orders against the weighted cost basis.
+    /// Realized trading profit is generated only by Sell transactions:
     /// Sum_Sell(usdtAmount * (price - avgBuyPrice))
-    /// - Sum_Sell(feeUSDT * price)
-    /// - Sum_All(txFeeUSDT * price)
-    public static func calculatePnL(orders: [P2POrder], avgBuyPrice: Double) -> Double {
-        var sellGrossProfit: Double = 0.0
-        var sellPlatformFeesUAH: Double = 0.0
-        var allTxFeesUAH: Double = 0.0
-
-        for order in orders {
-            if order.type == .sell {
-                sellGrossProfit += order.usdtAmount * (order.price - avgBuyPrice)
-                sellPlatformFeesUAH += order.feeUSDT * order.price
-            }
-            allTxFeesUAH += order.txFeeUSDT * order.price
-        }
-
-        return sellGrossProfit - sellPlatformFeesUAH - allTxFeesUAH
+    public static func calculateGrossPnL(orders: [P2POrder], avgBuyPrice: Double) -> Double {
+        orders
+            .filter { $0.type == .sell }
+            .reduce(0.0) { $0 + ($1.usdtAmount * ($1.price - avgBuyPrice)) }
     }
 
-    /// Convenience overload computing PnL directly using the orders' weighted average buy price.
+    /// Convenience overload computing gross PnL directly using the orders' weighted average buy price.
+    public static func calculateGrossPnL(orders: [P2POrder]) -> Double {
+        let avgPrice = averageBuyPrice(orders: orders)
+        return calculateGrossPnL(orders: orders, avgBuyPrice: avgPrice)
+    }
+
+    /// Calculates total commission expenses in UAH across all orders (both buy and sell),
+    /// converting USDT fees at each transaction's execution exchange rate:
+    /// Sum_All((feeUSDT + txFeeUSDT) * price)
+    public static func calculateTotalFeesUAH(orders: [P2POrder]) -> Double {
+        orders.reduce(0.0) { acc, order in
+            acc + ((order.feeUSDT + order.txFeeUSDT) * order.price)
+        }
+    }
+
+    /// Calculates net Profit & Loss in UAH.
+    /// Formula:
+    /// Net PnL = Gross PnL - Total Fees UAH
+    /// where Total Fees UAH = Sum_All((feeUSDT + txFeeUSDT) * price)
+    public static func calculatePnL(orders: [P2POrder], avgBuyPrice: Double) -> Double {
+        let grossProfit = calculateGrossPnL(orders: orders, avgBuyPrice: avgBuyPrice)
+        let totalFees = calculateTotalFeesUAH(orders: orders)
+        return grossProfit - totalFees
+    }
+
+    /// Convenience overload computing net PnL directly using the orders' weighted average buy price.
     public static func calculatePnL(orders: [P2POrder]) -> Double {
         let avgPrice = averageBuyPrice(orders: orders)
         return calculatePnL(orders: orders, avgBuyPrice: avgPrice)

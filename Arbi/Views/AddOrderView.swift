@@ -1,39 +1,14 @@
 import SwiftUI
 import SwiftData
 
-/// Quick presets for order commission.
-enum FeePreset: CaseIterable, Identifiable, Equatable {
-    case custom
-    case zeroPercent
-    case onePercent
-    case threePercent
-
-    var id: String { label }
-
-    /// Single Source of Truth: numerical rate multiplier (0.01 for 1%, 0.03 for 3%, nil for Custom)
-    var rate: Double? {
-        switch self {
-        case .custom: return nil
-        case .zeroPercent: return 0.0
-        case .onePercent: return 0.01
-        case .threePercent: return 0.03
-        }
-    }
-
-    /// UI label dynamically computed from rate
-    var label: String {
-        guard let rate else { return LocalizationManager.shared["order.fee.custom"] }
-        let percentInt = Int((rate * 100).rounded())
-        return "\(percentInt)%"
-    }
-}
-
 /// High-efficiency, single-handed input sheet for recording crypto P2P arbitrage trades.
 struct AddOrderView: View {
     fileprivate static let formLabelFont: Font = FormRowConstants.labelFont
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
+
+    private let orderToEdit: P2POrder?
 
     // Form states
     @State private var selectedType: TransactionType = .buy
@@ -62,6 +37,25 @@ struct AddOrderView: View {
 
     @FocusState private var focusedField: Field?
 
+    init(orderToEdit: P2POrder? = nil) {
+        self.orderToEdit = orderToEdit
+        if let order = orderToEdit {
+            _selectedType = State(initialValue: order.type)
+            _selectedPlatform = State(initialValue: order.platform)
+            _selectedBank = State(initialValue: order.bank)
+            _selectedBankAccount = State(initialValue: order.bankAccount)
+            _timestamp = State(initialValue: order.timestamp)
+            _noteText = State(initialValue: order.note ?? "")
+            _usdtText = State(initialValue: AddOrderView.formatNumber(order.usdtAmount, maxDecimals: 4))
+            _priceText = State(initialValue: AddOrderView.formatNumber(order.price, maxDecimals: 2))
+            _uahText = State(initialValue: AddOrderView.formatNumber(order.uahAmount, maxDecimals: 2))
+
+            let preset = FeePreset.matchingPreset(feeUSDT: order.feeUSDT, usdtAmount: order.usdtAmount)
+            _selectedFeePreset = State(initialValue: preset)
+            _feeText = State(initialValue: FeePreset.formatFeeForDisplay(order.feeUSDT))
+        }
+    }
+
     private enum Field: Hashable {
         case usdt
         case price
@@ -74,6 +68,12 @@ struct AddOrderView: View {
     private var parsedPrice: Double { parseDouble(priceText) }
     private var parsedUAH: Double { parseDouble(uahText) }
     private var parsedFee: Double { parseDouble(feeText) }
+
+    /// Single source of truth for fee calculation and persistence:
+    /// Preserves full Double precision without presentation rounding.
+    private var resolvedFeeUSDT: Double {
+        selectedFeePreset.resolveFeeUSDT(usdtAmount: parsedUSDT, customFeeText: feeText)
+    }
 
     private var validationResult: FormValidationResult {
         P2POrderDraftValidator.validate(
@@ -213,7 +213,7 @@ struct AddOrderView: View {
                 } header: {
                     HStack(spacing: 2) {
                         Text("order.section.settlement")
-                        Text("*").foregroundStyle(.secondary)
+                        Text(verbatim: "*").foregroundStyle(.secondary)
                     }
                     .font(.footnote.weight(.semibold))
                     .foregroundStyle(Color(uiColor: .secondaryLabel))
@@ -349,10 +349,10 @@ struct AddOrderView: View {
                                 .foregroundStyle(.secondary)
                         }
 
-                        if parsedFee > 0 && parsedPrice > 0 {
+                        if resolvedFeeUSDT > 0 && parsedPrice > 0 {
                             HStack {
                                 Spacer()
-                                Text(LocalizationManager.shared.string("order.fee.approx_commission", formatCurrency(parsedFee * parsedPrice)))
+                                Text(LocalizationManager.shared.string("order.fee.approx_commission", formatCurrency(resolvedFeeUSDT * parsedPrice)))
                                     .font(.caption2.weight(.regular))
                                     .foregroundStyle(.secondary)
                             }
@@ -516,7 +516,7 @@ struct AddOrderView: View {
     private func applyPercentageFee(rate: Double, usdt: Double) {
         if rate > 0 && usdt > 0 {
             let fee = usdt * rate
-            feeText = formatNumber(fee, maxDecimals: 3)
+            feeText = FeePreset.formatFeeForDisplay(fee)
         } else {
             feeText = "0.0"
         }
@@ -533,7 +533,6 @@ struct AddOrderView: View {
             isProgrammaticFeeUpdate = false
             return
         }
-        guard focusedField == .fee else { return }
         if selectedFeePreset != .custom {
             selectedFeePreset = .custom
         }
@@ -565,21 +564,36 @@ struct AddOrderView: View {
             bankFallback = matched
         }
 
-        let order = P2POrder(
-            type: selectedType,
-            usdtAmount: parsedUSDT,
-            price: parsedPrice,
-            uahAmount: parsedUAH,
-            feeUSDT: parsedFee,
-            txFeeUSDT: 0.0, // Network fee temporarily removed from this screen
-            platform: selectedPlatform,
-            bank: bankFallback,
-            bankAccount: bankAccount,
-            timestamp: timestamp,
-            note: noteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : noteText
-        )
+        let feeToSave = resolvedFeeUSDT
 
-        modelContext.insert(order)
+        if let existingOrder = orderToEdit {
+            existingOrder.type = selectedType
+            existingOrder.usdtAmount = parsedUSDT
+            existingOrder.price = parsedPrice
+            existingOrder.uahAmount = parsedUAH
+            existingOrder.feeUSDT = feeToSave
+            existingOrder.platform = selectedPlatform
+            existingOrder.bank = bankFallback
+            existingOrder.bankAccount = bankAccount
+            existingOrder.timestamp = timestamp
+            existingOrder.note = noteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : noteText
+        } else {
+            let order = P2POrder(
+                type: selectedType,
+                usdtAmount: parsedUSDT,
+                price: parsedPrice,
+                uahAmount: parsedUAH,
+                feeUSDT: feeToSave,
+                txFeeUSDT: 0.0, // Network fee temporarily removed from this screen
+                platform: selectedPlatform,
+                bank: bankFallback,
+                bankAccount: bankAccount,
+                timestamp: timestamp,
+                note: noteText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : noteText
+            )
+            modelContext.insert(order)
+        }
+
         do {
             try modelContext.save()
             dismiss()
@@ -596,13 +610,17 @@ struct AddOrderView: View {
         NumericInput(text: text).value ?? 0.0
     }
 
-    private func formatNumber(_ value: Double, maxDecimals: Int) -> String {
+    private static func formatNumber(_ value: Double, maxDecimals: Int) -> String {
         guard value > 0 else { return "" }
         let formatter = NumberFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
         formatter.minimumFractionDigits = 0
         formatter.maximumFractionDigits = maxDecimals
         return formatter.string(from: NSNumber(value: value)) ?? String(format: "%.\(maxDecimals)f", value)
+    }
+
+    private func formatNumber(_ value: Double, maxDecimals: Int) -> String {
+        Self.formatNumber(value, maxDecimals: maxDecimals)
     }
 
     private func formatCurrency(_ value: Double) -> String {

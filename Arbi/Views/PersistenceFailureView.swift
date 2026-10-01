@@ -5,10 +5,14 @@ struct PersistenceFailureView: View {
 
     var body: some View {
         ContentUnavailableView {
-            Label("Arbi data is temporarily unavailable", systemImage: "externaldrive.badge.exclamationmark")
+            Label {
+                Text(verbatim: "Arbi data is temporarily unavailable")
+            } icon: {
+                Image(systemName: "externaldrive.badge.exclamationmark")
+            }
         } description: {
-            Text(message)
-            Text("The existing local database was preserved. Please restart Arbi or contact support.")
+            Text(verbatim: message)
+            Text(verbatim: "The existing local database was preserved. Please restart Arbi or contact support.")
         }
     }
 }

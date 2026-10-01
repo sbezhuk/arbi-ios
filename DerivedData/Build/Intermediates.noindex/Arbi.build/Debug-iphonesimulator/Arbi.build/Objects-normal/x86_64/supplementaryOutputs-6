@@ -1,0 +1,23 @@
+{
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/ContentView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/ContentView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/ContentView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/ContentView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/ContentView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/FormRowLabel.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/FormRowLabel.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/FormRowLabel.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/FormRowLabel.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/FormRowLabel.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/FormRowLabel.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/PeriodRolloverView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/PeriodRolloverView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/PeriodRolloverView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/PeriodRolloverView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/PeriodRolloverView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/PeriodRolloverView.swiftdeps"
+  }
+}

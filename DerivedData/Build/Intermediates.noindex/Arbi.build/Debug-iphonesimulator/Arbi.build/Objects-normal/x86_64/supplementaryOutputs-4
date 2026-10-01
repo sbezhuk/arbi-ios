@@ -1,23 +1,30 @@
 {
-  "/Users/stepanbezhuk/work/Arbi/Arbi/Models/CapitalSettings.swift" : {
-    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CapitalSettings.swiftconstvalues",
-    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CapitalSettings.d",
-    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CapitalSettings.dia",
-    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CapitalSettings.o",
-    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CapitalSettings.swiftdeps"
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Tests/LocalizationTests.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/LocalizationTests.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/LocalizationTests.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/LocalizationTests.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/LocalizationTests.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/LocalizationTests.swiftdeps"
   },
-  "/Users/stepanbezhuk/work/Arbi/Arbi/Models/CashWithdrawal.swift" : {
-    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CashWithdrawal.swiftconstvalues",
-    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CashWithdrawal.d",
-    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CashWithdrawal.dia",
-    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CashWithdrawal.o",
-    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/CashWithdrawal.swiftdeps"
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/AddCashWithdrawalView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddCashWithdrawalView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddCashWithdrawalView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddCashWithdrawalView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddCashWithdrawalView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddCashWithdrawalView.swiftdeps"
   },
-  "/Users/stepanbezhuk/work/Arbi/Arbi/Models/Enums.swift" : {
-    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/Enums.swiftconstvalues",
-    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/Enums.d",
-    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/Enums.dia",
-    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/Enums.o",
-    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/Enums.swiftdeps"
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/AddOrderView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddOrderView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddOrderView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddOrderView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddOrderView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/AddOrderView.swiftdeps"
+  },
+  "/Users/stepanbezhuk/work/Arbi/Arbi/Views/BankAccountsView.swift" : {
+    "const-values" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/BankAccountsView.swiftconstvalues",
+    "dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/BankAccountsView.d",
+    "diagnostics" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/BankAccountsView.dia",
+    "object" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/BankAccountsView.o",
+    "swift-dependencies" : "/Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/Objects-normal/x86_64/BankAccountsView.swiftdeps"
   }
 }

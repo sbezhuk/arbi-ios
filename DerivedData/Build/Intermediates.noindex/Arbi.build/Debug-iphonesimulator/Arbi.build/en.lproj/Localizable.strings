@@ -224,6 +224,8 @@
 	<string>%lld sell orders</string>
 	<key>trades.period.current</key>
 	<string>%@ (Current)</string>
+	<key>trades.row.commission</key>
+	<string>Commission</string>
 	<key>trades.section.available_capital</key>
 	<string>Available capital</string>
 	<key>trades.section.bank_limits</key>

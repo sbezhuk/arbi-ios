@@ -25,6 +25,14 @@
           "startingColumn": 56,
           "startingLine": 35
         }
+      },
+      {
+        "comment": "",
+        "key": "order.fee.custom",
+        "location": {
+          "startingColumn": 65,
+          "startingLine": 101
+        }
       }
     ]
   },

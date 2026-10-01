@@ -7,7 +7,7 @@
         "key": "bank.title.management",
         "location": {
           "startingColumn": 30,
-          "startingLine": 83
+          "startingLine": 105
         }
       },
       {
@@ -15,15 +15,7 @@
         "key": "common.alert.error",
         "location": {
           "startingColumn": 20,
-          "startingLine": 107
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.section.archived_cards",
-        "location": {
-          "startingColumn": 63,
-          "startingLine": 67
+          "startingLine": 129
         }
       },
       {
@@ -31,7 +23,7 @@
         "key": "bank.empty.no_accounts",
         "location": {
           "startingColumn": 35,
-          "startingLine": 29
+          "startingLine": 41
         }
       },
       {
@@ -39,7 +31,7 @@
         "key": "bank.empty.description",
         "location": {
           "startingColumn": 34,
-          "startingLine": 31
+          "startingLine": 43
         }
       },
       {
@@ -47,23 +39,23 @@
         "key": "bank.action.add_defaults",
         "location": {
           "startingColumn": 36,
-          "startingLine": 33
+          "startingLine": 45
         }
       },
       {
         "comment": "",
         "key": "common.action.delete",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 50
+          "startingColumn": 51,
+          "startingLine": 63
         }
       },
       {
         "comment": "",
         "key": "common.action.archive",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 56
+          "startingColumn": 51,
+          "startingLine": 69
         }
       },
       {
@@ -71,15 +63,23 @@
         "key": "bank.section.active_accounts",
         "location": {
           "startingColumn": 26,
-          "startingLine": 63
+          "startingLine": 77
         }
       },
       {
         "comment": "",
         "key": "common.action.unarchive",
         "location": {
-          "startingColumn": 47,
-          "startingLine": 74
+          "startingColumn": 51,
+          "startingLine": 91
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.section.archived_cards",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 98
         }
       },
       {
@@ -87,7 +87,7 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 87
+          "startingLine": 109
         }
       },
       {
@@ -95,7 +95,7 @@
         "key": "bank.action.add_account",
         "location": {
           "startingColumn": 41,
-          "startingLine": 98
+          "startingLine": 120
         }
       },
       {
@@ -103,7 +103,7 @@
         "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
-          "startingLine": 108
+          "startingLine": 130
         }
       },
       {
@@ -111,15 +111,23 @@
         "key": "common.error.unknown",
         "location": {
           "startingColumn": 26,
-          "startingLine": 113
+          "startingLine": 135
         }
       },
       {
         "comment": "",
-        "key": "bank.label.monthly_limit",
+        "key": "bank.label.used",
         "location": {
-          "startingColumn": 22,
-          "startingLine": 180
+          "startingColumn": 26,
+          "startingLine": 229
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.label.limit",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 240
         }
       },
       {
@@ -127,7 +135,7 @@
         "key": "bank.title.new_account",
         "location": {
           "startingColumn": 54,
-          "startingLine": 282
+          "startingLine": 373
         }
       },
       {
@@ -135,7 +143,7 @@
         "key": "bank.title.edit_account",
         "location": {
           "startingColumn": 81,
-          "startingLine": 282
+          "startingLine": 373
         }
       },
       {
@@ -143,15 +151,15 @@
         "key": "common.alert.error",
         "location": {
           "startingColumn": 20,
-          "startingLine": 306
+          "startingLine": 397
         }
       },
       {
         "comment": "",
         "key": "bank.field.title",
         "location": {
-          "startingColumn": 31,
-          "startingLine": 224
+          "startingColumn": 36,
+          "startingLine": 293
         }
       },
       {
@@ -159,15 +167,15 @@
         "key": "bank.placeholder.name",
         "location": {
           "startingColumn": 35,
-          "startingLine": 229
+          "startingLine": 299
         }
       },
       {
         "comment": "",
         "key": "bank.field.card_number",
         "location": {
-          "startingColumn": 31,
-          "startingLine": 234
+          "startingColumn": 36,
+          "startingLine": 306
         }
       },
       {
@@ -175,7 +183,7 @@
         "key": "bank.placeholder.card_number",
         "location": {
           "startingColumn": 35,
-          "startingLine": 239
+          "startingLine": 311
         }
       },
       {
@@ -183,23 +191,23 @@
         "key": "bank.section.account_details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 243
+          "startingLine": 315
         }
       },
       {
         "comment": "",
         "key": "bank.footer.security_notice",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 245
+          "startingColumn": 37,
+          "startingLine": 323
         }
       },
       {
         "comment": "",
         "key": "bank.field.limit",
         "location": {
-          "startingColumn": 31,
-          "startingLine": 250
+          "startingColumn": 36,
+          "startingLine": 330
         }
       },
       {
@@ -207,15 +215,15 @@
         "key": "bank.section.turnover_limit",
         "location": {
           "startingColumn": 26,
-          "startingLine": 277
+          "startingLine": 361
         }
       },
       {
         "comment": "",
         "key": "bank.footer.turnover_limit_description",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 279
+          "startingColumn": 37,
+          "startingLine": 369
         }
       },
       {
@@ -223,7 +231,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 286
+          "startingLine": 377
         }
       },
       {
@@ -231,7 +239,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 292
+          "startingLine": 383
         }
       },
       {
@@ -239,7 +247,7 @@
         "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
-          "startingLine": 307
+          "startingLine": 398
         }
       },
       {
@@ -247,7 +255,7 @@
         "key": "common.error.unknown",
         "location": {
           "startingColumn": 26,
-          "startingLine": 312
+          "startingLine": 403
         }
       }
     ]

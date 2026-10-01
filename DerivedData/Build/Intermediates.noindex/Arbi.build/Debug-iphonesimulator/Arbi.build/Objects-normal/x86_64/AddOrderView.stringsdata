@@ -4,18 +4,10 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "order.fee.custom",
-        "location": {
-          "startingColumn": 65,
-          "startingLine": 25
-        }
-      },
-      {
-        "comment": "",
         "key": "order.title.record_buy",
         "location": {
           "startingColumn": 49,
-          "startingLine": 371
+          "startingLine": 412
         }
       },
       {
@@ -23,7 +15,15 @@
         "key": "order.title.record_sell",
         "location": {
           "startingColumn": 76,
-          "startingLine": 371
+          "startingLine": 412
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.alert.error",
+        "location": {
+          "startingColumn": 20,
+          "startingLine": 450
         }
       },
       {
@@ -31,7 +31,7 @@
         "key": "order.type.title",
         "location": {
           "startingColumn": 32,
-          "startingLine": 90
+          "startingLine": 105
         }
       },
       {
@@ -39,7 +39,7 @@
         "key": "order.type.buy",
         "location": {
           "startingColumn": 46,
-          "startingLine": 95
+          "startingLine": 110
         }
       },
       {
@@ -47,7 +47,7 @@
         "key": "order.type.sell",
         "location": {
           "startingColumn": 46,
-          "startingLine": 97
+          "startingLine": 112
         }
       },
       {
@@ -55,7 +55,7 @@
         "key": "order.type.title",
         "location": {
           "startingColumn": 30,
-          "startingLine": 106
+          "startingLine": 121
         }
       },
       {
@@ -63,7 +63,7 @@
         "key": "order.section.platform",
         "location": {
           "startingColumn": 30,
-          "startingLine": 128
+          "startingLine": 142
         }
       },
       {
@@ -71,7 +71,7 @@
         "key": "bank.empty.description",
         "location": {
           "startingColumn": 34,
-          "startingLine": 144
+          "startingLine": 158
         }
       },
       {
@@ -79,7 +79,7 @@
         "key": "bank.empty.no_accounts_found",
         "location": {
           "startingColumn": 38,
-          "startingLine": 140
+          "startingLine": 154
         }
       },
       {
@@ -87,7 +87,7 @@
         "key": "bank.action.add_account",
         "location": {
           "startingColumn": 42,
-          "startingLine": 153
+          "startingLine": 167
         }
       },
       {
@@ -95,31 +95,31 @@
         "key": "common.action.add",
         "location": {
           "startingColumn": 46,
-          "startingLine": 181
+          "startingLine": 195
         }
       },
       {
         "comment": "",
         "key": "order.section.settlement",
         "location": {
-          "startingColumn": 26,
-          "startingLine": 201
+          "startingColumn": 30,
+          "startingLine": 215
         }
       },
       {
         "comment": "",
         "key": "order.footer.selected_card_turnover",
         "location": {
-          "startingColumn": 68,
-          "startingLine": 207
+          "startingColumn": 72,
+          "startingLine": 228
         }
       },
       {
         "comment": "",
         "key": "order.footer.turnover_limit",
         "location": {
-          "startingColumn": 68,
-          "startingLine": 209
+          "startingColumn": 72,
+          "startingLine": 232
         }
       },
       {
@@ -127,7 +127,7 @@
         "key": "order.field.usdt",
         "location": {
           "startingColumn": 36,
-          "startingLine": 218
+          "startingLine": 244
         }
       },
       {
@@ -135,7 +135,7 @@
         "key": "order.field.price_uah",
         "location": {
           "startingColumn": 36,
-          "startingLine": 236
+          "startingLine": 263
         }
       },
       {
@@ -143,7 +143,7 @@
         "key": "order.field.total_uah",
         "location": {
           "startingColumn": 36,
-          "startingLine": 254
+          "startingLine": 282
         }
       },
       {
@@ -151,7 +151,7 @@
         "key": "order.section.amounts_rate",
         "location": {
           "startingColumn": 26,
-          "startingLine": 270
+          "startingLine": 299
         }
       },
       {
@@ -159,7 +159,7 @@
         "key": "order.field.usdt",
         "location": {
           "startingColumn": 34,
-          "startingLine": 312
+          "startingLine": 347
         }
       },
       {
@@ -167,7 +167,7 @@
         "key": "order.field.fee_usdt",
         "location": {
           "startingColumn": 40,
-          "startingLine": 297
+          "startingLine": 331
         }
       },
       {
@@ -175,7 +175,7 @@
         "key": "order.fee.approx_commission",
         "location": {
           "startingColumn": 72,
-          "startingLine": 320
+          "startingLine": 355
         }
       },
       {
@@ -183,7 +183,7 @@
         "key": "order.section.commission",
         "location": {
           "startingColumn": 26,
-          "startingLine": 328
+          "startingLine": 363
         }
       },
       {
@@ -191,7 +191,7 @@
         "key": "order.field.date_time",
         "location": {
           "startingColumn": 36,
-          "startingLine": 337
+          "startingLine": 378
         }
       },
       {
@@ -199,7 +199,7 @@
         "key": "order.field.note_placeholder",
         "location": {
           "startingColumn": 35,
-          "startingLine": 357
+          "startingLine": 398
         }
       },
       {
@@ -207,7 +207,7 @@
         "key": "order.section.details",
         "location": {
           "startingColumn": 26,
-          "startingLine": 363
+          "startingLine": 404
         }
       },
       {
@@ -215,7 +215,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 28,
-          "startingLine": 375
+          "startingLine": 416
         }
       },
       {
@@ -223,7 +223,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 28,
-          "startingLine": 381
+          "startingLine": 422
         }
       },
       {
@@ -231,7 +231,15 @@
         "key": "common.action.done",
         "location": {
           "startingColumn": 28,
-          "startingLine": 389
+          "startingLine": 430
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.ok",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 451
         }
       },
       {
@@ -239,7 +247,7 @@
         "key": "order.fee.custom",
         "location": {
           "startingColumn": 26,
-          "startingLine": 681
+          "startingLine": 709
         }
       }
     ]

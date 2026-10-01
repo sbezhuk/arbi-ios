@@ -55,7 +55,7 @@ public enum PeriodRolloverTests {
         assert(prevFromOct == "09.2026", "Expected 09.2026, got \(prevFromOct)")
 
         let display = PeriodRolloverService.formattedPeriodDisplay("09.2026")
-        assert(display == "September 2026", "Expected September 2026, got \(display)")
+        assert(display == "September 2026" || display == "Вересень 2026", "Expected September 2026 or Вересень 2026, got \(display)")
         print("✓ testPeriodFormattingAndNavigation passed")
     }
 

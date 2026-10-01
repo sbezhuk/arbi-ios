@@ -11,6 +11,7 @@ struct ContentView: View {
 
     @State private var selectedPeriod: String = PeriodRolloverService.currentPeriodIdentifier()
     @State private var showingAddOrderSheet: Bool = false
+    @State private var editingOrder: P2POrder?
     @State private var showingCapitalSettingsSheet: Bool = false
     @State private var showingBankAccountsSheet: Bool = false
     @State private var showingRolloverSheet: Bool = false
@@ -150,7 +151,12 @@ struct ContentView: View {
                         .padding(.vertical, 12)
                     } else {
                         ForEach(periodOrders) { order in
-                            OrderRowView(order: order)
+                            Button {
+                                editingOrder = order
+                            } label: {
+                                OrderRowView(order: order)
+                            }
+                            .buttonStyle(.plain)
                         }
                         .onDelete(perform: deleteOrders)
                     }
@@ -178,6 +184,9 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingAddOrderSheet) {
                 AddOrderView()
+            }
+            .sheet(item: $editingOrder) { order in
+                AddOrderView(orderToEdit: order)
             }
             .sheet(isPresented: $showingCapitalSettingsSheet) {
                 CapitalSettingsView(periodIdentifier: selectedPeriod)
@@ -709,6 +718,10 @@ private struct OrderRowView: View {
                     .font(.caption.monospacedDigit())
                     .foregroundStyle(.tertiary)
             }
+
+            Text(HomeFormatters.commissionLine(feeUSDT: order.feeUSDT))
+                .font(.caption2.monospacedDigit())
+                .foregroundStyle(.secondary)
         }
         .padding(.vertical, 3)
     }
@@ -730,6 +743,14 @@ enum HomeFormatters {
 
     static func percent(_ progress: Double) -> String {
         decimal(progress * 100, minimumFractionDigits: 1, maximumFractionDigits: 1) + "%"
+    }
+
+    static func commissionFee(_ value: Double) -> String {
+        "\(FeePreset.formatFeeAmount(value)) USDT"
+    }
+
+    static func commissionLine(feeUSDT: Double) -> String {
+        "\(LocalizationManager.shared["trades.row.commission"]): \(commissionFee(feeUSDT))"
     }
 
     private static func decimal(

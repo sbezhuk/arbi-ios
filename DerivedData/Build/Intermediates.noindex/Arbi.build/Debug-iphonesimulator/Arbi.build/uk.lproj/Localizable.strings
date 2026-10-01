@@ -224,6 +224,8 @@
 	<string>%lld угод продажу</string>
 	<key>trades.period.current</key>
 	<string>%@ (Поточний)</string>
+	<key>trades.row.commission</key>
+	<string>Комісія</string>
 	<key>trades.section.available_capital</key>
 	<string>Доступний капітал</string>
 	<key>trades.section.bank_limits</key>

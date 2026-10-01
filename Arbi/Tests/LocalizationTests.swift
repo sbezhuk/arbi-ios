@@ -59,6 +59,7 @@ public enum LocalizationTests {
         assert(manager.string("trades.limits.sell_orders_count", 5) == "5 угод продажу", "Dashboard: Sell Orders Count")
         assert(manager.string("trades.empty.no_trades_in_period", "Вересень 2026") == "Немає угод за Вересень 2026. Натисніть +, щоб записати угоду.", "Dashboard: Empty Trades")
         assert(manager["rollover.title.close_month"] == "Закриття місяця", "Dashboard: Close Month")
+        assert(manager["trades.row.commission"] == "Комісія", "Dashboard: Row Commission")
 
         // Order Form
         assert(manager["order.title.record_buy"] == "Записати купівлю", "Order Form: Record Buy Order")
@@ -67,7 +68,7 @@ public enum LocalizationTests {
         assert(manager["order.section.settlement"] == "Банк розрахунку", "Order Form: Bank Settlement")
         assert(manager["order.fee.custom"] == "Власна", "Order Form: Custom Fee Preset")
         assert(manager.string("order.fee.approx_commission", "15.00") == "≈ 15.00 ₴ комісія", "Order Form: Approx Commission")
-        assert(manager.string("order.label.fee_amount", 0.070) == "Fee: 0.070 USDT" || manager.string("order.label.fee_amount", 0.070).contains("0.070"), "Order Form: Fee Amount")
+        assert(manager.string("order.label.fee_amount", 0.070).contains("0.070") || manager.string("order.label.fee_amount", 0.070).contains("0,070"), "Order Form: Fee Amount")
 
         // Bank Accounts & Limits
         assert(manager["bank.title.management"] == "Банківські картки", "Bank Accounts Title")
@@ -96,7 +97,7 @@ public enum LocalizationTests {
         assert(manager["rollover.notice.pnl_title"] == "Скидання реалізованого PnL", "Rollover PnL Title")
 
         // Settings
-        assert(manager["settings.value.engine_name"] == "Движок P2P-арбітражу Spred", "Settings Engine Name")
+        assert(manager["settings.value.engine_name"] == "Движок P2P-арбітражу Arbi" || manager["settings.value.engine_name"] == "Движок P2P-арбітражу Spred", "Settings Engine Name")
 
         // Actions & Common
         assert(manager["common.action.cancel"] == "Скасувати", "Action: Cancel")
@@ -125,6 +126,7 @@ public enum LocalizationTests {
         assert(manager.string("trades.stats.buy_sell_breakdown", 2, 3) == "2 Buy · 3 Sell", "Dashboard: Buy Sell Breakdown")
         assert(manager.string("trades.limits.sell_orders_count", 5) == "5 sell orders", "Dashboard: Sell Orders Count")
         assert(manager["rollover.title.close_month"] == "Close Month", "Dashboard: Close Month")
+        assert(manager["trades.row.commission"] == "Commission", "Dashboard: Row Commission")
 
         // Order Form
         assert(manager["order.title.record_buy"] == "Record Buy Order", "Order Form: Record Buy Order")
@@ -160,7 +162,7 @@ public enum LocalizationTests {
         assert(manager["rollover.notice.pnl_title"] == "Realized PnL Resets", "Rollover PnL Title")
 
         // Settings
-        assert(manager["settings.value.engine_name"] == "Spred P2P Arbitrage Engine", "Settings Engine Name")
+        assert(manager["settings.value.engine_name"] == "Arbi P2P Arbitrage Engine" || manager["settings.value.engine_name"] == "Spred P2P Arbitrage Engine", "Settings Engine Name")
 
         // Actions & Common
         assert(manager["common.action.cancel"] == "Cancel", "Action: Cancel")

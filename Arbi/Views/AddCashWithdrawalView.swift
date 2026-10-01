@@ -50,7 +50,7 @@ struct AddCashWithdrawalView: View {
                         Text(verbatim: "₴")
                             .font(.title2.weight(.bold))
                             .foregroundStyle(Color.accentColor)
-                        Text("*")
+                        Text(verbatim: "*")
                             .foregroundStyle(.secondary)
 
                         TextField(String(""), text: $amountText, prompt: Text(verbatim: "0.00"))

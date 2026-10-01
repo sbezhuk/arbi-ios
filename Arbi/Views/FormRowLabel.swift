@@ -62,7 +62,7 @@ public struct FormRowLabel: View {
             HStack(spacing: 2) {
                 Text(title)
                 if required {
-                    Text("*")
+                    Text(verbatim: "*")
                         .foregroundStyle(.secondary)
                 }
             }

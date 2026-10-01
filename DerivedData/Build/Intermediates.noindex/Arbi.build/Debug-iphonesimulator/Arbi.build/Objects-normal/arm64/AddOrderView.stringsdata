@@ -4,14 +4,6 @@
     "Localizable": [
       {
         "comment": "",
-        "key": "order.fee.custom",
-        "location": {
-          "startingColumn": 65,
-          "startingLine": 25
-        }
-      },
-      {
-        "comment": "",
         "key": "order.title.record_buy",
         "location": {
           "startingColumn": 49,
@@ -112,14 +104,6 @@
         "location": {
           "startingColumn": 30,
           "startingLine": 215
-        }
-      },
-      {
-        "comment": "",
-        "key": "*",
-        "location": {
-          "startingColumn": 30,
-          "startingLine": 216
         }
       },
       {
@@ -263,7 +247,7 @@
         "key": "order.fee.custom",
         "location": {
           "startingColumn": 26,
-          "startingLine": 691
+          "startingLine": 709
         }
       }
     ]

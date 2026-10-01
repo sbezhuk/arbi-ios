@@ -1,13 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "*" : {
-
-    },
     "%lld" : {
-
-    },
-    "Arbi data is temporarily unavailable" : {
 
     },
     "bank.action.add_account" : {
@@ -1580,9 +1574,6 @@
         }
       }
     },
-    "The existing local database was preserved. Please restart Arbi or contact support." : {
-
-    },
     "trades.action.add_trade" : {
       "localizations" : {
         "en" : {
@@ -1788,6 +1779,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ (Поточний)"
+          }
+        }
+      }
+    },
+    "trades.row.commission" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commission"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Комісія"
           }
         }
       }

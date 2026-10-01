@@ -6,8 +6,16 @@
         "comment": "",
         "key": "trades.title.spread_arbitrage",
         "location": {
+          "startingColumn": 38,
+          "startingLine": 75
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.title.spread_arbitrage",
+        "location": {
           "startingColumn": 30,
-          "startingLine": 161
+          "startingLine": 172
         }
       },
       {
@@ -15,7 +23,7 @@
         "key": "bank.empty.no_accounts",
         "location": {
           "startingColumn": 34,
-          "startingLine": 103
+          "startingLine": 111
         }
       },
       {
@@ -23,7 +31,7 @@
         "key": "common.action.add",
         "location": {
           "startingColumn": 36,
-          "startingLine": 107
+          "startingLine": 115
         }
       },
       {
@@ -31,15 +39,15 @@
         "key": "trades.section.bank_limits",
         "location": {
           "startingColumn": 30,
-          "startingLine": 120
+          "startingLine": 128
         }
       },
       {
         "comment": "",
-        "key": "common.action.manage",
+        "key": "common.action.see_all",
         "location": {
-          "startingColumn": 36,
-          "startingLine": 125
+          "startingColumn": 32,
+          "startingLine": 130
         }
       },
       {
@@ -47,7 +55,7 @@
         "key": "trades.empty.no_transactions",
         "location": {
           "startingColumn": 35,
-          "startingLine": 137
+          "startingLine": 142
         }
       },
       {
@@ -55,7 +63,7 @@
         "key": "trades.empty.no_trades_in_period",
         "location": {
           "startingColumn": 68,
-          "startingLine": 139
+          "startingLine": 144
         }
       },
       {
@@ -63,7 +71,7 @@
         "key": "trades.empty.add_sample",
         "location": {
           "startingColumn": 36,
-          "startingLine": 141
+          "startingLine": 146
         }
       },
       {
@@ -71,31 +79,7 @@
         "key": "trades.section.recent_transactions",
         "location": {
           "startingColumn": 30,
-          "startingLine": 154
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.label.calendar_month",
-        "location": {
-          "startingColumn": 33,
-          "startingLine": 166
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.period.current",
-        "location": {
-          "startingColumn": 86,
-          "startingLine": 170
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.title.close_month",
-        "location": {
-          "startingColumn": 39,
-          "startingLine": 205
+          "startingLine": 164
         }
       },
       {
@@ -103,7 +87,7 @@
         "key": "trades.action.add_trade",
         "location": {
           "startingColumn": 46,
-          "startingLine": 227
+          "startingLine": 182
         }
       },
       {
@@ -111,7 +95,7 @@
         "key": "trades.card.free_money_bank_cards",
         "location": {
           "startingColumn": 27,
-          "startingLine": 346
+          "startingLine": 305
         }
       },
       {
@@ -119,7 +103,7 @@
         "key": "trades.action.rollover",
         "location": {
           "startingColumn": 34,
-          "startingLine": 355
+          "startingLine": 314
         }
       },
       {
@@ -127,7 +111,7 @@
         "key": "trades.action.configure",
         "location": {
           "startingColumn": 30,
-          "startingLine": 366
+          "startingLine": 325
         }
       },
       {
@@ -135,7 +119,7 @@
         "key": "trades.card.starting_deposit",
         "location": {
           "startingColumn": 30,
-          "startingLine": 388
+          "startingLine": 347
         }
       },
       {
@@ -143,7 +127,7 @@
         "key": "trades.card.cash_out",
         "location": {
           "startingColumn": 38,
-          "startingLine": 400
+          "startingLine": 359
         }
       },
       {
@@ -151,7 +135,7 @@
         "key": "trades.card.usdt_inventory",
         "location": {
           "startingColumn": 30,
-          "startingLine": 417
+          "startingLine": 376
         }
       },
       {
@@ -159,79 +143,103 @@
         "key": "trades.stats.net_pnl",
         "location": {
           "startingColumn": 22,
-          "startingLine": 455
+          "startingLine": 419
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.section.available_capital",
+        "location": {
+          "startingColumn": 22,
+          "startingLine": 425
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.manage",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 432
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.card.cash_out",
+        "location": {
+          "startingColumn": 28,
+          "startingLine": 433
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.manage",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 436
         }
       },
       {
         "comment": "",
         "key": "trades.stats.avg_buy_price",
         "location": {
-          "startingColumn": 28,
-          "startingLine": 481
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.label.per_usdt",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 483
+          "startingColumn": 26,
+          "startingLine": 449
         }
       },
       {
         "comment": "",
         "key": "trades.stats.total_trades",
         "location": {
-          "startingColumn": 28,
-          "startingLine": 489
+          "startingColumn": 26,
+          "startingLine": 459
+        }
+      },
+      {
+        "comment": "",
+        "key": "%lld",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 462
         }
       },
       {
         "comment": "",
         "key": "trades.stats.buy_sell_breakdown",
         "location": {
-          "startingColumn": 69,
-          "startingLine": 491
+          "startingColumn": 60,
+          "startingLine": 464
         }
       },
       {
         "comment": "",
-        "key": "trades.limits.progress_summary",
+        "key": "common.label.calendar_month",
         "location": {
-          "startingColumn": 50,
-          "startingLine": 622
+          "startingColumn": 34,
+          "startingLine": 538
         }
       },
       {
         "comment": "",
-        "key": "trades.limits.sell_orders_count",
+        "key": "common.label.calendar_month",
         "location": {
-          "startingColumn": 56,
-          "startingLine": 655
+          "startingColumn": 21,
+          "startingLine": 508
         }
       },
       {
         "comment": "",
-        "key": "order.type.buy",
+        "key": "rollover.title.close_month",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 691
+          "startingColumn": 27,
+          "startingLine": 526
         }
       },
       {
         "comment": "",
-        "key": "order.type.sell",
+        "key": "trades.row.commission",
         "location": {
-          "startingColumn": 30,
-          "startingLine": 693
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.label.fee_amount",
-        "location": {
-          "startingColumn": 64,
-          "startingLine": 737
+          "startingColumn": 39,
+          "startingLine": 753
         }
       }
     ]
