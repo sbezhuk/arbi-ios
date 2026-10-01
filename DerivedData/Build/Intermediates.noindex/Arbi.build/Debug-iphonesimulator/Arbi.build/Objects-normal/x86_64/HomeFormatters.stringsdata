@@ -1,0 +1,16 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Engine/HomeFormatters.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "trades.row.commission",
+        "location": {
+          "startingColumn": 39,
+          "startingLine": 25
+        }
+      }
+    ]
+  },
+  "version": 1
+}

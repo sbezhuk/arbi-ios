@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var showingBankAccountsSheet: Bool = false
     @State private var showingRolloverSheet: Bool = false
     @State private var showingWithdrawalsSheet: Bool = false
+    @State private var showingAllTransactions: Bool = false
 
     private var activeSettings: CapitalSettings? {
         CapitalSettings.settings(for: selectedPeriod, in: capitalSettingsList)
@@ -23,6 +24,10 @@ struct ContentView: View {
 
     private var periodOrders: [P2POrder] {
         PeriodRolloverService.ordersForPeriod(selectedPeriod, orders: orders)
+    }
+
+    private var recentOrders: [P2POrder] {
+        Array(periodOrders.prefix(5))
     }
 
     private var periodWithdrawals: [CashWithdrawal] {
@@ -150,7 +155,7 @@ struct ContentView: View {
                         }
                         .padding(.vertical, 12)
                     } else {
-                        ForEach(periodOrders) { order in
+                        ForEach(recentOrders) { order in
                             Button {
                                 editingOrder = order
                             } label: {
@@ -161,10 +166,24 @@ struct ContentView: View {
                         .onDelete(perform: deleteOrders)
                     }
                 } header: {
-                        Text("trades.section.recent_transactions")
-                        Text(verbatim: " (\(periodOrders.count))")
-                        .font(.footnote.weight(.semibold))
-                        .foregroundStyle(.secondary)
+                    HStack {
+                        HStack(spacing: 4) {
+                            Text("trades.section.recent_transactions")
+                            Text(verbatim: " (\(periodOrders.count))")
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if periodOrders.count > 5 {
+                            Button {
+                                showingAllTransactions = true
+                            } label: {
+                                Text("common.action.show_all")
+                            }
+                            .font(.caption.weight(.medium))
+                            .textCase(nil)
+                        }
+                    }
                 }
             }
             .listSectionSpacing(8)
@@ -181,6 +200,9 @@ struct ContentView: View {
                     }
                     .accessibilityLabel(Text("trades.action.add_trade"))
                 }
+            }
+            .navigationDestination(isPresented: $showingAllTransactions) {
+                TransactionsListView(periodIdentifier: selectedPeriod)
             }
             .sheet(isPresented: $showingAddOrderSheet) {
                 AddOrderView()
@@ -201,14 +223,14 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingWithdrawalsSheet) {
                 CashWithdrawalsListView(periodIdentifier: selectedPeriod)
-                }
+            }
             }
         }
     }
 
     private func deleteOrders(at offsets: IndexSet) {
         for index in offsets {
-            let order = periodOrders[index]
+            let order = recentOrders[index]
             modelContext.delete(order)
         }
         try? modelContext.save()
@@ -681,7 +703,7 @@ private struct AccountTurnoverRow: View {
 
 // MARK: - Order Row Component
 
-private struct OrderRowView: View {
+struct OrderRowView: View {
     let order: P2POrder
 
     var body: some View {
@@ -726,56 +748,4 @@ private struct OrderRowView: View {
         .padding(.vertical, 3)
     }
 
-}
-
-enum HomeFormatters {
-    static func uah(_ value: Double) -> String {
-        decimal(value, minimumFractionDigits: 0, maximumFractionDigits: 2) + " ₴"
-    }
-
-    static func rate(_ value: Double) -> String {
-        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2)
-    }
-
-    static func usdt(_ value: Double) -> String {
-        decimal(value, minimumFractionDigits: 2, maximumFractionDigits: 2) + " USDT"
-    }
-
-    static func percent(_ progress: Double) -> String {
-        decimal(progress * 100, minimumFractionDigits: 1, maximumFractionDigits: 1) + "%"
-    }
-
-    static func commissionFee(_ value: Double) -> String {
-        "\(FeePreset.formatFeeAmount(value)) USDT"
-    }
-
-    static func commissionLine(feeUSDT: Double) -> String {
-        "\(LocalizationManager.shared["trades.row.commission"]): \(commissionFee(feeUSDT))"
-    }
-
-    private static func decimal(
-        _ value: Double,
-        minimumFractionDigits: Int,
-        maximumFractionDigits: Int
-    ) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.locale = Locale(identifier: LocalizationManager.shared.currentLanguage.rawValue)
-        formatter.minimumFractionDigits = minimumFractionDigits
-        formatter.maximumFractionDigits = maximumFractionDigits
-        return formatter.string(from: NSNumber(value: value)) ?? String(value)
-    }
-}
-
-enum HomeDisplayNames {
-    static func bankAccount(_ name: String) -> String {
-        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard let openParen = trimmedName.firstIndex(of: "(") else { return trimmedName }
-
-        let bank = trimmedName[..<openParen].trimmingCharacters(in: .whitespacesAndNewlines)
-        let type = trimmedName[trimmedName.index(after: openParen)...]
-            .trimmingCharacters(in: CharacterSet(charactersIn: ") "))
-        guard !bank.isEmpty else { return trimmedName }
-        return type.isEmpty ? bank : "\(bank) · \(type)"
-    }
 }

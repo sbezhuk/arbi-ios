@@ -1,5 +1,7 @@
+/Users/stepanbezhuk/work/Arbi/Arbi/Engine/HomeFormatters.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Engine/P2PCalculator.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Engine/PeriodRolloverService.swift
+/Users/stepanbezhuk/work/Arbi/Arbi/Engine/TransactionsPaginationFetcher.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/BankAccount.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/CapitalSettings.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Models/CashWithdrawal.swift
@@ -18,6 +20,7 @@
 /Users/stepanbezhuk/work/Arbi/Arbi/Tests/FormValidationTests.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Tests/LocalizationTests.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Tests/PeriodRolloverTests.swift
+/Users/stepanbezhuk/work/Arbi/Arbi/Tests/TransactionsPaginationTests.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/AddCashWithdrawalView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/AddOrderView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/BankAccountsView.swift
@@ -31,6 +34,7 @@
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/PersistenceFailureView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/SectionValidationFooter.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/Views/SettingsView.swift
+/Users/stepanbezhuk/work/Arbi/Arbi/Views/TransactionsListView.swift
 /Users/stepanbezhuk/work/Arbi/Arbi/SpredApp.swift
 /Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/DerivedSources/GeneratedAssetSymbols.swift
 /Users/stepanbezhuk/work/Arbi/DerivedData/Build/Intermediates.noindex/Arbi.build/Debug-iphonesimulator/Arbi.build/DerivedSources/GeneratedStringSymbols_Localizable.swift

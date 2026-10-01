@@ -75,6 +75,31 @@ public struct PeriodRolloverService {
         return "\(monthName) \(year)"
     }
 
+    /// Returns the DateInterval covering the entire calendar month for a given period identifier (e.g. "09.2026").
+    nonisolated public static func dateInterval(for period: String) -> DateInterval? {
+        let parts = period.split(separator: ".")
+        guard parts.count == 2,
+              let month = Int(parts[0]),
+              let year = Int(parts[1]),
+              month >= 1 && month <= 12 else {
+            return nil
+        }
+        var startComps = DateComponents()
+        startComps.year = year
+        startComps.month = month
+        startComps.day = 1
+        startComps.hour = 0
+        startComps.minute = 0
+        startComps.second = 0
+
+        let calendar = Calendar.current
+        guard let startDate = calendar.date(from: startComps),
+              let endDate = calendar.date(byAdding: .month, value: 1, to: startDate) else {
+            return nil
+        }
+        return DateInterval(start: startDate, end: endDate)
+    }
+
     /// Filters orders that belong to a specific calendar month period (e.g. "09.2026").
     nonisolated public static func ordersForPeriod(_ period: String, orders: [P2POrder]) -> [P2POrder] {
         orders.filter { order in

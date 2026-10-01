@@ -132,7 +132,23 @@
       },
       {
         "comment": "",
-        "key": "order.title.record_buy",
+        "key": "common.action.show_all",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 63
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.action.show_all",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 64
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.title.transactions",
         "location": {
           "startingColumn": 24,
           "startingLine": 65
@@ -140,23 +156,7 @@
       },
       {
         "comment": "",
-        "key": "order.title.record_sell",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 66
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.section.commission",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 67
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.section.settlement",
+        "key": "order.title.record_buy",
         "location": {
           "startingColumn": 24,
           "startingLine": 68
@@ -164,7 +164,7 @@
       },
       {
         "comment": "",
-        "key": "order.fee.custom",
+        "key": "order.title.record_sell",
         "location": {
           "startingColumn": 24,
           "startingLine": 69
@@ -172,370 +172,10 @@
       },
       {
         "comment": "",
-        "key": "order.fee.approx_commission",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 70
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.label.fee_amount",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 71
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.label.fee_amount",
-        "location": {
-          "startingColumn": 100,
-          "startingLine": 71
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.title.management",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 74
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.section.turnover_limit",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 75
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.field.limit",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 76
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.placeholder.name",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 77
-        }
-      },
-      {
-        "comment": "",
-        "key": "bank.section.archived_cards",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 78
-        }
-      },
-      {
-        "comment": "",
-        "key": "capital.label.total_portfolio_equity",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 81
-        }
-      },
-      {
-        "comment": "",
-        "key": "capital.title.period",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 82
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.title.log",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 85
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.title.record",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 86
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.action.log_cash_out",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 87
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.label.total_withdrawn",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 88
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.label.entries_count",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 89
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.label.entries_count.one",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 90
-        }
-      },
-      {
-        "comment": "",
-        "key": "withdrawal.label.entries_count.few",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 91
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.label.current_period",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 94
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.label.new_period",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 95
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.notice.turnover_title",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 96
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.notice.pnl_title",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 97
-        }
-      },
-      {
-        "comment": "",
-        "key": "settings.value.engine_name",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 100
-        }
-      },
-      {
-        "comment": "",
-        "key": "settings.value.engine_name",
-        "location": {
-          "startingColumn": 111,
-          "startingLine": 100
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.action.cancel",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 103
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.action.save",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 104
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.action.confirm",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 105
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.action.ok",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 106
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.alert.error",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 107
-        }
-      },
-      {
-        "comment": "",
-        "key": "common.label.other",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 108
-        }
-      },
-      {
-        "comment": "",
-        "key": "sync.restore.message",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 109
-        }
-      },
-      {
-        "comment": "",
-        "key": "nav.tab.trades",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 115
-        }
-      },
-      {
-        "comment": "",
-        "key": "nav.tab.settings",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 116
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.stats.net_pnl",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 119
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.card.free_money_bank_cards",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 120
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.section.bank_limits",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 121
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.stats.avg_buy_price",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 122
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.stats.total_trades",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 123
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.action.add_trade",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 124
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.period.current",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 125
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.stats.buy_sell_breakdown",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 126
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.limits.sell_orders_count",
-        "location": {
-          "startingColumn": 31,
-          "startingLine": 127
-        }
-      },
-      {
-        "comment": "",
-        "key": "rollover.title.close_month",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 128
-        }
-      },
-      {
-        "comment": "",
-        "key": "trades.row.commission",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 129
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.title.record_buy",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 132
-        }
-      },
-      {
-        "comment": "",
-        "key": "order.title.record_sell",
-        "location": {
-          "startingColumn": 24,
-          "startingLine": 133
-        }
-      },
-      {
-        "comment": "",
         "key": "order.section.commission",
         "location": {
           "startingColumn": 24,
-          "startingLine": 134
+          "startingLine": 70
         }
       },
       {
@@ -543,7 +183,7 @@
         "key": "order.section.settlement",
         "location": {
           "startingColumn": 24,
-          "startingLine": 135
+          "startingLine": 71
         }
       },
       {
@@ -551,7 +191,7 @@
         "key": "order.fee.custom",
         "location": {
           "startingColumn": 24,
-          "startingLine": 136
+          "startingLine": 72
         }
       },
       {
@@ -559,7 +199,23 @@
         "key": "order.fee.approx_commission",
         "location": {
           "startingColumn": 31,
-          "startingLine": 137
+          "startingLine": 73
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.label.fee_amount",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 74
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.label.fee_amount",
+        "location": {
+          "startingColumn": 100,
+          "startingLine": 74
         }
       },
       {
@@ -567,7 +223,7 @@
         "key": "bank.title.management",
         "location": {
           "startingColumn": 24,
-          "startingLine": 140
+          "startingLine": 77
         }
       },
       {
@@ -575,7 +231,7 @@
         "key": "bank.section.turnover_limit",
         "location": {
           "startingColumn": 24,
-          "startingLine": 141
+          "startingLine": 78
         }
       },
       {
@@ -583,7 +239,7 @@
         "key": "bank.field.limit",
         "location": {
           "startingColumn": 24,
-          "startingLine": 142
+          "startingLine": 79
         }
       },
       {
@@ -591,7 +247,7 @@
         "key": "bank.placeholder.name",
         "location": {
           "startingColumn": 24,
-          "startingLine": 143
+          "startingLine": 80
         }
       },
       {
@@ -599,7 +255,7 @@
         "key": "bank.section.archived_cards",
         "location": {
           "startingColumn": 31,
-          "startingLine": 144
+          "startingLine": 81
         }
       },
       {
@@ -607,7 +263,7 @@
         "key": "capital.label.total_portfolio_equity",
         "location": {
           "startingColumn": 24,
-          "startingLine": 147
+          "startingLine": 84
         }
       },
       {
@@ -615,7 +271,7 @@
         "key": "capital.title.period",
         "location": {
           "startingColumn": 31,
-          "startingLine": 148
+          "startingLine": 85
         }
       },
       {
@@ -623,7 +279,7 @@
         "key": "withdrawal.title.log",
         "location": {
           "startingColumn": 24,
-          "startingLine": 151
+          "startingLine": 88
         }
       },
       {
@@ -631,7 +287,7 @@
         "key": "withdrawal.title.record",
         "location": {
           "startingColumn": 24,
-          "startingLine": 152
+          "startingLine": 89
         }
       },
       {
@@ -639,7 +295,7 @@
         "key": "withdrawal.action.log_cash_out",
         "location": {
           "startingColumn": 24,
-          "startingLine": 153
+          "startingLine": 90
         }
       },
       {
@@ -647,7 +303,7 @@
         "key": "withdrawal.label.total_withdrawn",
         "location": {
           "startingColumn": 24,
-          "startingLine": 154
+          "startingLine": 91
         }
       },
       {
@@ -655,7 +311,7 @@
         "key": "withdrawal.label.entries_count",
         "location": {
           "startingColumn": 31,
-          "startingLine": 155
+          "startingLine": 92
         }
       },
       {
@@ -663,7 +319,15 @@
         "key": "withdrawal.label.entries_count.one",
         "location": {
           "startingColumn": 31,
-          "startingLine": 156
+          "startingLine": 93
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.entries_count.few",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 94
         }
       },
       {
@@ -671,7 +335,7 @@
         "key": "rollover.label.current_period",
         "location": {
           "startingColumn": 24,
-          "startingLine": 159
+          "startingLine": 97
         }
       },
       {
@@ -679,7 +343,7 @@
         "key": "rollover.label.new_period",
         "location": {
           "startingColumn": 24,
-          "startingLine": 160
+          "startingLine": 98
         }
       },
       {
@@ -687,7 +351,7 @@
         "key": "rollover.notice.turnover_title",
         "location": {
           "startingColumn": 24,
-          "startingLine": 161
+          "startingLine": 99
         }
       },
       {
@@ -695,7 +359,7 @@
         "key": "rollover.notice.pnl_title",
         "location": {
           "startingColumn": 24,
-          "startingLine": 162
+          "startingLine": 100
         }
       },
       {
@@ -703,15 +367,15 @@
         "key": "settings.value.engine_name",
         "location": {
           "startingColumn": 24,
-          "startingLine": 165
+          "startingLine": 103
         }
       },
       {
         "comment": "",
         "key": "settings.value.engine_name",
         "location": {
-          "startingColumn": 96,
-          "startingLine": 165
+          "startingColumn": 111,
+          "startingLine": 103
         }
       },
       {
@@ -719,7 +383,7 @@
         "key": "common.action.cancel",
         "location": {
           "startingColumn": 24,
-          "startingLine": 168
+          "startingLine": 106
         }
       },
       {
@@ -727,7 +391,7 @@
         "key": "common.action.save",
         "location": {
           "startingColumn": 24,
-          "startingLine": 169
+          "startingLine": 107
         }
       },
       {
@@ -735,7 +399,7 @@
         "key": "common.action.confirm",
         "location": {
           "startingColumn": 24,
-          "startingLine": 170
+          "startingLine": 108
         }
       },
       {
@@ -743,7 +407,7 @@
         "key": "common.action.ok",
         "location": {
           "startingColumn": 24,
-          "startingLine": 171
+          "startingLine": 109
         }
       },
       {
@@ -751,7 +415,7 @@
         "key": "common.alert.error",
         "location": {
           "startingColumn": 24,
-          "startingLine": 172
+          "startingLine": 110
         }
       },
       {
@@ -759,7 +423,7 @@
         "key": "common.label.other",
         "location": {
           "startingColumn": 24,
-          "startingLine": 173
+          "startingLine": 111
         }
       },
       {
@@ -767,7 +431,391 @@
         "key": "sync.restore.message",
         "location": {
           "startingColumn": 24,
+          "startingLine": 112
+        }
+      },
+      {
+        "comment": "",
+        "key": "nav.tab.trades",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 118
+        }
+      },
+      {
+        "comment": "",
+        "key": "nav.tab.settings",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 119
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.stats.net_pnl",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 122
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.card.free_money_bank_cards",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 123
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.section.bank_limits",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 124
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.stats.avg_buy_price",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 125
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.stats.total_trades",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 126
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.action.add_trade",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 127
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.period.current",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 128
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.stats.buy_sell_breakdown",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 129
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.limits.sell_orders_count",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 130
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.title.close_month",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 131
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.row.commission",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 132
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.show_all",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 133
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.action.show_all",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 134
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.title.transactions",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 135
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.title.record_buy",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 138
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.title.record_sell",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 139
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.commission",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 140
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.section.settlement",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 141
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.fee.custom",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 142
+        }
+      },
+      {
+        "comment": "",
+        "key": "order.fee.approx_commission",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 143
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.title.management",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 146
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.section.turnover_limit",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 147
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.field.limit",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 148
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.placeholder.name",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 149
+        }
+      },
+      {
+        "comment": "",
+        "key": "bank.section.archived_cards",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 150
+        }
+      },
+      {
+        "comment": "",
+        "key": "capital.label.total_portfolio_equity",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 153
+        }
+      },
+      {
+        "comment": "",
+        "key": "capital.title.period",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 154
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.title.log",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 157
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.title.record",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 158
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.action.log_cash_out",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 159
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.total_withdrawn",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 160
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.entries_count",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 161
+        }
+      },
+      {
+        "comment": "",
+        "key": "withdrawal.label.entries_count.one",
+        "location": {
+          "startingColumn": 31,
+          "startingLine": 162
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.label.current_period",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 165
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.label.new_period",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 166
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.notice.turnover_title",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 167
+        }
+      },
+      {
+        "comment": "",
+        "key": "rollover.notice.pnl_title",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 168
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.value.engine_name",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 171
+        }
+      },
+      {
+        "comment": "",
+        "key": "settings.value.engine_name",
+        "location": {
+          "startingColumn": 96,
+          "startingLine": 171
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.cancel",
+        "location": {
+          "startingColumn": 24,
           "startingLine": 174
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.save",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 175
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.confirm",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 176
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.action.ok",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 177
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.alert.error",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 178
+        }
+      },
+      {
+        "comment": "",
+        "key": "common.label.other",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 179
+        }
+      },
+      {
+        "comment": "",
+        "key": "sync.restore.message",
+        "location": {
+          "startingColumn": 24,
+          "startingLine": 180
         }
       }
     ]

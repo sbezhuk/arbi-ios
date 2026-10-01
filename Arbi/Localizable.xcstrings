@@ -677,6 +677,22 @@
         }
       }
     },
+    "common.action.show_all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show All"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати всі"
+          }
+        }
+      }
+    },
     "common.action.unarchive" : {
       "localizations" : {
         "en" : {
@@ -1622,6 +1638,22 @@
         }
       }
     },
+    "trades.action.show_all" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Show All"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати всі"
+          }
+        }
+      }
+    },
     "trades.card.cash_out" : {
       "localizations" : {
         "en" : {
@@ -1923,6 +1955,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "P2P Арбітраж"
+          }
+        }
+      }
+    },
+    "trades.title.transactions" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transactions"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Транзакції"
           }
         }
       }

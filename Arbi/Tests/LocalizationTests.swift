@@ -60,6 +60,9 @@ public enum LocalizationTests {
         assert(manager.string("trades.empty.no_trades_in_period", "Вересень 2026") == "Немає угод за Вересень 2026. Натисніть +, щоб записати угоду.", "Dashboard: Empty Trades")
         assert(manager["rollover.title.close_month"] == "Закриття місяця", "Dashboard: Close Month")
         assert(manager["trades.row.commission"] == "Комісія", "Dashboard: Row Commission")
+        assert(manager["common.action.show_all"] == "Показати всі", "Action: Show All")
+        assert(manager["trades.action.show_all"] == "Показати всі", "Trades Action: Show All")
+        assert(manager["trades.title.transactions"] == "Транзакції", "Trades Title: Transactions")
 
         // Order Form
         assert(manager["order.title.record_buy"] == "Записати купівлю", "Order Form: Record Buy Order")
@@ -127,6 +130,9 @@ public enum LocalizationTests {
         assert(manager.string("trades.limits.sell_orders_count", 5) == "5 sell orders", "Dashboard: Sell Orders Count")
         assert(manager["rollover.title.close_month"] == "Close Month", "Dashboard: Close Month")
         assert(manager["trades.row.commission"] == "Commission", "Dashboard: Row Commission")
+        assert(manager["common.action.show_all"] == "Show All", "Action: Show All")
+        assert(manager["trades.action.show_all"] == "Show All", "Trades Action: Show All")
+        assert(manager["trades.title.transactions"] == "Transactions", "Trades Title: Transactions")
 
         // Order Form
         assert(manager["order.title.record_buy"] == "Record Buy Order", "Order Form: Record Buy Order")

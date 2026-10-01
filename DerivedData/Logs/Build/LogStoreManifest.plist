@@ -6,7 +6,7 @@
 	<integer>13</integer>
 	<key>logs</key>
 	<dict>
-		<key>46B24170-7F43-4BC3-BF1E-E50D296B35A9</key>
+		<key>7BD7E75D-75C8-430D-972A-FA06CE8040B6</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>46B24170-7F43-4BC3-BF1E-E50D296B35A9.xcactivitylog</string>
+			<string>7BD7E75D-75C8-430D-972A-FA06CE8040B6.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -29,7 +29,7 @@
 				<key>totalNumberOfTestFailures</key>
 				<integer>0</integer>
 				<key>totalNumberOfWarnings</key>
-				<integer>4</integer>
+				<integer>8</integer>
 			</dict>
 			<key>schemeIdentifier-containerName</key>
 			<string>Arbi project</string>
@@ -40,15 +40,15 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812538334.96917999</real>
+			<real>812542752.4181</real>
 			<key>timeStoppedRecording</key>
-			<real>812538345.60674703</real>
+			<real>812542766.29533696</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>46B24170-7F43-4BC3-BF1E-E50D296B35A9</string>
+			<string>7BD7E75D-75C8-430D-972A-FA06CE8040B6</string>
 		</dict>
-		<key>971C85C1-FC77-44CC-BA43-563DAB6A5AB4</key>
+		<key>7BDE272D-28E7-4436-8002-51164C20626D</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -57,7 +57,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>971C85C1-FC77-44CC-BA43-563DAB6A5AB4.xcactivitylog</string>
+			<string>7BDE272D-28E7-4436-8002-51164C20626D.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -82,13 +82,13 @@
 			<key>signature</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>timeStartedRecording</key>
-			<real>812537664.23786998</real>
+			<real>812543177.32692695</real>
 			<key>timeStoppedRecording</key>
-			<real>812537671.13482106</real>
+			<real>812543192.43418705</real>
 			<key>title</key>
 			<string>Building project Arbi with scheme Arbi</string>
 			<key>uniqueIdentifier</key>
-			<string>971C85C1-FC77-44CC-BA43-563DAB6A5AB4</string>
+			<string>7BDE272D-28E7-4436-8002-51164C20626D</string>
 		</dict>
 	</dict>
 </dict>

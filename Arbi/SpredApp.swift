@@ -52,6 +52,7 @@ struct SpredApp: App {
                 try CloudKitPersistenceTests.runAllTests()
                 try CloudKitSynchronizationReadinessTests.runAllTests()
                 try AccountingPnLTests.runAllTests()
+                try TransactionsPaginationTests.runAllTests()
                 print("🎉 ALL TESTS PASSED SUCCESSFULLY! 🎉")
             } catch {
                 fatalError("Unit tests failed: \(error)")

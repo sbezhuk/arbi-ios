@@ -1,0 +1,40 @@
+{
+  "source": "/Users/stepanbezhuk/work/Arbi/Arbi/Views/TransactionsListView.swift",
+  "tables": {
+    "Localizable": [
+      {
+        "comment": "",
+        "key": "trades.title.transactions",
+        "location": {
+          "startingColumn": 26,
+          "startingLine": 65
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.empty.no_transactions",
+        "location": {
+          "startingColumn": 27,
+          "startingLine": 23
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.empty.no_transactions",
+        "location": {
+          "startingColumn": 30,
+          "startingLine": 28
+        }
+      },
+      {
+        "comment": "",
+        "key": "trades.empty.no_trades_in_period",
+        "location": {
+          "startingColumn": 64,
+          "startingLine": 26
+        }
+      }
+    ]
+  },
+  "version": 1
+}
